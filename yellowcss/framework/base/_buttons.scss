@@ -1,0 +1,329 @@
+// BUTTONS
+// ===============================================================================
+
+.button{
+    display: inline-block;
+    vertical-align: middle;     
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 3;
+    padding-right: 1em;
+    padding-left:  1em;
+    touch-action: manipulation;
+    border: 1px solid transparent;
+    border-radius: $brand-button-radius-default;
+    color: $button-colour;
+    background-color: $button-bg;
+
+    &:hover {
+        background-color: darken($button-bg, 10%);
+    }
+}
+
+.button{
+
+    &,
+    &:hover{
+        text-decoration:none; 
+    }
+
+    &:active,
+    &:focus{
+        outline:none;
+    }
+}
+
+// SIZES
+.button--small{
+    padding-right:0.5em;
+    padding-left: 0.5em;
+    line-height:2;
+}
+
+.button--large{
+    padding-right:1.5em;
+    padding-left: 1.5em;
+    line-height:4;
+}
+
+.button--huge{
+    padding-right:2.5em;
+    padding-left: 2.5em;
+    line-height:6;
+}
+
+.button--fill{
+    width:100%;
+    padding-right:0;           
+    padding-left: 0;            
+    text-align:center;
+}
+
+// Font sizes
+.button--alpha{
+    font-size:3rem;
+}
+
+.button--beta{
+    font-size:2rem;
+}
+
+.button--gamma{
+    font-size:1rem;
+}
+
+
+// Make the button inherit sizing from its parent. E.g. inline buttons in a <p>.
+.button--inherit{
+    vertical-align:baseline;
+    font-size:inherit;
+    line-height:inherit;
+    padding-right:0.5em;
+    padding-left: 0.5em;
+}
+
+
+
+// Button modifiers.
+.button--primary {
+    background-color: $button-bg;
+    color: $button-colour;
+    &:hover {
+        background-color: darken($button-bg, 10%);
+    }
+}
+
+.button--secondary {
+    background-color: $button-bg-secondary;
+    color: $button-colour-secondary;
+    &:hover {
+        background-color: darken($button-bg-secondary, 10%);
+    }
+}
+
+.button--tertiary {
+    background-color: $button-bg-tertiary;
+    color: $button-colour-tertiary;
+    &:hover {
+        background-color: darken($button-bg-tertiary, 10%);
+    }
+}
+
+.button--circular {
+    // background-color: $button-bg;
+    // color: $button-colour;
+    border-radius: 200px;
+    &:hover {
+        // background-color: darken($button-bg, 10%);
+    }
+}
+
+.button--rounded {
+    border-radius: $brand-button-radius;
+}
+
+
+// Positive actions: Success, yes, send etc.
+.button--positive{
+    background-color: $colour-positive;
+    color:#fff;
+    &:hover {
+        background-color: darken($colour-positive, 10%);
+    }
+}
+
+// Negative actions: Error, no, cancel etc.
+.button--negative{
+    background-color: $colour-negative;
+    color:#fff;
+    &:hover {
+        background-color: darken($colour-negative, 10%);
+    }
+}
+
+// Inactive/disabled state.
+
+%button-inactive {
+    background-color:#ddd;
+    color:#777;
+    pointer-events: none; // Future-proof disabling of clicks
+    cursor: not-allowed;
+}
+
+.button--inactive, .button[disabled] {
+    @extend %button-inactive;
+    &:hover,
+    &:active,
+    &:focus {
+        @extend %button-inactive;
+    }
+}
+
+
+// BUTTON GROUP
+// ---------------------------------------------------
+
+.button-group,
+.button-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle; // match .button alignment given font-size hack above
+    > .button {
+        position: relative;
+        float: left;
+        // Bring the "active" button to the front
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          z-index: 2;
+        }
+    }
+}
+
+// Prevent double borders when buttons are next to each other
+.button-group {
+    .button + .button,
+    .button + .button-group,
+    .button-group + .button,
+    .button-group + .button-group {
+        margin-left: -1px;
+    }
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.button--toolbar {
+    margin-left: -5px; // Offset the first child's margin
+    @extend .cf;
+
+    .button-group,
+    .input-group {
+        float: left;
+    }
+    > .button,
+    > .button-group,
+    > .input-group {
+        margin-left: 5px;
+    }
+}
+
+// Button group sizing. Affects plain .buttons in the group.
+.button-group--small > .button { 
+    @extend .button--small; 
+}
+
+.button-group--large > .button { 
+    @extend .button--large; 
+}
+
+.button-group--huge > .button { 
+    @extend .button--huge; 
+}
+
+// Vertical button groups
+// ---------------------------------------------------
+
+.button-group--vertical {
+    > .button,
+    > .button-group,
+    > .button-group > .button {
+        display: block;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    // Clear floats so dropdown menus can be properly placed
+    > .button-group {
+        @extend .cf;
+    > .button {
+            float: none;
+        }
+    }
+
+    > .button + .button,
+    > .button + .button-group,
+    > .button-group + .button,
+    > .button-group + .button-group {
+        margin-top: -1px;
+        margin-left: 0;
+    }
+}
+
+// .button-group--vertical > .button {
+//     &:not(:first-child):not(:last-child) {
+//         border-radius: 0;
+//     }
+//     &:first-child:not(:last-child) {
+//         border-top-right-radius: $border-radius-base;
+//     }
+//     &:last-child:not(:first-child) {
+//         border-bottom-left-radius: $border-radius-base;
+//     }
+// }
+// .button-group--vertical > .button-group:not(:first-child):not(:last-child) > .button {
+//     border-radius: 0;
+// }
+// .button-group--vertical > .button-group:first-child:not(:last-child) {
+//     > .button:last-child,
+//     > .dropdown-toggle {
+
+//     }
+// }
+// .button-group--vertical > .button-group:last-child:not(:first-child) > .button:first-child {
+
+// }
+
+
+// Justified button groups
+
+.button-group--fill {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    > .button,
+    > .button-group {
+        float: none;
+        display: table-cell;
+        width: 1%;
+    }
+    > .button-group .button {
+        width: 100%;
+    }
+
+    > .button-group .dropdown-menu {
+        left: auto;
+    }
+}
+
+
+// Checkbox and radio options
+//
+// In order to support the browser's form validation feedback, powered by the
+// `required` attribute, we have to "hide" the inputs via `clip`. We cannot use
+// `display: none;` or `visibility: hidden;` as that also hides the popover.
+// Simply visually hiding the inputs via `opacity` would leave them clickable in
+// certain cases which is prevented by using `clip` and `pointer-events`.
+// This way, we ensure a DOM element is visible to position the popover from.
+//
+// See https://github.com/twbs/bootstrap/pull/12794 and
+// https://github.com/twbs/bootstrap/pull/14559 for more information.
+
+[data-toggle="buttons"] {
+    > .button,
+    > .button-group > .button {
+        input[type="radio"],
+        input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0,0,0,0);
+            pointer-events: none;
+        }
+    }
+}

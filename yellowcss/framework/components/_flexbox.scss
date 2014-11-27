@@ -1,0 +1,37 @@
+// FLEXBOX Emulation
+// ===============================================================================
+
+// Example:
+// <header class=flexbox>
+//    <div class=flexbox__item>
+//        <b>Welcome to</b>
+//    </div>
+//    <div class=flexbox__item>
+//        <img src="//csswizardry.com/inuitcss/img/logo.jpg" alt="inuit.css">
+//    </div>
+// </header>
+ 
+// Extend the grid too:
+// <div class=flexbox>
+//    <div class="flexbox__item  one-quarter">
+//    </div>
+//    <div class="flexbox__item  three-quarters">
+//    </div>
+// </div>
+
+.flexbox{
+    display:table;
+    width:100%;
+}
+
+// Nasty hack to circumvent Modernizr conflicts.
+ 
+html.flexbox{
+    display:block;
+    width:auto;
+}
+
+    .flexbox__item{
+        display:table-cell;
+        vertical-align:middle;
+    }

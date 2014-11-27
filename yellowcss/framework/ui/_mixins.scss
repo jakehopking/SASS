@@ -1,0 +1,21 @@
+// UI MIXINS
+// ===============================================================================
+
+// Font-face mixin
+@mixin font($font-family: $font-face-condensed, $font-weight: $font-weight-regular, $font-style: normal, $font-colour: inherit) {
+	font-family: 	$font-family;
+	font-style: 	$font-style;
+	font-weight: 	$font-weight;
+	color: 			$font-colour;
+}
+
+// Example usage:
+// Serif bold italic brand-primary: $font-face-serif, $font-weight-bold, italic, $brand-primary.
+// .some-class-name {
+// 	@include font($font-face-serif, $font-weight-bold, italic, $brand-primary);
+// }
+
+// Condenced regular normal inherit: empty (these are the mixin's default values)
+// .some-class-name-alt {
+// 	@include font();
+// }

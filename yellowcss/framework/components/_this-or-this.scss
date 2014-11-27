@@ -1,0 +1,28 @@
+// THIS OR THIS/THAT
+// ===============================================================================
+
+// Example:
+// <h1 class=this-or-this>
+//    <a href=# class="this-or-this__this  two-fifths">
+//        Free
+//    </a>
+//    <span class="this-or-this__or  one-fifth">
+//        or
+//    </span>
+//    <a href=# class="this-or-this__this  two-fifths">
+//        Pro
+//    </a>
+// </h1>
+ 
+// Size them with the grid too.
+
+.this-or-this{
+    display:table;
+    width:100%;
+    text-align:center;
+}
+    .this-or-this__this,
+    .this-or-this__or{
+        display:table-cell;
+        vertical-align:middle;
+    }

@@ -1,0 +1,77 @@
+// BREAKPOINTS BASE
+// ===============================================================================
+
+// I've created files for the following breakpoints. I'd like to aim for two breakpoints only (breaking at above mobile, and again at desktop. Being a mobile-first website the first one doesn't count :D )
+// They are located in ui/breakpoints/
+
+
+// Serves content to mobile devices only (<= 480px)                 
+// ui/breakpoints/_breakpoint__01-<=palm.scss
+// @media only screen and (max-width: $breakpoint-palm) {} 
+
+
+// Serves content to lap devices only (>= 480px and <= 1023px)      
+// ui/breakpoints/_breakpoint__02->palm--<desktop.scss
+// @media only screen and (min-width: $breakpoint-lap) and (max-width: $breakpoint-portable) {} 
+
+// Serves content to all devices above palm (> 480px)      
+// ui/breakpoints/_breakpoint__03->palm.scss
+// @media only screen and (min-width: $breakpoint-lap) {} 
+
+
+// Serves content to all devices below desktop (<= 1023px)          
+// ui/breakpoints/_breakpoint__04-<desktop.scss
+// @media only screen and (max-width: $breakpoint-portable) {} 
+
+
+// Serves content to desktop devices only (>= 1024px)               
+// ui/breakpoints/_breakpoint__05->=desktop.scss
+// @media only screen and (min-width: $breakpoint-desk) {} 
+
+
+// Serves content to desktop wide devices only (>= 1200px)          
+// ui/breakpoints/_breakpoint__06->=desktop-wide.scss
+// @media only screen and (min-width: $breakpoint-desk-wide) {} 
+
+
+
+
+@mixin media-query($media-query){
+
+    @if $media-query == palm{
+
+        @media only screen and (max-width: $breakpoint-palm) { @content; }
+
+    }
+
+    @if $media-query == lap{
+
+        @media only screen and (min-width: $breakpoint-lap) and (max-width: $breakpoint-portable) { @content; }
+
+    }
+
+    @if $media-query == lap-and-up{
+
+        @media only screen and (min-width: $breakpoint-lap) { @content; }
+
+    }
+
+    @if $media-query == portable{
+
+        @media only screen and (max-width: $breakpoint-portable) { @content; }
+
+    }
+
+    @if $media-query == desk{
+
+        @media only screen and (min-width: $breakpoint-desk) { @content; }
+
+    }
+
+    @if $media-query == desk-wide{
+
+        @media only screen and (min-width: $breakpoint-desk-wide) { @content; }
+
+    }
+
+}

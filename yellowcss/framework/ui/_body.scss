@@ -1,0 +1,15 @@
+body {
+	margin: 0 auto;
+	max-width: $body-max-width;
+	background-color: $body-background;
+	color: $body-text;
+}
+
+%grid__container {
+	margin: 0 auto;
+	max-width: $grid-container-max-width;
+}
+
+.grid__container {
+	@extend %grid__container;
+}

@@ -1,0 +1,114 @@
+// Raw colour variables
+// ===============================================================================
+
+// Some colours get their 'creative' names from here: http://chir.ag/projects/name-that-color/
+
+$colour-black:					#000;
+$colour-charcoal:				#262626;
+
+$colour-blue:					#007ed6;
+$colour-blue-lighter:			#8aceff;
+$colour-blue-lightest:			#c8e8ff;
+$colour-blue-darker:			#004779;
+$colour-blue-darkest:			#001f35;
+
+$colour-blue-bondi:				#0095af; // Dashboard profile colour
+$colour-blue-java:				#1FC2C2; // Dashboard profile colour
+$colour-blue-nevada:			#646D78; // 
+$colour-blue-nevada-dark:		#363c43; // 
+$colour-blue-nevada-light:		#363c43; // 
+
+$colour-blue-facebook:			#4C66A4; // Social colour
+$colour-blue-tumblr:			#35465C; // Social colour
+$colour-blue-twitter:			#2FC2EF; // Social colour
+
+$colour-grey:					#555;
+$colour-grey-light:				#a2a2a2;
+$colour-grey-light-alt:			#d7d7d7;
+$colour-grey-lighter:			#eaeaea;
+$colour-grey-lightest:			#f9f9f9;
+$colour-grey-darker:			#383838;
+$colour-grey-darkest:			#323232;
+
+$colour-orange:					#ffb400;
+$colour-orange-lighter:			#ffce58;
+$colour-orange-lightest:		#ffe6ab;
+$colour-orange-darker:			#ed8600;
+$colour-orange-darkest:			#d05300;
+
+$colour-orange-tango:			#ec6f29; // Dashboard profile colour
+
+$colour-red-google-plus:		#DD4B39; // Social colour
+
+$colour-white:					#fff;
+
+$colour-yellow:					#fff200;
+$colour-yellow-lighter:			#fff988;
+$colour-yellow-lightest:		#fffdd2;
+$colour-yellow-darker:			#e4d800;
+$colour-yellow-darkest:			#aba200;
+
+
+// Semantic colour variables
+// ===============================================================================
+
+$colour-box-shadow:				#d0d0d0;
+
+// $colour-positive:				#0bac03;
+// $colour-negative:				#d70000;
+
+
+// Functional colour assignment variables
+// ===============================================================================
+
+// Base
+$body-background:				$colour-grey-lighter;
+$body-text:						$colour-charcoal;
+	
+// Brand
+$brand-primary:					$colour-yellow;
+$brand-primary-lighter:			$colour-yellow-lighter;
+$brand-primary-lightest:		$colour-yellow-lightest;
+$brand-primary-darker:			$colour-yellow-darker;
+$brand-primary-darkest:			$colour-yellow-darkest;
+
+// States
+
+// UI Background and borders
+// -------------------------------------------------------------------------------
+
+// Cards
+$card-background-default:		$colour-white;
+$card-title-background-default:	$colour-grey-lighter;
+$card-title-border-default:		$colour-grey-light-alt;
+$card-title-colour-default:		$colour-charcoal;
+$card-border-colour-default:	$colour-white;
+$card-section-bg-default:		$colour-grey-lightest;
+$card-section-border-default:	$colour-grey-light-alt;
+
+// Highlights
+
+// Social media
+$facebook:						$colour-blue-facebook;
+$google-plus:					$colour-red-google-plus;
+$tumblr:						$colour-blue-tumblr;
+$twitter:						$colour-blue-twitter;
+
+// Buttons
+$button-bg:						$colour-blue;
+$button-colour:					$colour-white;
+
+$button-bg-secondary:			$colour-charcoal;
+$button-colour-secondary:		$colour-white;
+ 
+$button-bg-tertiary:			$colour-yellow;
+$button-colour-tertiary:		$colour-charcoal;
+
+
+
+
+
+
+
+
+

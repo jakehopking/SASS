@@ -1,0 +1,198 @@
+// Roboto @font-face
+
+
+// Roboto Regular: Bold
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto";
+    src: url('#{$path-fonts-roboto}/roboto-bold-webfont.eot');
+    src: url('#{$path-fonts-roboto}/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/roboto-bold-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/roboto-bold-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/roboto-bold-webfont.svg#robotobold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+// Roboto Regular: Bold Italic
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto";
+    src: url('#{$path-fonts-roboto}/roboto-bolditalic-webfont.eot');
+    src: url('#{$path-fonts-roboto}/roboto-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/roboto-bolditalic-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/roboto-bolditalic-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/roboto-bolditalic-webfont.svg#robotobold_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+// Roboto Regular: Italic
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto";
+    src: url('#{$path-fonts-roboto}/roboto-italic-webfont.eot');
+    src: url('#{$path-fonts-roboto}/roboto-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/roboto-italic-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/roboto-italic-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/roboto-italic-webfont.svg#robotoitalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+// Roboto Regular: Light
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto";
+    src: url('#{$path-fonts-roboto}/roboto-light-webfont.eot');
+    src: url('#{$path-fonts-roboto}/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/roboto-light-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/roboto-light-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/roboto-light-webfont.svg#robotolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+// Roboto Regular: Light Italic
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto";
+    src: url('#{$path-fonts-roboto}/roboto-lightitalic-webfont.eot');
+    src: url('#{$path-fonts-roboto}/roboto-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/roboto-lightitalic-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/roboto-lightitalic-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/roboto-lightitalic-webfont.svg#robotolight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+// Roboto Regular: Normal
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto";
+    src: url('#{$path-fonts-roboto}/roboto-regular-webfont.eot');
+    src: url('#{$path-fonts-roboto}/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/roboto-regular-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/roboto-regular-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+// Roboto Condensed: Bold
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('#{$path-fonts-roboto}/robotocondensed-bold-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotocondensed-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotocondensed-bold-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotocondensed-bold-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotocondensed-bold-webfont.svg#roboto_condensedbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+// Roboto Condensed: Bold Italic
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('#{$path-fonts-roboto}/robotocondensed-bolditalic-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotocondensed-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotocondensed-bolditalic-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotocondensed-bolditalic-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotocondensed-bolditalic-webfont.svg#roboto_condensedbold_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+// Roboto Condensed: Italic
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('#{$path-fonts-roboto}/robotocondensed-italic-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotocondensed-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotocondensed-italic-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotocondensed-italic-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotocondensed-italic-webfont.svg#roboto_condenseditalic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+// Roboto Condenced: Light
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('#{$path-fonts-roboto}/robotocondensed-light-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotocondensed-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotocondensed-light-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotocondensed-light-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotocondensed-light-webfont.svg#roboto_condensedlight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+// Roboto Condenced: Light Italic
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('#{$path-fonts-roboto}/robotocondensed-lightitalic-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotocondensed-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotocondensed-lightitalic-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotocondensed-lightitalic-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotocondensed-lightitalic-webfont.svg#roboto_condensedlight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+// Roboto Condenced: Normal
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url('#{$path-fonts-roboto}/robotocondensed-regular-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotocondensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotocondensed-regular-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotocondensed-regular-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotocondensed-regular-webfont.svg#roboto_condensedregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+// Roboto Slab: Bold
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Slab";
+    src: url('#{$path-fonts-roboto}/robotoslab-bold-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotoslab-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotoslab-bold-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotoslab-bold-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotoslab-bold-webfont.svg#roboto_slabbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+// Roboto Slab: Normal
+// ===========================================================================================
+@font-face {
+    font-family: "Roboto Slab";
+    src: url('#{$path-fonts-roboto}/robotoslab-regular-webfont.eot');
+    src: url('#{$path-fonts-roboto}/robotoslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$path-fonts-roboto}/robotoslab-regular-webfont.woff') format('woff'),
+         url('#{$path-fonts-roboto}/robotoslab-regular-webfont.ttf') format('truetype'),
+         url('#{$path-fonts-roboto}/robotoslab-regular-webfont.svg#roboto_slabregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}

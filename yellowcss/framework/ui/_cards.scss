@@ -1,0 +1,179 @@
+// CARDS (boxes etc)
+// ===============================================================================
+
+// Card vars
+$card-padding:			$base-line-height;
+$card-margin: 			$base-line-height;
+
+// Card base styling with placeholder classes
+%card-base {
+	margin-bottom: $card-margin;
+}
+
+%card-base__title {
+	
+}
+
+%card-base__content {
+
+}
+
+%card__section {
+	// margin-bottom: $card-margin;
+}
+
+%card__section--with-bg-colour-border {
+	background-color: $card-section-bg-default;
+	border-top: 1px dashed $card-section-border-default;
+	border-bottom: 1px dashed $card-section-border-default;
+}
+
+%card__title {
+	padding: (floor($card-padding / 1.333)) ($card-padding);
+}
+
+%card__title--font {
+	> /* h1, h2, h3, */h4/*, h5, h6*/ /*, .alpha, .beta, .gamma, .delta, .epsilon, .zeta */ { // Uncomment to use classes
+		@include font();
+	}
+}
+
+%card__title-children {
+	> * { // All immediate children of card__title affected
+		margin-bottom: 0; // Remove margin from all headings
+	}
+}
+
+%card__title-with-border {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+%card__title-colours--default {
+	background-color: $card-title-background-default;
+	border-bottom-color: $card-title-border-default;
+	color: $card-title-colour-default;
+}
+
+%card__title-colours--on-white-bg {
+	background-color: $card-title-background-default;
+	border-bottom-color: $card-title-border-default;
+	color: $card-title-colour-default;
+}
+
+
+// Card styling layers
+%card-with-padding-default {
+	padding: $card-padding;
+}
+
+%card-with-border {
+	border-width: 1px;
+	border-style: solid;
+}
+
+%card-with-border--colour-default {
+	border-color: $card-border-colour-default;
+}
+
+%card-with-box-shadow-default {
+	@extend %default-box-shadow;
+}
+
+%card-with-background-colour--default {
+	background-color: $card-background-default;
+}
+
+%card-minimal__title {
+	margin-bottom: $card-margin / 2;
+}
+
+// Card classes
+
+.card {
+	@extend %card-base;
+}
+
+.card-heading {
+	.card__title {
+		@extend %card__title;
+		@extend %card__title--font;
+		@extend %card__title-children;
+		@extend %card__title-with-border;
+		@extend %card__title-colours--default;
+	}
+	.card__content {
+
+	}
+}
+
+.card-shadow {
+	@extend %card-with-box-shadow-default;
+	@extend %card-with-background-colour--default;
+	@extend %card-with-padding-default;
+}
+
+.card-shadow--border {
+	@extend %card-with-border;
+	@extend %card-with-border--colour-default;
+}
+
+.card-shadow-frame {
+	@extend %card-with-box-shadow-default;
+	@extend %card-with-background-colour--default;
+	@extend %card-with-border;
+	@extend %card-with-border--colour-default;
+	.card__title {
+		@extend %card__title;
+		@extend %card__title--font;
+		@extend %card__title-children;
+		@extend %card__title-with-border;
+		@extend %card__title-colours--default;
+	}
+	.card__content {
+		@extend %card-with-padding-default;
+	}
+	.card__section {
+
+	}
+}
+
+// .card-shadow-frame-border {
+// 	@extend .card-shadow-frame;
+// 	@extend %card-with-border;
+// 	@extend %card-with-border--colour-default;
+// }
+
+.card-minimal {
+	.card__title {
+		@extend %card-minimal__title;
+		@extend %card__title--font;
+		@extend %card__title-children;
+	}
+	.card__content {
+
+	}
+}
+
+.card-blurred {
+	.card__title {
+
+	}
+	.card__content {
+
+	}
+}
+
+.card--no-border {
+	border: none;
+}
+
+.card__section {
+	@extend %card__section !optional;
+}
+
+.card__section-alt {
+	@extend %card__section !optional;
+	@extend %card__section--with-bg-colour-border;
+}
+
