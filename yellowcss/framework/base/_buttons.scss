@@ -1,6 +1,8 @@
 // BUTTONS
 // ===============================================================================
 
+$button-transition:     $transition;
+
 .button{
     display: inline-block;
     vertical-align: middle;     
@@ -20,7 +22,7 @@
     border-radius: $brand-button-radius-default;
     color: $button-colour;
     background-color: $button-bg;
-
+    @include vendor(transition, $button-transition);
     &:hover {
         background-color: darken($button-bg, 10%);
     }
@@ -153,7 +155,7 @@
     background-color:#ddd;
     color:#777;
     pointer-events: none; // Future-proof disabling of clicks
-    cursor: not-allowed;
+    cursor: not-allowed;  // Fallback if above not supported
 }
 
 .button--inactive, .button[disabled] {

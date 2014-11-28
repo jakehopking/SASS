@@ -2107,6 +2107,11 @@ label,
   border-radius: 0px;
   color: white;
   background-color: #007ed6;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .button:hover {
   background-color: #0060a3;
@@ -2824,9 +2829,51 @@ body {
   color: #262626;
 }
 
-.grid__container, header .header-container, footer .footer-container {
+.grid__container, .middle > section > .section-container, header .header-container, footer .footer-container {
   margin: 0 auto;
   max-width: 1200px;
+}
+
+.middle > section {
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+section.section-colour-blue {
+  color: white;
+}
+
+section.section-colour, section.section-colour-border {
+  background-color: white;
+}
+
+section.section-colour-border, section.section-border, section.section-colour-alt-border {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+section.section-colour-border {
+  border-color: #d7d7d7;
+}
+
+section.section-border {
+  border-color: #d7d7d7;
+}
+
+section.section-colour-alt, section.section-colour-alt-border {
+  background-color: #d7d7d7;
+}
+
+section.section-colour-blue {
+  background-color: #007ed6;
+}
+
+section.section-colour-alt-border {
+  border-color: #a2a2a2;
 }
 
 .card {
