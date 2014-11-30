@@ -4,10 +4,12 @@
 // Card vars
 $card-padding:			$base-line-height;
 $card-margin: 			$base-line-height;
+$card-border-radius:	$brand-round;
 
 // Card base styling with placeholder classes
 %card-base {
 	margin-bottom: $card-margin;
+	border-radius: $card-border-radius;
 }
 
 %card-base__title {
@@ -20,6 +22,11 @@ $card-margin: 			$base-line-height;
 
 %card__section {
 	// margin-bottom: $card-margin;
+	&:last-child {
+		border-bottom-left-radius: $card-border-radius;
+		border-bottom-right-radius: $card-border-radius;
+		border-bottom: transparent;
+	}
 }
 
 %card__section--with-bg-colour-border {
@@ -30,6 +37,8 @@ $card-margin: 			$base-line-height;
 
 %card__title {
 	padding: (floor($card-padding / 1.333)) ($card-padding);
+	border-top-left-radius: $card-border-radius;
+	border-top-right-radius: $card-border-radius;
 }
 
 %card__title--font {

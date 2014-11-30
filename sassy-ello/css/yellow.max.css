@@ -2878,6 +2878,13 @@ section.section-colour-alt-border {
 
 .card {
   margin-bottom: 20px;
+  border-radius: 0px;
+}
+
+.card__section:last-child, .card__section-alt:last-child {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: transparent;
 }
 
 .card__section-alt {
@@ -2888,6 +2895,8 @@ section.section-colour-alt-border {
 
 .card-heading .card__title, .card-shadow-frame .card__title {
   padding: 15px 20px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
 .card-heading .card__title > h4, .card-shadow-frame .card__title > h4, .card-minimal .card__title > h4 {
