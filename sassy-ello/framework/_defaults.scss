@@ -1,78 +1,78 @@
 // GLOBALS & DEBUG
 // ===============================================================================
 
-$debug-mode:				false !default;
-$global-border-box:			true !default;
+$debug-mode:                false !default;
+$global-border-box:         true !default;
 
 
 // BASE
 // ===============================================================================
 
-$body-max-width:			auto;
+$body-max-width:            auto;
 
-$base-font-size:			14px !default;
-$base-line-height:			20px !default;
-$base-font-family:			sans-serif !default;
-$base-ui-color:				#ccc !default;
+$base-font-size:            14px !default;
+$base-line-height:          20px !default;
+$base-font-family:          sans-serif !default;
+$base-ui-color:             #ccc !default;
 
 // Base sizing
-$base-spacing-unit:			$base-line-height !default;
-$half-spacing-unit:			$base-spacing-unit / 2 !default;
-$line-height-ratio:			$base-line-height / $base-font-size;
+$base-spacing-unit:         $base-line-height !default;
+$half-spacing-unit:         $base-spacing-unit / 2 !default;
+$line-height-ratio:         $base-line-height / $base-font-size;
 
 
 // IMAGES
 // ===============================================================================
 
-$path-images:				"images/";
+$path-images:               "images/";
 
 
 // FONTS
 // ===============================================================================
 
-$path-fonts-roboto:			"fonts/font-roboto" !default;
-$path-fonts-fa:				"fonts/font-awesome" !default;
+$path-fonts-roboto:         "fonts/font-roboto" !default;
+$path-fonts-fa:             "fonts/font-awesome" !default;
 
-$font-face-default:			"Roboto", sans-serif;
-$font-face-condensed:		"Roboto Condensed", sans-serif;
-$font-face-serif:			"Roboto Slab", serif;
+$font-face-default:         "Roboto", sans-serif;
+$font-face-condensed:       "Roboto Condensed", sans-serif;
+$font-face-serif:           "Roboto Slab", serif;
 
-$font-weight-bold:			700;
-$font-weight-regular:		400;
-$font-weight-light:			300;
+$font-weight-bold:          700;
+$font-weight-regular:       400;
+$font-weight-light:         300;
 
 // Font-sizing
 // -------------------------------------------------------------------------------
-$giga-size:					96px !default;
-$mega-size:					72px !default;
-$kilo-size:					48px !default;
+$giga-size:                 96px !default;
+$mega-size:                 72px !default;
+$kilo-size:                 48px !default;
 
-$h1-size:					36px !default; // .alpha
-$h2-size:					30px !default; // .beta
-$h3-size:					24px !default; // .gamma
-$h4-size:					20px !default; // .delta
-$h5-size:					16px !default; // .epsilon
-$h6-size:					14px !default; // .zeta
+$h1-size:                   36px !default; // .alpha
+$h2-size:                   30px !default; // .beta
+$h3-size:                   24px !default; // .gamma
+$h4-size:                   20px !default; // .delta
+$h5-size:                   16px !default; // .epsilon
+$h6-size:                   14px !default; // .zeta
 
-$milli-size:				10px !default;
-$micro-size:				8px !default;
+$milli-size:                10px !default;
+$micro-size:                8px !default;
 
 // Quotes
 // -------------------------------------------------------------------------------
-$english-quotes:			true !default;
+$english-quotes:            true !default;
 
-$open-quote:				null;
-$close-quote:				null;
+$open-quote:                null;
+$close-quote:               null;
 
-@if $english-quotes			!= true{
-    $open-quote:			\00AB;
-    $close-quote:			\00BB;
+@if $english-quotes         != true{
+    $open-quote:            \00AB;
+    $close-quote:           \00BB;
 }
 
 // GRID
 // ===============================================================================
 
-$grid-container-max-width:	1200px !default;
+$grid-container-max-width:  1200px !default;
 
 // See base/_grid.scss for vars etc.
 
@@ -80,32 +80,32 @@ $grid-container-max-width:	1200px !default;
 // MEDIA BREAKPOINTS
 // ===============================================================================
 
-$breakpoint-palm:			480px !default;
-$breakpoint-lap:			481px !default;
-$breakpoint-portable:		1023px !default;
-$breakpoint-desk:			1024px !default;
-$breakpoint-desk-wide:		1200px !default;
+$breakpoint-palm:           480px !default;
+$breakpoint-lap:            481px !default;
+$breakpoint-portable:       1023px !default;
+$breakpoint-desk:           1024px !default;
+$breakpoint-desk-wide:      1200px !default;
 
-// See base/_breakpoints.scss 	for mixin
-// See ui/breakpoints/ 			for breakpoint files
+// See base/_breakpoints.scss   for mixin
+// See ui/breakpoints/          for breakpoint files
 
 
 
 // BRAND Defaults
 // ===============================================================================
 
-$brand-color:				#007ed6 !default;
-$brand-face:				$font-face-default;
-$base-font-family:			$font-face-default;
-$brand-round:				0px !default;
-$brand-button-radius:		4px !default;
-$brand-box-shadow:			0px 1px 2px $colour-box-shadow !default;
-$colour-positive:			#4A993E !default;
-$colour-negative:			#b33630 !default;
-$button-bg:					#b0b0b0 !default;
-$button-colour:				#fff !default;
-$section-bg:				#fff !default;
+$brand-color:               #007ed6 !default;
+$brand-face:                $font-face-default;
+$base-font-family:          $font-face-default;
+$brand-round:               0px !default;
+$brand-button-radius:       4px !default;
+$brand-box-shadow:          0px 1px 2px $colour-box-shadow !default;
+$colour-positive:           #4A993E !default;
+$colour-negative:           #b33630 !default;
+$button-bg:                 #b0b0b0 !default;
+$button-colour:             #fff !default;
+$section-bg:                #fff !default;
 
-$transition:				all 0.3s !default;
+$transition:                all 0.3s !default;
 
 
