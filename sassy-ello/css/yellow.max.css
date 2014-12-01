@@ -528,7 +528,7 @@ textarea:focus {
   outline: none;
 }
 
-.cf:after, .button--toolbar:after, .button-group--vertical > .button-group:after, .media:after, .island:after,
+.cf:after, .form-horizontal .form-group:after, .button--toolbar:after, .button-group--vertical > .button-group:after, .media:after, .island:after,
 .islet:after {
   content: "";
   display: table;
@@ -1437,7 +1437,6 @@ blockquote, p, address,
 table,
 fieldset, figure,
 pre,
-.form-fields > li,
 .media,
 .island,
 .islet {
@@ -1449,7 +1448,7 @@ ul, .islet ol, .islet dl, .islet
 blockquote, .islet p, .islet address, .islet
 table, .islet
 fieldset, .islet figure, .islet
-pre, .islet .form-fields > li, .islet
+pre, .islet
 .media, .islet
 .island, .islet
 .islet {
@@ -1925,167 +1924,345 @@ td {
   font: 12px/1.5 sans-serif;
 }
 
+.form-group__item:focus, .form-group__item:focus:hover, .form-group__item:hover, input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+.form-group__item:focus, .form-group__item:focus:hover {
+  box-shadow: 0 0 4px 0px rgba(0, 126, 214, 0.6);
+  border-color: rgba(0, 126, 214, 0.6);
+}
+
+.form-group__item:hover {
+  box-shadow: 0 0 4px 0px rgba(85, 85, 85, 0.1);
+  border-color: rgba(85, 85, 85, 0.5);
+}
+
 fieldset {
-  padding: 20px;
-}
-
-/**
- * Text inputs
- *
- * Instead of a `[type]` selector for each kind of form input, we just use a
- * class to target any/every one, e.g.:
-   <input type=text class=text-input>
-   <input type=email class=text-input>
-   <input type=password class=text-input>
- *
- */
-.text-input,
-textarea {
-  /**
-   * Style these via your theme stylesheet.
-   */
-}
-
-/**
- * Group sets of form fields in a list, e.g.:
- *
-   <ul class=form-fields>
-       <li>
-           <label />
-           <input />
-       </li>
-       <li>
-           <label />
-           <select />
-       </li>
-       <li>
-           <label />
-           <input />
-       </li>
-   </ul>
- *
- */
-.form-fields {
-  list-style: none;
+  padding: 0;
   margin: 0;
+  border: 0;
+  min-width: 0;
 }
 
-.form-fields > li:last-child {
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  border: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: inherit;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+.form-group__item {
+  display: block;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #d7d7d7;
+  border-radius: 0px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form-group__item[disabled], .form-group__item[readonly], fieldset[disabled] .form-group__item {
+  color: #dddddd;
+  background-color: #777777;
+  opacity: 1;
+}
+
+textarea.form-group__item {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    line-height: 20px;
+  }
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.radio,
+.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.radio label,
+.checkbox label {
+  min-height: 1.42857;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px \9;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: -5px;
+}
+
+.radio-inline,
+.checkbox-inline {
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px;
+}
+
+.form-group__item--static {
+  padding-top: 6px;
+  padding-bottom: 6px;
   margin-bottom: 0;
 }
+.form-group__item--static.input-lg, .form-group__item--static.input-sm {
+  padding-left: 0;
+  padding-right: 0;
+}
 
-/**
- * Labels
- *
- * Define a `.label` class as well as a `label` element. This means we can apply
- * label-like styling to meta-labels for groups of options where a `label`
- * element is not suitable, e.g.:
- *
-   <li>
-       <span class=label>Select an option below:</span>
-       <ul class="multi-list  four-cols">
-           <li>
-               <input /> <label />
-           </li>
-           <li>
-               <input /> <label />
-           </li>
-           <li>
-               <input /> <label />
-           </li>
-           <li>
-               <input /> <label />
-           </li>
-       </ul>
-   </li>
- *
- */
-label,
-.label {
+.input--sm, .form-group--sm .form-group__item {
+  height: 16px;
+  padding: 4px 8px;
+  font-size: 11.2px;
+  line-height: 16px;
+  border-radius: 0px;
+}
+
+select.input--sm, .form-group--sm .form-group__item {
+  height: 16px;
+  line-height: 16px;
+}
+
+textarea.input--sm, .form-group--sm .form-group__item,
+select[multiple].input--sm, .form-group--sm .form-group__item {
+  height: auto;
+}
+
+.input--lg, .form-group--lg .form-group__item {
+  height: 25px;
+  padding: 6.25px 12.5px;
+  font-size: 17.5px;
+  line-height: 25px;
+  border-radius: 0px;
+}
+
+select.input--lg, .form-group--lg .form-group__item {
+  height: 25px;
+  line-height: 25px;
+}
+
+textarea.input--lg, .form-group--lg .form-group__item,
+select[multiple].input--lg, .form-group--lg .form-group__item {
+  height: auto;
+}
+
+.has-feedback {
+  position: relative;
+}
+.has-feedback .form-group__item {
+  padding-right: 25px;
+}
+
+.form-group__item--feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
   display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  pointer-events: none;
 }
 
-/**
- * Extra help text in `label`s, e.g.:
- *
-   <label>Card number <small class=additional>No spaces</small></label>
- *
- */
-.additional {
+.input-lg + .form-group__item--feedback {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.input-sm + .form-group__item--feedback {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.has-feedback label ~ .form-group__item--feedback {
+  top: 6.42857;
+}
+.has-feedback label.sr-only ~ .form-group__item--feedback {
+  top: 0;
+}
+
+.help-block {
   display: block;
-  font-weight: normal;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
-/*
- * Groups of checkboxes and radios, e.g.:
- *
-   <li>
-       <ul class=check-list>
-           <li>
-               <input /> <label />
-           </li>
-           <li>
-               <input /> <label />
-           </li>
-       </ul>
-   </li>
- *
- */
-.check-list {
-  list-style: none;
-  margin: 0;
+@media (min-width: 481px) {
+  .form-inline .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .form-inline .form-group__item {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .form-inline .form-group__item--static {
+    display: inline-block;
+  }
+  .form-inline .input-group {
+    display: inline-table;
+    vertical-align: middle;
+  }
+  .form-inline .input-group .input-group-addon,
+  .form-inline .input-group .input-group-btn,
+  .form-inline .input-group .form-group__item {
+    width: auto;
+  }
+  .form-inline .input-group > .form-group__item {
+    width: 100%;
+  }
+  .form-inline .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .form-inline .radio,
+  .form-inline .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .form-inline .radio label,
+  .form-inline .checkbox label {
+    padding-left: 0;
+  }
+  .form-inline .radio input[type="radio"],
+  .form-inline .checkbox input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  .form-inline .has-feedback .form-group__item--feedback {
+    top: 0;
+  }
 }
 
-/*
- * Labels in check-lists
- */
-.check-label,
-.check-list label,
-.check-list .label {
-  display: inline-block;
+.form-horizontal .radio,
+.form-horizontal .checkbox,
+.form-horizontal .radio-inline,
+.form-horizontal .checkbox-inline {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 6px;
+}
+.form-horizontal .radio,
+.form-horizontal .checkbox {
+  min-height: 7.42857px;
+}
+@media (min-width: 481px) {
+  .form-horizontal .control-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 6px;
+  }
+}
+.form-horizontal .has-feedback .form-group__item--feedback {
+  right: 10px;
+}
+@media (min-width: 481px) {
+  .form-horizontal .form-group-sm .control-label {
+    padding-top: 5px;
+  }
 }
 
-/**
- * Spoken forms are for forms that read like spoken word, e.g.:
- *
-   <li class=spoken-form>
-       Hello, my <label for=spoken-name>name</label> is
-       <input type=text class=text-input id=spoken-name>. My home
-       <label for=country>country</label> is
-       <select id=country>
-           <option>UK</option>
-           <option>US</option>
-           <option>Other</option>
-       </select>
-   </li>
- *
- */
-.spoken-form label {
-  display: inline-block;
-  font: inherit;
-}
-
-/**
- * Extra help text displayed after a field when that field is in focus, e.g.:
- *
-   <label for=email>Email:</label>
-   <input type=email class=text-input id=email>
-   <small class=extra-help>.edu emails only</small>
- *
- * We leave the help text in the document flow and merely set it to
- * `visibility:hidden;`. This means that it won’t interfere with anything once
- * it reappears.
- *
- */
-/*small*/
 .extra-help {
+  margin-top: 10px;
   display: inline-block;
   visibility: hidden;
 }
 
-.text-input:active + .extra-help,
-.text-input:focus + .extra-help {
+.form-group__item:active + .extra-help,
+.form-group__item:focus + .extra-help {
   visibility: visible;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .button {
@@ -2218,10 +2395,8 @@ label,
 }
 
 .button--inactive, .button[disabled], .button--inactive:hover, .button--inactive:active, .button--inactive:focus, .button[disabled]:hover, .button[disabled]:active, .button[disabled]:focus {
-  background-color: #ddd;
-  color: #777;
-  pointer-events: none;
-  cursor: not-allowed;
+  background-color: #777777;
+  color: #dddddd;
 }
 
 .button-group,
@@ -2822,6 +2997,18 @@ html.flexbox {
   box-shadow: 0px 1px 2px #d0d0d0;
 }
 
+.form-group__item[disabled], .form-group__item[readonly], fieldset[disabled] .form-group__item, input[type="radio"][disabled], input[type="radio"].disabled, fieldset[disabled] input[type="radio"],
+input[type="checkbox"][disabled],
+input[type="checkbox"].disabled, fieldset[disabled]
+input[type="checkbox"], .radio-inline.disabled, fieldset[disabled] .radio-inline,
+.checkbox-inline.disabled, fieldset[disabled]
+.checkbox-inline, .radio.disabled label, fieldset[disabled] .radio label,
+.checkbox.disabled label, fieldset[disabled]
+.checkbox label, .button--inactive, .button[disabled], .button--inactive:hover, .button--inactive:active, .button--inactive:focus, .button[disabled]:hover, .button[disabled]:active, .button[disabled]:focus {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 body {
   margin: 0 auto;
   max-width: auto;
@@ -2829,51 +3016,9 @@ body {
   color: #262626;
 }
 
-.grid__container, .middle > section > .section-container, header .header-container, footer .footer-container {
+.grid__container, header .header-container, .middle .middle-container, .middle > section > .section-container, footer .footer-container {
   margin: 0 auto;
   max-width: 1200px;
-}
-
-.middle > section {
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-section.section-colour-blue {
-  color: white;
-}
-
-section.section-colour, section.section-colour-border {
-  background-color: white;
-}
-
-section.section-colour-border, section.section-border, section.section-colour-alt-border {
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: transparent;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
-}
-
-section.section-colour-border {
-  border-color: #d7d7d7;
-}
-
-section.section-border {
-  border-color: #d7d7d7;
-}
-
-section.section-colour-alt, section.section-colour-alt-border {
-  background-color: #d7d7d7;
-}
-
-section.section-colour-blue {
-  background-color: #007ed6;
-}
-
-section.section-colour-alt-border {
-  border-color: #a2a2a2;
 }
 
 .card {
@@ -2944,6 +3089,48 @@ section.section-colour-alt-border {
 
 .card--no-border {
   border: none;
+}
+
+.middle > section {
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+section.section-colour-blue {
+  color: white;
+}
+
+section.section-colour, section.section-colour-border {
+  background-color: white;
+}
+
+section.section-colour-border, section.section-border, section.section-colour-alt-border {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+}
+
+section.section-colour-border {
+  border-color: #d7d7d7;
+}
+
+section.section-border {
+  border-color: #d7d7d7;
+}
+
+section.section-colour-alt, section.section-colour-alt-border {
+  background-color: #d7d7d7;
+}
+
+section.section-colour-blue {
+  background-color: #007ed6;
+}
+
+section.section-colour-alt-border {
+  border-color: #a2a2a2;
 }
 
 /*!
@@ -5221,6 +5408,80 @@ section.section-colour-alt-border {
   font-weight: 400;
   font-style: normal;
 }
+p a {
+  padding: 1px 0;
+  position: relative;
+  outline: none;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: none;
+}
+
+p a:hover, p a:focus {
+  outline: none;
+}
+
+p a:active::after, p a:active {
+  -webkit-transition: color 0.05s, color 0.05s;
+  -moz-transition: color 0.05s, color 0.05s;
+  -ms-transition: color 0.05s, color 0.05s;
+  -o-transition: color 0.05s, color 0.05s;
+  transition: color 0.05s, color 0.05s;
+}
+
+p a::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, transform 0.3s;
+  -moz-transition: opacity 0.3s, transform 0.3s;
+  -ms-transition: opacity 0.3s, transform 0.3s;
+  -o-transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  -webkit-transform: translateY(4px);
+  -moz-transform: translateY(4px);
+  -ms-transform: translateY(4px);
+  -o-transform: translateY(4px);
+  transform: translateY(4px);
+}
+
+p a:hover::after, p a:focus::after {
+  opacity: 0.9;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+a {
+  -webkit-transition: color 0.3s, color 0.3s;
+  -moz-transition: color 0.3s, color 0.3s;
+  -ms-transition: color 0.3s, color 0.3s;
+  -o-transition: color 0.3s, color 0.3s;
+  transition: color 0.3s, color 0.3s;
+}
+
+p a {
+  color: #007ed6;
+}
+p a:hover, p a:focus {
+  color: #004779;
+}
+p a:active {
+  color: #ffb400;
+}
+p a:active::after {
+  background-color: #ffb400;
+}
+p a::after {
+  background-color: #004779;
+  height: 1px;
+}
+
 .prototype-block {
   background-color: #000;
   color: #fff200;

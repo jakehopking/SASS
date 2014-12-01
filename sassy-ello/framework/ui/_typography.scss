@@ -1,0 +1,86 @@
+// TYPOGRAPHY
+// ===============================================================================
+
+
+// Links
+
+// Default link transition
+%link-animantion-base {
+	padding: 1px 0;
+	position: relative;
+	outline: none;
+	display: inline-block;
+	text-decoration: none;
+	text-transform: none;
+	// letter-spacing: 1px;
+}
+
+%link-animantion-hover {
+	outline: none;
+}
+
+%link-animantion-active {
+	@include vendor(transition, color 0.05s, color 0.05s);
+}
+
+%link-animantion__after {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	content: '';
+	opacity: 0;
+	@include vendor(transition, opacity 0.3s, transform 0.3s);
+	@include vendor(transform, translateY(4px));
+}
+
+%link-animantion__after-hover {
+	opacity: 0.9;
+	@include vendor(transform, translateY(0px));
+}
+
+%link-animantion__after-active {
+	@extend %link-animantion-active;
+}
+
+a {
+	@include vendor(transition, color 0.3s, color 0.3s);
+}
+
+
+// Completed default link transition placeholder class.
+%link-transition {
+	color: $colour-link;
+	@extend %link-animantion-base;
+	&:hover, &:focus {
+		color: $colour-link-hover;
+		@extend %link-animantion-hover;
+		&::after {
+			@extend %link-animantion__after-hover;
+		}
+	}
+	&:active {
+		color: $colour-link-active;
+		@extend %link-animantion-active;
+		&::after {
+			background-color: $colour-link-active; // Line colour active
+			@extend %link-animantion__after-active;
+		}
+	}
+	&::after {
+		background-color: $colour-link-hover; 	// Line colour
+		height: 1px;							// Line thickness
+		@extend %link-animantion__after;
+	}
+}
+
+// Paragraph links
+
+p a {
+	@extend %link-transition;
+}
+
+
+
+
+

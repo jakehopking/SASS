@@ -152,10 +152,9 @@ $button-transition:     $transition;
 // Inactive/disabled state.
 
 %button-inactive {
-    background-color:#ddd;
-    color:#777;
-    pointer-events: none; // Future-proof disabling of clicks
-    cursor: not-allowed;  // Fallback if above not supported
+    background-color: $button-disabled-bg;
+    color: $button-disabled;
+    @extend %cursor-disabled;
 }
 
 .button--inactive, .button[disabled] {

@@ -3,11 +3,19 @@
 // ===============================================================================
 
 
+// Globals (for UI and base layers)
+// ===============================================================================
+
+@import "ui/colours";
+@import "ui/mixins";
+@import "base/mixins";
+
+
 // Base layer. For unclassed stuff.
 // ===============================================================================
 
 @import "defaults";
-@import "base/mixins";
+
 @import "base/breakpoints";
 @import "base/normalize";
 @import "base/reset";
@@ -55,16 +63,17 @@
 // UI layer
 // ===============================================================================
 
-@import "ui/colours";
 @import "ui/placeholders";
-@import "ui/mixins";
 @import "ui/body";
 @import "ui/cards";
 @import "ui/header";
+@import "ui/middle";
+@import "ui/sections";
 @import "ui/footer";
 
 @import "fonts/font-awesome";
 @import "fonts/font-roboto";
+@import "ui/typography";
 
 @import "ui/breakpoints/ui-breakpoints";
 

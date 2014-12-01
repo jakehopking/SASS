@@ -1,9 +1,8 @@
-// FOOTER
+// MIDDLE
 // ===============================================================================
 
-
-footer {
-	.footer-container {
+.middle {
+	.middle-container {
 		@extend %grid__container;
 	}
 }

@@ -4,3 +4,8 @@
 %default-box-shadow {
 	box-shadow: $brand-box-shadow;
 }
+
+%cursor-disabled {
+    pointer-events: none; // Future-proof disabling of clicks
+    cursor: not-allowed;  // Fallback if above not supported
+}

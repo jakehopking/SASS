@@ -57,6 +57,13 @@ $colour-box-shadow:				#d0d0d0;
 // $colour-positive:				#0bac03;
 // $colour-negative:				#d70000;
 
+$colour-link:					$colour-blue;
+$colour-link-hover:				$colour-blue-darker;
+$colour-link-active:			$colour-orange;
+
+$colour-disabled:				#ddd;
+$colour-disabled-bg:			#777;
+
 
 // Functional colour assignment variables
 // ===============================================================================
@@ -105,13 +112,22 @@ $twitter:						$colour-blue-twitter;
 $button-bg:						$colour-blue;
 $button-colour:					$colour-white;
 
+$button-disabled:				$colour-disabled;
+$button-disabled-bg:			$colour-disabled-bg;
+
 $button-bg-secondary:			$colour-charcoal;
 $button-colour-secondary:		$colour-white;
  
 $button-bg-tertiary:			$colour-yellow;
 $button-colour-tertiary:		$colour-charcoal;
 
+// Forms
+$form-input-colour:				$colour-grey;
+$form-input-bg:					$colour-white;
+$form-input-border:				$colour-grey-light-alt;
 
+$form-disabled:					$colour-disabled;
+$form-disabled-bg:				$colour-disabled-bg;
 
 
 
