@@ -1954,11 +1954,14 @@ legend {
   margin-bottom: 20px;
   font-size: 21px;
   line-height: inherit;
+  color: #007ed6;
   border: 0;
   font-family: "Roboto Condensed", sans-serif;
   font-style: normal;
   font-weight: 400;
   color: inherit;
+  font-weight: 700;
+  border-bottom: 1px solid #007ed6;
 }
 
 label {
@@ -1989,6 +1992,15 @@ select[size] {
   height: auto;
 }
 
+Adjust output element
+output {
+  display: block;
+  padding-top: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #555555;
+}
+
 .form-group__item {
   display: block;
   width: 100%;
@@ -2008,9 +2020,15 @@ select[size] {
   transition: all 0.3s;
 }
 .form-group__item[disabled], .form-group__item[readonly], fieldset[disabled] .form-group__item {
-  color: #dddddd;
-  background-color: #777777;
+  cursor: not-allowed;
+  color: #777777;
+  background-color: #ececec;
   opacity: 1;
+  box-shadow: none;
+}
+.form-group__item[disabled]:focus, .form-group__item[disabled]:active, .form-group__item[disabled]:hover, .form-group__item[readonly]:focus, .form-group__item[readonly]:active, .form-group__item[readonly]:hover, fieldset[disabled] .form-group__item:focus, fieldset[disabled] .form-group__item:active, fieldset[disabled] .form-group__item:hover {
+  box-shadow: none;
+  border-color: #d7d7d7;
 }
 
 textarea.form-group__item {
@@ -2079,49 +2097,87 @@ input[type="search"] {
   margin-left: 10px;
 }
 
+input[type="radio"][disabled], input[type="radio"].disabled, fieldset[disabled] input[type="radio"],
+input[type="checkbox"][disabled],
+input[type="checkbox"].disabled, fieldset[disabled]
+input[type="checkbox"] {
+  cursor: not-allowed;
+}
+
+.radio-inline.disabled, fieldset[disabled] .radio-inline,
+.checkbox-inline.disabled, fieldset[disabled]
+.checkbox-inline {
+  cursor: not-allowed;
+}
+
+.radio.disabled label, fieldset[disabled] .radio label,
+.checkbox.disabled label, fieldset[disabled]
+.checkbox label {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .form-group__item--static {
   padding-top: 6px;
   padding-bottom: 6px;
   margin-bottom: 0;
 }
-.form-group__item--static.input-lg, .form-group__item--static.input-sm {
+.form-group__item--static.input--large, .input-group-lg > .form-group__item--static.form-group__item,
+.input-group-lg > .form-group__item--static.input-group-addon,
+.input-group-lg > .input-group-button > .form-group__item--static.button, .form-group__item--static.input--small, .input-group-sm > .form-group__item--static.form-group__item,
+.input-group-sm > .form-group__item--static.input-group-addon,
+.input-group-sm > .input-group-button > .form-group__item--static.button {
   padding-left: 0;
   padding-right: 0;
 }
 
-.input--sm, .form-group--sm .form-group__item {
-  height: 16px;
+.input--small, .input-group-sm > .form-group__item,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-button > .button, .form-group--small .form-group__item {
   padding: 4px 8px;
   font-size: 11.2px;
   line-height: 16px;
   border-radius: 0px;
 }
 
-select.input--sm, .form-group--sm .form-group__item {
-  height: 16px;
+select.input--small, .input-group-sm > select.form-group__item,
+.input-group-sm > select.input-group-addon,
+.input-group-sm > .input-group-button > select.button, .form-group--small .form-group__item {
   line-height: 16px;
 }
 
-textarea.input--sm, .form-group--sm .form-group__item,
-select[multiple].input--sm, .form-group--sm .form-group__item {
+textarea.input--small, .input-group-sm > textarea.form-group__item,
+.input-group-sm > textarea.input-group-addon,
+.input-group-sm > .input-group-button > textarea.button, .form-group--small .form-group__item,
+select[multiple].input--small,
+.input-group-sm > select[multiple].form-group__item,
+.input-group-sm > select[multiple].input-group-addon,
+.input-group-sm > .input-group-button > select[multiple].button, .form-group--small .form-group__item {
   height: auto;
 }
 
-.input--lg, .form-group--lg .form-group__item {
-  height: 25px;
+.input--large, .input-group-lg > .form-group__item,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-button > .button, .form-group--large .form-group__item {
   padding: 6.25px 12.5px;
   font-size: 17.5px;
   line-height: 25px;
   border-radius: 0px;
 }
 
-select.input--lg, .form-group--lg .form-group__item {
-  height: 25px;
+select.input--large, .input-group-lg > select.form-group__item,
+.input-group-lg > select.input-group-addon,
+.input-group-lg > .input-group-button > select.button, .form-group--large .form-group__item {
   line-height: 25px;
 }
 
-textarea.input--lg, .form-group--lg .form-group__item,
-select[multiple].input--lg, .form-group--lg .form-group__item {
+textarea.input--large, .input-group-lg > textarea.form-group__item,
+.input-group-lg > textarea.input-group-addon,
+.input-group-lg > .input-group-button > textarea.button, .form-group--large .form-group__item,
+select[multiple].input--large,
+.input-group-lg > select[multiple].form-group__item,
+.input-group-lg > select[multiple].input-group-addon,
+.input-group-lg > .input-group-button > select[multiple].button, .form-group--large .form-group__item {
   height: auto;
 }
 
@@ -2145,13 +2201,17 @@ select[multiple].input--lg, .form-group--lg .form-group__item {
   pointer-events: none;
 }
 
-.input-lg + .form-group__item--feedback {
+.input--large + .form-group__item--feedback, .input-group-lg > .form-group__item + .form-group__item--feedback,
+.input-group-lg > .input-group-addon + .form-group__item--feedback,
+.input-group-lg > .input-group-button > .button + .form-group__item--feedback {
   width: 25px;
   height: 25px;
   line-height: 25px;
 }
 
-.input-sm + .form-group__item--feedback {
+.input--small + .form-group__item--feedback, .input-group-sm > .form-group__item + .form-group__item--feedback,
+.input-group-sm > .input-group-addon + .form-group__item--feedback,
+.input-group-sm > .input-group-button > .button + .form-group__item--feedback {
   width: 16px;
   height: 16px;
   line-height: 16px;
@@ -2189,7 +2249,7 @@ select[multiple].input--lg, .form-group--lg .form-group__item {
     vertical-align: middle;
   }
   .form-inline .input-group .input-group-addon,
-  .form-inline .input-group .input-group-btn,
+  .form-inline .input-group .input-group-button,
   .form-inline .input-group .form-group__item {
     width: auto;
   }
@@ -2249,20 +2309,113 @@ select[multiple].input--lg, .form-group--lg .form-group__item {
   }
 }
 
-.extra-help {
+.form-group__item-help {
   margin-top: 10px;
   display: inline-block;
   visibility: hidden;
 }
 
-.form-group__item:active + .extra-help,
-.form-group__item:focus + .extra-help {
+.form-group__item:active + .form-group__item-help,
+.form-group__item:focus + .form-group__item-help {
   visibility: visible;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.input-group[class*="grid__item"] {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.input-group .form-group__item {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.input-group-addon,
+.input-group-button,
+.input-group .form-group__item {
+  display: table-cell;
+}
+.input-group-addon:not(:first-child):not(:last-child),
+.input-group-button:not(:first-child):not(:last-child),
+.input-group .form-group__item:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.input-group-addon,
+.input-group-button {
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.input-group-addon {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555555;
+  text-align: center;
+  background-color: #dddddd;
+  border: 1px solid #d7d7d7;
+  border-radius: 0px;
+}
+.input-group-addon.input--small,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-button > .input-group-addon.button {
+  padding: 4px 8px;
+  font-size: 11.2px;
+  border-radius: 0px;
+}
+.input-group-addon.input--large,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-button > .input-group-addon.button {
+  padding: 6.25px 12.5px;
+  font-size: 17.5px;
+  border-radius: 0px;
+}
+.input-group-addon input[type="radio"],
+.input-group-addon input[type="checkbox"] {
+  margin-top: 0;
+}
+
+.input-group-addon:last-child {
+  border-left: 0;
+}
+
+.input-group-button {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+}
+.input-group-button > .button {
+  position: relative;
+}
+.input-group-button > .button + .button {
+  margin-left: -1px;
+}
+.input-group-button > .button:hover, .input-group-button > .button:focus, .input-group-button > .button:active {
+  z-index: 2;
+}
+.input-group-button:first-child > .button,
+.input-group-button:first-child > .button-group {
+  margin-right: -1px;
+}
+.input-group-button:last-child > .button,
+.input-group-button:last-child > .button-group {
+  margin-left: -1px;
 }
 
 .button {
@@ -2276,7 +2429,7 @@ select[multiple].input--lg, .form-group--lg .form-group__item {
   margin: 0;
   padding-top: 0;
   padding-bottom: 0;
-  line-height: 3;
+  line-height: 2.1;
   padding-right: 1em;
   padding-left: 1em;
   touch-action: manipulation;
@@ -2372,6 +2525,7 @@ select[multiple].input--lg, .form-group--lg .form-group__item {
 
 .button--circular {
   border-radius: 200px;
+  line-height: 3;
 }
 
 .button--rounded {
@@ -2395,8 +2549,9 @@ select[multiple].input--lg, .form-group--lg .form-group__item {
 }
 
 .button--inactive, .button[disabled], .button--inactive:hover, .button--inactive:active, .button--inactive:focus, .button[disabled]:hover, .button[disabled]:active, .button[disabled]:focus {
-  background-color: #777777;
-  color: #dddddd;
+  background-color: #dddddd;
+  color: #777777;
+  cursor: not-allowed;
 }
 
 .button-group,
@@ -2997,16 +3152,24 @@ html.flexbox {
   box-shadow: 0px 1px 2px #d0d0d0;
 }
 
-.form-group__item[disabled], .form-group__item[readonly], fieldset[disabled] .form-group__item, input[type="radio"][disabled], input[type="radio"].disabled, fieldset[disabled] input[type="radio"],
-input[type="checkbox"][disabled],
-input[type="checkbox"].disabled, fieldset[disabled]
-input[type="checkbox"], .radio-inline.disabled, fieldset[disabled] .radio-inline,
-.checkbox-inline.disabled, fieldset[disabled]
-.checkbox-inline, .radio.disabled label, fieldset[disabled] .radio label,
-.checkbox.disabled label, fieldset[disabled]
-.checkbox label, .button--inactive, .button[disabled], .button--inactive:hover, .button--inactive:active, .button--inactive:focus, .button[disabled]:hover, .button[disabled]:active, .button[disabled]:focus {
-  pointer-events: none;
-  cursor: not-allowed;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
 }
 
 body {
@@ -5408,7 +5571,7 @@ section.section-colour-alt-border {
   font-weight: 400;
   font-style: normal;
 }
-p a {
+p a:not(.button) {
   padding: 1px 0;
   position: relative;
   outline: none;
@@ -5417,11 +5580,11 @@ p a {
   text-transform: none;
 }
 
-p a:hover, p a:focus {
+p a:hover:not(.button), p a:focus:not(.button) {
   outline: none;
 }
 
-p a:active::after, p a:active {
+p a:not(.button):active::after, p a:active:not(.button) {
   -webkit-transition: color 0.05s, color 0.05s;
   -moz-transition: color 0.05s, color 0.05s;
   -ms-transition: color 0.05s, color 0.05s;
@@ -5429,7 +5592,7 @@ p a:active::after, p a:active {
   transition: color 0.05s, color 0.05s;
 }
 
-p a::after {
+p a:not(.button)::after {
   position: absolute;
   top: 100%;
   left: 0;
@@ -5448,7 +5611,7 @@ p a::after {
   transform: translateY(4px);
 }
 
-p a:hover::after, p a:focus::after {
+p a:not(.button):hover::after, p a:not(.button):focus::after {
   opacity: 0.9;
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
@@ -5465,19 +5628,19 @@ a {
   transition: color 0.3s, color 0.3s;
 }
 
-p a {
+p a:not(.button) {
   color: #007ed6;
 }
-p a:hover, p a:focus {
+p a:hover:not(.button), p a:focus:not(.button) {
   color: #004779;
 }
-p a:active {
+p a:active:not(.button) {
   color: #ffb400;
 }
-p a:active::after {
+p a:not(.button):active::after {
   background-color: #ffb400;
 }
-p a::after {
+p a:not(.button)::after {
   background-color: #004779;
   height: 1px;
 }

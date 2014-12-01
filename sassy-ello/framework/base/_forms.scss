@@ -27,6 +27,7 @@ $form-large-padding-vertical:   $form-large-padding / 4;
 $form-large-font:               $base-font-size * 1.25;
 $form-large-border-radius:      $form-border-radius * 1.25;
 
+
 %form-focus {
     outline: none;
 }
@@ -49,8 +50,6 @@ fieldset {
     padding: 0;
     margin: 0;
     border: 0;
-    // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
-    // so we reset that to ensure it behaves more like a standard block element.
     min-width: 0;
 }
 
@@ -61,10 +60,11 @@ legend {
     margin-bottom: $form-margin;
     font-size: ($base-font-size * 1.5);
     line-height: inherit;
-    // color: $legend-color;
+    color: $colour-link;
     border: 0;
     @include font();
-    // border-bottom: 1px solid $legend-border-color;
+    font-weight: 700;
+    border-bottom: 1px solid $colour-link;
 }
 
 label {
@@ -76,10 +76,6 @@ label {
 
 
 // Normalize form controls
-//
-// While most of our form styles require extra classes, some basic normalization
-// is required to ensure optimum display with or without those classes to better
-// address browser inconsistencies.
 
 // Override content-box in Normalize (* isn't specific enough)
 input[type="search"] {
@@ -118,20 +114,19 @@ input[type="checkbox"]:focus {
     @extend %form-focus;
 }
 
-// Adjust output element
-// output {
-//     display: block;
-//     padding-top: ($form-padding-vertical + 1);
-//     font-size: $base-font-size;
-//     line-height: $base-line-height;
-//     color: $input-color;
-// }
+Adjust output element
+output {
+    display: block;
+    padding-top: ($form-padding-vertical + 1);
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color: $form-input-colour;
+}
 
 
 // Common form controls
 //
-// Shared size and type resets for form controls. Apply .form-group__item to any
-// of the following form controls:
+// Shared size and type resets for form controls. Apply .form-group__item:
 //
 // select
 // textarea
@@ -173,13 +168,16 @@ input[type="checkbox"]:focus {
     &[disabled],
     &[readonly],
     fieldset[disabled] & {
-        @extend %cursor-disabled;
+        @include cursor-disabled;
         color: $form-disabled;
-        background-color: $form-disabled-bg;
+        background-color: lighten($form-disabled-bg, 6);
         opacity: 1; // iOS fix for unreadable disabled content
-}
-
-// [converter] extracted textarea& to textarea.form-group__item
+        box-shadow: none;
+        &:focus, &:active, &:hover {
+            box-shadow: none;
+            border-color: $form-input-border;
+        }
+    }  
 }
 
 // Reset height for `textarea`s
@@ -189,23 +187,12 @@ textarea.form-group__item {
 
 
 // Search inputs in iOS
-//
-// This overrides the extra rounded corners on search inputs in iOS so that our
-// `.form-group__item` class can properly style them. Note that this cannot simply
-// be added to `.form-group__item` as it's not specific enough. For details, see
-// https://github.com/twbs/bootstrap/issues/11586.
 
 input[type="search"] {
     -webkit-appearance: none;
 }
 
-
 // Special styles for iOS temporal inputs
-//
-// In Mobile Safari, setting `display: block` on temporal inputs causes the
-// text within the input to become vertically misaligned. As a workaround, we
-// set a pixel line-height that matches the given height of the input, but only
-// for Safari.
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     input[type="date"],
@@ -214,25 +201,22 @@ input[type="search"] {
     input[type="month"] {
         line-height: $base-line-height;
     }
-    // input[type="date"].input-sm,
-    // input[type="time"].input-sm,
-    // input[type="datetime-local"].input-sm,
-    // input[type="month"].input-sm {
+    // input[type="date"].input--small,
+    // input[type="time"].input--small,
+    // input[type="datetime-local"].input--small,
+    // input[type="month"].input--small {
     //     line-height: $input-height-small;
     // }
-    // input[type="date"].input-lg,
-    // input[type="time"].input-lg,
-    // input[type="datetime-local"].input-lg,
-    // input[type="month"].input-lg {
+    // input[type="date"].input--large,
+    // input[type="time"].input--large,
+    // input[type="datetime-local"].input--large,
+    // input[type="month"].input--large {
     //     line-height: $input-height-large;
     // }
 }
 
 
 // Form groups
-//
-// Designed to help with the organization and spacing of vertical forms. For
-// horizontal forms, use the predefined grid classes.
 
 .form-group {
     margin-bottom: $form-margin;
@@ -240,8 +224,6 @@ input[type="search"] {
 
 
 // Checkboxes and radios
-//
-// Indent the labels to position radios/checkboxes as hanging controls.
 
 .radio,
 .checkbox {
@@ -296,7 +278,7 @@ input[type="checkbox"] {
     &[disabled],
     &.disabled,
     fieldset[disabled] & {
-        @extend %cursor-disabled;
+        @include cursor-disabled;
     }
 }
 // These classes are used directly on <label>s
@@ -304,7 +286,7 @@ input[type="checkbox"] {
 .checkbox-inline {
     &.disabled,
     fieldset[disabled] & {
-        @extend %cursor-disabled;
+        @include cursor-disabled;
     }
 }
 // These classes are used on elements with <label> descendants
@@ -313,7 +295,8 @@ input[type="checkbox"] {
     &.disabled,
     fieldset[disabled] & {
         label {
-            @extend %cursor-disabled;
+            @include cursor-disabled;
+            opacity: 0.5;
         }
     }
 }
@@ -331,8 +314,8 @@ input[type="checkbox"] {
     // Remove default margin from `p`
     margin-bottom: 0;
 
-    &.input-lg,
-    &.input-sm {
+    &.input--large,
+    &.input--small {
         padding-left: 0;
         padding-right: 0;
     }
@@ -341,13 +324,13 @@ input[type="checkbox"] {
 
 // Form control sizing
 //
-// Build on `.form-group__item` with modifier classes to decrease or increase the
+// Build on .form-group__item with modifier classes to decrease or increase the
 // height and font-size of form controls.
 
-
+// Form input size mixin
 @mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
     #{$parent} {
-        height: $input-height;
+        // height: $input-height;
         padding: $padding-vertical $padding-horizontal;
         font-size: $font-size;
         line-height: $line-height;
@@ -355,7 +338,7 @@ input[type="checkbox"] {
     }
 
     select#{$parent} {
-        height: $input-height;
+        // height: $input-height;
         line-height: $input-height;
     }
 
@@ -364,16 +347,12 @@ input[type="checkbox"] {
         height: auto;
     }
 }
+@include input-size('.input--small, .form-group--small .form-group__item', $form-small-padding, $form-small-padding-vertical, $form-small-padding-horizontal, $form-small-font, $form-small-padding, $form-small-border-radius);
+@include input-size('.input--large, .form-group--large .form-group__item', $form-large-padding, $form-large-padding-vertical, $form-large-padding-horizontal, $form-large-font, $form-large-padding, $form-large-border-radius);
 
-
-@include input-size('.input--sm, .form-group--sm .form-group__item', $form-small-padding, $form-small-padding-vertical, $form-small-padding-horizontal, $form-small-font, $form-small-padding, $form-small-border-radius);
-
-@include input-size('.input--lg, .form-group--lg .form-group__item', $form-large-padding, $form-large-padding-vertical, $form-large-padding-horizontal, $form-large-font, $form-large-padding, $form-large-border-radius);
 
 // Form control feedback states
-//
 // Apply contextual and semantic states to individual form controls.
-
 .has-feedback {
     // Enable absolute positioning
     position: relative;
@@ -396,12 +375,12 @@ input[type="checkbox"] {
     text-align: center;
     pointer-events: none;
 }
-.input-lg + .form-group__item--feedback {
+.input--large + .form-group__item--feedback {
     width: $form-large-padding;
     height: $form-large-padding;
     line-height: $form-large-padding;
 }
-.input-sm + .form-group__item--feedback {
+.input--small + .form-group__item--feedback {
     width: $form-small-padding;
     height: $form-small-padding;
     line-height: $form-small-padding;
@@ -481,7 +460,7 @@ input[type="checkbox"] {
             vertical-align: middle;
 
             .input-group-addon,
-            .input-group-btn,
+            .input-group-button,
             .form-group__item {
                 width: auto;
             }
@@ -580,7 +559,7 @@ input[type="checkbox"] {
 
     // Form group sizes
     //
-    // Quick utility class for applying `.input-lg` and `.input-sm` styles to the
+    // Quick utility class for applying `.input--large` and `.input--small` styles to the
     // inputs and labels within a `.form-group`.
     .form-group-lg {
         @media (min-width: $breakpoint-lap) {
@@ -599,13 +578,178 @@ input[type="checkbox"] {
 }
 
 
-.extra-help{
+.form-group__item-help{
     margin-top: $form-margin / 2;
     display: inline-block;
     visibility: hidden;
 }
-.form-group__item:active + .extra-help,
-.form-group__item:focus + .extra-help {
+.form-group__item:active + .form-group__item-help,
+.form-group__item:focus + .form-group__item-help {
     visibility: visible;
     @include vendor(transition, $transition);
+}
+
+
+// Input groups
+
+// Base styles
+.input-group {
+    position: relative; // For dropdowns
+    display: table;
+    border-collapse: separate; // prevent input groups from inheriting border styles from table cells when placed within a table
+
+    // Undo padding and float of grid classes
+    &[class*="grid__item"] {
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .form-group__item {
+        // Ensure that the input is always above the *appended* addon button for
+        // proper border colors.
+        position: relative;
+        z-index: 2;
+
+        // IE9 fubars the placeholder attribute in text inputs and the arrows on
+        // select elements in input groups. To fix it, we float the input. Details:
+        // https://github.com/twbs/bootstrap/issues/11561#issuecomment-28936855
+        float: left;
+
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+// Sizing options
+//
+// Remix the default form control sizing classes into new ones for easier
+// manipulation.
+
+.input-group-lg > .form-group__item,
+.input-group-lg > .input-group-addon,
+.input-group-lg > .input-group-button > .button {
+    @extend .input--large;
+}
+.input-group-sm > .form-group__item,
+.input-group-sm > .input-group-addon,
+.input-group-sm > .input-group-button > .button {
+    @extend .input--small;
+}
+
+
+// Display as table-cell
+// -------------------------
+.input-group-addon,
+.input-group-button,
+.input-group .form-group__item {
+    display: table-cell;
+
+    &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+}
+// Addon and addon wrapper for buttons
+.input-group-addon,
+.input-group-button {
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle; // Match the inputs
+}
+
+// Text input groups
+// -------------------------
+.input-group-addon {
+    padding: $form-padding-vertical $form-padding-horizontal;
+    font-size: $base-font-size;
+    font-weight: normal;
+    line-height: 1;
+    color: $form-input-colour;
+    text-align: center;
+    background-color: $colour-disabled-bg;
+    border: 1px solid $form-input-border;
+    border-radius: $form-border-radius;
+
+// Sizing
+&.input--small {
+    padding: $form-small-padding-vertical $form-small-padding-horizontal;
+    font-size: $form-small-font;
+    border-radius: $form-small-border-radius;
+}
+&.input--large {
+    padding: $form-large-padding-vertical $form-large-padding-horizontal;
+    font-size: $form-large-font;
+    border-radius: $form-large-border-radius;
+}
+
+// Nuke default margins from checkboxes and radios to vertically center within.
+input[type="radio"],
+    input[type="checkbox"] {
+        margin-top: 0;
+    }
+}
+
+// // Reset rounded corners
+// .input-group .form-group__item:first-child,
+// .input-group-addon:first-child,
+// .input-group-button:first-child > .button,
+// .input-group-button:first-child > .button-group > .button,
+// .input-group-button:first-child > .dropdown-toggle,
+// .input-group-button:last-child > .button:not(:last-child):not(.dropdown-toggle),
+// .input-group-button:last-child > .button-group:not(:last-child) > .button {
+// @include border-right-radius(0);
+// }
+// .input-group-addon:first-child {
+// border-right: 0;
+// }
+// .input-group .form-group__item:last-child,
+// .input-group-addon:last-child,
+// .input-group-button:last-child > .button,
+// .input-group-button:last-child > .button-group > .button,
+// .input-group-button:last-child > .dropdown-toggle,
+// .input-group-button:first-child > .button:not(:first-child),
+// .input-group-button:first-child > .button-group:not(:first-child) > .button {
+// @include border-left-radius(0);
+// }
+.input-group-addon:last-child {
+    border-left: 0;
+}
+
+// Button input groups
+// -------------------------
+.input-group-button {
+    position: relative;
+    // Jankily prevent input button groups from wrapping with `white-space` and
+    // `font-size` in combination with `inline-block` on buttons.
+    font-size: 0;
+    white-space: nowrap;
+
+    // Negative margin for spacing, position for bringing hovered/focused/actived
+    // element above the siblings.
+    > .button {
+        position: relative;
+        + .button {
+            margin-left: -1px;
+        }
+        // Bring the "active" button to the front
+        &:hover,
+        &:focus,
+        &:active {
+            z-index: 2;
+        }
+    }
+
+    // Negative margin to only have a 1px border between the two
+    &:first-child {
+    > .button,
+    > .button-group {
+            margin-right: -1px;
+        }
+    }
+    &:last-child {
+        > .button,
+        > .button-group {
+            margin-left: -1px;
+        }
+    }
 }

@@ -1,7 +1,9 @@
 // BUTTONS
 // ===============================================================================
 
-$button-transition:     $transition;
+$button-transition:         $transition;
+$button-radius-default:     $brand-round;
+$button-rounded-radius:     $brand-button-radius;
 
 .button{
     display: inline-block;
@@ -14,12 +16,12 @@ $button-transition:     $transition;
     margin: 0;
     padding-top: 0;
     padding-bottom: 0;
-    line-height: 3;
+    line-height: 2.1;
     padding-right: 1em;
     padding-left:  1em;
     touch-action: manipulation;
     border: 1px solid transparent;
-    border-radius: $brand-button-radius-default;
+    border-radius: $button-radius-default;
     color: $button-colour;
     background-color: $button-bg;
     @include vendor(transition, $button-transition);
@@ -121,13 +123,14 @@ $button-transition:     $transition;
     // background-color: $button-bg;
     // color: $button-colour;
     border-radius: 200px;
+    line-height: 3;
     &:hover {
         // background-color: darken($button-bg, 10%);
     }
 }
 
 .button--rounded {
-    border-radius: $brand-button-radius;
+    border-radius: $button-rounded-radius;
 }
 
 
@@ -154,7 +157,7 @@ $button-transition:     $transition;
 %button-inactive {
     background-color: $button-disabled-bg;
     color: $button-disabled;
-    @extend %cursor-disabled;
+    @include cursor-disabled;
 }
 
 .button--inactive, .button[disabled] {
@@ -306,16 +309,6 @@ $button-transition:     $transition;
 
 
 // Checkbox and radio options
-//
-// In order to support the browser's form validation feedback, powered by the
-// `required` attribute, we have to "hide" the inputs via `clip`. We cannot use
-// `display: none;` or `visibility: hidden;` as that also hides the popover.
-// Simply visually hiding the inputs via `opacity` would leave them clickable in
-// certain cases which is prevented by using `clip` and `pointer-events`.
-// This way, we ensure a DOM element is visible to position the popover from.
-//
-// See https://github.com/twbs/bootstrap/pull/12794 and
-// https://github.com/twbs/bootstrap/pull/14559 for more information.
 
 [data-toggle="buttons"] {
     > .button,

@@ -27,6 +27,12 @@
     background: rgba($color, $opacity);
 }
 
+@mixin cursor-disabled() {
+	// @extend %cursor-disabled;
+    // pointer-events: none; // Future-proof disabling of clicks
+    cursor: not-allowed;  // Fallback if above not supported
+}
+
 // Gradients
 
 // Horizontal gradient, from left to right

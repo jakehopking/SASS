@@ -44,7 +44,7 @@
 }
 
 a {
-	@include vendor(transition, color 0.3s, color 0.3s);
+	@include vendor(transition, color 0.3s, color 0.3s );
 }
 
 
@@ -76,7 +76,7 @@ a {
 
 // Paragraph links
 
-p a {
+p a:not(.button) { // :not prevents this styling being applied to the inline buttons.
 	@extend %link-transition;
 }
 
