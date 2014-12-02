@@ -67,6 +67,9 @@ $button-rounded-radius:     $brand-button-radius;
     padding-right:0;           
     padding-left: 0;            
     text-align:center;
+    + .button--fill {
+        margin-top: 2px;
+    }
 }
 
 // Font sizes

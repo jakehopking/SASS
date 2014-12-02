@@ -322,7 +322,7 @@ input[type="checkbox"] {
 }
 
 
-// Form control sizing
+// Form group__item sizing
 //
 // Build on .form-group__item with modifier classes to decrease or increase the
 // height and font-size of form controls.
@@ -387,15 +387,15 @@ input[type="checkbox"] {
 }
 
 // Feedback states
-.has-success {
-    // @include form-group__item--validation($state-success-text, $state-success-text, $state-success-bg);
-}
-.has-warning {
-    // @include form-group__item--validation($state-warning-text, $state-warning-text, $state-warning-bg);
-}
-.has-error {
-    // @include form-group__item--validation($state-danger-text, $state-danger-text, $state-danger-bg);
-}
+// .has-success {
+//     @include form-group__item--validation($state-success-text, $state-success-text, $state-success-bg);
+// }
+// .has-warning {
+//     @include form-group__item--validation($state-warning-text, $state-warning-text, $state-warning-bg);
+// }
+// .has-error {
+//     @include form-group__item--validation($state-danger-text, $state-danger-text, $state-danger-bg);
+// }
 
 // Reposition feedback icon if input has visible label above
 .has-feedback label {
@@ -406,20 +406,6 @@ input[type="checkbox"] {
         top: 0;
     }
 }
-
-
-// Help text
-//
-// Apply to any element you wish to create light text for placement immediately
-// below a form control. Use for general help, formatting, or instructional text.
-
-.help-block {
-    display: block; // account for any element using help-block
-    margin-top: 5px;
-    margin-bottom: 10px;
-    // color: lighten($text-color, 25%); // lighten the text some for contrast
-}
-
 
 // Inline forms
 //
@@ -435,7 +421,7 @@ input[type="checkbox"] {
 // [converter] extracted from `.form-inline` for libsass compatibility
 @mixin form-inline {
     // Kick in the inline
-    @media (min-width: $breakpoint-lap) {
+    @media (min-width: $breakpoint-forms) {
         // Inline-block all the things for "inline"
         .form-group {
             display: inline-block;
@@ -541,7 +527,7 @@ input[type="checkbox"] {
 
     // Reset spacing and right align labels, but scope to media queries so that
     // labels on narrow viewports stack the same as a default form example.
-    @media (min-width: $breakpoint-lap) {
+    @media (min-width: $breakpoint-forms) {
         .control-label {
             text-align: right;
             margin-bottom: 0;
@@ -562,14 +548,14 @@ input[type="checkbox"] {
     // Quick utility class for applying `.input--large` and `.input--small` styles to the
     // inputs and labels within a `.form-group`.
     .form-group-lg {
-        @media (min-width: $breakpoint-lap) {
+        @media (min-width: $breakpoint-forms) {
             .control-label {
                 // padding-top: (($form-large-padding-vertical * $form-large-padding) + 1);
             }
         }
     }
     .form-group-sm {
-        @media (min-width: $breakpoint-lap) {
+        @media (min-width: $breakpoint-forms) {
             .control-label {
                 padding-top: ($form-small-padding-vertical + 1);
             }

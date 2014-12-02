@@ -86,6 +86,8 @@ $breakpoint-portable:       1023px !default;
 $breakpoint-desk:           1024px !default;
 $breakpoint-desk-wide:      1200px !default;
 
+$breakpoint-forms:          768px !default; // Inline forms are full width below this point.
+
 // See base/_breakpoints.scss   for mixin
 // See ui/breakpoints/          for breakpoint files
 
