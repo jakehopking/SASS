@@ -3,7 +3,18 @@
 
 // Vars
 
+$network-bar-bg:            $colour-grey;
+$network-bar-border:        $colour-charcoal;
 $header-bg:                 $brand-primary;
+
+
+.network-bar {
+	background-color: $network-bar-bg;
+	border-bottom: 1px solid $network-bar-border;
+    .network-bar-container {
+        @extend %grid__container;
+    }
+}
 
 
 header {
@@ -11,10 +22,6 @@ header {
     .header-container {
         @extend %grid__container;
     }
-}
-
-.header-link-bar {
-    
 }
 
 .header-search {

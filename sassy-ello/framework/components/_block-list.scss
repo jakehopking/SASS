@@ -1,4 +1,4 @@
-// BOXLISTS
+// BOX LIST
 // ===============================================================================
 
 // Example:
@@ -9,14 +9,13 @@
 //   <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
 // </ul>
 
-.block-list{
-
+.block-list {
     &,
     > li{
         border:0 solid $base-ui-color;
     }
 }
-.block-list{
+.block-list {
     list-style:none;
     margin-left:0;
     border-top-width:1px;
@@ -26,9 +25,9 @@
         padding:$half-spacing-unit;
     }
 }
-        .block-list__link{
-            display:block;
-            padding:$half-spacing-unit;
-            margin:-$half-spacing-unit;
-        }
+.block-list__link {
+    display:block;
+    padding:$half-spacing-unit;
+    margin:-$half-spacing-unit;
+}
 
