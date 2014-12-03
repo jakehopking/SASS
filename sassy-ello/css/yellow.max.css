@@ -3452,6 +3452,13 @@ body {
   border-bottom: 1px solid #262626;
 }
 
+.network-bar .inline-list {
+  text-align: right;
+}
+.network-bar .inline-list a {
+  color: white;
+}
+
 header {
   background-color: #fff200;
 }

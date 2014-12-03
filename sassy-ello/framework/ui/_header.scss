@@ -6,6 +6,7 @@
 $network-bar-bg:            $colour-grey;
 $network-bar-border:        $colour-charcoal;
 $header-bg:                 $brand-primary;
+$network-bar-link:			$colour-white;
 
 
 .network-bar {
@@ -16,6 +17,14 @@ $header-bg:                 $brand-primary;
     }
 }
 
+.network-bar {
+	.inline-list {
+		text-align: right;
+		a {
+			color: $network-bar-link;
+		}
+	}
+}
 
 header {
     background-color: $header-bg;
