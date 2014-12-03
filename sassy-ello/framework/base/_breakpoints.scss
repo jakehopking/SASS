@@ -34,6 +34,9 @@
 // @media only screen and (min-width: $breakpoint-desk-wide) {} 
 
 
+// Serves content to below desktop wide devices only (< 1200px)          
+// ui/breakpoints/_breakpoint__07-<desktop-wide.scss
+// @media only screen and (min-width: $breakpoint-desk-wide - 1) {} 
 
 
 @mixin media-query($media-query){
@@ -74,4 +77,40 @@
 
     }
 
+    @if $media-query == below-desk-wide{
+
+        @media only screen and (max-width: $breakpoint-desk-wide - 1) { @content; }
+
+    }
+
 }
+
+body .hide-me {
+    display: none;
+}
+
+body .hide-me--palm {
+    @include media-query(palm) {
+        display: none;
+    }
+}
+
+body .hide-me--portable {
+    @include media-query(portable) {
+        display: none;
+    }
+}
+
+body .hide-me--lap {
+    @include media-query(lap) {
+        display: none;
+    }
+}
+
+body .hide-me--desk {
+    @include media-query(desk) {
+        display: none;
+    }
+}
+
+

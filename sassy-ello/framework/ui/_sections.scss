@@ -3,64 +3,107 @@
 
 
 // Section vars
-$section-padding: 		$base-line-height;
+$section-padding:       $base-line-height;
 
 %section-base {
-	margin: 0 auto;
-	padding: $section-padding 0;
+    margin: 0 auto;
+    // padding: $section-padding 0;
+}
+
+%section-base-no-padding {
+    padding: 0 0;
+}
+
+%section-base-padding {
+    padding: $section-padding 0;
 }
 
 %section-with-white-text {
-	color: $colour-white;
+    color: $colour-white;
 }
 
 %section-with-bg-colour {
-	background-color: $section-bg;
+    background-color: $section-bg;
 }
 
 %section-with-border {
-	border-top-width: 1px;
-	border-top-style: solid;
-	border-top-color: transparent;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: transparent;
 
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	border-bottom-color: transparent;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+}
+
+%section-hero-colour-default {
+    color: $colour-white;
+} 
+
+%section-hero-colour-bg-default {
+    background-color: $section-hero-bg;
+    @extend %section-hero-colour-default;
 }
 
 .middle > section {
-	@extend %section-base;
-	> .section-container {
-		@extend %grid__container;
-	}
+    @extend %section-base;
+    @extend %section-base-padding;
+    > .section-container {
+        @extend %grid__container;
+    }
+}
+
+.middle > section.section-hero-image {
+    @extend %section-base;
+    @extend %section-base-no-padding;
+    width: 100%;
+    background-position: 50%;
+    background-size: cover;
+    height: $section-hero-height;
+    > .section-container {
+        
+    }
+}
+
+.middle > section.section-hero {
+    height: $section-hero-height;
+    @extend %section-base;
+    @extend %section-base-padding;
+    @extend %section-hero-colour-default;
+    @extend %section-hero-colour-bg-default;
+}
+
+.middle > section.section--collapse {
+    @extend %section-base;
+    @extend %section-base-no-padding;
 }
 
 section.section-colour {
-	@extend %section-with-bg-colour;
+    @extend %section-with-bg-colour;
 }
 
 section.section-colour-border {
-	@extend %section-with-bg-colour;
-	@extend %section-with-border;
-	border-color: $section-border;
+    @extend %section-with-bg-colour;
+    @extend %section-with-border;
+    border-color: $section-border;
 }
 
 section.section-border {
-	@extend %section-with-border;
-	border-color: $section-border;
+    @extend %section-with-border;
+    border-color: $section-border;
 }
 
 section.section-colour-alt {
-	background-color: $section-bg-alt;
+    background-color: $section-bg-alt;
 }
 
 section.section-colour-blue {
-	@extend %section-with-white-text;
-	background-color: $colour-blue;
+    @extend %section-with-white-text;
+    background-color: $colour-blue;
 }
 
 section.section-colour-alt-border {
-	@extend .section-colour-alt;
-	@extend %section-with-border;
-	border-color: $section-border-alt;
+    @extend .section-colour-alt;
+    @extend %section-with-border;
+    border-color: $section-border-alt;
 }

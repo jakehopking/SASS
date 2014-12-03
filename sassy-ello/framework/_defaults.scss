@@ -86,7 +86,7 @@ $breakpoint-portable:       1023px !default;
 $breakpoint-desk:           1024px !default;
 $breakpoint-desk-wide:      1200px !default;
 
-$breakpoint-forms:          768px !default; // Inline forms are full width below this point.
+$breakpoint-forms:          480px !default; // Inline forms are full width below this point.
 
 // See base/_breakpoints.scss   for mixin
 // See ui/breakpoints/          for breakpoint files
@@ -107,7 +107,8 @@ $colour-negative:           #b33630 !default;
 $button-bg:                 #b0b0b0 !default;
 $button-colour:             #fff !default;
 $section-bg:                #fff !default;
-
+$section-hero-height:       350px !default;
+$section-hero-bg:           $colour-grey !default;
 $transition:                all 0.3s !default;
 
 

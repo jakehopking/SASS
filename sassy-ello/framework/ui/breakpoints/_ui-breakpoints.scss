@@ -8,7 +8,8 @@
 // @media only screen and (min-width: 481px)							{}
 // @media only screen and (max-width: 1023px)							{}
 // @media only screen and (min-width: 1024px)							{}
-// @media only screen and (min-width: 1200px)							{}
+// @media only screen and (min-width: 1199px)							{}
+// @media only screen and (max-width: 1200px)							{}
 
 @import "breakpoint__01-<=palm";
 @import "breakpoint__02->palm--<desktop";
@@ -16,3 +17,4 @@
 @import "breakpoint__04-<desktop";
 @import "breakpoint__05->=desktop";
 @import "breakpoint__06->=desktop-wide";
+@import "breakpoint__07-<desktop-wide";

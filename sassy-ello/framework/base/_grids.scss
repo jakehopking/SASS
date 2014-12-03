@@ -80,7 +80,7 @@ $mobile-first:          true !default;
 /**
  * Set the spacing between your grid items.
  */
-$gutter:                20px !default;
+$gutter:                $base-line-height !default;
 
 
 /**
@@ -120,6 +120,7 @@ $use-markup-fix:        false !default;
  */
 $breakpoints: (
     'palm' '(max-width: 480px)',
+    'palm-up' '(min-width: 481px)',
     'lap' '(min-width: 481px) and (max-width: 1023px)',
     'portable' '(max-width: 1023px)',
     'desk' '(min-width: 1024px)'
@@ -136,9 +137,9 @@ $breakpoints: (
  * Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
  * have been set to ‘true’.
  */
-$breakpoint-has-widths: ('palm', 'lap', 'portable', 'desk') !default;
-$breakpoint-has-push:   ('palm', 'lap', 'portable', 'desk') !default;
-$breakpoint-has-pull:   ('palm', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-widths: ('palm', 'palm-up', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-push:   ('palm', 'palm-up', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-pull:   ('palm', 'palm-up', 'lap', 'portable', 'desk') !default;
 
 
 /**

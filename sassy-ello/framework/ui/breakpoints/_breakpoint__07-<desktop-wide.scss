@@ -1,0 +1,5 @@
+// Serves content to below desktop wide devices only (< 1200px)
+
+@media only screen and (max-width: $breakpoint-desk-wide - 1) {
+	// Content
+}

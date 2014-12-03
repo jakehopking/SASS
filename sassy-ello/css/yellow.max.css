@@ -83,6 +83,34 @@
    }
  *
  */
+body .hide-me {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  body .hide-me--palm {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  body .hide-me--portable {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  body .hide-me--lap {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body .hide-me--desk {
+    display: none;
+  }
+}
+
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -1036,6 +1064,130 @@ textarea:focus {
   }
 
   .palm--eleven-twelfths {
+    width: 91.666%;
+  }
+}
+@media only screen and (min-width: 481px) {
+  /**
+   * Whole
+   */
+  .palm-up--one-whole {
+    width: 100%;
+  }
+
+  /**
+   * Halves
+   */
+  .palm-up--one-half, .palm-up--two-quarters, .palm-up--three-sixths, .palm-up--four-eighths, .palm-up--five-tenths, .palm-up--six-twelfths {
+    width: 50%;
+  }
+
+  /**
+   * Thirds
+   */
+  .palm-up--one-third, .palm-up--two-sixths, .palm-up--four-twelfths {
+    width: 33.333%;
+  }
+
+  .palm-up--two-thirds, .palm-up--four-sixths, .palm-up--eight-twelfths {
+    width: 66.666%;
+  }
+
+  /**
+   * Quarters
+   */
+  .palm-up--one-quarter, .palm-up--two-eighths, .palm-up--three-twelfths {
+    width: 25%;
+  }
+
+  .palm-up--three-quarters, .palm-up--six-eighths, .palm-up--nine-twelfths {
+    width: 75%;
+  }
+
+  /**
+   * Fifths
+   */
+  .palm-up--one-fifth, .palm-up--two-tenths {
+    width: 20%;
+  }
+
+  .palm-up--two-fifths, .palm-up--four-tenths {
+    width: 40%;
+  }
+
+  .palm-up--three-fifths, .palm-up--six-tenths {
+    width: 60%;
+  }
+
+  .palm-up--four-fifths, .palm-up--eight-tenths {
+    width: 80%;
+  }
+
+  /**
+   * Sixths
+   */
+  .palm-up--one-sixth, .palm-up--two-twelfths {
+    width: 16.666%;
+  }
+
+  .palm-up--five-sixths, .palm-up--ten-twelfths {
+    width: 83.333%;
+  }
+
+  /**
+   * Eighths
+   */
+  .palm-up--one-eighth {
+    width: 12.5%;
+  }
+
+  .palm-up--three-eighths {
+    width: 37.5%;
+  }
+
+  .palm-up--five-eighths {
+    width: 62.5%;
+  }
+
+  .palm-up--seven-eighths {
+    width: 87.5%;
+  }
+
+  /**
+   * Tenths
+   */
+  .palm-up--one-tenth {
+    width: 10%;
+  }
+
+  .palm-up--three-tenths {
+    width: 30%;
+  }
+
+  .palm-up--seven-tenths {
+    width: 70%;
+  }
+
+  .palm-up--nine-tenths {
+    width: 90%;
+  }
+
+  /**
+   * Twelfths
+   */
+  .palm-up--one-twelfth {
+    width: 8.333%;
+  }
+
+  .palm-up--five-twelfths {
+    width: 41.666%;
+  }
+
+  .palm-up--seven-twelfths {
+    width: 58.333%;
+  }
+
+  .palm-up--eleven-twelfths {
     width: 91.666%;
   }
 }
@@ -2224,7 +2376,7 @@ select[multiple].input--large,
   top: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .form-inline .form-group {
     display: inline-block;
     margin-bottom: 0;
@@ -2287,7 +2439,7 @@ select[multiple].input--large,
 .form-horizontal .checkbox {
   min-height: 7.42857px;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .form-horizontal .control-label {
     text-align: right;
     margin-bottom: 0;
@@ -2297,7 +2449,7 @@ select[multiple].input--large,
 .form-horizontal .has-feedback .form-group__item--feedback {
   right: 10px;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .form-horizontal .form-group-sm .control-label {
     padding-top: 5px;
   }
@@ -3145,6 +3297,18 @@ html.flexbox {
 }
 
 /* endif */
+@media only screen and (max-width: 1199px) {
+  .grid__container, header .header-container, .middle .middle-container, .middle > section > .section-container, footer .footer-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.grid__container, header .header-container, .middle .middle-container, .middle > section > .section-container, footer .footer-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .card-shadow, .card-shadow-frame {
   box-shadow: 0px 1px 2px #d0d0d0;
 }
@@ -3174,11 +3338,6 @@ body {
   max-width: auto;
   background-color: #eaeaea;
   color: #262626;
-}
-
-.grid__container, header .header-container, .middle .middle-container, .middle > section > .section-container, footer .footer-container {
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
 .card {
@@ -3251,8 +3410,19 @@ body {
   border: none;
 }
 
-.middle > section {
+header {
+  background-color: #fff200;
+}
+
+.middle > section, .middle > section.section-hero-image, .middle > section.section-hero, .middle > section.section--collapse {
   margin: 0 auto;
+}
+
+.middle > section.section-hero-image, .middle > section.section--collapse {
+  padding: 0 0;
+}
+
+.middle > section, .middle > section.section-hero {
   padding: 20px 0;
 }
 
@@ -3271,6 +3441,25 @@ section.section-colour-border, section.section-border, section.section-colour-al
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
+}
+
+.middle > section.section-hero {
+  color: white;
+}
+
+.middle > section.section-hero {
+  background-color: #555555;
+}
+
+.middle > section.section-hero-image {
+  width: 100%;
+  background-position: 50%;
+  background-size: cover;
+  height: 350px;
+}
+
+.middle > section.section-hero {
+  height: 350px;
 }
 
 section.section-colour-border {

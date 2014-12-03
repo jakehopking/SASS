@@ -1,8 +1,26 @@
 // HEADER
 // ===============================================================================
 
+// Vars
+
+$header-bg:                 $brand-primary;
+
+
 header {
-	.header-container {
-		@extend %grid__container;
-	}
+    background-color: $header-bg;
+    .header-container {
+        @extend %grid__container;
+    }
+}
+
+.header-link-bar {
+    
+}
+
+.header-search {
+    
+}
+
+.header-search.header-search--homepage {
+    
 }
