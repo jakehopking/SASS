@@ -3,10 +3,11 @@
 
 // Vars
 
+$header-bg:                 $brand-primary;
 $network-bar-bg:            $colour-grey;
 $network-bar-border:        $colour-charcoal;
-$header-bg:                 $brand-primary;
 $network-bar-link:			$colour-white;
+$network-bar-list-bg:		$colour-grey-darker;
 
 
 .network-bar {
@@ -20,8 +21,10 @@ $network-bar-link:			$colour-white;
 .network-bar {
 	.inline-list {
 		text-align: right;
+		background-color: $network-bar-list-bg;
 		a {
 			color: $network-bar-link;
+			text-decoration: none;
 		}
 	}
 }

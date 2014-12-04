@@ -21,16 +21,13 @@ h6,.zeta{
 }
 
 
-/**
- * Heading groups and generic any-heading class.
- * To target any heading of any level simply apply a class of `.hN`, e.g.:
- *
-   <hgroup>
-       <h1 class=hN>Heading</h1>
-       <h2 class=hN>Sub heading</h2>
-   </hgroup>
- *
- */
+// Heading groups and generic any-heading class.
+// To target any heading of any level simply apply a class of `.hN`, e.g.:
+// <hgroup>
+//    <h1 class=hN>Heading</h1>
+//    <h2 class=hN>Sub heading</h2>
+// </hgroup>
+ 
 .hN{
 }
 hgroup .hN{
@@ -38,10 +35,8 @@ hgroup .hN{
 }
 
 
-/**
- * A series of classes for setting massive type; for use in heroes, mastheads,
- * promos, etc.
- */
+// A series of classes for setting massive type; for use in heroes, mastheads, promos, etc.
+ 
 .giga{
     @include font-size($giga-size);
 }
