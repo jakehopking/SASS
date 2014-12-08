@@ -1,0 +1,18 @@
+// TABS
+// ===============================================================================
+
+// See tabs.js for function.
+
+.tabs-menu {
+
+}
+
+// Basic show/hide functionality
+.tabs-content {
+	.tab-content__item {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}

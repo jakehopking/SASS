@@ -14,6 +14,10 @@ $section-padding:       $base-line-height;
     padding: 0 0;
 }
 
+%section-box-shadow-inset {
+    box-shadow: inset 0px 5px 10px rgba($colour-charcoal, 0.3);
+}
+
 %section-base-padding {
     padding: $section-padding 0;
 }
@@ -56,6 +60,7 @@ $section-padding:       $base-line-height;
 .middle > section.section-hero-image {
     @extend %section-base;
     @extend %section-base-no-padding;
+    @extend %section-box-shadow-inset;
     width: 100%;
     background-position: 50%;
     background-size: cover;
@@ -71,6 +76,7 @@ $section-padding:       $base-line-height;
     @extend %section-base-padding;
     @extend %section-hero-colour-default;
     @extend %section-hero-colour-bg-default;
+    @extend %section-box-shadow-inset;
 }
 
 .middle > section.section--collapse {

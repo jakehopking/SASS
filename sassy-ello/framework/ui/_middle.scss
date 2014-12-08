@@ -2,6 +2,7 @@
 // ===============================================================================
 
 .middle {
+	display: block;
 	.middle-container {
 		@extend %grid__container;
 	}

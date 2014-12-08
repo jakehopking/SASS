@@ -222,6 +222,12 @@ input[type="search"] {
     margin-bottom: $form-margin;
 }
 
+.form-group--collapse-desktop {
+    @include media-query(desk) {
+        margin-bottom: 0;
+    }
+}
+
 
 // Checkboxes and radios
 

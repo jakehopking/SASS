@@ -1,0 +1,53 @@
+// IMAGES
+// ===============================================================================
+
+// Vars
+$image-background-default: 				$colour-white;
+$image-padding:							$base-line-height / 5;
+$image-radius-circle:					300px;
+$image-thumb-small:						30px;
+$image-thumb-medium:					40px;
+$image-thumb-large:						50px;
+$image-thumb-v-large:					60px;
+
+
+// User thumbnail images
+%image-with-borders-or-backgrounds {
+	background-color: $image-background-default;
+}
+
+%image-with-with-default-border {
+	border: 1px solid $colour-grey-light-alt;
+}
+
+%image-with-default-padding { // In conjunction with default border to create additional white border
+	padding: $image-padding;
+}
+
+%image-circular {
+	border-radius: $image-radius-circle;
+}
+
+.user-thumb-circle {
+	@extend %image-circular;
+	@extend %image-with-borders-or-backgrounds;
+	@extend %image-with-with-default-border;
+	@extend %image-with-default-padding;
+}
+
+.user-thumb--small {
+	width: $image-thumb-small;
+	height: $image-thumb-small;
+	padding: $image-padding - 1;
+}
+
+.user-thumb--medium {
+	width: $image-thumb-medium;
+	height: $image-thumb-medium;
+}
+
+.user-thumb--large {
+	width: $image-thumb-large;
+	height: $image-thumb-large;
+	padding: $image-padding + 1;
+}

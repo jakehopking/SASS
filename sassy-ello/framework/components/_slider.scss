@@ -1,0 +1,29 @@
+.slider {
+    width: 100%;
+}
+
+.slider-menu > *, .slider-arrows > *, .slider-nav > * {
+    cursor: pointer;
+}
+
+.slider-menu > .active {
+    font-weight: bold;
+}
+
+.slider-content {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    * {
+        width: 100%;
+    }
+}
+
+.slider-frame {
+    position: absolute;
+    top: 0px;
+}
+
+.slider-nav > .active {
+    font-weight: bold;
+}

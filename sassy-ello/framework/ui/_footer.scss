@@ -1,9 +1,39 @@
 // FOOTER
 // ===============================================================================
 
+// Vars
+
+$footer-general-bg:                 $colour-grey;
+$footer-coporate-bg:                $colour-grey-darker;
+$footer-text:                       $colour-white;
 
 footer {
-	.footer-container {
-		@extend %grid__container;
-	}
+    .footer-container,
+    .section-container {
+        @extend %grid__container;
+    }
+}
+
+footer section.footer-horizon {
+    background-image: url(images/footer-horizon.png);
+    background-position: 50% 0;
+    vertical-align: bottom;
+    padding-top: 240px;
+    margin-top: 60px;
+}
+
+footer .footer-horizon__image {
+    background-image: url(images/footer-bokeh.jpg);
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+footer section.footer-general {
+    background-color: $footer-general-bg;
+    color: $footer-text;
+}
+
+footer section.footer-corporate-info {
+    background-color: $footer-coporate-bg;
+    color: $footer-text;
 }

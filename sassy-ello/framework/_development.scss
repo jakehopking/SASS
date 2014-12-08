@@ -1,0 +1,10 @@
+@if $in-development == true {
+
+// DEVELOPMENT OVERRIDES
+// ===============================================================================
+
+a:visited {
+	color: $colour-link;
+}
+
+} // end if

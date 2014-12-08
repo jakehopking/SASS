@@ -1,5 +1,9 @@
-// TYPOGRAPHY
+// TYPOGRAPHY & ICONS
 // ===============================================================================
+
+// Vars
+
+$fa-padding:			$base-line-height / 4;
 
 
 // Links
@@ -45,6 +49,11 @@
 
 a {
 	@include vendor(transition, color 0.3s, color 0.3s );
+	text-decoration: none;
+	color: $colour-link;
+	&:hover {
+		color: $colour-link-hover;
+	}
 }
 
 
@@ -81,6 +90,14 @@ p a:not(.button) { // :not prevents this styling being applied to the inline but
 }
 
 
+// Icons
 
+.fa-pad--right {
+	padding-right: $fa-padding;
+}
+
+.fa-pad--left {
+	padding-left: $fa-padding;
+}
 
 

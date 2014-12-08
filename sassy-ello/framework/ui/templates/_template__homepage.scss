@@ -1,0 +1,60 @@
+// HOMEPAGE TEMPLATE
+// ===============================================================================
+
+// Vars
+$business-title:                $colour-black;
+
+// Featured businesses
+
+// Tabs-menu
+
+// Tabs-content
+// Featured buisnesses
+.tabs-content.suggested-business-content {
+    .card {
+        .card__section--image {
+            height: 100px;
+            > img, a > img {
+                margin-top: -15%;
+                display: block;
+            }
+        }
+    }
+}
+// Review score
+.tabs-content.suggested-business-content {
+    .review-score {
+        border-right: 1px solid $card-title-border-default;
+
+        .score__number {
+            line-height: 1.2;
+        }
+    }
+}
+
+.tabs-content.suggested-business-content {
+    .card--top-pad {
+        padding: ($card-padding / 2) 0 0 0;
+    }
+    .business-info {
+
+        .business__title {
+            font-size: $h6-size + 1;
+            padding-bottom: floor($base-line-height / 6);
+            display: block;
+            a {
+                color: $business-title;
+                text-decoration: none;
+            }
+        }
+
+        .business__categories {
+            font-size: $h7-size;
+            a {
+                text-decoration: none;
+                border-bottom: 1px dashed $colour-grey;
+                font-weight: 300;
+            }
+        }
+    }
+}

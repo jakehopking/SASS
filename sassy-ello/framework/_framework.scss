@@ -53,6 +53,9 @@
 @import "components/rules";
 @import "components/greybox";
 @import "components/embed-responsively";
+@import "components/slider";
+@import "components/maps";
+@import "components/tabs";
 
 
 // Helpers and debug layer
@@ -71,12 +74,19 @@
 @import "ui/header";
 @import "ui/middle";
 @import "ui/sections";
+@import "ui/reviews";
 @import "ui/footer";
+
+@import "ui/templates/ui-templates";
 
 @import "fonts/font-awesome";
 @import "fonts/font-roboto";
+@import "ui/images";
 @import "ui/typography";
 
 @import "ui/breakpoints/ui-breakpoints";
 
+
+// Development (is the project in development ?)
+@import "development";
 

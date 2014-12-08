@@ -1,51 +1,87 @@
 // INLINE LIST
 // ===============================================================================
 
+// Info: This component requires that you remove the whitespace between LIs. The simplest (and valid) way to achieve this is by omitting theclosing '</li>' tag.
+// See: http://css-tricks.com/fighting-the-space-between-inline-block-elements/
+
 // Example:
-// <ul class=inline-list>
+// <ul class=inline-list--block>
 //   <li>Foo</li>
 //   <li>Bar</li>
 //   <li>Baz</li>
 //   <li><a href=# class=inline-list__link>Foo Bar Baz</a></li> // Not implemented
 // </ul>
 
-$list-inline-delimit-character:         ",\00A0" !default;
+$list-inline-delimit-character-comma:         ",\00A0" !default;
+$list-inline-delimit-character-bar:         "|\00A0" !default;
 
 %inline-list-base {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+%inline-list-li {
+    > li {
+        display: inline;
+    }
+}
+
+%inline-list-li-a {
+    > li > a {
+        display: inline-block;
+    }
+}
+
+%inline-block-list-base {
     &,
     > li{
         border: 0 solid $base-ui-color;
     }
 }
 
-%inline-list-basic {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
+%inline-block-list-li {
     > li {
         display: inline-block;
     }
 }
 
-// Info: This component requires that you remove the whitespace between LIs. The simplest (and valid) way to achieve this is by omitting theclosing '</li>' tag.
-     
-
-%inline-list-delimited {
-    > li + li {
-        &:before {
-            content: "#{$list-inline-delimit-character}";
-        }
-    }
+%inline-block-list-li-a {
+    @extend %inline-list-li-a;
 }
 
 .inline-list {
     @extend %inline-list-base;
-    @extend %inline-list-basic;
+    @extend %inline-list-li;
+    @extend %inline-list-li-a; // Anchor styling
 }
 
-.inline-list-delimited {
+.inline-list-block {
     @extend %inline-list-base;
-    @extend %inline-list-basic;
-    @extend %inline-list-delimited;
+    @extend %inline-block-list-base;
+    @extend %inline-block-list-li;
+    @extend %inline-block-list-li-a; // Anchor styling
 }
+
+// .inline-list-block-delimited {
+//     @extend %inline-list-base;
+//     @extend %inline-block-list-base;
+//     @extend %inline-block-list-li;
+// }
+
+.delimited--comma {
+    > li + li {
+        &:before {
+            content: "#{$list-inline-delimit-character-comma}";
+        }
+    }
+}
+
+.delimited--bar {
+    > li + li {
+        &:before {
+            content: "#{$list-inline-delimit-character-bar}";
+        }
+    }
+}
+

@@ -1,0 +1,93 @@
+// REVIEW RELATED ELEMENTS
+// ===============================================================================
+
+// Vars
+$review-score-box-bg:           $colour-grey-lightest;
+$review-star-colour:            $colour-orange;
+$review-padding:                $base-line-height;
+$review-score-colour:           $colour-grey-darker;
+$review-score-size:             $h2-size;
+$review-stars-size:             $milli-size + 1;
+
+$review-quote-colour:           $colour-blue;
+$review-feature-cont-border:    $card-title-border-default;
+$review-feature-cont-bor-width: 3px;
+$review-feature-time:           $colour-grey-light;
+
+%review-score-common {
+    text-align: center;
+    background-color: $review-score-box-bg;
+}
+%review-star-colour {
+    color: $review-star-colour;
+}
+
+.review-score {
+    @extend %review-score-common;
+
+    .score__number {
+        @include font($font-face-condensed, 300, normal, $review-score-colour);
+        font-size: $review-score-size;
+        padding-top: $review-padding / 4;
+    }
+
+    .score__stars {
+        @extend %review-star-colour;
+        font-size: $review-stars-size;
+    }
+
+    .score__reviews {
+        @include font($font-face-condensed, 400, normal, $review-score-colour);
+        padding-bottom: $review-padding / 4;
+    }
+}
+
+
+.review-feature {
+    padding: $review-padding / 2;
+    .feature__user-thumb {
+        width: 30%;
+        img {
+            
+        }
+    }
+
+    .feature__content {
+        &:before {
+            font-family: $font-face-fa;
+            content: "\f10d";
+            color: $review-quote-colour;
+            font-size: 13px;
+            position: absolute;
+            // top: -2px;
+            left: -25px;
+        }
+        width: 70%;
+        position: relative;
+        padding-left: $review-padding / 2;
+        // margin-left: $review-padding / 2;
+        border-left: $review-feature-cont-bor-width solid $review-feature-cont-border;
+        .feature__comment {
+            font-size: $milli-size;
+        }
+
+        .feature__comment-details {
+            > div {
+                display: inline-block;
+                font-size: $h7-size;
+                padding-left: $review-padding / 4;
+            }
+            .feature__comment-user {
+                font-style: italic;
+            }
+            .feature__comment-score {
+                .fa {
+                    color: $review-star-colour;
+                }
+            }
+            .feature__comment-time{
+                color: $review-feature-time;
+            }
+        }
+    }    
+}

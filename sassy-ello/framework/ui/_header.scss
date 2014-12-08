@@ -3,12 +3,18 @@
 
 // Vars
 
+$header-padding: 			$base-line-height;
 $header-bg:                 $brand-primary;
 $network-bar-bg:            $colour-grey;
 $network-bar-border:        $colour-charcoal;
 $network-bar-link:			$colour-white;
 $network-bar-list-bg:		$colour-grey-darker;
+$network-bar-font-size:		$base-font-size - 2;
+$search-box-border:			$colour-grey;
 
+%header-interaction-elements {
+	min-height: 36px;
+}
 
 .network-bar {
 	background-color: $network-bar-bg;
@@ -19,27 +25,56 @@ $network-bar-list-bg:		$colour-grey-darker;
 }
 
 .network-bar {
-	.inline-list {
+	.network-bar__list {
 		text-align: right;
-		background-color: $network-bar-list-bg;
+		font-size: $network-bar-font-size;
+		// background-color: $network-bar-list-bg;
 		a {
 			color: $network-bar-link;
+			background-color: $network-bar-list-bg;
 			text-decoration: none;
+			border-style: solid;
+			border-width: 1px;
+			border-color: transparent;
+			border-right-color: $network-bar-border;
+			padding: 5px 12px;
+			&:hover {
+				background-color: $network-bar-border;
+			}
+		}
+		li:first-child a {
+			border-left-color: $network-bar-border;
 		}
 	}
 }
 
 header {
     background-color: $header-bg;
+    box-shadow: 0px 10px 25px rgba($colour-charcoal, 0.6);
     .header-container {
         @extend %grid__container;
     }
 }
 
 .header-search {
-    
+    padding: ($header-padding / 1.25) (0);
+    .form-group__item {
+		@extend %header-interaction-elements;
+		border-color: $search-box-border;
+    }
+    .button {
+    	@extend %header-interaction-elements;
+    }
 }
 
-.header-search.header-search--homepage {
-    
+.header-container.header-container--homepage {
 }
+
+.yellow-logo {
+	max-height: 40px;
+	margin-bottom: $header-padding;
+	@include media-query(desk) {
+		margin-bottom: -4px;
+	}
+}
+
