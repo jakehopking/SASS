@@ -17,6 +17,7 @@ $review-feature-time:           $colour-grey-light;
 %review-score-common {
     text-align: center;
     background-color: $review-score-box-bg;
+    border-right: 1px solid $card-title-border-default;
 }
 %review-star-colour {
     color: $review-star-colour;
@@ -46,9 +47,9 @@ $review-feature-time:           $colour-grey-light;
 .review-feature {
     padding: $review-padding / 2;
     .feature__user-thumb {
-        width: 30%;
+        text-align: center;
         img {
-            
+            margin-left: -22px; // Accouts for quote negative position.
         }
     }
 
@@ -62,7 +63,6 @@ $review-feature-time:           $colour-grey-light;
             // top: -2px;
             left: -25px;
         }
-        width: 70%;
         position: relative;
         padding-left: $review-padding / 2;
         // margin-left: $review-padding / 2;
@@ -75,7 +75,7 @@ $review-feature-time:           $colour-grey-light;
             > div {
                 display: inline-block;
                 font-size: $h7-size;
-                padding-left: $review-padding / 4;
+                padding-right: $review-padding / 4;
             }
             .feature__comment-user {
                 font-style: italic;

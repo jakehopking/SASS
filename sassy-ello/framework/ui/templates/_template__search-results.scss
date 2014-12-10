@@ -1,0 +1,130 @@
+// SEARCH RESULTS TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+$search-results-padding:                $base-line-height;
+$search-results-container:              $colour-white;
+$search-results-container-shadow:       0px 2px 3px $colour-box-shadow;
+$search-results-container-opacity:      0.7;
+$search-item-height-desktop:            86px;
+$search-item-height-mobile:             $search-item-height-desktop - 20;
+$search-item-border-colour:             $card-title-border-default;
+
+
+
+// Google map container. See map.js for view options.
+#search-results-map {
+    img {
+        max-width: none;
+    }
+
+    @include media-query(desk) { // Desktop breakpoint shows the map
+        width: 100%;
+        height: 1000px;
+    }
+}
+
+
+// Search results container
+.search-results-container {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    max-width: $breakpoint-desk; // Same as desktop breakpoint (full width until desktop kicks in).
+    padding: $search-results-padding;
+    z-index: 200;
+    background: $search-results-container;
+    @include media-query(desk) { // Desktop breakpoint shows the map
+        width: 60%;
+        height: 1000px;
+        background: rgba($search-results-container, $search-results-container-opacity);
+        box-shadow: $search-results-container-shadow;
+    }
+}
+
+// Search results list
+.search-results-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// Search results item
+.search-results__item {
+    .review-score {
+        max-height: $search-item-height-desktop;
+    }
+
+    .business-thumbnail { // Business image
+        max-height: $search-item-height-mobile;
+        @include media-query(lap-and-up) {
+            max-height: $search-item-height-desktop;
+        }
+        > a {
+            min-height: $search-item-height-mobile;
+            border-right: 1px solid $search-item-border-colour;
+            @include media-query(lap-and-up) {
+                min-height: $search-item-height-desktop;
+                border-left: 1px solid $search-item-border-colour;
+            }
+        }
+    }
+
+    .business-content { // Business details / categories / CTAs
+        .card__content {
+            padding: ($search-results-padding / 2) ($search-results-padding);
+        }
+
+        .grid--business-info {
+            // @extend %arrow-search-results !optional;
+        }
+
+        .business-info { // Title / categores / address // See _results.scss for base styles
+            
+        }
+
+        .business-call-to-actions { // Phone, website / directions
+            > .button {
+                margin-right: 5px;
+            }
+            .business-detail-link { // More info arrow >
+                
+                top: ($search-results-padding / 2);
+                right: ($search-results-padding / 2);
+                position: absolute;
+                @extend %arrow-chevron-right;
+                @include media-query(desk) {
+                    position: relative;
+                    float: right;
+                    top: 0;
+                    right: 0;
+                    margin: 5px -10px 5px 0;
+                }
+            }
+        }
+    }
+}
+
+.search-results__item.item--with-review {
+    
+    .business-content {
+        // border-bottom: 1px solid $search-item-border-colour;
+    }
+
+    .review-feature {
+        background-color: $review-score-box-bg; // Inherits from _reviews.scss
+        padding: floor($search-results-padding / 1.3) ($search-results-padding / 2);
+        .feature__content {
+            .feature__comment {
+                font-size: $h7-size;
+            }
+        }
+    }
+}
+
+.item--platinum {
+    .search-results__item {
+
+    }
+}

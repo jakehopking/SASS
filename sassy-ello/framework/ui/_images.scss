@@ -51,3 +51,45 @@ $image-thumb-v-large:					60px;
 	height: $image-thumb-large;
 	padding: $image-padding + 1;
 }
+
+// Image div containers
+
+%image-container-base {
+	overflow: hidden;
+}
+
+%image-container-with-image-as-link {
+	@extend %image-container-base;
+	> a {
+		display: block;
+		position: relative;
+		> img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			min-width: 100%;
+			min-height: 100%;
+		}
+	}
+}
+
+%image-container-with-background-image-linked-anchor {
+	> a {
+		background-size: cover; 
+		background-position: 50%;
+		background-repeat: no-repeat;
+		display: block;
+	}
+}
+
+.image-container-linked {
+	@extend %image-container-with-image-as-link;
+}
+
+.image-container-background-linked {
+	@extend %image-container-with-background-image-linked-anchor;
+}
+
+
+

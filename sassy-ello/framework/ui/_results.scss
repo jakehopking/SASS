@@ -1,0 +1,42 @@
+// RESULTS RELATED ELEMENTS
+// ===============================================================================
+
+// Vars
+$results-item-patinum-bg:				$colour-blue-lightest;
+$business-title:	                    $colour-black;
+$business-address:	                    $colour-black;
+$business-categories-border:			$colour-grey;
+
+.item--platinum {
+
+}
+
+
+.business-info {
+
+    .business__title {
+        font-size: $h6-size + 1;
+        padding-bottom: floor($base-line-height / 6);
+        display: block;
+        a {
+            color: $business-title;
+            text-decoration: none;
+        }
+    }
+
+    .business__categories {
+        font-size: $h7-size;
+        padding-bottom: floor($base-line-height / 4);
+        a {
+            text-decoration: none;
+            border-bottom: 1px dashed $business-categories-border;
+            font-weight: 300;
+        }
+    }
+
+    .business__address {
+    	color: $business-address;
+    	font-size: $h6-size;
+    	font-style: normal;
+    }
+}

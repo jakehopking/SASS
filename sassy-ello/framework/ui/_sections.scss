@@ -7,6 +7,7 @@ $section-padding:       $base-line-height;
 
 %section-base {
     margin: 0 auto;
+    position: relative;
     // padding: $section-padding 0;
 }
 
@@ -77,6 +78,16 @@ $section-padding:       $base-line-height;
     @extend %section-hero-colour-default;
     @extend %section-hero-colour-bg-default;
     @extend %section-box-shadow-inset;
+}
+
+.middle > section.section-map {
+    @extend %section-base;
+    @extend %section-box-shadow-inset;
+    > .section-container {
+        @include media-query(portable) {
+            padding: 0;
+        }
+    }
 }
 
 .middle > section.section--collapse {

@@ -86,30 +86,30 @@
 }
 
 body .hide-me {
-    display: none;
+    display: none !important;
 }
 
 body .hide-me--palm {
     @include media-query(palm) {
-        display: none;
+        display: none !important;
     }
 }
 
 body .hide-me--portable {
     @include media-query(portable) {
-        display: none;
+        display: none !important;
     }
 }
 
 body .hide-me--lap {
     @include media-query(lap) {
-        display: none;
+        display: none !important;
     }
 }
 
 body .hide-me--desk {
     @include media-query(desk) {
-        display: none;
+        display: none !important;
     }
 }
 

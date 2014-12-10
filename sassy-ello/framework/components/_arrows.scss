@@ -11,7 +11,7 @@ $arrow:                 $arrow-size - $arrow-border;
 
 %arrow{
     position:relative;
-
+    z-index: 1;
     &:before,
     &:after{
         content:"";
@@ -135,4 +135,16 @@ $arrow:                 $arrow-size - $arrow-border;
     }
 }
 
+// %arrow-search-results {
+//     &:after {
+//         content: url('/static/css/images/arrow-chevron-right.png');
+//     }
+// }
+
+%arrow-chevron-right {
+    display: block;
+    > img {
+        width: 25px;
+    }
+}
 

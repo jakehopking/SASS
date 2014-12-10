@@ -50,7 +50,7 @@ $search-box-border:			$colour-grey;
 
 header {
     background-color: $header-bg;
-    box-shadow: 0px 10px 25px rgba($colour-charcoal, 0.6);
+    // box-shadow: 0px 10px 25px rgba($colour-charcoal, 0.6);
     .header-container {
         @extend %grid__container;
     }
