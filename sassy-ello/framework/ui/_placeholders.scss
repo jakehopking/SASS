@@ -12,6 +12,7 @@
 	margin: 0 auto;
 	max-width: $grid-container-max-width;
 	@extend %grid__container-below-max-breakpoint;
+	@extend %clear-all;
 }
 
 %default-box-shadow {

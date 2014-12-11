@@ -20,51 +20,51 @@
         <div class="network-bar-container">
             <div class="grid grid--right">
                 <div class="grid__item">
-                    <ul class="inline-list">
-                        <li><a href="#">Improve your business</a></li>
-                        <li><a href="#">Find people</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Sign up</a></li>
+                    <ul class="network-bar__list inline-list-block">
+                        <li><a href="#">Improve your business</a>
+                        <li><a href="#">Find people</a>
+                        <li><a href="#">Login</a>
+                        <li><a href="#">Sign up</a> <!-- Where are the closing '</li>'s? see base/_inline-list.scss -->
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <header>
-        <div class="header-container">
-            <div class="header-search header-search--homepage">
+        <div class="header-container header-container--homepage">
+            <div class="header-search">
                 <div class="grid">
                     <div class="grid__item one-whole">
-                        <div class="grid">
+                        <div class="grid grid--right">
                             <div class="grid__item one-whole desk--two-twelfths">
-                                <img src="assets/brand-logo.png" alt="Yellow logo">
+                                <a href="/"><img class="yellow-logo yellow-logo--large" src="/static/images/brand-logo.png" alt="Yellow logo"></a>
                             </div>
                             <div class="grid__item one-whole desk--ten-twelfths">
                                 <div class="grid">
                                     <div class="grid__item one-whole desk--ten-twelfths">
                                         <div class="grid">
-                                            <form class="" role="form">
+                                            <form id="searchbox" class="" role="form" method="post" action="/">
                                                 <div class="grid__item portable--one-whole desk--five-twelfths">
-                                                    <div class="form-group">
+                                                    <div class="form-group form-group--collapse-desktop">
                                                         <label class="sr-only" for="yellow-search-term">What are you searching for?</label>
-                                                        <input type="text" placeholder="What are you searching for?" class="form-group__item" id="yellow-search-term" placeholder="Enter email">
+                                                        <input name="what" type="text" placeholder="What are you searching for?" class="form-group__item" id="yellow-search-term" />
                                                     </div>
                                                 </div>
                                                 <div class="grid__item portable--four-sixths desk--five-twelfths">
-                                                    <div class="form-group">
+                                                    <div class="form-group form-group--collapse-desktop">
                                                         <label class="sr-only" for="yellow-search-location">Password</label>
-                                                        <input type="text" placeholder="Where area are you searching in?" class="form-group__item" id="yellow-search-location" placeholder="Password">
+                                                        <input name="where" type="text" placeholder="Where are you searching?" class="form-group__item" id="yellow-search-location" />
                                                     </div>
                                                 </div>
                                                 <div class="grid__item portable--two-sixths desk--two-twelfths">
-                                                    <button type="submit" class="button button--fill button--secondary"><i class="fa fa-search"></i></button>
+                                                    <button id="post_search" type="submit" class="button button--fill button--secondary"><i class="fa fa-search"></i></button>
                                                 </div>
                                             </form>
                                         </div> 
                                     </div>
                                     <div class="grid__item desk--two-twelfths hide-me--portable">
                                         <!-- <span class="separator-verticle separator--button">|</span>  | is placeholder -->
-                                        <button type="submit" class="button button--secondary"><i class="fa fa-navicon"></i> Browse</button>
+                                        <button type="submit" class="button button--fill button--secondary"><i class="fa fa-pad--right fa-navicon"></i> Browse Yellow</button>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
         </div>
     </header>
     <div class="middle">
-        <section class="section-hero-image" style="background-image: url('assets/hero-image-02.jpg');">
+        <section class="section-hero-image" style="background-image: url('/static/images/hero-image-02.jpg');">
             <div class="section-container">
                 
             </div>
@@ -83,122 +83,380 @@
         
         <section class="section-colour section--collapse">
             <div class="section-container">
-                <ul class="suggested-business-menu inline-list"> <!-- Tabs menu -->
-                    <li><a href="#"><i class="fa fa-coffee"></i> Cafes</a></li>  <!-- Tabs menu item -->
-                    <li><a href="#"><i class="fa fa-car"></i> Taxis</a></li>
-                    <li><a href="#"><i class="fa fa-coffee"></i> Chemists</a></li>
-                    <li><a href="#"><i class="fa fa-coffee"></i> Museums</a></li>
-                    <li><a href="#"><i class="fa fa-coffee"></i> Movers</a></li>
-                    <li><a href="#"><i class="fa fa-coffee"></i> Childcare</a>       <!-- Missing closing </li>? See base/_inline-list.scss -->
+                <ul class="suggested-business-menu tabs-menu inline-list-block"> <!-- Tabs menu -->
+                    <li><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-coffee"></i></em> Cafes</a>  <!-- Tabs menu item -->
+                    <li><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-car"></i></em> Taxis</a>
+                    <li class="hide-me--palm"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-bomb"></i></em> Chemists</a>
+                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-institution"></i></em> Museums</a>
+                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-dropbox"></i></em> Movers</a>
+                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-child"></i></em> Childcare</a> <!-- Where are the closing '</li>'s? see base/_inline-list.scss -->
                 </ul>
             </div>
         </section>
         <section class="section-colour-alt">  
-            <div class="section-container suggested-business-content"> <!-- Tabs content -->
-                <div class="grid">                                     <!-- Tabs content item -->
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            item 01 a
+            <div class="section-container suggested-business-content tabs-content"> <!-- Tabs content -->
+                <div class="grid tab-content__item">                                     <!-- Tabs content item -->
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
+                        <div class="card card-shadow-frame card--no-border card--no-margin-desk">
+                            <div class="card__section">
+                                <div class="grid">
+                                    <div class="grid__item three-tenths">
+                                        <div class="review-score">
+                                            <div class="score__number">
+                                                3.9
+                                            </div>
+                                            <div class="score__stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half"></i>
+                                            </div>
+                                            <div class="score__reviews">
+                                                <span class="score__rev iews-number">5</span> reviews
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__item seven-tenths">
+                                        <div class="business-info card--top-pad">
+                                            <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+                                            <ul class="business__categories inline-list-block delimited--bar">
+                                                <li><a href="#">Cafes</a></li>
+                                                <li><a href="#">Coffee roastery</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__section-alt card__section--image">
+                                <a href="#"><img src="/static/images/home-featured-business-01.jpg" alt=""></a>
+                            </div>
+                            <div class="card__section">
+                                <div class="grid review-feature">
+                                    <div class="grid__item three-tenths feature__user-thumb">
+                                        <img class="user-thumb-circle user-thumb--small" src="/static/images/user-thumb-01.jpg" alt="">
+                                    </div>
+                                    <div class="grid__item seven-tenths feature__content">
+                                        <div class="feature__comment">Put simply, it's the best coffee you can buy in Auckland. Superb and...</div>
+                                        <div class="feature__comment-details">
+                                            <div class="feature__comment-user"><a href="#">Robert Z</a></div>
+                                            <div class="feature__comment-score">5.0 <i class="fa fa-star"></i></div>
+                                            <div class="feature__comment-time">10 minutes ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            item 02 a
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
+                        <div class="card card-shadow-frame card--no-border card--no-margin-desk">
+                            <div class="card__section">
+                                <div class="grid">
+                                    <div class="grid__item three-tenths">
+                                        <div class="review-score">
+                                            <div class="score__number">
+                                                3.9
+                                            </div>
+                                            <div class="score__stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half"></i>
+                                            </div>
+                                            <div class="score__reviews">
+                                                <span class="score__rev iews-number">5</span> reviews
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__item seven-tenths">
+                                        <div class="business-info card--top-pad">
+                                            <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+                                            <ul class="business__categories inline-list-block delimited--bar">
+                                                <li><a href="#">Cafes</a></li>
+                                                <li><a href="#">Coffee roastery</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__section-alt card__section--image">
+                                <a href="#"><img src="/static/images/home-featured-business-02.jpg" alt=""></a>
+                            </div>
+                            <div class="card__section">
+                                <div class="grid review-feature">
+                                    <div class="grid__item three-tenths feature__user-thumb">
+                                        <img class="user-thumb-circle user-thumb--small" src="/static/images/user-thumb-01.jpg" alt="">
+                                    </div>
+                                    <div class="grid__item seven-tenths feature__content">
+                                        <div class="feature__comment">Put simply, it's the best coffee you can buy in Auckland. Superb and...</div>
+                                        <div class="feature__comment-details">
+                                            <div class="feature__comment-user"><a href="#">Robert Z</a></div>
+                                            <div class="feature__comment-score">5.0 <i class="fa fa-star"></i></div>
+                                            <div class="feature__comment-time">10 minutes ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            item 03 a
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
+                        <div class="card card-shadow-frame card--no-border card--no-margin-desk">
+                            <div class="card__section">
+                                <div class="grid">
+                                    <div class="grid__item three-tenths">
+                                        <div class="review-score">
+                                            <div class="score__number">
+                                                3.9
+                                            </div>
+                                            <div class="score__stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half"></i>
+                                            </div>
+                                            <div class="score__reviews">
+                                                <span class="score__rev iews-number">5</span> reviews
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__item seven-tenths">
+                                        <div class="business-info card--top-pad">
+                                            <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+                                            <ul class="business__categories inline-list-block delimited--bar">
+                                                <li><a href="#">Cafes</a></li>
+                                                <li><a href="#">Coffee roastery</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__section-alt card__section--image">
+                                <a href="#"><img src="/static/images/home-featured-business-03.jpg" alt=""></a>
+                            </div>
+                            <div class="card__section">
+                                <div class="grid review-feature">
+                                    <div class="grid__item three-tenths feature__user-thumb">
+                                        <img class="user-thumb-circle user-thumb--small" src="/static/images/user-thumb-01.jpg" alt="">
+                                    </div>
+                                    <div class="grid__item seven-tenths feature__content">
+                                        <div class="feature__comment">Put simply, it's the best coffee you can buy in Auckland. Superb and...</div>
+                                        <div class="feature__comment-details">
+                                            <div class="feature__comment-user"><a href="#">Robert Z</a></div>
+                                            <div class="feature__comment-score">5.0 <i class="fa fa-star"></i></div>
+                                            <div class="feature__comment-time">10 minutes ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            item 04 a
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
+                        <div class="card card-shadow-frame card--no-border card--no-margin-desk">
+                            <div class="card__section">
+                                <div class="grid">
+                                    <div class="grid__item three-tenths">
+                                        <div class="review-score">
+                                            <div class="score__number">
+                                                3.9
+                                            </div>
+                                            <div class="score__stars">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half"></i>
+                                            </div>
+                                            <div class="score__reviews">
+                                                <span class="score__rev iews-number">5</span> reviews
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__item seven-tenths">
+                                        <div class="business-info card--top-pad">
+                                            <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+                                            <ul class="business__categories inline-list-block delimited--bar">
+                                                <li><a href="#">Cafes</a></li>
+                                                <li><a href="#">Coffee roastery</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__section-alt card__section--image">
+                                <a href="#"><img src="/static/images/home-featured-business-04.jpg" alt=""></a>
+                            </div>
+                            <div class="card__section">
+                                <div class="grid review-feature">
+                                    <div class="grid__item three-tenths feature__user-thumb">
+                                        <img class="user-thumb-circle user-thumb--small" src="/static/images/user-thumb-01.jpg" alt="">
+                                    </div>
+                                    <div class="grid__item seven-tenths feature__content">
+                                        <div class="feature__comment">Put simply, it's the best coffee you can buy in Auckland. Superb and...</div>
+                                        <div class="feature__comment-details">
+                                            <div class="feature__comment-user"><a href="#">Robert Z</a></div>
+                                            <div class="feature__comment-score">5.0 <i class="fa fa-star"></i></div>
+                                            <div class="feature__comment-time">10 minutes ago</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="grid" style="display: none;">               <!-- Tabs content item -->
-                    <div class="grid__item one-whole desk--one-quarter">
+                <div class="grid tab-content__item">               <!-- Tabs content item -->
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
                         <div class="card card-shadow-frame">
                             item 01 b
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
                         <div class="card card-shadow-frame">
                             item 02 b
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
                         <div class="card card-shadow-frame">
                             item 03 b
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
+                    <div class="grid__item lap--one-half one-whole desk--one-quarter">
                         <div class="card card-shadow-frame">
                             item 04 b
                         </div>
                     </div>
                 </div>
-                <div class="grid" style="display: none;"></div>
-                <div class="grid" style="display: none;"></div>
-                <div class="grid" style="display: none;"></div>
-                <div class="grid" style="display: none;"></div>
+                <div class="grid tab-content__item"></div>
+                <div class="grid tab-content__item"></div>
+                <div class="grid tab-content__item"></div>
+                <div class="grid tab-content__item"></div>
             </div>
         </section>
         <section>  
             <div class="section-container">
             <h2>Popular articles and interviews</h2>
                 <div class="grid">
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            article
+                    <div class="grid__item one-whole lap--one-half desk--one-quarter">
+                        <div class="card card__image">
+                            <div class="article-date">
+                                <span class="date-day">5th</span>
+                                <span class="date-month">Dec</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="#">New Zealand's top 10 beaches</a>
+                            </div>
+                            <a href="#"><img src="/static/images/article-thumb-01.jpg" alt=""></a>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            article
+                    <div class="grid__item one-whole lap--one-half desk--one-quarter">
+                        <div class="card card__image">
+                            <div class="article-date">
+                                <span class="date-day">5th</span>
+                                <span class="date-month">Dec</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="#">New Zealand's top 10 beaches</a>
+                            </div>
+                            <a href="#">
+                                <img src="/static/images/article-thumb-02.jpg" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            article
+                    <div class="grid__item one-whole lap--one-half desk--one-quarter">
+                        <div class="card card__image">
+                            <div class="article-date">
+                                <span class="date-day">5th</span>
+                                <span class="date-month">Dec</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="#">New Zealand's top 10 beaches</a>
+                            </div>
+                            <a href="#">
+                                <img src="/static/images/article-thumb-03.jpg" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            article
+                    <div class="grid__item one-whole lap--one-half desk--one-quarter">
+                        <div class="card card__image">
+                            <div class="article-date">
+                                <span class="date-day">5th</span>
+                                <span class="date-month">Dec</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="#">New Zealand's top 10 beaches</a>
+                            </div>
+                            <a href="#">
+                                <img src="/static/images/article-thumb-04.jpg" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid">
                     <div class="grid__item one-whole desk--one-half">
-                        <div class="card card-shadow-frame">
-                            article
+                        <div class="card card__image">
+                            <div class="article-date">
+                                <span class="date-day">5th</span>
+                                <span class="date-month">Dec</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="#">New Zealand's top 10 beaches</a>
+                            </div>
+                            <a href="#">
+                                <img src="/static/images/article-thumb-07.jpg" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            article
+                    <div class="grid__item one-whole lap--one-half desk--one-quarter">
+                        <div class="card card__image">
+                            <div class="article-date">
+                                <span class="date-day">5th</span>
+                                <span class="date-month">Dec</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="#">New Zealand's top 10 beaches</a>
+                            </div>
+                            <a href="#">
+                                <img src="/static/images/article-thumb-05.jpg" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="grid__item one-whole desk--one-quarter">
-                        <div class="card card-shadow-frame">
-                            article
+                    <div class="grid__item one-whole lap--one-half desk--one-quarter">
+                        <div class="card card__image">
+                            <div class="article-date">
+                                <span class="date-day">5th</span>
+                                <span class="date-month">Dec</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="#">New Zealand's top 10 beaches</a>
+                            </div>
+                            <a href="#">
+                                <img src="/static/images/article-thumb-06.jpg" alt="">
+                            </a>
                         </div>
                     </div>
                 </div>
-                <hr class="rule  rule--ornament" data-ornament="X">
+                <hr class="rule rule--ornament" data-ornament="x">
             </div>
         </section>
-
-        
     </div>
     <footer>
-        <div class="footer-container">
-            footer
-        </div>
+        <section class="footer-horizon">
+            <div class="footer-horizon__image">
+                <div class="section-container">
+                    <p>Lorem ipsum dolor sit amet, <a href="#"><strong>hover me please</strong></a> elit. Vitae incidunt, nam omnis! Voluptatum nisi ducimus dolorem aperiam eveniet ipsum. Magnam inventore reiciendis sapiente laudantium atque totam aspernatur fuga quasi, eius!</p>
+                </div>
+                
+            </div>
+        </section>
+        <section class="footer-general">
+            <div class="section-container">
+                <p>blah</p>
+            </div>
+        </section>
+        <section class="footer-corporate-info">
+            <div class="section-container">
+                <p>blah</p>
+            </div>
+        </section>
     </footer>
     <!-- <script src="js/yellow.js"></script> -->
 </body>
