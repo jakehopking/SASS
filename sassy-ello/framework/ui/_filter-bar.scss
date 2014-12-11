@@ -1,0 +1,14 @@
+// FILTER BAR
+// ===============================================================================
+
+
+// Vars
+$srp-filter-bar-bg:				$colour-blue-lightest;
+
+
+.srp-filter-bar {
+    background: $srp-filter-bar-bg;
+    select {
+        display: none;
+    }
+}

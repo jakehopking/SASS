@@ -182,11 +182,16 @@ $button-rounded-radius:     $brand-button-radius;
     &[title]:after{
         content:attr(title);
         position: absolute;
-        top: $base-line-height * 1.5;
-        left: 0;
-        color: red;
-        width: 100px;
-        display: block;
+        // top: $base-line-height * 1.8;
+        // left: 0;
+        margin-left: -25%;
+        margin-top: -10%;
+        font-size: $milli-size;
+        display: table;
+        color: $button-bg;
+    }
+    .fa-2x {
+        padding-top: 11px;
     }
 }
 

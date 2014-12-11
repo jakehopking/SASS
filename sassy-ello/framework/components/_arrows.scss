@@ -141,10 +141,55 @@ $arrow:                 $arrow-size - $arrow-border;
 //     }
 // }
 
-%arrow-chevron-right {
+
+%arrow-base {
     display: block;
+}
+
+%arrow-chevron-right {
+    background-image: url(images/arrow-chevron-right-bg.png);
+}
+
+%arrow-chevron-right--platinum {
+    background-image: url(images/arrow-chevron-right-bg-platinum.png);
+}
+
+%arrow-chevron--inverted-transparency {
+    @extend %arrow-base;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 59px;
+    width: 25px;
+    background-size: 25px 59px;
+}
+
+%arrow-chevron--inverted-transparency--default-colours { // Matches default link colours
+    background-color: $colour-link;
+    @include vendor(transition, background-color 0.3s, background-color 0.3s);
+    &:hover {
+        background-color: $colour-link-hover;   
+    }
+    &:active {
+        background-color: $colour-link-active;
+        @include vendor(transition, background-color 0.05s, background-color 0.05s);
+    }
+}
+
+%arrow-chevron-img-container__img {
     > img {
         width: 25px;
     }
 }
+
+%arrow-chevron-img-container {
+    @extend %arrow-base;
+    @extend %arrow-chevron-img-container__img;
+}
+
+.arrow-chevron-right {
+    @extend %arrow-chevron--inverted-transparency;
+    @extend %arrow-chevron--inverted-transparency--default-colours;
+    @extend %arrow-chevron-right;
+}
+
 

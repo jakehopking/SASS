@@ -84,7 +84,7 @@ $pull:                  false !default;
 // github.com/csswizardry/csswizardry-grids/commit/744d4b23c9d2b77d605b5991e54a397df72e0688
 // github.com/csswizardry/inuit.css/issues/170#issuecomment-14859371
  
-$use-markup-fix:        false !default;
+// $use-markup-fix:        true !default;
 
 // If above true, then <!--  --> needs to be placed after each grid__item
 
@@ -142,9 +142,9 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
         }
     }
 
-    @if not $breakpoint-found {
-        @warn "Breakpoint ‘#{$media-query}’ does not exist";
-    }
+    // @if not $breakpoint-found {
+    //     @warn "Breakpoint ‘#{$media-query}’ does not exist";
+    // }
 }
 
 
@@ -168,18 +168,27 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     margin:0;                       /* [2] */
     padding:0;                      /* [2] */
     margin-left:-$gutter;           /* [3] */
-    @if not $use-markup-fix {
-        letter-spacing:-0.31em;
-    }
+    @extend %clear-all;             /* [4] */ // Uses %clear-all silent class to clear the grid.
+    // @if not $use-markup-fix {
+    //     letter-spacing:-0.25em;
+    // }
 }
 
-@if not $use-markup-fix {
-    /* Opera hack */
-    .opera:-o-prefocus,
-    #{$class-type}grid {
-        word-spacing:-0.43em;
-    }
-}
+// @if not $use-markup-fix {
+//     @-moz-document url-prefix() { 
+//         #{$class-type}grid {
+//             letter-spacing:-0.25em;
+//         }
+//     }
+// }
+
+// @if not $use-markup-fix {
+//     /* Opera hack */
+//     .opera:-o-prefocus,
+//     #{$class-type}grid {
+//         word-spacing:-0.43em;
+//     }
+// }
 
     // 1. Cause columns to stack side-by-side.
     // 2. Space columns apart.
@@ -188,7 +197,8 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     // 5. Required to combine fluid widths and fixed gutters.
      
     #{$class-type}grid__item {
-        display:inline-block;           /* [1] */
+        // display:inline-block;           /* [1] */
+        float: left;                    /* [1] */ // Float grid item left (I prefer this over markup or negative letter-spacing hack)
         padding-left:$gutter;           /* [2] */
         vertical-align:top;             /* [3] */
         @if $mobile-first {
@@ -197,10 +207,10 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
         -webkit-box-sizing:border-box;  /* [5] */
            -moz-box-sizing:border-box;  /* [5] */
                 box-sizing:border-box;  /* [5] */
-        @if not $use-markup-fix {
-            letter-spacing:normal;
-            word-spacing:normal;
-        }
+        // @if not $use-markup-fix {
+        //     letter-spacing:normal;
+        //     word-spacing:normal;
+        // }
     }
 
 
@@ -213,6 +223,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
     > #{$class-type}grid__item {
         direction:ltr;
         text-align:left;
+        float: right; // Float right so can order grid__items in opposite order (perfect for presentational over informational hierarchy)
     }
 }
 
@@ -241,12 +252,18 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
 
 
 // Centered grids align grid items centrally without needing to use push or pull classes. Extends `.grid`.
+
+// !! Centered grids use the hacky inline-block and negative letter spacing.
  
 #{$class-type}grid--center {
-    text-align:center;
+    text-align:center; 
+    letter-spacing: -0.25em;    // Letter spacing hack
 
     > #{$class-type}grid__item {
         text-align:left;
+        letter-spacing: 0;      // Undo above inheritance
+        float: none;            // Override default grid floats
+        display: inline-block;
     }
 }
 
@@ -293,7 +310,7 @@ $class-type: if($use-silent-classes, unquote("%"), unquote("."));
 
 
 
-// WIDTHS
+// WIDTHS - INTENDED TO BE USED INDEPENDENT OF THE GRID IF NEEDED. USE THESE ANYWHERE.
 // ------------------------------------
 // Create our width classes, prefixed by the specified namespace.
  

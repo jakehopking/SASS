@@ -55,7 +55,7 @@ $fa-outline-large:			45px;
 }
 
 a {
-	@include vendor(transition, color 0.3s, color 0.3s );
+	@include vendor(transition, color 0.3s, color 0.3s);
 	text-decoration: none;
 	color: $colour-link;
 	&:hover {

@@ -17,7 +17,7 @@ $review-feature-time:           $colour-grey-light;
 %review-score-common {
     text-align: center;
     background-color: $review-score-box-bg;
-    border-right: 1px solid $card-title-border-default;
+    border-right: 1px solid $review-feature-cont-border;
 }
 %review-star-colour {
     color: $review-star-colour;
@@ -49,7 +49,7 @@ $review-feature-time:           $colour-grey-light;
     .feature__user-thumb {
         text-align: center;
         img {
-            margin-left: -22px; // Accouts for quote negative position.
+            margin-left: -22px; // Accouts for negative position of quotation mark.
         }
     }
 
