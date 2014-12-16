@@ -5,13 +5,12 @@
 $results-item-patinum-bg:				$colour-blue-lightest;
 $business-title:	                    $colour-black;
 $business-address:	                    $colour-black;
-$business-categories-border:			$colour-grey;
+$business-categories-border:            $colour-grey;
+$business-info-grey-bg:			        $colour-grey-lightest;
 
-.item--platinum {
-
-}
-
-
+.business-info.grey-bg {
+    background: $business-info-grey-bg;
+}  
 .business-info {
 
     .business__title {

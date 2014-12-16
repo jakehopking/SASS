@@ -3,6 +3,7 @@
 
 // Vars
 
+$footer-padding:                    $base-line-height;
 $footer-general-bg:                 $colour-grey;
 $footer-coporate-bg:                $colour-grey-darker;
 $footer-text:                       $colour-white;
@@ -36,4 +37,9 @@ footer section.footer-general {
 footer section.footer-corporate-info {
     background-color: $footer-coporate-bg;
     color: $footer-text;
+    padding: $footer-padding 0;
+}
+
+.footer-copy {
+    font-size: $milli-size;
 }

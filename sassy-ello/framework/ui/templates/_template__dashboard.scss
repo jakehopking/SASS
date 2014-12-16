@@ -1,0 +1,132 @@
+// DASHBOARD TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+$user-info-color: 				$colour-grey-darker;
+$user-name-color: 				$colour-charcoal;
+$user-image-padding: 			14px;
+$dashboard-menu-colour: 		$colour-grey-light;
+$menu-item-border-colour: 		$colour-grey-lighter;
+$user-stats-padding: 			$base-line-height/2;
+$photo-list-padding:			$base-line-height;
+$photo-item-padding:			$base-line-height;
+$businesses-title-padding:		$base-line-height;
+$favourites-margin-bottom: 		$base-line-height/2;
+
+//User details
+.user-details {
+	.user__image {
+		padding: $user-image-padding;
+	}
+
+	.user__name {
+		font-size: $h5-size; 
+		font-weight: bold;
+		color: $user-name-color;
+	}
+	.user__region {
+		font-size: $h6-size; 
+		font-weight: bold;
+		color: $user-info-color
+	}
+	.user__membership {
+		font-size: $h7-size; 
+		color: $user-info-color;
+		margin-top: 4px;
+	}
+}
+%user-stats-padding {
+	padding: $user-stats-padding;
+}
+
+//Photo list
+.photo__list {
+	padding-top: $photo-list-padding;
+	.photo__item {
+		padding-bottom:	$photo-item-padding;
+	}
+}
+
+//Businesses
+.dashboard-businesses {
+	.businesses__title {
+		padding-bottom: $businesses-title-padding;
+	}
+}
+
+//Favourties
+
+.dashboard-favourites {
+	.favourites__title {
+		margin-bottom: $favourites-margin-bottom;
+	}
+	.recent-favourites {
+		h6 {
+			margin-bottom: $favourites-margin-bottom;
+		}
+	}
+}
+//User photos, ratings, listings, likes
+.user-stats {
+	color: $colour-white;
+	.user-stats__ratings {
+		background:  $colour-orange;
+		@extend %user-stats-padding;
+	}
+	.user-stats__photos {
+		background:  $colour-orange-darkest;
+		@extend %user-stats-padding;
+	}
+	.user-stats__lists {
+		background:  $colour-blue-java;
+		@extend %user-stats-padding;
+	}
+	.user-stats__likes {
+		background:  $colour-blue-bondi;
+		@extend %user-stats-padding;
+	}
+}
+
+//Old favourite in favourites section
+.old-favourites {
+	h6 {
+		border-bottom: 1px solid $card-title-border-default;
+		padding-bottom: 10px;
+		margin-bottom: 0px;
+	}
+	.old-favourite__list {
+		border-bottom: 1px solid $card-title-border-default;
+		padding: 4px;
+	}
+}
+
+//Dashboard menu
+.dashboard-menu-items {
+	margin-left: 0px;
+	margin: 20px;
+	border-top: 1px solid $menu-item-border-colour;
+	li {
+		list-style-type: none;
+		margin-left:0px;	
+		a {
+			display: block;
+			padding: 7px;
+			color: $dashboard-menu-colour;
+			&.active {
+				color: $colour-black;
+			}
+			&:hover {
+				color: $colour-black;
+			}
+		}
+	}
+	>li {
+		ul {
+			margin-left: 20px;
+		}
+		>a {
+			border-bottom: 1px solid $menu-item-border-colour;
+		}
+	}
+}

@@ -3,13 +3,25 @@
 
 // A bunch of helper classes to use arbitrarily.
 
-
+.no--background {
+    background: none !important;
+}
 // Add/remove floats
  
 .float--right   { float:right!important; }
 .float--left    { float:left !important; }
 .float--none    { float:none !important; }
 
+
+//Text color
+
+.colour-grey {
+    color: $colour-grey;
+}
+
+.colour-grey-light {
+    color: $colour-grey-light;
+}
 
 // Text alignment
  
@@ -27,6 +39,15 @@
 .push--left     { margin-left:  $base-spacing-unit!important; }
 .push--ends     { margin-top:   $base-spacing-unit!important; margin-bottom:$base-spacing-unit!important; }
 .push--sides    { margin-right: $base-spacing-unit!important; margin-left:  $base-spacing-unit!important; }
+
+.pull           { margin:       -$base-spacing-unit!important; }
+.pull--top      { margin-top:   -$base-spacing-unit!important; }
+.pull--right    { margin-right: -$base-spacing-unit!important; }
+.pull--bottom   { margin-bottom:-$base-spacing-unit!important; }
+.pull--left     { margin-left:  -$base-spacing-unit!important; }
+.pull--ends     { margin-top:   -$base-spacing-unit!important; margin-bottom: -$base-spacing-unit!important; }
+.pull--sides    { margin-right: -$base-spacing-unit!important; margin-left:  -$base-spacing-unit!important; }
+
 
 .push-half          { margin:       $half-spacing-unit!important; }
 .push-half--top     { margin-top:   $half-spacing-unit!important; }

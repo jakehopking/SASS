@@ -1,0 +1,24 @@
+// NOTIFICATION BAR
+// ===============================================================================
+
+
+.notification-message {
+
+    background: $colour-blue;
+    color:      $colour-white;
+    cursor:     pointer;
+    text-align: center;
+    padding:    5px;
+    display:    none;
+
+    &:hover {
+        background: $colour-blue-darker;
+    }
+
+    &.error {
+        background:  $colour-orange-darker;
+        &:hover {
+            background: $colour-orange-darkest;
+        }
+    }
+}

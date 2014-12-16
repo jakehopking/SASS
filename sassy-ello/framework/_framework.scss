@@ -56,6 +56,7 @@
 @import "components/slider";
 @import "components/maps";
 @import "components/tabs";
+@import "components/select-proxy";
 
 
 // Helpers and debug layer
@@ -72,12 +73,14 @@
 @import "ui/body";
 @import "ui/cards";
 @import "ui/header";
+@import "ui/mobile-menu";
 @import "ui/middle";
 @import "ui/sections";
 @import "ui/reviews";
 @import "ui/results";
 @import "ui/footer";
 @import "ui/filter-bar";
+@import "ui/notification-bar";
 
 @import "fonts/font-awesome";
 @import "fonts/font-roboto";

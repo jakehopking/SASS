@@ -4,7 +4,7 @@
 $button-transition:         $transition;
 $button-radius-default:     $brand-round;
 $button-rounded-radius:     $brand-button-radius;
-
+$button-half-padding:       $base-line-height/2;
 .button{
     display: inline-block;
     vertical-align: middle;     
@@ -27,6 +27,21 @@ $button-rounded-radius:     $brand-button-radius;
     @include vendor(transition, $button-transition);
     &:hover {
         background-color: darken($button-bg, 10%);
+    }
+}
+.button-with__icon {
+    padding: 6px 0 5px 0;
+    text-align: left !important;
+    position: relative;
+    i {
+        background-color:rgba(51, 152, 222, 0.6);
+        margin: -1px;
+        padding:14px 5px;
+        width: 2em;
+        text-align: center;
+        position: absolute;
+        right: 0;
+        top: 0;
     }
 }
 
@@ -71,6 +86,9 @@ $button-rounded-radius:     $brand-button-radius;
     + .button--fill {
         margin-top: 2px;
     }
+}
+.button--padding-left {
+    padding-left: $button-half-padding;
 }
 
 // Font sizes
@@ -346,4 +364,19 @@ $button-rounded-radius:     $brand-button-radius;
             pointer-events: none;
         }
     }
+}
+
+
+// Social media buttons
+
+.button--facebook {
+    @extend .button;
+    @extend .button--fill;
+    background-color: $facebook;
+}
+
+.button--google {
+    @extend .button;
+    @extend .button--fill;
+    background-color: $google-plus;
 }

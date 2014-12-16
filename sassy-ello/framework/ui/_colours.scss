@@ -4,6 +4,7 @@
 // Some colours get their 'creative' names from here: http://chir.ag/projects/name-that-color/
 
 $colour-black:                  #000;
+$colour-black-transparent:      rgba(0, 0, 0, 0.3);
 $colour-charcoal:               #262626;
 
 $colour-blue:                   #007ed6;
@@ -42,6 +43,7 @@ $colour-orange-tango:           #ec6f29; // Dashboard profile colour
 $colour-red-google-plus:        #DD4B39; // Social colour
 
 $colour-white:                  #fff;
+$colour-white-transparent:      rgba(255, 255, 255, 0.7);
 
 $colour-yellow:                 #fff200;
 $colour-yellow-lighter:         #fff988;
@@ -49,6 +51,9 @@ $colour-yellow-lightest:        #fffdd2;
 $colour-yellow-darker:          #e4d800;
 $colour-yellow-darkest:         #aba200;
 
+$colour-grey:                   #666;
+$colour-grey-light:             #bbb;
+$colour-grey-lighter:           #ddd;
 
 // Semantic colour variables
 // ===============================================================================
@@ -62,6 +67,8 @@ $colour-link:                   $colour-blue;
 $colour-link-hover:             $colour-blue-darker;
 $colour-link-active:            $colour-orange;
 
+$colour-red-link: 				#ae0000;
+$colour-red-link-hover: 		#5d0000;
 $colour-disabled-bg:            #ddd;
 $colour-disabled:               #777;
 
@@ -93,13 +100,7 @@ $section-bg-alt:                $colour-grey-light-alt;
 $section-border-alt:            $colour-grey-light;
 
 // Cards
-$card-background-default:       $colour-white;
-$card-title-background-default: $colour-grey-lighter;
-$card-title-border-default:     $colour-grey-light-alt;
-$card-title-colour-default:     $colour-charcoal;
-$card-border-colour-default:    $colour-white;
-$card-section-bg-default:       $colour-grey-lightest;
-$card-section-border-default:   $colour-grey-light-alt;
+// Moved vars to _cards.scss
 
 // Highlights
 

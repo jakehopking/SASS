@@ -13,6 +13,9 @@ $review-quote-colour:           $colour-blue;
 $review-feature-cont-border:    $card-title-border-default;
 $review-feature-cont-bor-width: 3px;
 $review-feature-time:           $colour-grey-light;
+$yes-no-color:                  $colour-blue;
+$review-feature-heading-margin: -20px;
+$review-actions-margin-left:    $base-line-height/2;
 
 %review-score-common {
     text-align: center;
@@ -22,7 +25,6 @@ $review-feature-time:           $colour-grey-light;
 %review-star-colour {
     color: $review-star-colour;
 }
-
 .review-score {
     @extend %review-score-common;
 
@@ -45,6 +47,9 @@ $review-feature-time:           $colour-grey-light;
 
 
 .review-feature {
+    h5 {
+        margin-left: $review-feature-heading-margin;
+    }
     padding: $review-padding / 2;
     .feature__user-thumb {
         text-align: center;
@@ -70,6 +75,9 @@ $review-feature-time:           $colour-grey-light;
         .feature__comment {
             font-size: $milli-size;
         }
+        .feature__comment.normal--size {
+            font-size: 0.85em;
+        }
 
         .feature__comment-details {
             > div {
@@ -90,4 +98,34 @@ $review-feature-time:           $colour-grey-light;
             }
         }
     }    
+}
+%review-actions-margin-left {
+    margin-left: $review-actions-margin-left;
+}
+.review-actions {
+    background: #F0F0F0;
+    padding: 3px 10px;
+    a.edit {
+        @extend %review-actions-margin-left;
+    }
+    a.remove {
+        @extend %review-actions-margin-left;
+    }
+}
+.rating {
+    padding: 20px;
+    font-size: 0.9em;
+    h6 {
+        margin-bottom: 0px;
+        font-size: 1em;
+    }
+    div {
+        margin-bottom: 10px;
+        span {
+            color: $yes-no-color;
+        }
+        .rating__value {
+            color: $colour-grey;
+        }
+    }
 }

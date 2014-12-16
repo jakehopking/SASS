@@ -3,13 +3,22 @@
 
 // Vars
 $image-background-default: 				$colour-white;
+$image-background-black: 				$colour-black;
+$image-background-brand: 				$brand-primary;
 $image-padding:							$base-line-height / 5;
 $image-radius-circle:					300px;
 $image-thumb-small:						30px;
 $image-thumb-medium:					40px;
 $image-thumb-large:						50px;
-$image-thumb-v-large:					60px;
+$image-thumb-x-large:					60px;
+$image-thumb-x2-large:					70px;
+$image-thumb-x3-large:					80px;
 
+
+%image-thumbnail-base {
+	vertical-align: middle;
+	display: inline-block;
+}
 
 // User thumbnail images
 %image-with-borders-or-backgrounds {
@@ -24,15 +33,36 @@ $image-thumb-v-large:					60px;
 	padding: $image-padding;
 }
 
+%image-with-thin-padding { // Used when modifiying border colours (want single colour rather than multiple)
+	padding: $image-padding - 1;
+}
+
 %image-circular {
 	border-radius: $image-radius-circle;
 }
 
 .user-thumb-circle {
+	@extend %image-thumbnail-base;
 	@extend %image-circular;
 	@extend %image-with-borders-or-backgrounds;
 	@extend %image-with-with-default-border;
 	@extend %image-with-default-padding;
+}
+.image-thumb-square {
+	@extend %image-with-borders-or-backgrounds;
+	@extend %image-with-with-default-border;
+	@extend %image-with-default-padding;
+}
+.user-thumb--black {
+	@extend %image-with-thin-padding;
+	background-color: $image-background-black;
+	border-color: $image-background-black;
+}
+
+.user-thumb--brand {
+	@extend %image-with-thin-padding;
+	background-color: $image-background-brand;
+	border-color: $image-background-brand;
 }
 
 .user-thumb--small {
@@ -50,6 +80,11 @@ $image-thumb-v-large:					60px;
 	width: $image-thumb-large;
 	height: $image-thumb-large;
 	padding: $image-padding + 1;
+}
+.user-thumb--x3-large {
+	width: $image-thumb-x3-large;
+	height: $image-thumb-x3-large;
+	padding: $image-padding;
 }
 
 // Image div containers
@@ -89,6 +124,24 @@ $image-thumb-v-large:					60px;
 
 .image-container-background-linked {
 	@extend %image-container-with-background-image-linked-anchor;
+}
+
+
+.yellow-logo {
+	@include media-query(desk) {
+		
+	}
+}
+
+.yellow-logo--header {
+	max-height: 40px;
+	margin-bottom: -8px;
+}
+
+.yellow-logo--footer {
+	max-height: 24px;
+	margin-bottom: -4px;
+	margin-right: $base-line-height / 2;
 }
 
 

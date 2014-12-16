@@ -19,6 +19,9 @@ h5,.epsilon{
 h6,.zeta{
     @include font-size($h6-size);
 }
+.eta {
+    @include font-size($h7-size);
+}
 
 
 // Heading groups and generic any-heading class.

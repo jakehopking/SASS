@@ -4,7 +4,7 @@
 $debug-mode:                false;
 $global-border-box:         true;
 
-$in-development:         	true; // True to enable global in-development overrides.
+$in-development:            true; // True to enable global in-development overrides.
 
 
 // BASE
@@ -38,7 +38,7 @@ $path-fonts-fa:             "fonts/font-awesome";
 $font-face-default:         "Roboto", sans-serif;
 $font-face-condensed:       "Roboto Condensed", sans-serif;
 $font-face-serif:           "Roboto Slab", serif;
-$font-face-fa:         		"FontAwesome";
+$font-face-fa:              "FontAwesome";
 
 $font-weight-bold:          700;
 $font-weight-regular:       400;
@@ -114,5 +114,6 @@ $section-bg:                #fff;
 $section-hero-height:       250px;
 $section-hero-bg:           $colour-grey;
 $transition:                all 0.3s ease-in-out;
+$border-thick:              3px;
 
 

@@ -1,0 +1,99 @@
+// MOBILE MENU
+// ===============================================================================
+
+
+// Vars
+$mobile-menu-padding:			$base-line-height;
+$mobile-menu-width:				290px;
+$mobile-menu-width-shadow:		30px; // Used to offset shadow (so doesn't bleed onto the page when hidden)
+$mobile-menu-transition:		all 0.5s;
+$mobile-menu-bg:				$colour-grey-darker;
+$mobile-menu-bg-hover:			$colour-charcoal;
+$mobile-menu-colour:			$colour-white;
+$mobile-menu-colour-hover:		$brand-primary;
+$mobile-menu-border:			#222;
+$mobile-menu__header-bg:		$colour-charcoal;
+
+
+
+nav.mobile-menu {
+    position: fixed;
+    z-index: 300;
+    overflow: hidden;
+    top: 0;
+    width: $mobile-menu-width;
+    height: 100%;
+    background-color: $mobile-menu-bg;
+    transition: $mobile-menu-transition;
+}
+
+// Mobile menu list
+nav.mobile-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: $mobile-menu-colour;
+    border-top-color: transparent;
+    height: 100%;
+    overflow-x: auto;
+    li {
+    	border-color: $mobile-menu-border;
+    	padding: 0;
+    	a {
+			color: $mobile-menu-colour;
+	    	padding: $mobile-menu-padding;
+			display: block;
+			transition: background-color 0.3s;
+			&:hover {
+				color: $mobile-menu-colour-hover;
+				background-color: $mobile-menu-bg-hover;
+			}
+    	}
+    }
+}
+
+// Mobile menu logged-in state
+.mobile-menu__user-logged-in {
+	a {
+		.user-thumb-circle {
+			margin-right: $mobile-menu-padding / 2;
+		}
+		strong {
+
+		}
+		i.fa {
+			float: right;
+		}
+	}
+}
+
+// Top of the menu (header area - contains the navicon).
+.mobile-menu {
+	.mobile-menu__header {
+		// padding: $mobile-menu-padding;
+		background-color: $mobile-menu__header-bg;
+		text-align: right;
+		a {
+			
+		}
+	}
+}
+
+// Side modifiers
+nav.mobile-menu--right {
+    // right: 0px;
+    right: -$mobile-menu-width - $mobile-menu-width-shadow;
+    box-shadow: -5px 0px $mobile-menu-width-shadow rgba(0,0,0,0.2);
+    &.open {
+        right: 0px;
+    }
+}
+
+nav.mobile-menu--left {
+    // right: 0px;
+    left: -$mobile-menu-width - $mobile-menu-width-shadow;
+    box-shadow: 5px 0px $mobile-menu-width-shadow rgba(0,0,0,0.2);
+    &.open {
+        left: 0px;
+    }
+}

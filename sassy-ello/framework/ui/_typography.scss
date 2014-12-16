@@ -3,151 +3,168 @@
 
 // Vars
 
-$fa-padding:				$base-line-height;
-$fa-outline:				3px;
-$fa-outline-brand:			$brand-primary;
-$fa-outline-radius:			$brand-button-radius;
-$fa-outline-radius-ring:	100px;
-$fa-outline-small:			25px;
-$fa-outline-medium:			35px;
-$fa-outline-large:			45px;
+$fa-padding:                    $base-line-height;
+$fa-outline:                    3px;
+$fa-outline-brand:              $brand-primary;
+$fa-outline-radius:             $brand-button-radius;
+$fa-outline-radius-ring:        100px;
+$fa-outline-small:              25px;
+$fa-outline-medium:             35px;
+$fa-outline-large:              45px;
 
 
 // Links
 
 // Default link transition
 %link-animantion-base {
-	padding: 1px 0;
-	position: relative;
-	outline: none;
-	display: inline-block;
-	text-decoration: none;
-	text-transform: none;
-	// letter-spacing: 1px;
+    padding: 1px 0;
+    position: relative;
+    outline: none;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: none;
+    // letter-spacing: 1px;
 }
 
 %link-animantion-hover {
-	outline: none;
+    outline: none;
 }
 
 %link-animantion-active {
-	@include vendor(transition, color 0.05s, color 0.05s);
+    @include vendor(transition, color 0.05s, color 0.05s);
 }
 
 %link-animantion__after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	content: '';
-	opacity: 0;
-	@include vendor(transition, opacity 0.3s, transform 0.3s);
-	@include vendor(transform, translateY(4px));
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    content: '';
+    opacity: 0;
+    @include vendor(transition, opacity 0.3s, transform 0.3s);
+    @include vendor(transform, translateY(4px));
 }
 
 %link-animantion__after-hover {
-	opacity: 0.9;
-	@include vendor(transform, translateY(0px));
+    opacity: 0.9;
+    @include vendor(transform, translateY(0px));
 }
 
 %link-animantion__after-active {
-	@extend %link-animantion-active;
+    @extend %link-animantion-active;
 }
 
 a {
+    @include vendor(transition, color 0.3s, color 0.3s);
+    text-decoration: none;
+    color: $colour-link;
+    &:hover {
+        color: $colour-link-hover;
+    }
+}
+a.link--red {
 	@include vendor(transition, color 0.3s, color 0.3s);
 	text-decoration: none;
-	color: $colour-link;
+	color: $colour-red-link;
 	&:hover {
-		color: $colour-link-hover;
+		color: $colour-red-link-hover;
 	}
 }
 
-
 // Completed default link transition placeholder class.
 %link-transition {
-	color: $colour-link;
-	@extend %link-animantion-base;
-	&:hover, &:focus {
-		color: $colour-link-hover;
-		@extend %link-animantion-hover;
-		&::after {
-			@extend %link-animantion__after-hover;
-		}
-	}
-	&:active {
-		color: $colour-link-active;
-		@extend %link-animantion-active;
-		&::after {
-			background-color: $colour-link-active; // Line colour active
-			@extend %link-animantion__after-active;
-		}
-	}
-	&::after {
-		background-color: $colour-link-hover; 	// Line colour
-		height: 1px;							// Line thickness
-		@extend %link-animantion__after;
-	}
+    color: $colour-link;
+    @extend %link-animantion-base;
+    &:hover, &:focus {
+        color: $colour-link-hover;
+        @extend %link-animantion-hover;
+        &::after {
+            @extend %link-animantion__after-hover;
+        }
+    }
+    &:active {
+        color: $colour-link-active;
+        @extend %link-animantion-active;
+        &::after {
+            background-color: $colour-link-active; // Line colour active
+            @extend %link-animantion__after-active;
+        }
+    }
+    &::after {
+        background-color: $colour-link-hover;   // Line colour
+        height: 1px;                            // Line thickness
+        @extend %link-animantion__after;
+    }
 }
 
 // Paragraph links
 
 p a:not(.button) { // :not prevents this styling being applied to the inline buttons.
-	@extend %link-transition;
+    @extend %link-transition;
 }
 
 
 // Icons
 
 .fa-pad--right {
-	padding-right: $fa-padding / 4;
+    padding-right: $fa-padding / 4;
 }
 
 .fa-pad--left {
-	padding-left: $fa-padding / 4;
+    padding-left: $fa-padding / 4;
 }
 
 .fa-outline {
-	vertical-align: middle;
-	display: inline-block;
-	position: relative;
-	margin-right: $fa-padding / 3;
-	border-width: $fa-outline;
-	border-style: solid;
-	border-color: transparent;
-	> .fa {
-		position: absolute;
-		top: 30%;
-		left: 25%;
-	}
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    margin-right: $fa-padding / 3;
+    border-width: $fa-outline;
+    border-style: solid;
+    border-color: transparent;
+    > .fa {
+        position: absolute;
+        top: 30%;
+        left: 25%;
+    }
 }
 
 %fa-outline--ring {
-	border-radius: $fa-outline-radius-ring;
+    border-radius: $fa-outline-radius-ring;
 }
 
 .fa-outline--ring {
-	@extend %fa-outline--ring;
-	width: $fa-outline-medium;
-	height: $fa-outline-medium;
+    @extend %fa-outline--ring;
+    width: $fa-outline-medium;
+    height: $fa-outline-medium;
 }
 
 .fa-outline--ring-small {
-	@extend %fa-outline--ring;
-	width: $fa-outline-small;
-	height: $fa-outline-small;
+    @extend %fa-outline--ring;
+    width: $fa-outline-small;
+    height: $fa-outline-small;
 }
 
 .fa-outline--ring-large {
-	@extend %fa-outline--ring;
-	width: $fa-outline-large;
-	height: $fa-outline-large;
+    @extend %fa-outline--ring;
+    width: $fa-outline-large;
+    height: $fa-outline-large;
 }
 
 .fa-outline--radius {
-	border-radius: $fa-outline-radius;
+    border-radius: $fa-outline-radius;
 }
 
 .fa-outline--brand {
-	border-color: $fa-outline-brand;
+    border-color: $fa-outline-brand;
+}
+
+// layout
+
+.text-centre {
+    text-align: center;
+}
+
+.app-data {
+    display: none;
 }

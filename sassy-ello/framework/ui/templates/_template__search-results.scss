@@ -6,6 +6,7 @@
 $search-results-padding:                $base-line-height;
 $search-results-container:              $colour-white;
 $search-results-container-shadow:       0px 2px 3px $colour-box-shadow;
+$search-results-container-border:       1px solid rgba($colour-box-shadow, 0.8);
 $search-results-container-opacity:      0.7;
 $search-item-height-desktop:            86px;
 $search-item-height-mobile:             $search-item-height-desktop - 20;
@@ -29,7 +30,7 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
 
 // Search results container
 .search-results-container {
-    position: absolute;
+    position: relative;
     top: 0px;
     width: 100%;
     max-width: $breakpoint-desk; // Same as desktop breakpoint (full width until desktop kicks in).
@@ -37,10 +38,14 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
     z-index: 200;
     background: $search-results-container;
     @include media-query(desk) { // Desktop breakpoint shows the map
+        position: absolute;
         width: 62%;
         height: 1000px;
         background: rgba($search-results-container, $search-results-container-opacity);
-        box-shadow: $search-results-container-shadow;
+        // box-shadow: $search-results-container-shadow;
+        border-left: $search-results-container-border;
+        border-right: $search-results-container-border;
+        margin-left: -1px;
     }
 }
 

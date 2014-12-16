@@ -1,0 +1,76 @@
+// SIGNUP PAGE TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+
+
+
+.section-signup {
+    background: $colour-white;
+    @include media-query(desk) {
+        background: url('/static/images/hand-phone.jpg') no-repeat center center fixed; 
+        @include vendor(background-size, cover);
+    }
+}
+
+.signup {
+
+    max-width:  700px;
+    margin:     0px auto;
+    padding:    75px 0px;
+
+    h1 {
+        font-size:      2em;
+        text-align:     center;
+        padding-bottom: 15px;
+    }
+
+    form {
+        background: $colour-white;
+        background: $colour-white-transparent;
+    }
+
+    fieldset {
+        max-width:  350px;
+        margin:     0px auto;
+        padding:    25px 0px;
+        display:    block;
+    }
+
+    .sub {
+        @extend     .text-centre;
+        color:      $colour-grey;
+        font-size:  0.8em;
+    }
+
+    .cta {
+        @extend     .text-centre;
+        font-weight: bold;
+    }
+
+    .checkbox label {
+        font-size:  0.9em;
+    }
+
+    .divider-dotted {
+        border-top: 1px dashed $colour-grey-lighter;
+        text-align: center;
+        b {
+            background:     $colour-grey-light;
+            color:          $colour-white;
+            border-radius:  20px;
+            padding:        10px;
+            top:            -10px;
+            position:       relative;
+        }
+    }
+
+    @include media-query(desk) {
+        form {
+            border:     1px solid $colour-white;
+            box-shadow: 0px 0px 2px $colour-black-transparent;
+        }
+    }
+}
+

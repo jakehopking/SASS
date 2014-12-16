@@ -3,4 +3,25 @@
 
 
 // Vars
+$dlp-section-height-top:            275px; // Top section min-height (map and business-detail equal)
 
+
+
+.dlp-business-detail {
+    .dlp-business-image {
+        > .card {
+            @include media-query(desk) {
+                min-height: $dlp-section-height-top;
+            }
+        }
+    }
+}
+
+.dlp-map {
+    .embed-container {
+        height: 200px;
+        @include media-query(desk) {
+            min-height: $dlp-section-height-top - ($border-thick * 2); // minus the thick border
+        }
+    }
+}

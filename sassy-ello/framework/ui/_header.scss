@@ -5,12 +5,16 @@
 
 $header-padding: 			$base-line-height;
 $header-bg:                 $brand-primary;
+$header-border-bottom:      $colour-grey-light;
 $network-bar-bg:            $colour-grey;
 $network-bar-border:        $colour-charcoal;
 $network-bar-link:			$colour-white;
 $network-bar-list-bg:		$colour-grey-darker;
 $network-bar-font-size:		$base-font-size - 2;
 $search-box-border:			$colour-grey;
+$header-menu-colour:		$colour-black;
+$header-menu-colour-hover:	$colour-charcoal;
+
 
 %header-interaction-elements {
 	min-height: 36px;
@@ -51,6 +55,7 @@ $search-box-border:			$colour-grey;
 header {
     background-color: $header-bg;
     box-shadow: 0px 3px 5px rgba($colour-charcoal, 0.15);
+    border-bottom: 1px solid $header-border-bottom;
     .header-container {
         @extend %grid__container;
     }
@@ -58,6 +63,19 @@ header {
 
 .header-search {
     padding: ($header-padding / 1.25) (0);
+    @include media-query(portable) {
+    	.grid {
+    		margin-left: -($gutter / 2);
+    		.grid__item {
+    			padding-left: $gutter / 2;
+    		}
+    	}
+    }
+    .form-group {
+    	@include media-query(portable) {
+			margin-bottom: 0;
+		}
+    }
     .form-group__item {
 		@extend %header-interaction-elements;
 		border-color: $search-box-border;
@@ -67,14 +85,31 @@ header {
     }
 }
 
-.header-container.header-container--homepage {
+.header-search {
+	@include media-query(portable) {
+		.header-search__where-and-button {
+			margin-top: $gutter / 2;
+		}
+	}
 }
 
-.yellow-logo {
-	max-height: 40px;
-	margin-bottom: $header-padding;
-	@include media-query(desk) {
-		margin-bottom: -4px;
+.header-container.header-container--homepage {
+
+}
+
+span.twitter-typeahead {
+    width:100%;
+}
+
+.header-menu {
+	text-align: right;
+	a {
+		margin-top: 4px;
+		display: block;
+		color: $header-menu-colour;
+		&:hover {
+			color: $header-menu-colour-hover;
+		}
 	}
 }
 
