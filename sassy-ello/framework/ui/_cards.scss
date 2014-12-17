@@ -254,6 +254,12 @@ $card-image-text:               $colour-white;
     }
 }
 
+.card--no-padding-palm {
+    @include media-query(palm) {
+        padding: 0;
+    }
+}
+
 .card--vertical-pad {
     padding: $card-padding 0px;
 }

@@ -41,47 +41,56 @@ $image-thumb-x3-large:					80px;
 	border-radius: $image-radius-circle;
 }
 
-.user-thumb-circle {
+// .image-thumb-circle {
+// 	@extend %image-thumbnail-base;
+// 	@extend %image-circular;
+// 	@extend %image-with-borders-or-backgrounds;
+// 	@extend %image-with-with-default-border;
+// 	@extend %image-with-default-padding;
+// }
+
+.image-thumb-circle {
 	@extend %image-thumbnail-base;
 	@extend %image-circular;
 	@extend %image-with-borders-or-backgrounds;
 	@extend %image-with-with-default-border;
 	@extend %image-with-default-padding;
 }
+
 .image-thumb-square {
 	@extend %image-with-borders-or-backgrounds;
 	@extend %image-with-with-default-border;
 	@extend %image-with-default-padding;
 }
-.user-thumb--black {
+.image-thumb--black {
 	@extend %image-with-thin-padding;
 	background-color: $image-background-black;
 	border-color: $image-background-black;
 }
 
-.user-thumb--brand {
+.image-thumb--brand {
 	@extend %image-with-thin-padding;
 	background-color: $image-background-brand;
 	border-color: $image-background-brand;
 }
 
-.user-thumb--small {
+.image-thumb--small {
 	width: $image-thumb-small;
 	height: $image-thumb-small;
 	padding: $image-padding - 1;
 }
 
-.user-thumb--medium {
+.image-thumb--medium {
 	width: $image-thumb-medium;
 	height: $image-thumb-medium;
 }
 
-.user-thumb--large {
+.image-thumb--large {
 	width: $image-thumb-large;
 	height: $image-thumb-large;
 	padding: $image-padding + 1;
 }
-.user-thumb--x3-large {
+.image-thumb--x3-large {
 	width: $image-thumb-x3-large;
 	height: $image-thumb-x3-large;
 	padding: $image-padding;

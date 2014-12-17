@@ -3,53 +3,53 @@
 
 // Vars
 
-$header-padding: 			$base-line-height;
+$header-padding:            $base-line-height;
 $header-bg:                 $brand-primary;
 $header-border-bottom:      $colour-grey-light;
 $network-bar-bg:            $colour-grey;
 $network-bar-border:        $colour-charcoal;
-$network-bar-link:			$colour-white;
-$network-bar-list-bg:		$colour-grey-darker;
-$network-bar-font-size:		$base-font-size - 2;
-$search-box-border:			$colour-grey;
-$header-menu-colour:		$colour-black;
-$header-menu-colour-hover:	$colour-charcoal;
+$network-bar-link:          $colour-white;
+$network-bar-list-bg:       $colour-grey-darker;
+$network-bar-font-size:     $base-font-size - 2;
+$search-box-border:         $colour-grey;
+$header-menu-colour:        $colour-black;
+$header-menu-colour-hover:  $colour-charcoal;
 
 
 %header-interaction-elements {
-	min-height: 36px;
+    min-height: 36px;
 }
 
 .network-bar {
-	background-color: $network-bar-bg;
-	border-bottom: 1px solid $network-bar-border;
+    background-color: $network-bar-bg;
+    border-bottom: 1px solid $network-bar-border;
     .network-bar-container {
         @extend %grid__container;
     }
 }
 
 .network-bar {
-	.network-bar__list {
-		text-align: right;
-		font-size: $network-bar-font-size;
-		// background-color: $network-bar-list-bg;
-		a {
-			color: $network-bar-link;
-			background-color: $network-bar-list-bg;
-			text-decoration: none;
-			border-style: solid;
-			border-width: 1px;
-			border-color: transparent;
-			border-right-color: $network-bar-border;
-			padding: 5px 12px;
-			&:hover {
-				background-color: $network-bar-border;
-			}
-		}
-		li:first-child a {
-			border-left-color: $network-bar-border;
-		}
-	}
+    .network-bar__list {
+        text-align: right;
+        font-size: $network-bar-font-size;
+        // background-color: $network-bar-list-bg;
+        a {
+            color: $network-bar-link;
+            background-color: $network-bar-list-bg;
+            text-decoration: none;
+            border-style: solid;
+            border-width: 1px;
+            border-color: transparent;
+            border-right-color: $network-bar-border;
+            padding: 5px 12px;
+            &:hover {
+                background-color: $network-bar-border;
+            }
+        }
+        li:first-child a {
+            border-left-color: $network-bar-border;
+        }
+    }
 }
 
 header {
@@ -64,33 +64,33 @@ header {
 .header-search {
     padding: ($header-padding / 1.25) (0);
     @include media-query(portable) {
-    	.grid {
-    		margin-left: -($gutter / 2);
-    		.grid__item {
-    			padding-left: $gutter / 2;
-    		}
-    	}
+        .grid {
+            margin-left: -($gutter / 2);
+            .grid__item {
+                padding-left: $gutter / 2;
+            }
+        }
     }
     .form-group {
-    	@include media-query(portable) {
-			margin-bottom: 0;
-		}
+        @include media-query(portable) {
+            margin-bottom: 0;
+        }
     }
     .form-group__item {
-		@extend %header-interaction-elements;
-		border-color: $search-box-border;
+        @extend %header-interaction-elements;
+        border-color: $search-box-border;
     }
     .button {
-    	@extend %header-interaction-elements;
+        @extend %header-interaction-elements;
     }
 }
 
 .header-search {
-	@include media-query(portable) {
-		.header-search__where-and-button {
-			margin-top: $gutter / 2;
-		}
-	}
+    @include media-query(portable) {
+        .header-search__where-and-button {
+            margin-top: $gutter / 2;
+        }
+    }
 }
 
 .header-container.header-container--homepage {
@@ -102,14 +102,14 @@ span.twitter-typeahead {
 }
 
 .header-menu {
-	text-align: right;
-	a {
-		margin-top: 4px;
-		display: block;
-		color: $header-menu-colour;
-		&:hover {
-			color: $header-menu-colour-hover;
-		}
-	}
+    text-align: right;
+    a {
+        margin-top: 4px;
+        display: block;
+        color: $header-menu-colour;
+        &:hover {
+            color: $header-menu-colour-hover;
+        }
+    }
 }
 

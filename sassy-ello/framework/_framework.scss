@@ -59,13 +59,6 @@
 @import "components/select-proxy";
 
 
-// Helpers and debug layer
-// ===============================================================================
- 
-@import "base/helper";
-@import "base/debug";
-
-
 // UI layer
 // ===============================================================================
 
@@ -74,6 +67,7 @@
 @import "ui/cards";
 @import "ui/header";
 @import "ui/mobile-menu";
+@import "ui/hero-feature";
 @import "ui/middle";
 @import "ui/sections";
 @import "ui/reviews";
@@ -81,6 +75,7 @@
 @import "ui/footer";
 @import "ui/filter-bar";
 @import "ui/notification-bar";
+@import "ui/star-rater";
 
 @import "fonts/font-awesome";
 @import "fonts/font-roboto";
@@ -91,6 +86,13 @@
 @import "ui/templates/ui-templates";
 @import "ui/breakpoints/ui-breakpoints";
 
-// Development (is the project in development ?)
+
+// Helpers and debug layer
+// ===============================================================================
+ 
+@import "base/helper";
+@import "base/debug";
+
+// Development (is the project in development? Toggle in _defaults.)
 @import "development";
 

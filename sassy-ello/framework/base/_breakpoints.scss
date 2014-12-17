@@ -47,6 +47,12 @@
 
     }
 
+    @if $media-query == tablet{
+
+        @media only screen and (max-width: 750px) { @content; }
+
+    }
+    
     @if $media-query == lap{
 
         @media only screen and (min-width: $breakpoint-lap) and (max-width: $breakpoint-portable) { @content; }

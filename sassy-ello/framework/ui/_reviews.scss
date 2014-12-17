@@ -16,6 +16,7 @@ $review-feature-time:           $colour-grey-light;
 $yes-no-color:                  $colour-blue;
 $review-feature-heading-margin: -20px;
 $review-actions-margin-left:    $base-line-height/2;
+$review-quote-colour-yellow:    $colour-yellow;
 
 %review-score-common {
     text-align: center;
@@ -25,6 +26,7 @@ $review-actions-margin-left:    $base-line-height/2;
 %review-star-colour {
     color: $review-star-colour;
 }
+
 .review-score {
     @extend %review-score-common;
 
@@ -45,10 +47,78 @@ $review-actions-margin-left:    $base-line-height/2;
     }
 }
 
+.review-score--horizontal {
+    @extend %clear-all;
+    border-right: none;
+    > div {
+        float: left;
+    }
+    .score__number {
+        width: 100%;
+        padding-top: 0;
+        @include media-query(desk) {
+            width: 30%;
+        }
 
+    }
+
+    .score__stars {
+        width: 100%;
+        @include media-query(desk) {
+            width: 70%;
+        }
+    }
+
+    .score__reviews {
+        width: 100%;
+        @include media-query(desk) {
+            width: 70%;
+        }
+    }
+}
+
+//Slider feature comments
+.review-feature.review-feature--for-slider {
+    padding: $review-padding/4*3;
+    .feature__content {
+        margin-left: 35px;
+        .feature__comment {
+            padding-right: $review-padding;
+            .read__more {
+                font-size: 1.2em;
+                color: #fff;
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .feature__comment-details {
+            span {
+                font-size: $h7-size;
+            }
+            .feature__comment-score {
+                .fa {
+                    color: $review-quote-colour-yellow;
+                    display: initial;
+                    margin-left: 5px;
+                }
+            }
+        }
+        &:before {
+            color: $review-quote-colour-yellow;
+        }
+    }
+}
+
+//Default deature comments
 .review-feature {
     h5 {
         margin-left: $review-feature-heading-margin;
+    }
+    h6 {
+        margin-bottom: 5px;
+        font-size: $h7-size;
     }
     padding: $review-padding / 2;
     .feature__user-thumb {

@@ -88,6 +88,20 @@ $favourites-margin-bottom: 		$base-line-height/2;
 	}
 }
 
+// Recent favourites 
+
+.recent-favourites {
+	.button--with-block-icon,
+	.button--with-block-icon .fa {
+	}
+	@include media-query(desk) {
+		.button--with-block-icon,
+		.button--with-block-icon .fa {
+			line-height: 2.9em;
+		}
+	}
+}
+
 //Old favourite in favourites section
 .old-favourites {
 	h6 {
@@ -104,7 +118,7 @@ $favourites-margin-bottom: 		$base-line-height/2;
 //Dashboard menu
 .dashboard-menu-items {
 	margin-left: 0px;
-	margin: 20px;
+	padding: 20px;
 	border-top: 1px solid $menu-item-border-colour;
 	li {
 		list-style-type: none;

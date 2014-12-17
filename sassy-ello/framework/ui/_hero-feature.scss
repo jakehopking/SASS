@@ -1,0 +1,122 @@
+// HERO FEATURES (stuff that lives in the hero image/coloured box)
+// ===============================================================================
+
+
+// Vars
+$hero-feature-padding:              $base-line-height;
+$hero-opacity:                      0.7;
+$hero-bg-default:                   $colour-black;
+$hero-bg-alt:                       $colour-white;
+$hero-colour-default:               $colour-white;
+$hero-colour-alt:                   $colour-black;
+
+$hero-review-accent-default:        $brand-primary;
+$hero-review-accent-alt:            $colour-black;
+
+// Base hero feature stuff
+%hero__feature-base {
+    margin-top: $hero-feature-padding * 2.5;
+    padding: $hero-feature-padding * 0.75;
+    @include font();
+    .title {
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+}
+
+%hero__feature-bg-default {
+    background-color: rgba($hero-bg-default, $hero-opacity);
+    color: $hero-colour-default;
+    a {
+        color: $hero-colour-default;
+        &:hover {
+            color: $brand-primary; 
+        }
+    }
+}
+
+%hero__feature-bg-alt {
+    background-color: rgba($hero-bg-alt, $hero-opacity);
+    color: $hero-colour-alt;
+    a {
+        color: $hero-colour-alt;
+        &:hover {
+            
+        }
+    }
+}
+
+// Hero feature review
+%hero__feature--review-base { // Common hero feature styles
+    padding-bottom: 0;
+    margin-left: 45px;
+    > .grid {
+        margin-left: -80px;
+        margin-top: -15px;
+    }
+    .title {
+        margin-top: 5px;
+    }
+    .review-feature {
+        padding-bottom: 0;
+    }
+    .feature__content {
+        .feature__comment {
+            font-size: $h7-size;
+            font-weight: 300;
+            padding-bottom: $hero-feature-padding * 0.25;
+        }
+        .feature__comment-details > div {
+            font-size: $h6-size;
+            padding-bottom: $hero-feature-padding * 0.75;
+        }
+    }
+}
+
+%hero__feature--review { // Black base
+    @extend %hero__feature--review-base;
+    .feature__content {
+        .feature__comment {
+            color: $hero-review-accent-default;
+        }
+        &:before {
+            color: $hero-review-accent-default;
+        }
+        border-left-color: $hero-review-accent-default;
+    }
+}
+
+%hero__feature--review-alt { // White base
+    @extend %hero__feature--review-base;
+    .feature__content {
+        .feature__comment {
+            color: $hero-review-accent-alt;
+        }
+        &:before {
+            color: $hero-review-accent-alt;
+        }
+        border-left-color: $hero-review-accent-alt;
+    }
+}
+
+
+// Default
+.hero__feature {
+    @extend %hero__feature-base;
+    @extend %hero__feature-bg-default;  
+}
+
+// Alt (inverted)
+.hero__feature-alt {
+    @extend %hero__feature-base;
+    @extend %hero__feature-bg-alt;
+}
+
+
+.hero__feature.hero__feature--review {
+    @extend %hero__feature--review;
+}
+
+.hero__feature-alt.hero__feature--review {
+    @extend %hero__feature--review-alt;
+}

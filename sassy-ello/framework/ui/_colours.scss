@@ -67,8 +67,8 @@ $colour-link:                   $colour-blue;
 $colour-link-hover:             $colour-blue-darker;
 $colour-link-active:            $colour-orange;
 
-$colour-red-link: 				#ae0000;
-$colour-red-link-hover: 		#5d0000;
+$colour-red-link:               #ae0000;
+$colour-red-link-hover:         #5d0000;
 $colour-disabled-bg:            #ddd;
 $colour-disabled:               #777;
 
@@ -122,6 +122,9 @@ $button-colour-secondary:       $colour-white;
  
 $button-bg-tertiary:            $colour-yellow;
 $button-colour-tertiary:        $colour-charcoal;
+
+$button-bg-muted:   	        $colour-grey-lighter;
+$button-colour-muted:   	    $colour-grey;
 
 // Forms
 $form-input-colour:             $colour-grey;

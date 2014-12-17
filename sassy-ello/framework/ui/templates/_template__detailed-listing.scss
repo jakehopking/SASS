@@ -3,15 +3,84 @@
 
 
 // Vars
+$dlp-padding:                       $base-line-height;
 $dlp-section-height-top:            275px; // Top section min-height (map and business-detail equal)
 
+$dlp-business-title-colour:         $colour-grey-darker;
+$dlp-business-title-size:           $h3-size;
+
+$dlp-business-address-colour:       $colour-grey-darker;
+$dlp-business-address-size:         $h5-size;
 
 
+// Business logo, score, page tools section.
 .dlp-business-detail {
-    .dlp-business-image {
+    .dlp-business-image-rating {
         > .card {
+            padding: 0;
             @include media-query(desk) {
+                padding: $dlp-padding;
                 min-height: $dlp-section-height-top;
+            }
+        }
+        
+        .dlp-business-logo { // Business logo
+            display: block;
+            min-width: 100%;
+            @include media-query(desk) {
+                margin-top: -$dlp-padding; // Pulls the image to the top of the box on desk
+            }
+        }
+
+        .review-score--horizontal { // The rating score and review number
+            @include media-query(desk) {
+                background-color: $colour-grey-lighter;
+                padding: ($dlp-padding / 4) ($dlp-padding / 2);
+            }
+        }
+
+        .page-tools { // Share and save buttons
+            @include media-query(portable) {
+                border-top: 1px solid $card-section-border-default;
+            }
+            @include media-query(desk) {
+                margin-top: $dlp-padding;
+            }
+            .button--small {
+                font-size: $h7-size;
+                @include media-query(portable) {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+// Business name, address, categories and CTAs
+.dlp-business-detail {
+    .dlp-business-info {
+
+        .business__title {
+            @include font($font-face-serif, $font-weight-regular, normal, inherit);
+            font-size: $dlp-business-title-size;
+            color: $dlp-business-title-colour;
+            // padding-bottom: $dlp-padding / 4;
+            
+        }
+
+        .business__address {
+            @include font($font-face-condensed, $font-weight-light, normal, inherit);
+            font-size: $dlp-business-address-size;
+            color: $dlp-business-address-colour;
+            padding-bottom: $dlp-padding / 4;
+            
+        }
+
+        .business__categories {
+            li {
+                a {
+
+                }
             }
         }
     }
