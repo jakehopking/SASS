@@ -82,6 +82,17 @@ $article-head-opacity:                 0.7;
     font-size: 1em;
 }
 
+.share {
+    color: $colour-grey-alt;
+    text-align: right;
+    b {
+        font-weight: normal;
+    }
+    a {
+        color: $colour-grey-alt;
+    }
+}
+
 @include media-query(below-desk-wide) {
     .article-head h1 span {
         padding: $gutter;

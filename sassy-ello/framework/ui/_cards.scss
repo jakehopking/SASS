@@ -17,6 +17,10 @@ $card-border-radius:            $brand-round;
 $card-image-title-bg:           $colour-charcoal;
 $card-image-title-bg-hover:     $colour-black;
 $card-image-text:               $colour-white;
+$card-title-background-dark:    $colour-grey;
+$card-title-color-white:        $colour-white;
+$card-title-border-black:       $colour-black;
+$card-title-color-hover:        $colour-black;
 
 // Card base styling with placeholder classes
 %card-base {
@@ -240,6 +244,51 @@ $card-image-text:               $colour-white;
     }
 }
 
+.card--margin-bottom {
+    margin-bottom: 10px;
+}
+.card--grey-bg {
+    background-color: $card-background-alt;
+}
+
+.card--title-dark {
+    .card__title {
+         background-color: $card-title-background-dark;
+         color: $card-title-color-white;
+         border-bottom: 5px solid $card-title-border-black;       
+    }
+    .fa-comments {
+        background-color: $colour-grey-light;
+        float: left;
+        padding:14px 0px 13px 14px;
+        color: #fff;
+        font-size: 1.2em; 
+    } 
+    .triangle {
+        float: left;
+        width: 0px; 
+        height: 0px; 
+        border-top: 22px solid transparent;
+        border-bottom: 22px solid transparent;
+        border-left: 22px solid $colour-grey-light;
+        margin-right: 10px;
+    }
+    .see-all__link {
+        float: right;
+        color: $card-title-color-white; 
+        &:hover {
+            color: $card-title-color-hover; 
+        }
+    }
+
+}
+.font--small {
+    font-size: 12px;
+    line-height: 22px;
+}
+.card--blue-border {
+    border: 1px solid $colour-blue-lighter;
+}
 .card--no-border {
     border: none;
 }
@@ -247,7 +296,6 @@ $card-image-text:               $colour-white;
 .card--border-dashed {
     @extend %card__section--with-bg-colour-border-alt;
 }
-
 .card--border-thick {
     border-width: $card-border-thick;
 }
@@ -283,7 +331,12 @@ $card-image-text:               $colour-white;
         padding: 0;
     }
 }
-
+.border--bottom-dashed {
+    border-bottom: 1px dashed $colour-blue-lighter;
+}
+.card--padding-half {
+    padding: $card-padding/2;
+}
 .card--vertical-pad {
     padding: $card-padding 0px;
 }

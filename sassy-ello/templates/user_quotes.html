@@ -1,0 +1,272 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+<div class="middle">
+	<section>
+		<div class="section-container">
+			<div class="grid">
+				<div class="grid__item one-whole desk--one-quarter column-menu">
+					<div class="card card-shadow-frame card--no-border">
+						<div class="card__section user-details">
+							<div class="grid">
+								<div class="grid__item one-third lap--one-quarter desk--five-twelfths">
+									<div class="user__image">
+										<img class="image-thumb-circle image-thumb--black image-thumb--x3-large" src="/static/images/user-thumb-01.jpg" />
+									</div>
+								</div>
+								<div class="grid__item two-thirds lap--three-quarter desk--seven-twelfths grid--narrow">
+									<div class="card--vertical-pad">
+										<div class="user__name">Mez Hopking</div>
+										<div class="user__region">Auckland Region</div>
+										<div class="user__membership">
+											Yellow member since </br>
+											January 2013
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-section">
+							<div class="grid user-stats grid--full text--center ">
+								<div class="grid__item one-quarter">
+									<div class="user-stats__ratings">
+										13 <i class="fa fa-star"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__photos">
+										9 <i class="fa fa-camera"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__lists">
+										1 <i class="fa fa-list"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__likes">
+										23 <i class="fa fa-thumbs-up"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<ul class="dashboard-menu-items">
+							<li>
+								<a href="#">Dashboard</a>
+								<ul>
+									<li><a class="active" href="#">Quotes</a></li>
+									<li><a href="#">Reviews</a></li>
+									<li><a href="#">Photos</a></li>
+									<li><a href="#">Favourites</a></li>
+									<li><a href="#">Businesses you may know</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Account settings</a></li>
+							<li><a href="#">Edit Profile</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="grid__item one-whole desk--three-quarters column-content">
+					<div class="card card-shadow-frame">
+						<div class="grid">
+							<div class="grid__item one-whole">
+								<div class="card card--no-border card--title-dark card--grey-bg">
+									<div class="card-section">
+										<i class="fa fa-comments"></i>
+										<span class="triangle"></span>
+										<div class="card__title ">
+											<span class="epsilon"> Quotes <span class="colour-grey-light">( 5 )</span> </span>
+										</div>
+									</div>
+									<div class="card__section quote-tabs">
+										<div class="grid">
+										    <div class="tabs-menu grid__item one-whole">
+										    	<ul class="grid">
+											        <li class="quotes-received grid__item palm-up--one-third desk--one-sixth">
+											        	<a href="javascript:void()">
+											        		<span class="amount">4</span> 
+											        		<span class="title">Quotes Received</span>
+											        	</a>
+											        </li>
+											       	<li class="quotes-declined grid__item palm-up--one-third one-whole desk--one-sixth">
+											        	<a href="javascript:void()">
+											        		<span class="amount">4</span> 
+											        		<span class="title">Quotes declined</span>
+											        	</a>
+											        </li>
+											        <li class="quotes-accepted grid__item palm-up--one-third one-whole desk--one-sixth">
+											        	<a href="javascript:void()">
+											        		<span class="amount">4</span> 
+											        		<span class="title">Quotes accepted</span>
+											        	</a>
+											        </li>
+										    	</ul>
+										    </div>
+										    <div class="tabs-content grid__item one-whole">
+										        <div class="quotes-received">
+										        	<div class="card card-minimal card-shadow-frame card--blue-border">
+										        		<div class="card__section card--padding-half">
+										        			<div class="border--bottom-dashed card--bottom-half-pad card--margin-bottom">
+											        			<div class="grid font--small ">
+											        				<div class="grid__item one-whole palm-up--one-third desk--two-twelfths">
+											        					<b>Clean my house</b>
+											        				</div>
+											        				<div class="grid__item one-whole palm-up--one-third desk--eight-twelfths">
+											        					<b>Posted</b> <span class="colour-grey">12th of November 2014</span>
+											        				</div>
+											        				<div class="grid__item one-whole palm-up--one-third desk--two-twelfths">
+											        					<a class="button button--small button--red " href="#"><i class="fa fa-times"></i> Cancel my quote</a>
+											        				</div>
+											        			</div>
+											        		</div>
+											        		<ul class="accordion quotes-accordion">
+											        			<li class="search-results__item accordion-part"> {# GOLD OR SILVER LISTING #} {# STRUCTURAL DEFAULT #}
+											        				<div class="">
+												        			    <div class="card card-shadow-frame card--no-border">
+												        			        <div class="grid">
+												        			            <div class="grid__item one-whole accordion-head">
+												        			                <div class="grid grid--full">
+												        			                    <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> {# Palm, lap, desk breaks #}
+												        			                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+												        			                            <div class="grid__item one-whole palm-up--one-half"> 
+												        			                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+												        			                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+												        			                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+												        			                                    </a>
+												        			                                </div>
+												        			                            </div>
+												        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business review score container #}
+												        			                                <div class="review-score">
+												        			                                    <div class="score__number">
+												        			                                        5.0
+												        			                                    </div>
+												        			                                    <div class="score__stars">
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                    </div>
+												        			                                    <div class="score__reviews">
+												        			                                        <span class="score__rev iews-number">187</span> reviews
+												        			                                    </div>
+												        			                                </div>
+												        			                            </div>
+												        			                        </div>
+												        			                    </div>
+												        			                    <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+												        			                        <div class="grid grid--full"> {# Business details and CTAs grid #}
+												        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business details container #}
+												        			                                <div class="business-info card__content">
+												        			                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+												        			                                    <div>Price range: <b>$300-450</b></div>
+												        			                                    <div class="quote-status">Status: <span class="status--quotes-received">Quote received</span></div>
+												        			                                </div>
+												        			                            </div>
+												        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business CTAs (buttons) #}
+												        			                                <div class="business-call-to-actions card__content">
+												        			                                    <a href="#" class="cta__more-details arrow-chevron-right" alt="Follow link arrow"></a>
+												        			                                </div>
+												        			                            </div>
+												        			                        </div>
+												        			                    </div>
+												        			                </div>
+												        			            </div>
+												        			            <div class="accordion-body grid__item one-whole">
+												        			                Section B body
+												        			            </div>
+												        			        </div>
+												        			    </div>
+											        				</div>
+												        			
+											        			</li>
+											        			<li class="search-results__item accordion-part"> {# GOLD OR SILVER LISTING #} {# STRUCTURAL DEFAULT #}
+											        			    <div class="">
+												        			    <div class="card card-shadow-frame card--no-border">
+												        			        <div class="grid">
+												        			            <div class="grid__item one-whole accordion-head">
+												        			                <div class="grid grid--full">
+												        			                    <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> {# Palm, lap, desk breaks #}
+												        			                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+												        			                            <div class="grid__item one-whole palm-up--one-half"> 
+												        			                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+												        			                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+												        			                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+												        			                                    </a>
+												        			                                </div>
+												        			                            </div>
+												        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business review score container #}
+												        			                                <div class="review-score">
+												        			                                    <div class="score__number">
+												        			                                        5.0
+												        			                                    </div>
+												        			                                    <div class="score__stars">
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                        <i class="fa fa-star"></i>
+												        			                                    </div>
+												        			                                    <div class="score__reviews">
+												        			                                        <span class="score__rev iews-number">187</span> reviews
+												        			                                    </div>
+												        			                                </div>
+												        			                            </div>
+												        			                        </div>
+												        			                    </div>
+												        			                    <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+												        			                        <div class="grid grid--full"> {# Business details and CTAs grid #}
+												        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business details container #}
+												        			                                <div class="business-info card__content">
+												        			                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+												        			                                    <div>Price range: <b>$300-450</b></div>
+												        			                                    <div class="quote-status">Status: <span class="status--quotes-received">Quote received</span></div>
+												        			                                </div>
+												        			                            </div>
+												        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business CTAs (buttons) #}
+												        			                                <div class="business-call-to-actions card__content">
+												        			                                    <a href="#" class="cta__more-details arrow-chevron-right" alt="Follow link arrow"></a>
+												        			                                </div>
+												        			                            </div>
+												        			                        </div>
+												        			                    </div>
+												        			                </div>
+												        			            </div>
+												        			            <div class="accordion-body">
+												        			                Section A body
+												        			            </div>
+												        			        </div>
+												        			    </div>
+												        			</div>
+												        			
+											        			</li>
+											        		</ul>
+										        		</div>
+										        	</div>
+										        </div>
+										        <div class="quotes-declined">
+										        </div>
+										        <div class="quotes-accepted">
+										        </div>
+										    </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'dashboard' %}{% endblock %}

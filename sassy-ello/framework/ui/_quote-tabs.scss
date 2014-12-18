@@ -1,0 +1,108 @@
+// Dashboard quote tabs
+// ===============================================================================
+
+//VARS
+
+$quote-received-colour: #4d545e;
+$quote-received-background-colour: #dee6ef;
+$quote-accepted-colour: #0f9609;
+$quote-accepted-background-colour: #e8f6eb;
+$quote-declined-colour: #a12323;
+$quote-declined-background-colour: #f6e8e8;
+$quote-received-status-colour: $colour-grey;
+
+$quote-white-border: $colour-white;
+
+%quote-status {
+	color: $colour-white;
+	padding: 2px 6px;
+	font-size: 12px;
+}
+.quote-status {
+	margin-top:5px;
+	.status--quotes-received {
+		background: $quote-received-status-colour;
+		@extend %quote-status;
+	}
+}
+.quote-tabs {
+	ul, li {
+		list-style-type: none;
+		margin: 0px;
+	}
+	.tabs-menu {
+		display: block;
+		li {
+			padding:10px;
+			float: left;
+			border-bottom: 2px solid #fff;
+			border-right: 2px solid #fff;
+			.amount {
+				border-radius:50%;
+				padding: 10px 15px;
+				float: left;
+				margin-right: 10px;
+			}
+			.title {
+				padding: 5px 0;
+				font-size: 13px;
+				display: inline-block;
+				width: 50%;
+			}
+		}
+		li.quotes-received {
+			background: $quote-received-background-colour;
+				&.active {
+					border-bottom: 2px solid $quote-received-background-colour;
+				}
+				a {
+					color: $quote-received-colour;
+					.amount {
+						border: 3px solid $quote-received-colour;
+					}
+				}
+		}
+		li.quotes-declined {
+			background: $quote-declined-background-colour;
+				&.active {
+					border-bottom: 2px solid $quote-declined-background-colour;
+				}
+				a {
+					color: $quote-declined-colour;
+					.amount {
+						border: 3px solid $quote-declined-colour;
+					}
+				}
+		}
+		li.quotes-accepted {
+			background: $quote-accepted-background-colour;
+				&.active {
+					border-bottom: 2px solid $quote-accepted-background-colour;
+				}
+				a {
+					color: $quote-accepted-colour;
+					.amount {
+						border: 3px solid $quote-accepted-colour;
+					}
+				}
+		}
+	}
+	.tabs-content {
+		> div {
+			display: none;
+			padding: 15px;
+		}
+		>div.active {
+			display: block;
+		}
+		.quotes-received {
+			background: $quote-received-background-colour;
+		}
+		.quotes-accepted {
+			background: $quote-accepted-background-colour;
+		}
+		.quotes-declined {
+			background: $quote-declined-background-colour;
+		}
+	}
+}

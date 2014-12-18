@@ -5,6 +5,8 @@ $button-transition:         $transition;
 $button-radius-default:     $brand-round;
 $button-rounded-radius:     $brand-button-radius;
 $button-half-padding:       $base-line-height/2;
+$button-red-colour:         $colour-red-google-plus;
+$button-red-hover-colour:   #891305;
 
 .button {
     display: inline-block;
@@ -101,7 +103,12 @@ $button-half-padding:       $base-line-height/2;
     padding-left: 0.5em;
 }
 
-
+.button--red {
+    background-color: $colour-red-google-plus;
+    &:hover {
+        background-color: $button-red-hover-colour;
+    }
+}
 
 // Button modifiers.
 .button--primary {

@@ -22,6 +22,7 @@ $dlp-business-address-size-palm:    $h5-size;
             padding: 0;
             @include media-query(desk) {
                 padding: $dlp-padding;
+                min-height: 100%;
                 min-height: $dlp-section-height-top;
             }
         }
@@ -94,6 +95,19 @@ $dlp-business-address-size-palm:    $h5-size;
             margin-bottom: $dlp-padding;
             .button {
                 
+            }
+        }
+
+        .business__info-extra {
+            padding: ($dlp-padding * 0.75);
+            .title-content-pair {
+                font-size: $h6-size - 1;
+            }
+
+            .is-business-open {
+                @include media-query(lap-and-up) {
+                    padding-left: 5px;
+                }
             }
         }
     }
