@@ -1,4 +1,4 @@
 SASS
 ====
 
-Somewhere to put Sassy bit of scss of course.
+Somewhere to put Sassy bits of scss of course.
