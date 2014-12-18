@@ -1,0 +1,687 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+<div class="middle">
+	<section>
+		<div class="section-container">
+			<div class="grid">
+				<div class="grid__item one-whole desk--one-quarter column-menu">
+					<div class="card card-shadow-frame card--no-border">
+						<div class="card__section user-details">
+							<div class="grid">
+								<div class="grid__item one-third lap--one-quarter desk--five-twelfths">
+									<div class="user__image">
+										<img class="user-thumb-circle image-thumb--black image-thumb--x3-large" src="/static/images/user-thumb-01.jpg" />
+									</div>
+								</div>
+								<div class="grid__item two-thirds lap--three-quarter desk--seven-twelfths grid--narrow">
+									<div class="card--vertical-pad">
+										<div class="user__name">Mez Hopking</div>
+										<div class="user__region">Auckland Region</div>
+										<div class="user__membership">
+											Yellow member since </br>
+											January 2013
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-section">
+							<div class="grid user-stats grid--full text--center ">
+								<div class="grid__item one-quarter">
+									<div class="user-stats__ratings">
+										13 <i class="fa fa-star"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__photos">
+										9 <i class="fa fa-camera"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__lists">
+										1 <i class="fa fa-list"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__likes">
+										23 <i class="fa fa-thumbs-up"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+						<ul class="dashboard-menu-items">
+							<li>
+								<a class="active" href="#">Dashboard</a>
+								<ul>
+									<li><a href="#">Reviews</a></li>
+									<li><a href="#">Photos</a></li>
+									<li><a href="#">Favourites</a></li>
+									<li><a href="#">Businesses you may know</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Account settings</a></li>
+							<li><a href="#">Edit Profile</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="grid__item one-whole desk--three-quarters column-content">
+					<div class="card card-shadow-frame card--no-border card-shadow">
+						<div class="grid">
+							<div class="grid__item desk--one-half">
+								<!-- Reviews and photots -->
+								<div class="card card--no-border">
+									<div class="card-section card--bottom-half-pad">
+										<div class="card__title">
+											<span class="epsilon"><i class="fa fa-star"></i> Reviews <span class="colour-grey-light">( 13 )</span> </span>
+											<a class="float--right eta" href="#"><b>See all reviews </b>&nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+										</div>
+									</div>
+									<!-- Review item starts-->
+									<div class="card__section">
+									    <div class="soft--left review-feature">
+									    	<h5>Atomic Coffee Roasters</h5>
+									        <div class="feature__content">
+									            <div class="feature__comment normal--size">
+									            	Put simply, it's the best coffee you can buy in Auckland. Superb and Put simply, it's the best coffee you can buy in Auckland. Superb and...Put simply, it's the best coffee you can buy in Auckland. Superb and Put simply, it's the best coffee you can buy in Auckland. Superb and...</div>
+									            <div class="feature__comment-details">
+									                <div class="feature__comment-user"><a href="#">Robert Z</a></div>
+									                <div class="feature__comment-score">5.0 <i class="fa fa-star"></i></div>
+									                <div class="feature__comment-time">10 minutes ago</div>
+									            </div>
+									        </div>
+									    </div>
+									</div>
+									<div class="card__section card--no-border">
+										<div class="review-actions">
+											<div class="eta grid">
+												<div class="grid__item one-half">
+													<b>5 of 11</b> found this review helpful
+												</div>
+												<div class="grid__item one-half text--right">
+													<a href="#">Write an update</a>
+													<a class="edit" href="#">Edit</a> 
+													<a class="remove link--red" href="#">Remove</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Review item ends -->
+									<!-- Review item starts-->
+									<div class="card__section">
+									    <div class="soft--left review-feature">
+									    	<h5 >Atomic Coffee Roasters</h5>
+									        <div class="feature__content">
+									            <div class="feature__comment normal--size">Put simply, it's the best coffee you can buy in Auckland. Superb and Put simply, it's the best coffee you can buy in Auckland. Superb and...</div>
+									            <div class="feature__comment-details">
+									                <div class="feature__comment-user"><a href="#">Robert Z</a></div>
+									                <div class="feature__comment-score">5.0 <i class="fa fa-star"></i></div>
+									                <div class="feature__comment-time">10 minutes ago</div>
+									            </div>
+									        </div>
+									    </div>
+									</div>
+									<div class="card__section card--no-border">
+										<div class="review-actions">
+											<div class="eta grid">
+												<div class="grid__item one-half">
+													<b>5 of 11</b> found this review helpful
+												</div>
+												<div class="grid__item one-half text--right">
+													<a href="#">Write an update</a>
+													<a class="edit" href="#">Edit</a> 
+													<a class="remove link--red" href="#">Remove</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Review item ends -->
+								</div>
+							</div>
+							<div class="grid__item desk--one-half">
+								<div class="card card--no-border">
+									<div class="card__title">
+										<span class="epsilon"><i class="fa fa-camera"></i> Photos <span class="colour-grey-light">( 9 )</span></span>
+										<a class=" float--right eta" href="#"><b>See all photos</b> &nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+									</div>
+									<div class="card__section photo__list">
+										<div class="grid">
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends --><!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends --><!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+											<!-- Photo item starts -->
+											<li class="grid__item one-quarter photo__item">
+												<a href="#"><img class="image-thumb-square" src="/static/images/home-featured-business-03.jpg"></a>
+											</li>
+											<!-- Photo item ends -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="grid__item desk--one-full">
+								<!-- Favourites -->
+								<div class="card card--no-border dashboard-favourites">
+									<div class="card-section favourites__title">
+										<div class="card__title">
+											<span class="epsilon"><i class="fa fa-heart"></i> Favourites <span class="colour-grey-light">( 6 )</span> </span>
+										</div>
+									</div>
+									<div class="card__section">
+										<div class="grid">
+											<div class="grid__item desk--eight-twelfths recent-favourites">
+												<h6> Recent favourites</h6>
+												<li class="search-results__item">{# STRUCTURAL DEFAULT #}
+												    <div class="card card-shadow-frame card--no-border">
+												        <div class="grid">
+												            <div class="grid__item one-whole">
+												                <div class="grid grid--full">
+												                    <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> {# Palm, lap, desk breaks #}
+												                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+												                            <div class="grid__item one-whole palm-up--one-half"> 
+												                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+												                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+												                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+												                                    </a>
+												                                </div>
+												                            </div>
+												                            <div class="grid__item one-whole palm-up--one-half"> {# Business review score container #}
+												                                <div class="review-score">
+												                                    <div class="score__number">
+												                                        5.0
+												                                    </div>
+												                                    <div class="score__stars">
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                    </div>
+												                                    <div class="score__reviews">
+												                                        <span class="score__rev iews-number">187</span> reviews
+												                                    </div>
+												                                </div>
+												                            </div>
+												                        </div>
+												                    </div>
+												                    <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+												                        <div class="grid grid--full"> {# Business details and CTAs grid #}
+												                            <div class="grid__item one-whole palm-up--two-thirds"> {# Business details container #}
+												                                <div class="business-info card__content">
+												                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+												                                    <ul class="business__categories inline-list-block delimited--bar">
+												                                        <li><a href="#">Cafes</a></li>
+												                                        <li><a href="#">Coffee roastery</a></li>
+												                                    </ul>
+												                                    <em class="business__address">6-8 Vulcan Lane Auckland</em>
+												                                </div>
+												                            </div>
+												                            <div class="grid__item palm-up--one-third one-whole">
+												                            	<a class="button button--fill button--with-block-icon button--align-left" href="#">Call <i class="fa fa-fw fa-phone"></i></a>
+												                            	<a class="button button--fill button--with-block-icon button--align-left" href="#">Directions <i class="fa fa-fw fa-car"></i></a>
+												                            </div>
+												                        </div>
+												                    </div>
+												                </div>
+												            </div>
+												        </div>
+												    </div>
+												</li>
+												<li class="search-results__item">{# STRUCTURAL DEFAULT #}
+												    <div class="card card-shadow-frame card--no-border">
+												        <div class="grid">
+												            <div class="grid__item one-whole">
+												                <div class="grid grid--full">
+												                    <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> {# Palm, lap, desk breaks #}
+												                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+												                            <div class="grid__item one-whole palm-up--one-half"> 
+												                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+												                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+												                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+												                                    </a>
+												                                </div>
+												                            </div>
+												                            <div class="grid__item one-whole palm-up--one-half"> {# Business review score container #}
+												                                <div class="review-score">
+												                                    <div class="score__number">
+												                                        5.0
+												                                    </div>
+												                                    <div class="score__stars">
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                        <i class="fa fa-star"></i>
+												                                    </div>
+												                                    <div class="score__reviews">
+												                                        <span class="score__rev iews-number">187</span> reviews
+												                                    </div>
+												                                </div>
+												                            </div>
+												                        </div>
+												                    </div>
+												                    <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+												                        <div class="grid grid--full"> {# Business details and CTAs grid #}
+												                            <div class="grid__item one-whole palm-up--two-thirds"> {# Business details container #}
+												                                <div class="business-info card__content">
+												                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+												                                    <ul class="business__categories inline-list-block delimited--bar">
+												                                        <li><a href="#">Cafes</a></li>
+												                                        <li><a href="#">Coffee roastery</a></li>
+												                                    </ul>
+												                                    <em class="business__address">6-8 Vulcan Lane Auckland</em>
+												                                </div>
+												                            </div>
+												                            <div class="grid__item palm-up--one-third one-whole">
+												                            	<a class="button button--fill button--with-block-icon button--align-left" href="#">Call <i class="fa fa-fw fa-phone"></i></a>
+												                            	<a class="button button--fill button--with-block-icon button--align-left" href="#">Directions <i class="fa fa-fw fa-car"></i></a>
+												                            </div>
+												                        </div>
+												                    </div>
+												                </div>
+												            </div>
+												        </div>
+												    </div>
+												</li>
+											</div>
+											<div class="grid__item desk--four-twelfths old-favourites">
+												<h6>Older favourites</h6>
+												<li class="old-favourite__list">
+													<div class="grid milli">
+														<div class="grid__item two-thirds lap--eight-tenths">
+															<b>Some listing name 1</b></br>
+															<span class="colour-grey-light">Some address</span>
+														</div>
+														<div class="grid__item one-third lap--two-tenths">
+															<div class="text--right">
+																<a href="#"><span class="float--left">More info</span><i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+															<div class="text--right">
+																<a href="#" class="colour-grey-light"><span class="float--left">Directions</span> &nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="old-favourite__list">
+													<div class="grid milli">
+														<div class="grid__item two-thirds lap--eight-tenths">
+															<b>Some listing name 1</b></br>
+															<span class="colour-grey-light">Some address</span>
+														</div>
+														<div class="grid__item one-third lap--two-tenths">
+															<div class="text--right">
+																<a href="#"><span class="float--left">More info</span><i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+															<div class="text--right">
+																<a href="#" class="colour-grey-light"><span class="float--left">Directions</span> &nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="old-favourite__list">
+													<div class="grid milli">
+														<div class="grid__item two-thirds lap--eight-tenths">
+															<b>Some listing name 1</b></br>
+															<span class="colour-grey-light">Some address</span>
+														</div>
+														<div class="grid__item one-third lap--two-tenths">
+															<div class="text--right">
+																<a href="#"><span class="float--left">More info</span><i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+															<div class="text--right">
+																<a href="#" class="colour-grey-light"><span class="float--left">Directions</span> &nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="old-favourite__list">
+													<div class="grid milli">
+														<div class="grid__item two-thirds lap--eight-tenths">
+															<b>Some listing name 1</b></br>
+															<span class="colour-grey-light">Some address</span>
+														</div>
+														<div class="grid__item one-third lap--two-tenths">
+															<div class="text--right">
+																<a href="#"><span class="float--left">More info</span><i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+															<div class="text--right">
+																<a href="#" class="colour-grey-light"><span class="float--left">Directions</span> &nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+															</div>
+														</div>
+													</div>
+												</li>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Businesses -->
+								<div class="card card--no-border dashboard-businesses">
+									<div class="card-section businesses__title">
+										<div class="card__title">
+											<span class="epsilon"><i class="fa fa-building"></i> Businesses you may know </span>
+										</div>
+									</div>
+									<div class="grid">
+										<li class="search-results__item grid__item one-whole desk--one-half palm-up--one-half">{# STRUCTURAL DEFAULT #}
+										    <div class="card card-shadow-frame card--no-border card--no-margin">
+										        <div class="grid">
+										            <div class="grid__item one-whole">
+										                <div class="grid grid--full">
+										                    <div class="grid__item one-whole desk--one-third business-score"> {# Palm, lap, desk breaks #}
+										                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+										                            <div class="grid__item one-half"> 
+										                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+										                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+										                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+										                                    </a>
+										                                </div>
+										                            </div>
+										                            <div class="grid__item one-half"> {# Business review score container #}
+										                                <div class="review-score">
+										                                    <div class="score__number">
+										                                        5.0
+										                                    </div>
+										                                    <div class="score__stars">
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                    </div>
+										                                    <div class="score__reviews">
+										                                        <span class="score__rev iews-number">187</span> reviews
+										                                    </div>
+										                                </div>
+										                            </div>
+										                        </div>
+										                    </div>
+										                    <div class="grid__item one-whole desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+								                                <div class="business-info grey-bg  card__content">
+								                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+								                                    <ul class="business__categories inline-list-block delimited--bar">
+								                                        <li><a href="#">Cafes</a></li>
+								                                        <li><a href="#">Coffee roastery</a></li>
+								                                    </ul>
+								                                    <em class="business__address">6-8 Vulcan Lane Auckland</em>
+								                                </div>
+								                            </div>
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="card card-shadow-frame card--no-border">
+									        	<div class="card__section rating">
+									        		<div>
+									    		    	<h6> Rate </h6>
+									    		    	<span class="rating__value">Love it</span>
+									    	    	</div>
+									    	    	<div>
+									    		    	<h6> Good value? </h6>
+									    		    	<a href="#">Yes</a> / <a href="#">No</a>
+									    		    </div>
+									    		    <div>
+									    		    	<h6>What would you recommend?</h6>
+									    		    	<a href="#">Yes</a> / <a href="#" >No</a>
+									    		    </div>
+									    	    </div>
+									    	</div>
+										</li>
+										<li class="search-results__item grid__item one-whole desk--one-half palm-up--one-half">{# STRUCTURAL DEFAULT #}
+										    <div class="card card-shadow-frame card--no-border card--no-margin">
+										        <div class="grid">
+										            <div class="grid__item one-whole">
+										                <div class="grid grid--full">
+										                    <div class="grid__item one-whole desk--one-third business-score"> {# Palm, lap, desk breaks #}
+										                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+										                            <div class="grid__item one-half"> 
+										                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+										                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+										                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+										                                    </a>
+										                                </div>
+										                            </div>
+										                            <div class="grid__item one-half"> {# Business review score container #}
+										                                <div class="review-score">
+										                                    <div class="score__number">
+										                                        5.0
+										                                    </div>
+										                                    <div class="score__stars">
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                    </div>
+										                                    <div class="score__reviews">
+										                                        <span class="score__rev iews-number">187</span> reviews
+										                                    </div>
+										                                </div>
+										                            </div>
+										                        </div>
+										                    </div>
+										                    <div class="grid__item one-whole desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+								                                <div class="business-info grey-bg  card__content">
+								                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+								                                    <ul class="business__categories inline-list-block delimited--bar">
+								                                        <li><a href="#">Cafes</a></li>
+								                                        <li><a href="#">Coffee roastery</a></li>
+								                                    </ul>
+								                                    <em class="business__address">6-8 Vulcan Lane Auckland</em>
+								                                </div>
+								                            </div>
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="card card-shadow-frame card--no-border">
+								    	    	<div class="card__section rating">
+								    	    		<div>
+								    			    	<h6> Rate </h6>
+								    			    	<span class="rating__value">Love it</span>
+								    		    	</div>
+								    		    	<div>
+								    			    	<h6> Good value? </h6>
+								    			    	<a href="#">Yes</a> / <a href="#">No</a>
+								    			    </div>
+								    			    <div>
+								    			    	<h6>What would you recommend?</h6>
+								    			    	<a href="#">Yes</a> / <a href="#" >No</a>
+								    			    </div>
+								    		    </div>										    </div>
+										</li>
+										<li class="search-results__item grid__item one-whole desk--one-half palm-up--one-half">{# STRUCTURAL DEFAULT #}
+										    <div class="card card-shadow-frame card--no-border card--no-margin">
+										        <div class="grid">
+										            <div class="grid__item one-whole">
+										                <div class="grid grid--full">
+										                    <div class="grid__item one-whole desk--one-third business-score"> {# Palm, lap, desk breaks #}
+										                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+										                            <div class="grid__item one-half"> 
+										                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+										                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+										                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+										                                    </a>
+										                                </div>
+										                            </div>
+										                            <div class="grid__item one-half"> {# Business review score container #}
+										                                <div class="review-score">
+										                                    <div class="score__number">
+										                                        5.0
+										                                    </div>
+										                                    <div class="score__stars">
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                    </div>
+										                                    <div class="score__reviews">
+										                                        <span class="score__rev iews-number">187</span> reviews
+										                                    </div>
+										                                </div>
+										                            </div>
+										                        </div>
+										                    </div>
+										                    <div class="grid__item one-whole desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+								                                <div class="business-info grey-bg  card__content">
+								                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+								                                    <ul class="business__categories inline-list-block delimited--bar">
+								                                        <li><a href="#">Cafes</a></li>
+								                                        <li><a href="#">Coffee roastery</a></li>
+								                                    </ul>
+								                                    <em class="business__address">6-8 Vulcan Lane Auckland</em>
+								                                </div>
+								                            </div>
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="card card-shadow-frame card--no-border">
+								    	    	<div class="card__section rating">
+								    	    		<div>
+								    			    	<h6> Rate </h6>
+								    			    	<span class="rating__value">Love it</span>
+								    		    	</div>
+								    		    	<div>
+								    			    	<h6> Good value? </h6>
+								    			    	<a href="#">Yes</a> / <a href="#">No</a>
+								    			    </div>
+								    			    <div>
+								    			    	<h6>What would you recommend?</h6>
+								    			    	<a href="#">Yes</a> / <a href="#" >No</a>
+								    			    </div>
+								    		    </div>										    </div>
+										</li>
+										<li class="search-results__item grid__item one-whole desk--one-half palm-up--one-half">{# STRUCTURAL DEFAULT #}
+										    <div class="card card-shadow-frame card--no-border card--no-margin">
+										        <div class="grid">
+										            <div class="grid__item one-whole">
+										                <div class="grid grid--full">
+										                    <div class="grid__item one-whole desk--one-third business-score"> {# Palm, lap, desk breaks #}
+										                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+										                            <div class="grid__item one-half"> 
+										                                <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+										                                    <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+										                                        {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+										                                    </a>
+										                                </div>
+										                            </div>
+										                            <div class="grid__item one-half"> {# Business review score container #}
+										                                <div class="review-score">
+										                                    <div class="score__number">
+										                                        5.0
+										                                    </div>
+										                                    <div class="score__stars">
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                        <i class="fa fa-star"></i>
+										                                    </div>
+										                                    <div class="score__reviews">
+										                                        <span class="score__rev iews-number">187</span> reviews
+										                                    </div>
+										                                </div>
+										                            </div>
+										                        </div>
+										                    </div>
+										                    <div class="grid__item one-whole desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+								                                <div class="business-info grey-bg  card__content">
+								                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+								                                    <ul class="business__categories inline-list-block delimited--bar">
+								                                        <li><a href="#">Cafes</a></li>
+								                                        <li><a href="#">Coffee roastery</a></li>
+								                                    </ul>
+								                                    <em class="business__address">6-8 Vulcan Lane Auckland</em>
+								                                </div>
+								                            </div>
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="card card-shadow-frame card--no-border">
+										    	<div class="card__section rating">
+										    		<div>
+												    	<h6> Rate </h6>
+												    	<span class="rating__value">Love it</span>
+											    	</div>
+											    	<div>
+												    	<h6> Good value? </h6>
+												    	<a href="#">Yes</a> / <a href="#">No</a>
+												    </div>
+												    <div>
+												    	<h6>What would you recommend?</h6>
+												    	<a href="#">Yes</a> / <a href="#" >No</a>
+												    </div>
+											    </div>
+										    </div>
+										</li>
+									</div>
+								</div>
+								<div class="grid grid--center">
+									<div class="grid__item one-whole palm-up--one-half desk--one-quarter">
+										<a href="#" class="button button--fill"><i class="fa fa-angle-down"></i>&nbsp; Show more messages &nbsp;<i class="fa fa-angle-down"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'dashboard' %}{% endblock %}

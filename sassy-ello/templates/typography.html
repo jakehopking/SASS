@@ -1,0 +1,90 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+	<div class="middle">
+		<section class="section-colour">
+			<div class="section-container">
+				<table class="table--bordered">
+					<colgroup>
+				       <col class="t60">
+				       <col class="t20">
+				       <col class="t20">
+				   </colgroup>
+				    <thead>
+				        <tr>
+				            <th scope="col">Typographical examples</th>
+				            <th scope="col">Class</th>
+				            <th scope="col">Description</th>
+				        </tr>
+				    </thead>
+				    <tbody>
+				        <tr>
+				            <th colspan="100%">Headings</th>
+				        </tr>
+				        <tr>
+				            <td>
+				                <h1>H1 Heading Regular</h1>
+				                <h1 class="font-face--condensed">H1 Heading Condenced</h1>
+				                <h1 class="font-face--serif">H1 Heading Serif</h1>
+
+				                <h2>H2 Heading Regular</h2>
+				                <h2 class="font-face--condensed">H2 Heading Condenced</h2>
+				                <h2 class="font-face--serif">H2 Heading Serif</h2>
+
+				                <h3>H3 Heading Regular</h3>
+				                <h3 class="font-face--condensed">H3 Heading Condenced</h3>
+				                <h3 class="font-face--serif">H3 Heading Serif</h3>
+
+				                <h4>H4 Heading Regular</h4>
+				                <h4 class="font-face--condensed">H4 Heading Condenced</h4>
+				                <h4 class="font-face--serif">H4 Heading Serif</h4>
+
+				                <h5>H5 Heading Regular</h5>
+				                <h5 class="font-face--condensed">H5 Heading Condenced</h5>
+				                <h5 class="font-face--serif">H5 Heading Serif</h5>
+
+				                <h6>H6 Heading Regular</h6>
+				                <h6 class="font-face--condensed">H6 Heading Condenced</h6>
+				                <h6 class="font-face--serif">H6 Heading Serif</h6>
+
+				            </td>
+				            <td>
+				                <code>.font-face--default OR NO CLASS</code>
+				                <hr>
+				                <code>.font-face--condensed</code>
+				                <hr>
+				                <code>.font-face--serif</code>
+				            </td>
+				            <td>
+				                
+				            </td>
+				        </tr>
+				        <tr>
+				            <th colspan="100%">Body text</th>
+				        </tr>
+				        <tr>
+				            <td>
+				                <p>Lorem ipsum dolor sit amet, consectetur <a href="#">with a paragraph link</a>. Tempore deleniti ullam provident <a href="#" class="button button--inherit">and inline button</a> nisi soluta consequuntur ad eius ipsum, saepe aliquid magni, <strong>some strong text</strong> vitae praesentium <em>how about italic</em>?</p>
+				            </td>
+				            <td>
+				                
+				            </td>
+				            <td>
+				                
+				            </td>
+				        </tr>
+				    </tbody>
+				</table>
+			</div>
+		</section>
+	</div> 
+	
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+
+{% endblock %}

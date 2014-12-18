@@ -1,0 +1,103 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+
+<div class="middle">
+
+    <section>
+        <div class="section-container">
+            <div class="grid">
+                <div class="grid__item one-whole">
+                    <div class="grid">
+                        <div class="grid__item one-whole desk--three-quarters dlp-business-detail"> {# business info / image #}
+                            <div class="card card-shadow-frame card--no-border">
+                                <div class="grid grid--full">
+                                    <div class="grid__item one-third lap--one-quarter desk--one-fifth dlp-business-image-rating">
+                                        <div class="card card__content-alt card--no-padding-palm card--no-margin card--border-right">
+                                            <img class="dlp-business-logo" src="/static/images/business-logo-01.png" alt="">
+                                            <div class="review-score review-score--horizontal">
+                                                <div class="score__number">
+                                                    3.9
+                                                </div>
+                                                <div class="score__stars">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-half"></i>
+                                                </div>
+                                                <div class="score__reviews">
+                                                    <span class="score__rev iews-number">5</span> reviews
+                                                </div>
+                                            </div>
+                                            <div class="page-tools page-tools--dlp">
+                                                <div class="grid grid--full">
+                                                    <div class="grid__item one-whole desk--one-half">
+                                                        <a href="#/listing/{listing_id}/save" class="ajax-button button button--muted button--small button--fill">
+                                                            <i class="fa fa-heart fa-pad--right"></i><span>Save</span>
+                                                        </a>
+                                                    </div>
+                                                    <div class="grid__item one-whole desk--one-half">
+                                                        <a href="#" class="button button--muted button--small button--fill"><i class="fa fa-share-alt fa-pad--right"></i> Share</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__item two-thirds lap--three-quarters desk--four-fifths dlp-business-info">
+                                        <div class="card card__content card--no-margin">
+                                            <strong class="business__title">Kokako Cafe and Coffee Roastery</strong>
+                                            <em class="business__address">537 Great North Road, Grey Lynn, Auckland</em>
+                                            <ul class="business__categories inline-list-block delimited--bar">
+                                                <li><a href="#">Cafes</a></li>
+                                                <li><a href="#">Coffee roastery</a></li>
+                                                <li><a href="#">Flat whites</a></li>
+                                            </ul>
+                                            <div class="business__actions button-group button-group--spaced-2x button-group--responsive">
+                                                <a href="#" class="button button--with-block-icon">Directions <i class="fa fa-fw fa-car"></i></a>
+                                                <a href="#" class="button button--with-block-icon">Call <i class="fa fa-fw fa-phone"></i></a>
+                                                <a href="#" class="button button--with-block-icon">Website <i class="fa fa-fw fa-globe"></i></a>
+                                            </div>
+                                            <div class="business__info-extra card card-flat-alt card--border-dashed card--no-margin">
+                                                <div class="title-content-pair pair-seperator--colon">
+                                                    <span class="pair__title">Hours</span>
+                                                    <span class="pair__content">07:00 - 22:00 <strong class="is-business-open colour--positive">Open now</strong></span>
+                                                </div>
+                                                <div class="title-content-pair pair-seperator--colon">
+                                                    <span class="pair__title">Credit cards</span>
+                                                    <span class="pair__content">Yes</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid__item one-whole desk--one-quarter dlp-map"> {# map #}
+                            <div class="card card-shadow-frame card--border-thick">
+                                <div class='embed-container'>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3190.6965340508386!2d174.8027926!3d-36.8976074!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d48ef0f099ad1%3A0xa19475b1099db912!2s604+Great+S+Rd%2C+Ellerslie%2C+Auckland+1051!5e0!3m2!1sen!2snz!4v1418603523051" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item one-whole">
+                    <div class="grid">
+                        <div class="grid__item one-whole desk--three-quarters">
+                            content
+                        </div>
+                        <div class="grid__item one-whole desk--one-quarter">
+                            sub-content
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'dlp' %}{% endblock %}

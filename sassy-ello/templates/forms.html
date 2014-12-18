@@ -1,0 +1,334 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+    <div class="middle">
+        <section class="section-colour">
+            <div class="section-container">
+                <table class="table--bordered">
+                    <colgroup>
+                       <col class="t60">
+                       <col class="t20">
+                       <col class="t20">
+                   </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">Form item(s)</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="100%">Inputs</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="usr">Name:</label>
+                                        <input type="text" class="form-group__item" id="usr">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pwd">Password:</label>
+                                        <input type="password" class="form-group__item" id="pwd">
+                                        <small class="form-group__item-help"><i class="fa fa-info-circle"></i> A mix of lower/upper and numbers</small>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-group > label</code>
+                                <br>
+                                <br>
+                                <code>.form-group > .form-group__item</code>
+                                <br>
+                                <br>
+                                <code>.form-group > .form-group__item + form-group__item-help</code>
+                            </td>
+                            <td>
+                                <p></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="ro">Read only:</label>
+                                        <input class="form-group__item" type="text" id="ro" placeholder="Readonly input here…" readonly>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>&lt;.form-group__item [readonly]&gt;</code>
+                            </td>
+                            <td>
+                                <p>Add readonly attribute to tag to render disabled state</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form role="form">
+                                    <fieldset disabled>
+                                        <div class="form-group">
+                                            <label for="disabledTextInput">Disabled input:</label>
+                                            <input type="text" id="disabledTextInput" class="form-group__item" placeholder="Disabled input">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="disabledSelect">Disabled select menu:</label>
+                                            <select id="disabledSelect" class="form-group__item">
+                                                <option>Disabled select</option>
+                                            </select>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Can't check this
+                                            </label>
+                                        </div>
+                                        <button type="submit" class="button" disabled>Submit</button>
+                                    </fieldset>
+                                </form>
+                            </td>
+                            <td>
+                                <code>&lt;fieldset [disabled]&gt;</code>
+                            </td>
+                            <td>
+                                Adding disabled attribute to fieldset tag render all children disabled. Attribute currently needs to be added separatly to button.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="comment">Comment:</label>
+                                        <textarea class="form-group__item" rows="5" id="comment"></textarea>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-group > textarea.form-group__item</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" value="">Option 1</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" value="">Option 2</label>
+                                        </div>
+                                        <div class="checkbox disabled">
+                                            <label><input type="checkbox" value="" disabled>Option 3</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-group > .checkbox > label > input=checkbox</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
+                                        <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-group > label.checkbox-inline > input=checkbox</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio">Option 1</label>
+                                        </div>
+                                        <div class="radio">
+                                            <label><input type="radio" name="optradio">Option 2</label>
+                                        </div>
+                                        <div class="radio disabled">
+                                            <label><input type="radio" name="optradio" disabled>Option 3</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-group > .radio > label > input=radio</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
+                                        <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+                                        <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-group > label.radio-inline > input=radio</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="sel1">Select list (select one):</label>
+                                        <select class="form-group__item" id="sel1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                        <br>
+                                        <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
+                                        <select multiple class="form-group__item" id="sel2">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-group > label + select.form-group__item</code>
+                                <br>
+                                <br>
+                                <code>.form-group > label + select[multiple].form-group__item</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                                            <div class="input-group-addon">@</div>
+                                            <input type="email" class="form-group__item" id="exampleInputEmail2" placeholder="Enter email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="exampleInputPassword2">Password</label>
+                                        <input type="password" class="form-group__item" id="exampleInputPassword2" placeholder="Password">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> Remember me
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="button">Sign in</button>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-inline > .form-group > .input-group > label + .input-group-addon + input=email</code>
+                                <br>
+                                <br>
+                                <code>.form-group > label.sr-only + input=password</code>
+                                <br>
+                                <br>
+                                <code>.button</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <label>Large input:</label>
+                                        <input class="form-group__item input--large" type="text" placeholder=".input--large">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Default input:</label>
+                                        <input class="form-group__item" type="text" placeholder="Default input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Default input:</label>
+                                        <input class="form-group__item input--small" type="text" placeholder=".input--small">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Select large: </label>
+                                        <select class="form-group__item input--large">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Select default: </label>
+                                        <select class="form-group__item">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Select small: </label>
+                                        <select class="form-group__item input--small">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </td>
+                            <td>
+                                <code>.form-inline > .form-group > input.form-group__item.input--large</code>
+                                <br>
+                                <br>
+                                <code>.form-inline > .form-group > input.form-group__item</code>
+                                <br>
+                                <br>
+                                <code>.form-inline > .form-group > input.form-group__item.input--small</code>
+                                <br>
+                                <br>
+                                <code>.form-inline > .form-group > select.form-group__item.input--large</code>
+                                <br>
+                                <br>
+                                <code>.form-inline > .form-group > select.form-group__item</code>
+                                <br>
+                                <br>
+                                <code>.form-inline > .form-group > select.form-group__item.input--large</code>
+                            </td>
+                            <td>
+                                <p>Inline form elements. Resize below 768px for full width.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div> 
+
+{% endblock %}

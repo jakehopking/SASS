@@ -1,0 +1,1 @@
+alert('plain old js');
