@@ -8,3 +8,15 @@
     cursor:     pointer;
     display:    inline-block;
 }
+
+.star-rater--large {
+	font-size: $h5-size;
+}
+
+.star-rater--2x {
+	font-size: $h4-size;
+}
+
+.star-rater--3x {
+	font-size: $h3-size;
+}

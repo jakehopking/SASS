@@ -1,0 +1,103 @@
+// ARTICLE PAGE
+// ===============================================================================
+
+
+// Vars
+
+
+
+$article-head-height:                  350px;
+$article-head-bg-default:              $colour-black;
+$article-head-opacity:                 0.7;
+
+
+
+
+.article-head {
+
+    width:                  100%;
+    background-position:    50%;
+    background-size:        cover;
+    position:               relative;
+    padding:                0px;
+    height:                 $article-head-height;
+    @extend                 %section-box-shadow-inset;
+    h1 {
+
+        @extend             .font-face--serif;
+        font-weight:        normal;
+        font-size:          2em;
+        color:              $colour-white;
+        background-color:   rgba($article-head-bg-default, $article-head-opacity);
+        position:           absolute;
+        bottom:             0px;
+        margin-bottom:      0px;
+        width:              100%;
+
+        span {
+            @extend         %grid__container;
+            display:        block;
+            padding:        30px 0px;
+        }
+    }
+}
+
+.article-sub-head {
+    color:          $colour-grey-alt;
+    padding-bottom: 5px;
+    font-size:      0.9em;
+    border-bottom:  1px solid $colour-grey-alt;
+    @extend .cf;
+}
+
+.article-author {
+    color: #000;
+}
+
+.article-body {
+    @include media-query(desk) {
+        padding-right: $gutter;
+    }
+    p {
+        text-align: justify;
+    }
+    aside {
+        color:          $colour-blue;
+        font-style:     italic;
+        font-size:      1.2em;
+        padding-bottom: $gutter;
+    }
+    .embed-container {
+        margin-bottom: $gutter;
+    }
+}
+
+.article-footer {
+    border-top:  1px solid $colour-grey-alt;
+    padding: $gutter 0px;
+}
+
+.article-popular h3 {
+    @extend .font-face--serif;
+    font-size: 1em;
+}
+
+@include media-query(below-desk-wide) {
+    .article-head h1 span {
+        padding: $gutter;
+    }
+}
+
+@include media-query(desk) {
+    .article-body aside {
+        width:          200px;
+        float:          left;
+        padding:        0px $gutter $gutter 0px;
+    }
+    .article-desc {
+        float: left;
+    }
+    .article-author {
+        float: right;
+    }
+}

@@ -303,6 +303,41 @@ $button-half-padding:       $base-line-height/2;
     @extend .button--huge; 
 }
 
+// Button group with horizontal spacing
+.button-group--spaced {
+    > .button {
+        margin-right: $base-line-height / 4;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// Button group with horizontal spacing -- more spacing!
+.button-group--spaced-2x {
+    > .button {
+        margin-right: $base-line-height / 2;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.button-group--responsive {
+    @include media-query(palm) {
+        > .button {
+            display: block;
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: $base-line-height / 10;
+        }
+    } // End query
+    .button + .button {
+        margin-left: 0;
+    }
+}
+
+
 // Vertical button groups
 // ---------------------------------------------------
 

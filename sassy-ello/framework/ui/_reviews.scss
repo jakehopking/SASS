@@ -27,6 +27,7 @@ $review-quote-colour-yellow:    $colour-yellow;
     color: $review-star-colour;
 }
 
+// Review score block (defualt is vertical alignment, or stacked)
 .review-score {
     @extend %review-score-common;
 
@@ -47,6 +48,7 @@ $review-quote-colour-yellow:    $colour-yellow;
     }
 }
 
+// Review score block -- horizontal modifier (score to left, stars and ratings stacked)
 .review-score--horizontal {
     @extend %clear-all;
     border-right: none;

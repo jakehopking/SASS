@@ -1,0 +1,40 @@
+// DEFINITION LIST
+// ===============================================================================
+
+
+dl {
+    dt {
+        &:after {
+            content: ":";
+        }
+        font-weight: bold;
+        margin-right: $base-line-height / 2;
+    }
+
+    dd {
+
+    }
+}
+
+dl.dl-basic {
+    
+    * {
+        display: inline;
+    }
+    dt {
+        
+    }
+    dd {
+        margin-left: 0;
+    }
+    dd + dt {
+        margin-left: $base-line-height;
+    }
+}
+
+dl.dl--responsive {
+    @include media-query(palm) {
+        dt {
+        }
+    }
+}

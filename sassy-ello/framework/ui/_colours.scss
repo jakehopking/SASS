@@ -25,6 +25,7 @@ $colour-blue-tumblr:            #35465C; // Social colour
 $colour-blue-twitter:           #2FC2EF; // Social colour
 
 $colour-grey:                   #555;
+$colour-grey-alt:               #999;
 $colour-grey-light:             #a2a2a2;
 $colour-grey-light-alt:         #d7d7d7;
 $colour-grey-lighter:           #eaeaea;
@@ -51,17 +52,15 @@ $colour-yellow-lightest:        #fffdd2;
 $colour-yellow-darker:          #e4d800;
 $colour-yellow-darkest:         #aba200;
 
-$colour-grey:                   #666;
-$colour-grey-light:             #bbb;
-$colour-grey-lighter:           #ddd;
+
 
 // Semantic colour variables
 // ===============================================================================
 
 $colour-box-shadow:             #d0d0d0;
 
-// $colour-positive:                #0bac03;
-// $colour-negative:                #d70000;
+$colour-positive:                #0bac03;
+$colour-negative:                #d70000;
 
 $colour-link:                   $colour-blue;
 $colour-link-hover:             $colour-blue-darker;

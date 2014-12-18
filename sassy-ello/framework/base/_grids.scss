@@ -94,6 +94,8 @@ $breakpoints: (
     'palm' '(max-width: 480px)',
     'palm-up' '(min-width: 481px)',
     'lap' '(min-width: 481px) and (max-width: 1023px)',
+    'tablet' '(min-width: 768px) and (max-width: 1023px)',
+    'tablet-up' '(min-width: 768px)',
     'portable' '(max-width: 1023px)',
     'desk' '(min-width: 1024px)'
 ) !default;
@@ -109,9 +111,9 @@ $breakpoints: (
 // Push and pull shall only be used if `$push` and/or `$pull` and `$responsive`
 // have been set to ‘true’.
 
-$breakpoint-has-widths: ('palm', 'palm-up', 'lap', 'portable', 'desk') !default;
-$breakpoint-has-push:   ('palm', 'palm-up', 'lap', 'portable', 'desk') !default;
-$breakpoint-has-pull:   ('palm', 'palm-up', 'lap', 'portable', 'desk') !default;
+$breakpoint-has-widths: ('palm', 'palm-up', 'lap', 'tablet', 'tablet-up', 'portable', 'desk') !default;
+$breakpoint-has-push:   ('palm', 'palm-up', 'lap', 'tablet', 'tablet-up', 'portable', 'desk') !default;
+$breakpoint-has-pull:   ('palm', 'palm-up', 'lap', 'tablet', 'tablet-up', 'portable', 'desk') !default;
 
 
 // You do not need to edit anything from this line onward; csswizardry-grids is good to go. Happy griddin’!

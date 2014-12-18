@@ -8,9 +8,11 @@ $dlp-section-height-top:            275px; // Top section min-height (map and bu
 
 $dlp-business-title-colour:         $colour-grey-darker;
 $dlp-business-title-size:           $h3-size;
+$dlp-business-title-size-palm:      $h4-size;
 
 $dlp-business-address-colour:       $colour-grey-darker;
 $dlp-business-address-size:         $h5-size;
+$dlp-business-address-size-palm:    $h5-size;
 
 
 // Business logo, score, page tools section.
@@ -56,15 +58,18 @@ $dlp-business-address-size:         $h5-size;
     }
 }
 
-// Business name, address, categories and CTAs
+// Business name, address, categories and CTAs section
 .dlp-business-detail {
     .dlp-business-info {
 
         .business__title {
             @include font($font-face-serif, $font-weight-regular, normal, inherit);
-            font-size: $dlp-business-title-size;
+            font-size: $dlp-business-title-size-palm;
             color: $dlp-business-title-colour;
             // padding-bottom: $dlp-padding / 4;
+            @include media-query(lap-and-up) {
+                font-size: $dlp-business-title-size; 
+            }
             
         }
 
@@ -77,10 +82,18 @@ $dlp-business-address-size:         $h5-size;
         }
 
         .business__categories {
+            margin-bottom: $dlp-padding / 2;
             li {
                 a {
 
                 }
+            }
+        }
+
+        .business__actions {
+            margin-bottom: $dlp-padding;
+            .button {
+                
             }
         }
     }

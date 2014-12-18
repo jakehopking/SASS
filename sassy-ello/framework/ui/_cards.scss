@@ -44,6 +44,11 @@ $card-image-text:               $colour-white;
 
 %card__section--with-bg-colour-border-alt {
     background-color: $card-background-alt;
+    border: 1px dashed $card-section-border-default;
+}
+
+%card__section--with-bg-colour-border-alt-top-bottom {
+    background-color: $card-background-alt;
     border-top: 1px dashed $card-section-border-default;
     border-bottom: 1px dashed $card-section-border-default;
 }
@@ -112,6 +117,11 @@ $card-image-text:               $colour-white;
     border-style: solid;
 }
 
+%card-with-border-dashed {
+    border-width: 1px;
+    border-style: dashed;
+}
+
 %card-with-border--colour-default {
     border-color: $card-border-colour-default;
 }
@@ -146,6 +156,16 @@ $card-image-text:               $colour-white;
 
 .card {
     @extend %card-base;
+}
+
+.card-flat {
+    @extend %card-with-background-colour--default;
+    @extend %card-with-padding-default;
+}
+
+.card-flat-alt {
+    @extend %card-with-background-colour--alt;
+    @extend %card-with-padding-default;
 }
 
 .card-heading {
@@ -224,6 +244,10 @@ $card-image-text:               $colour-white;
     border: none;
 }
 
+.card--border-dashed {
+    @extend %card__section--with-bg-colour-border-alt;
+}
+
 .card--border-thick {
     border-width: $card-border-thick;
 }
@@ -279,13 +303,14 @@ $card-image-text:               $colour-white;
 .card--bottom-half-pad {
     padding: 0 0 $card-padding/2 0;
 }
+
 .card__section {
     @extend %card__section !optional;
 }
 
 .card__section-alt {
     @extend %card__section !optional;
-    @extend %card__section--with-bg-colour-border-alt;
+    @extend %card__section--with-bg-colour-border-alt-top-bottom;
 }
 
 .card__section--image {

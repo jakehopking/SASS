@@ -86,6 +86,7 @@ $grid-container-max-width:  1200px;
 
 $breakpoint-palm:           480px;
 $breakpoint-lap:            481px;
+$breakpoint-tablet:         768px;
 $breakpoint-portable:       1023px;
 $breakpoint-desk:           1024px;
 $breakpoint-desk-wide:      1200px;
@@ -106,8 +107,8 @@ $base-font-family:          $font-face-default;
 $brand-round:               0px;
 $brand-button-radius:       4px;
 $brand-box-shadow:          0px 1px 2px $colour-box-shadow;
-$colour-positive:           #4A993E;
-$colour-negative:           #b33630;
+// $colour-positive:           #4A993E !default;
+// $colour-negative:           #b33630 !default;
 $button-bg:                 #007ed6;
 $button-colour:             #fff;
 $section-bg:                #fff;

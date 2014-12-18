@@ -49,10 +49,16 @@
 
     @if $media-query == tablet{
 
-        @media only screen and (max-width: 750px) { @content; }
+        @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-portable) { @content; }
 
     }
-    
+
+    @if $media-query == tablet-and-up{
+
+        @media only screen and (min-width: $breakpoint-tablet) { @content; }
+
+    }
+
     @if $media-query == lap{
 
         @media only screen and (min-width: $breakpoint-lap) and (max-width: $breakpoint-portable) { @content; }
@@ -109,6 +115,12 @@ body .hide-me--portable {
 
 body .hide-me--lap {
     @include media-query(lap) {
+        display: none !important;
+    }
+}
+
+body .hide-me--tablet {
+    @include media-query(tablet) {
         display: none !important;
     }
 }

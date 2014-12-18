@@ -1,19 +1,6 @@
 // SASS PLACEHOLDER CLASSES (a.k.a Silent classes)
 // ===============================================================================
 
-%grid__container-below-max-breakpoint {
-	@include media-query(below-desk-wide) {
-		padding-left:  $gutter; // Same as default gutter width
-		padding-right: $gutter; // Same as default gutter width
-	}
-}
-
-%grid__container {
-	margin: 0 auto;
-	max-width: $grid-container-max-width;
-	@extend %grid__container-below-max-breakpoint;
-	@extend %clear-all;
-}
 
 %default-box-shadow {
 	box-shadow: $brand-box-shadow;
