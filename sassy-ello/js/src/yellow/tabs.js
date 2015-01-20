@@ -29,7 +29,7 @@
 
         Js:
 
-            Yellow.tabs('.tabs');
+            Yellow.tabs('.tabs-menu > *', '.tabs-content > *');
 
     The first child of .tabs-content will be active on initialisation        
 

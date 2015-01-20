@@ -86,90 +86,87 @@
                 </div>
 
                                                 
-                <div class="grid__item one-whole dlp-body-content">
+                <div class="grid__item one-whole">
                     <div class="grid">
 
                         <div class="grid__item one-whole desk--three-quarters">
                             <div class="dlp-main card card-shadow-frame">
 
-                                <div class="dlp-carousel">
-                                    <div class="carousel-content">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item">
-                                                <img src="/static/images/home-featured-business-01.jpg">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="/static/images/home-featured-business-02.jpg">
-                                            </div>
-                                            <div class="carousel-item" data-video-src="http://www.youtube.com/embed/QILiHiTD3uc">
-                                                <img src="/static/images/home-featured-business-03.jpg">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="/static/images/home-featured-business-04.jpg">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img src="/static/images/home-featured-business-01.jpg">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-nav">
-                                        <a href="#left"></a>
-                                        <a href="#right"></a>
-                                    </div>
-                                    <div class="carousel-expanded-item"></div>
+
+                                <div class="dlp-street-view">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2snz!4v1419282611376!6m8!1m7!1sKtMhxpqqHiL2RutaSnfl3Q!2m2!1d-36.89816209848883!2d174.8029950191317!3f30.300195585288257!4f-1.6214181172910571!5f0.7820865974627469" width="600" height="150" frameborder="0" style="border:0"></iframe> 
                                 </div>
+
 
                                 <div class="card__section">
                                     <div class="card__content">
+                                        <h4>You might also like</h4>
 
-                                        <div class="grid">
+                                        <ol class="search-results-list">
 
-                                            <div class="grid__item one-whole desk--two-thirds">
-
-                                                <div class="dlp-about">
-
-                                                    <h4>More about us</h4>
-
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis dolor eu diam tempor imperdiet. Curabitur consequat nulla ac ultricies dictum. Donec condimentum, dolor non bibendum suscipit, ex purus rhoncus leo, in semper mi ante sed felis. Curabitur ante ligula, ultrices vel molestie vel, condimentum eu tortor.
-                                                    </p> 
-
-                                                    <p>Praesent pretium ex id faucibus bibendum. Ut quis odio vitae purus fringilla laoreet. Donec venenatis id ex et efficitur. Maecenas fermentum, eros sit amet feugiat tincidunt, eros ipsum congue nulla, ut viverra ante libero vitae leo.</p>
-
-                                                    <p>Sed nisl ex, convallis quis fringilla at, lobortis ac enim. Donec eu ex augue. Sed sed nulla suscipit, placerat est eu, molestie odio. Cras pulvinar tempus tempor.</p>
-
+                                            <li class="search-results__item item--disruptive"> {# DISRUPTIVE LISTING #}
+                                                <div class="card card-shadow-frame card--no-border">
+                                                    <div class="grid">
+                                                        <div class="grid__item one-whole">
+                                                            <div class="grid grid--full">
+                                                                <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> {# Palm, lap, desk breaks #}
+                                                                    <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+                                                                        <div class="grid__item one-whole palm-up--one-half"> 
+                                                                            <div class="business-thumbnail image-container-background-linked"> {# Business image container #}
+                                                                                <a href="#" style="background-image: url(/static/images/business-thumb-02.jpg);">
+                                                                                    {# <img src="/static/images/business-thumb-01.jpg" alt=""> #}
+                                                                                </a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="grid__item one-whole palm-up--one-half"> {# Business review score container #}
+                                                                            <div class="review-score">
+                                                                                <div class="score__number">
+                                                                                    5.0
+                                                                                </div>
+                                                                                <div class="score__stars">
+                                                                                    <i class="fa fa-star"></i>
+                                                                                    <i class="fa fa-star"></i>
+                                                                                    <i class="fa fa-star"></i>
+                                                                                    <i class="fa fa-star"></i>
+                                                                                    <i class="fa fa-star"></i>
+                                                                                </div>
+                                                                                <div class="score__reviews">
+                                                                                    <span class="score__rev iews-number">187</span> reviews
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+                                                                    <div class="grid grid--full"> {# Business details and CTAs grid #}
+                                                                        <div class="grid__item five-sixths"> {# Business details container #}
+                                                                            <div class="business-info card__content">
+                                                                                <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
+                                                                                <span class="business__message"><a href="#">A free muffin with every coffee!</a></span>
+                                                                                <em class="business__address"><a href="#">Wellington region</a></em>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="grid__item one-sixth"> {# Business CTAs (buttons) #}
+                                                                            <div class="business-call-to-actions card__content">
+                                                                                <a href="#" class="cta__more-details arrow-chevron-right" alt="Follow link arrow"></a>
+                                                                                {# <a href="#" class="cta__phone-us button button--circular button--title-text" title="Phone us"><i class="fa fa-phone fa-lg"></i></a> #}
+                                                                                {# <a href="#" class="cta__website button button--circular button--title-text" title="Website"><i class="fa fa-globe fa-lg"></i></a> #}
+                                                                                {# <a href="#" class="cta__directions button button--circular button--title-text" title="Directions"><i class="fa fa-location-arrow fa-lg"></i></a> #}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                            </li>
 
-                                            </div>
-
-                                            <div class="grid__item one-whole desk--one-third">
-
-                                                <div class="dlp-products">
-
-                                                    <h5>Products and Services</h5>
-
-                                                    <table>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td><strong>Products</strong></td>
-                                                                <td><div>Espresso Machines, Coffee Grinders, Coffee Machines, Tampers</div></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><strong>Drinks</strong></td>
-                                                                <td><div>Coffee, Espresso, Single Origin Tea, Hot Chocolate, Cappucino, Flat White</div></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><strong>Food</strong></td>
-                                                                <td><div>Cabinet, Breakfast, Lunch, Dinner, Sandwiches, Cakes, Vegetarian, Kosher, Halal</div></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                        </div>
+                                        </ol>
 
                                     </div>
                                 </div>
+                  
 
                                 <div class="card__section-alt">
                                     <div class="card__content">
@@ -248,7 +245,6 @@
                                     </div>
                                 </div>
 
-
                                 <div class="card__section">
                                     <div class="card__content dlp-ratings">
                                         <h4>Latest reviews</h4>
@@ -290,9 +286,9 @@
                                                                     <span class="stars">
                                                                         <i class="fa fa-star"></i>
                                                                     </span>
-                                                                    <span class="review-timestamp">18 hours ago</span> 
+                                                                    <span class="review-timestamp">18 hours ago</span>
                                                                     <div class="review-helpful hide-me--palm">
-                                                                        | <span class="title">Was this review helpful? </span>
+                                                                         | <span class="title">Was this review helpful? </span>
                                                                         <a href="/">Yes</a> / <a href="/">No</a> | 
                                                                         <a href="/">Report this review</a>
                                                                     </div>
@@ -372,15 +368,40 @@
                                 </div>
 
                             </div>
-
                         </div>
 
                         <div class="grid__item one-whole desk--one-quarter">
+
+                            <div class="card dlp-aside dlp-products">
+
+                                <h6>Products and Services</h6>
+
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Products</strong></td>
+                                            <td><div>Espresso Machines, Coffee Grinders, Coffee Machines, Tampers</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Drinks</strong></td>
+                                            <td><div>Coffee, Espresso, Single Origin Tea, Hot Chocolate, Cappucino, Flat White</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Food</strong></td>
+                                            <td><div>Cabinet, Breakfast, Lunch, Dinner, Sandwiches, Cakes, Vegetarian, Kosher, Halal</div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <div class="card dlp-aside">
                                 <h6>Work here? <a href="/">Claim this business</a></h6>
                                 <p>Make sure your information is up to date, and
                                     use our free tools to find new customers.</p>
+                            </div>
+
+                            <div class="card dlp-aside">
+                                <h6><i class="fa fa-fw fa-cog fa-lg"></i> <a href="/">Edit business information</a></h6>
                             </div>
 
                             <div class="card dlp-aside">
@@ -409,7 +430,7 @@
                             </div>
 
                             <div class="card dlp-aside">
-                                <h6>Popular articles</h6>
+                                <h5>Popular articles</h5>
 
                                 <div class="grid articles">
                                     <div class="grid__item one-half palm--one-whole desk--one-whole">

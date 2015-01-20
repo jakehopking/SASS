@@ -5,12 +5,13 @@ $debug-mode:                false;
 $global-border-box:         true;
 
 $in-development:            true; // True to enable global in-development overrides.
-
+ 
 
 // BASE
 // ===============================================================================
 
-$body-max-width:            auto;
+$body-max-width:            100%;
+$body-min-width:            320px;
 
 $base-font-size:            14px;
 $base-line-height:          20px;

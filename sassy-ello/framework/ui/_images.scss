@@ -5,8 +5,8 @@
 $image-background-default: 				$colour-white;
 $image-background-black: 				$colour-black;
 $image-background-brand: 				$brand-primary;
-$image-padding:							$base-line-height / 5;
-$image-radius-circle:					300px;
+$image-padding:							floor($base-line-height / 6);
+$image-radius-circle:					50%;
 $image-thumb-small:						30px;
 $image-thumb-medium:					40px;
 $image-thumb-large:						50px;

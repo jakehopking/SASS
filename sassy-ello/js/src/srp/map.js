@@ -1,3 +1,4 @@
+var hello;
 (function () {
 
     "use strict";
@@ -50,11 +51,14 @@
                         var marker = new google.maps.Marker({
                             position:   latLng,
                             map:        m.map,
-                            draggable:  true,
+                            draggable:  false,
                             icon:       '/static/images/map-icon.png'
                         });
 
                         Yellow.mapLabel(m.map, marker, data);
+                        google.maps.event.addListener(marker, 'click', function() {
+                            alert('Please scroll to listing: #listing-' + data.id);
+                        });
 
                         return marker;
                     }

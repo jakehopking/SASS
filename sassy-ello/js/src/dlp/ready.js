@@ -3,8 +3,6 @@ $(function () {
     "use strict";
 
 
-    Yellow.equalizeHeight('.dlp-business-image-rating > .card, .dlp-business-info > .card', 'max');
-
     // Save / Unsave this listing
     
     Yellow.ajaxButton('.ajax-button');
@@ -12,7 +10,17 @@ $(function () {
 
     // Rate this listing
 
-    Yellow.starRater('.star-rater');
+    var ratingLabel = $('.star-rater-text'),
+        ratingText  = ['Terrible', 'Very poor', 'Poor', 'Ok', 'Good', 'Love it!'];
+
+    Yellow.starRater('.star-rater', function (rating) {
+        ratingLabel.text((rating === -1) ? '' : ratingText[Math.round(rating)]);
+    });
+
+
+    // Activate carousel
+
+    Yellow.carousel('.dlp-carousel', { showItems: 3 });
 
 
 });

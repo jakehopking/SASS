@@ -7,7 +7,29 @@ $body-border-color: $colour-grey;
 
 
 .quotes-accordion {
+	.accordion-head {
+		&:hover {
+			.grid {
+			    background-color: $colour-blue-lightest-alt; 
+			    cursor: pointer;
+			 }
+		    .cta__more-details {
+	            @extend %arrow-chevron-right--platinum; // Change out bg img to align with platinum bg colour
+	        }
+		}
+		&.active {
+			.arrow-chevron-right {
+				background-color: #fff;
+				background: url(../images/arrows.png);
+				background-position: 78px 14px;
+				background-size: 216px 131px;
+				width: 81px;
+				height: 44px;
+			}
+		}
+	}
 	.accordion-body {
-		//border: 1px solid $body-border-color;
+
 	}
 }
+

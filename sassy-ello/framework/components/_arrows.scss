@@ -3,6 +3,7 @@
 
 // See mixin in base/_mixins.scss
 
+// Vars
 $arrow-size:            $half-spacing-unit!default;
 $arrow-border:          1!default;
 $border:                $arrow-size;
@@ -165,13 +166,13 @@ $arrow:                 $arrow-size - $arrow-border;
 
 %arrow-chevron--inverted-transparency--default-colours { // Matches default link colours
     background-color: $colour-link;
-    @include vendor(transition, background-color 0.3s, background-color 0.3s);
+    //@include vendor(transition, background-color 0.3s, background-color 0.3s);
     &:hover {
         background-color: $colour-link-hover;   
     }
     &:active {
         background-color: $colour-link-active;
-        @include vendor(transition, background-color 0.05s, background-color 0.05s);
+        //@include vendor(transition, background-color 0.05s, background-color 0.05s);
     }
 }
 

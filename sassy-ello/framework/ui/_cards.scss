@@ -12,15 +12,22 @@ $card-section-border-default:   $colour-grey-light-alt;
 
 $card-border-thick:             $border-thick;
 $card-padding:                  $base-line-height;
+$card-padding-vertical:         floor($card-padding / 1.63);
 $card-margin:                   $base-line-height;
 $card-border-radius:            $brand-round;
 $card-image-title-bg:           $colour-charcoal;
 $card-image-title-bg-hover:     $colour-black;
 $card-image-text:               $colour-white;
-$card-title-background-dark:    $colour-grey;
-$card-title-color-white:        $colour-white;
-$card-title-border-black:       $colour-black;
+$card-title-dark-bg:            $colour-smoke;
+$card-title-dark-border:        $colour-smoke-darker;
+$card-title-dark-arrow:         $colour-smoke-lighter;
+$card-title-color-light:        $colour-white;
+$card-title-color-light-hover:  $colour-grey-light;
 $card-title-color-hover:        $colour-black;
+
+$blue-section-color:            $colour-blue-lightest-alt;
+$blue-section-border-color:     $colour-blue;
+
 
 // Card base styling with placeholder classes
 %card-base {
@@ -51,6 +58,11 @@ $card-title-color-hover:        $colour-black;
     border: 1px dashed $card-section-border-default;
 }
 
+%card__section--with-bg-colour-border-solid {
+    background-color: $card-background-default;
+    border: 1px solid $card-section-border-default;
+}
+
 %card__section--with-bg-colour-border-alt-top-bottom {
     background-color: $card-background-alt;
     border-top: 1px dashed $card-section-border-default;
@@ -76,9 +88,23 @@ $card-title-color-hover:        $colour-black;
 }
 
 %card__title {
-    padding: (floor($card-padding / 1.63)) ($card-padding);
+    padding: ($card-padding-vertical) ($card-padding);
     border-top-left-radius: $card-border-radius;
     border-top-right-radius: $card-border-radius;
+    .see-all {
+        float: right;
+    }
+}
+
+%card__title-dark {
+    @extend %card__title-colours--dark;
+    border-bottom-color: $card-title-dark-border;
+    .see-all {
+        color: $card-title-color-light;
+        &:hover {
+            color: $card-title-color-light-hover;
+        }
+    }
 }
 
 %card__title--font {
@@ -110,10 +136,56 @@ $card-title-color-hover:        $colour-black;
     color: $card-title-colour-default;
 }
 
+%card__title-colours--dark {
+    background-color: $card-title-dark-bg;
+    color: $card-title-color-light;
+    
+}
+
+%card__title-icon-base {
+    float: left;
+    padding: 14px 0px 13px 14px;
+    font-size: 1.2em;
+    margin-top: -$card-padding-vertical;
+    margin-left: -$card-padding;
+}
+
+%card__title-icon--default {
+    color: #000;
+    background-color: $colour-grey;
+}
+
+%card__title-icon--dark {
+    background-color: $card-title-dark-arrow;
+    color: #fff;
+}
+
+%card__title-triangle-base {
+    float: left;
+    width: 0px; 
+    height: 0px; 
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 22px solid $colour-grey-light;
+    margin-right: 10px;
+    margin-top: -$card-padding-vertical;
+}
+
+%card__title-triangle-default {
+    border-left: 22px solid $colour-grey-light;
+}
+
+%card__title-triangle-dark {
+    border-left: 22px solid $card-title-dark-arrow;
+}
+
 
 // Card styling layers
 %card-with-padding-default {
     padding: $card-padding;
+}
+%card-with-padding-half {
+    padding: $card-padding/2;
 }
 
 %card-with-border {
@@ -219,7 +291,6 @@ $card-title-color-hover:        $colour-black;
 
     }
 }
-
 // .card-shadow-frame-border {
 //  @extend .card-shadow-frame;
 //  @extend %card-with-border;
@@ -244,6 +315,19 @@ $card-title-color-hover:        $colour-black;
     }
 }
 
+.card__title-dark {
+    @extend %card__title;
+    @extend %card__title-dark;
+    .card__title-icon {
+        @extend %card__title-icon-base;
+        @extend %card__title-icon--dark;
+        } 
+    .card__title-triangle {
+        @extend %card__title-triangle-base;
+        @extend %card__title-triangle-dark;
+    }
+}
+
 .card--margin-bottom {
     margin-bottom: 10px;
 }
@@ -251,37 +335,6 @@ $card-title-color-hover:        $colour-black;
     background-color: $card-background-alt;
 }
 
-.card--title-dark {
-    .card__title {
-         background-color: $card-title-background-dark;
-         color: $card-title-color-white;
-         border-bottom: 5px solid $card-title-border-black;       
-    }
-    .fa-comments {
-        background-color: $colour-grey-light;
-        float: left;
-        padding:14px 0px 13px 14px;
-        color: #fff;
-        font-size: 1.2em; 
-    } 
-    .triangle {
-        float: left;
-        width: 0px; 
-        height: 0px; 
-        border-top: 22px solid transparent;
-        border-bottom: 22px solid transparent;
-        border-left: 22px solid $colour-grey-light;
-        margin-right: 10px;
-    }
-    .see-all__link {
-        float: right;
-        color: $card-title-color-white; 
-        &:hover {
-            color: $card-title-color-hover; 
-        }
-    }
-
-}
 .font--small {
     font-size: 12px;
     line-height: 22px;
@@ -295,6 +348,10 @@ $card-title-color-hover:        $colour-black;
 
 .card--border-dashed {
     @extend %card__section--with-bg-colour-border-alt;
+}
+
+.card--border-solid {
+    @extend %card__section--with-bg-colour-border-solid;
 }
 .card--border-thick {
     border-width: $card-border-thick;
@@ -314,6 +371,11 @@ $card-title-color-hover:        $colour-black;
 
 .card--border-bottom {
     border-bottom: 1px solid $card-section-border-default;
+}
+
+.card--border-bottom-thick {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
 }
 
 .card--no-margin {
@@ -337,6 +399,9 @@ $card-title-color-hover:        $colour-black;
 .card--padding-half {
     padding: $card-padding/2;
 }
+.card--padding {
+    padding: $card-padding;
+}
 .card--vertical-pad {
     padding: $card-padding 0px;
 }
@@ -359,6 +424,11 @@ $card-title-color-hover:        $colour-black;
 
 .card__section {
     @extend %card__section !optional;
+    &.blue--section {
+        background-color: $blue-section-color;
+        border: 1px dashed $blue-section-border-color;
+        @extend %card-with-padding-half;
+    }
 }
 
 .card__section-alt {

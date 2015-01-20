@@ -8,20 +8,13 @@
 }
 // Add/remove floats
  
+ .left      { float: left; }
+ .right     { float: right; }
+
 .float--right   { float:right!important; }
 .float--left    { float:left !important; }
 .float--none    { float:none !important; }
 
-
-//Text color
-
-.colour-grey {
-    color: $colour-grey;
-}
-
-.colour-grey-light {
-    color: $colour-grey-light;
-}
 
 // Text alignment
  

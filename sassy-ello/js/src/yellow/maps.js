@@ -155,4 +155,27 @@
 
 
 
+
+    Yellow.geoPosition = undefined;
+    // Try HTML5 geolocation
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+             function (position) {
+                Yellow.geoPosition = position;
+             },
+             function(e) {
+                 console.log(e);
+             },
+             {
+                 timeout: 0,
+                 enableHighAccuracy: true,
+                 maximumAge: Infinity
+             }
+        );
+    } else {
+        // no native support; maybe try a fallback?
+        console.log('failed geo');
+    }
+
+
 }).call(this);

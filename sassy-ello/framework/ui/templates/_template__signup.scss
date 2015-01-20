@@ -53,19 +53,6 @@
         font-size:  0.9em;
     }
 
-    .divider-dotted {
-        border-top: 1px dashed $colour-grey-lighter;
-        text-align: center;
-        b {
-            background:     $colour-grey-light;
-            color:          $colour-white;
-            border-radius:  20px;
-            padding:        10px;
-            top:            -10px;
-            position:       relative;
-        }
-    }
-
     @include media-query(desk) {
         form {
             border:     1px solid $colour-white;

@@ -1,0 +1,104 @@
+// BROWSE CATEGORIES PAGE
+// ===============================================================================
+
+// Vars
+$browse-letters-colour:          $colour-white;
+$browse-letter-colour:           $browse-letters-colour;
+$browse-letters-background:      $colour-blue;
+$browse-letter-background:       $browse-letters-background;
+
+.browse {
+
+}
+
+
+.browse-letters {
+
+    display:    table;
+    width:      100%;
+    padding:    0px;
+    margin:     0px 0px $gutter 0px;
+    background: $browse-letters-background;
+    color:      $browse-letters-colour;
+
+    a {
+        display:        table-cell;
+        text-align:     center;
+        color:          $colour-white;
+        text-transform: uppercase;
+        padding:        10px 0px;
+
+        &:hover {
+            color: $colour-blue-darkest;
+        }
+    }
+}
+
+.browse-letter {
+
+    background:     $browse-letter-background;
+    color:          $browse-letter-colour;
+    border:         2px solid $colour-white;
+    border-radius:  25px;
+    padding:        0px 7px;
+    font-size:      1.4em;
+    float:          left;
+    box-shadow:     0px 0px 1px rgba($colour-black, 0.7);
+    margin-left:    -15px;
+    @extend .font-face--serif;
+
+    &:hover {
+        color: $browse-letter-colour;    }
+}
+
+.browse-letter-categories {
+
+    border-left: 1px dashed $colour-grey-lighter;
+    margin-left: 15px;
+}
+
+.browse-category {
+
+    margin-left: $gutter * 2;
+    padding-bottom: $gutter;
+
+    h3 {
+        font-weight: normal;
+        font-size: 1.4em;
+        @extend .font-face--serif;
+    }
+
+    a {
+        i {
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            color: $colour-grey-light;
+            transition: $transition;
+        }
+        b {
+            font-weight: normal;
+        }
+        span {
+            background: $colour-grey-lighter;
+            display: block;
+            padding: 5px 10px;
+            color: $colour-grey;
+            transition: $transition;
+        }
+        font-size: 0.9em;
+        color: $colour-grey;
+        position: relative;
+        margin-bottom: 2px;
+
+        &:hover {
+            span {
+                background-color: $colour-grey-light;
+                color: $colour-white;
+            }
+            i {
+                color: $colour-white;
+            }
+        }
+    }
+}

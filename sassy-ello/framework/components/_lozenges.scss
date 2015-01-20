@@ -1,7 +1,7 @@
 // LOZENGES AND PILLS
 // ===============================================================================
 
-.pill{
+.pill {
     display:inline-block;
 
     // These numbers set in ems mean that, at its narrowest, a lozenge will be the same width as the 'line-height' set on the 'html' element. This allows us to use the '.loz' in almost any 'font-size' we wish.
@@ -16,7 +16,7 @@
     border-radius:100px;
 }
 
-.loz{
+.loz {
     @extend .pill;
     border-radius:$brand-round;
 }

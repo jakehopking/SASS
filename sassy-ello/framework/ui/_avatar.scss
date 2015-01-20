@@ -1,0 +1,26 @@
+// USER AVATAR
+// ===============================================================================
+
+// Vars
+$avatar-title-colour:       $colour-grey;
+$avatar-count-colour:       $colour-blue;
+
+.avatar {
+
+    text-align: center;
+    font-size: 0.8em;
+    white-space: nowrap;
+    @extend .font-face--condensed;
+
+    h6 {
+        margin-bottom: 3px;
+        color: $avatar-title-colour; 
+        font-size: 1.1em;
+    }
+    img {
+        margin: 0px auto 3px auto;
+    }
+    .count {
+        color: $avatar-count-colour;
+    }
+}

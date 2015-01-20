@@ -1,0 +1,61 @@
+// DISRUPTIVE ADVERT (Above header, full section)
+// ===============================================================================
+
+// Vars 
+$disruptive-padding:			$base-line-height;
+$distruptive-advert-border:     $colour-black;
+$disruptive-colour-dark:		$colour-white;
+$disruptive-colour-light:		$colour-charcoal;
+$disruptive-bg-dark:			$colour-charcoal;
+$disruptive-bg-light:			$colour-grey-lightest;
+
+.distruptive-advert {
+	border-bottom: 1px solid $distruptive-advert-border;
+}
+
+.distruptive-advert-container {
+	@extend %grid__container;
+    padding-top: $disruptive-padding;
+    padding-bottom: $disruptive-padding;
+    a.close-panel:hover {
+        color: $colour-link;
+    }
+}
+
+.distruptive-advert--dark {
+    color: $disruptive-colour-dark;
+	background-color: $disruptive-bg-dark;
+    a.close-panel {
+        color: $disruptive-colour-dark;
+    }
+}
+
+.distruptive-advert--light {
+    color: $disruptive-colour-light;
+	background-color: $disruptive-bg-light;
+    a.close-panel {
+        color: $disruptive-colour-light;
+    }
+}
+
+.disruptive__text {
+
+}
+
+.disruptive__image {
+    // background-size: cover;
+    // background-position: 0 0;
+    overflow: hidden;
+    height: 204px;
+    margin-bottom: -$base-line-height;
+    @include media-query(lap) {
+        height: 300px;
+    }
+    @include media-query(palm) {
+        height: 300px;
+        margin-top: $base-line-height;
+    }
+    > img {
+        
+    }
+}

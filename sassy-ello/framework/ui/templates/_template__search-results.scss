@@ -158,6 +158,30 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
     }
 }
 
+// Item disruptive 
+.search-results__item.item--disruptive {
+    .business-call-to-actions {
+        @include media-query(portable) {
+            padding: 0;
+        }
+    }
+    &:hover {
+        .card-shadow-frame {
+            background-color: $search-item-platinum-bg;
+        }
+        .business-content {
+            .cta__more-details {
+                @extend %arrow-chevron-right--platinum; // Change out bg img to align with platinum bg colour
+            }
+        }
+    }
+}
+
+
+
+
+
+
 
 
 

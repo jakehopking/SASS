@@ -6,6 +6,7 @@
 $user-info-color: 				$colour-grey-darker;
 $user-name-color: 				$colour-charcoal;
 $user-image-padding: 			14px;
+$user-info-padding: 			14px;
 $dashboard-menu-colour: 		$colour-grey-light;
 $menu-item-border-colour: 		$colour-grey-lighter;
 $user-stats-padding: 			$base-line-height/2;
@@ -17,7 +18,15 @@ $favourites-margin-bottom: 		$base-line-height/2;
 //User details
 .user-details {
 	.user__image {
-		padding: $user-image-padding;
+		padding: $user-image-padding 0 0 $user-image-padding;
+		display: inline-block;
+		vertical-align: top;
+	}
+	
+	.user__info {
+		display: inline-block;
+		vertical-align: top;
+		padding: $user-info-padding 0 $user-info-padding $user-info-padding;
 	}
 
 	.user__name {
@@ -118,7 +127,7 @@ $favourites-margin-bottom: 		$base-line-height/2;
 //Dashboard menu
 .dashboard-menu-items {
 	margin-left: 0px;
-	padding: 20px;
+	padding: 7px 20px 20px 20px;
 	border-top: 1px solid $menu-item-border-colour;
 	li {
 		list-style-type: none;

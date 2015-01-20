@@ -1,0 +1,40 @@
+// STRIKE THROUGH
+// ===============================================================================
+
+.strike-through {
+    position: relative;
+    z-index: 1;
+    &:before {
+        border-top-color: $base-ui-color;
+        border-top-style: solid;
+        border-top-width: 2px;
+        content:"";
+        margin: 0 auto; // this centers the line to the full width specified
+        position: absolute; // positioning must be absolute here, and relative positioning must be applied to the parent
+        top: 50%; left: 0; right: 0; bottom: 0;
+        width: 100%;
+        z-index: -1;
+    }
+    span { 
+        background: $body-background; // Colour of container
+        padding: 0 $base-line-height; 
+    }
+}
+
+.strike-through--thick {
+    &:before {
+        border-top-width: 3px;
+    }
+}
+
+.strike-through--left {
+	span {
+		padding-left: 0;
+	}
+}
+
+.strike-through--right {
+	span {
+		padding-right: 0;
+	}
+}

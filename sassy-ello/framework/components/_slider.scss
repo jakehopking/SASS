@@ -1,6 +1,7 @@
+// IMAGE SLIDER
+// ===============================================================================
 
-//VARS
-
+// Vars
 $arrow-colour: $colour-yellow;
 
 @mixin arrows {
@@ -8,7 +9,7 @@ $arrow-colour: $colour-yellow;
     bottom: 50%;
     width: 33px;
     height: 52px;
-    background-size: 100px 100px;
+    background-size: 140px 100px;
     @include media-query(tablet) {
         bottom: 70%;
     }
@@ -33,14 +34,14 @@ $arrow-colour: $colour-yellow;
             background: url(../images/arrows.png) 3px 50px;
             @include arrows;
             &:hover {
-                background-position: 67px 50px;
+                background-position: -27px 50px;
             }
         }
         .arrow-right {
             right: 20px;
             background: url(../images/arrows.png) 3px 2px;
             &:hover {
-                background-position: 67px 2px;
+                background-position: -27px 2px;
             }
             @include arrows;
         }

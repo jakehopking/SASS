@@ -1,0 +1,25 @@
+// ICON LIST
+// ===============================================================================
+
+
+%icon-list-base {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+%icon-list-li {
+    > li {
+        display: block;
+		margin: 10px 0;
+		i {
+			margin-right: $base-spacing-unit/2;
+		}
+    }
+}
+
+
+.icon-list {
+    @extend %icon-list-base;
+    @extend %icon-list-li;
+}

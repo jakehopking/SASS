@@ -1,6 +1,7 @@
 body {
 	margin: 0 auto;
 	max-width: $body-max-width;
+	min-width: $body-min-width;
 	background-color: $body-background;
 	color: $body-text;
 }

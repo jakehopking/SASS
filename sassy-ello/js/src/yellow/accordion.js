@@ -50,21 +50,13 @@
 
         var heads   = $('.accordion-head', sel),
             bodies  = $('.accordion-body', sel),
-            speed   = speed || 200,
-            active  = 0;
-
-        function activate (index) {
-            $(bodies.get(active)).slideUp(speed);
-            $(bodies.get(index)).slideDown(speed);
-            active = index;
-        }    
+            speed   = speed || 200;
 
         heads.on('click', function () {
-            activate($(this).parent('.accordion-part').index());
+            $(this).next('.accordion-body').toggle();
+			$(this).toggleClass('active');
         });
 
-        bodies.css('display', 'none');
-        activate(0);
     };
 
 

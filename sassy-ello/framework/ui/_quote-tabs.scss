@@ -3,15 +3,19 @@
 
 //VARS
 
-$quote-received-colour: #4d545e;
-$quote-received-background-colour: #dee6ef;
-$quote-accepted-colour: #0f9609;
-$quote-accepted-background-colour: #e8f6eb;
-$quote-declined-colour: #a12323;
-$quote-declined-background-colour: #f6e8e8;
-$quote-received-status-colour: $colour-grey;
+$quote-received-colour: 					$colour-blue-darker;
+$quote-received-background-colour: 			$colour-blue-lightest-alt-2;
+$quote-accepted-colour: 					$colour-green-darker;
+$quote-accepted-background-colour: 			$colour-green-lightest;
+$quote-declined-colour: 					$colour-red-darker;
+$quote-declined-background-colour: 			$colour-red-lightest-alt;
+$quote-pending-colour: 						$colour-orange-tango;
+$quote-pending-background-colour: 			$colour-orange-lightest;
+$quote-received-status-colour: 				$colour-grey;
+$contact-form-label-color: 					$colour-grey;
 
-$quote-white-border: $colour-white;
+$quote-border-colour: 						$colour-white;
+$or-circle-margin: 							28px;
 
 %quote-status {
 	color: $colour-white;
@@ -19,28 +23,49 @@ $quote-white-border: $colour-white;
 	font-size: 12px;
 }
 .quote-status {
-	margin-top:5px;
+	margin-top:4px;
 	.status--quotes-received {
 		background: $quote-received-status-colour;
 		@extend %quote-status;
 	}
 }
-.quote-tabs {
-	ul, li {
-		list-style-type: none;
-		margin: 0px;
+
+.quotes-accordion.accordion {
+	background-color: transparent;
+	list-style-type: none;
+	margin: 0px;
+	.accordion-head {
+		&.active {
+			> .grid {
+				border-bottom: 1px solid $colour-grey-light-alt;
+			}
+		}
 	}
+	.accordion-body {
+		display: none;
+	}
+}
+
+.quote-tabs {
 	.tabs-menu {
 		display: block;
+		ul, li {
+			list-style-type: none;
+			margin: 0px;
+			background-color: $card-background-alt;
+		}
 		li {
 			padding:10px;
 			float: left;
-			border-bottom: 2px solid #fff;
-			border-right: 2px solid #fff;
+			border-bottom: 2px solid $quote-border-colour;
+			border-right: 2px solid $quote-border-colour;
+			@include media-query(palm) {
+				border-right: none;
+			}
 			.amount {
 				border-radius:50%;
 				padding: 10px 15px;
-				float: left;
+				display: inline-block;
 				margin-right: 10px;
 			}
 			.title {
@@ -49,42 +74,54 @@ $quote-white-border: $colour-white;
 				display: inline-block;
 				width: 50%;
 			}
-		}
-		li.quotes-received {
-			background: $quote-received-background-colour;
-				&.active {
-					border-bottom: 2px solid $quote-received-background-colour;
-				}
-				a {
-					color: $quote-received-colour;
-					.amount {
-						border: 3px solid $quote-received-colour;
+			&.quotes-received {
+				background: $quote-received-background-colour;
+					&.active {
+						border-bottom: 2px solid $quote-received-background-colour;
 					}
-				}
-		}
-		li.quotes-declined {
-			background: $quote-declined-background-colour;
-				&.active {
-					border-bottom: 2px solid $quote-declined-background-colour;
-				}
-				a {
-					color: $quote-declined-colour;
-					.amount {
-						border: 3px solid $quote-declined-colour;
+					a {
+						color: $quote-received-colour;
+						.amount {
+							border: 3px solid $quote-received-colour;
+						}
 					}
-				}
-		}
-		li.quotes-accepted {
-			background: $quote-accepted-background-colour;
-				&.active {
-					border-bottom: 2px solid $quote-accepted-background-colour;
-				}
-				a {
-					color: $quote-accepted-colour;
-					.amount {
-						border: 3px solid $quote-accepted-colour;
+			}
+			&.quotes-declined {
+				background: $quote-declined-background-colour;
+					&.active {
+						border-bottom: 2px solid $quote-declined-background-colour;
 					}
-				}
+					a {
+						color: $quote-declined-colour;
+						.amount {
+							border: 3px solid $quote-declined-colour;
+						}
+					}
+			}
+			&.quotes-accepted {
+				background: $quote-accepted-background-colour;
+					&.active {
+						border-bottom: 2px solid $quote-accepted-background-colour;
+					}
+					a {
+						color: $quote-accepted-colour;
+						.amount {
+							border: 3px solid $quote-accepted-colour;
+						}
+					}
+			}
+			&.quotes-pending, &.quotes-submitted {
+				background: $quote-pending-background-colour;
+					&.active {
+						border-bottom: 2px solid $quote-pending-background-colour;
+					}
+					a {
+						color: $quote-pending-colour;
+						.amount {
+							border: 3px solid $quote-pending-colour;
+						}
+					}
+			}
 		}
 	}
 	.tabs-content {
@@ -103,6 +140,32 @@ $quote-white-border: $colour-white;
 		}
 		.quotes-declined {
 			background: $quote-declined-background-colour;
+		}
+		.quotes-pending, .quotes-submitted {
+			background: $quote-pending-background-colour;
+		}
+	}
+}
+.quote__contact-form {
+	padding-bottom: $base-line-height/4;
+	border-bottom: 1px solid $colour-grey-light;
+	label {
+		font-weight: normal;
+		color: $contact-form-label-color;
+	}
+	.or__circle {
+		margin-top: $or-circle-margin;
+		 @include media-query(palm) {
+		 	margin-top: -15px;
+		 	span {
+		 		float: left;
+		 	}
+	    }
+		span {
+			border-radius: 50%;
+			padding:20px;
+			background: $colour-grey-light;
+			color: $colour-white;
 		}
 	}
 }

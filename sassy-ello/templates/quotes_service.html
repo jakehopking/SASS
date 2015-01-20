@@ -1,0 +1,120 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+<div class="middle">
+	<section>
+		<div class="section-container">
+			<div class="grid quotes-service">
+				<div class="grid__item one-whole desk--two-thirds column-content">
+					<div class="card card-shadow-frame">
+						<div class="grid">
+							<div class="grid__item one-whole">
+								<div class="card card--no-border card--title-dark card--grey-bg">
+									<div class="card-section">
+										<i class="card__title-icon fa fa-comments"></i>
+										<span class="card__title-triangle"></span>
+										<div class="card__title">
+											<span class="epsilon">Get free quotes for Pest Control</span>
+										</div>
+									</div>
+									<div class="card__content">
+										<div class="grid grid--rev">
+											<div class="grid__item one-whole desk--one-half">
+												<div class="card__section blue--section font--small card--margin-bottom">
+													<h5 class="font-face--condensed"><i class=" fa fa-lg fa-info-circle colour--info"></i> How do quotes work?</h5>
+													Within 48 hours, we'll introduce you to several interested and available cleaners near you. You'll be able to compare quotes, messages, reviews and profiles. When you're ready, hire the right professional. Simples.
+												</div>
+												<br>
+											</div>
+											<div class="grid__item one-whole desk--one-half">
+												<form>
+													<h4 class="font-face--condensed"><i class=" fa fa-bullhorn"></i> Tell us what you need</h4>
+													<div class="form-group">
+														<hr class="rule"">
+														<label for="sel1">What kind of infestation do you have?</label>
+														<div class="checkbox">
+															<label><input type="checkbox" name="service-type" value="">Rats or vermin</label>
+														</div>
+														<div class="checkbox">
+															<label><input type="checkbox" name="service-type" checked value="">Fat cats or annoying neighbours</label>
+														</div>
+														<div class="checkbox">
+															<label><input type="checkbox" name="service-type" value="">Flys, flying everywhere!! Help!!</label>
+														</div>
+														<div class="checkbox">
+															<label><input type="checkbox" name="service-type" value="">Skyprawns or other airborne fish</label>
+														</div>
+														<hr class="rule">
+													</div>
+													<div class="form-group">
+														<label for="sel1">Rough order of magnitude of infestation?</label>
+														<select class="form-group__item" name="service-size" id="sel1">
+															<option>Select one</option>
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+														<br>
+														<hr class="rule">
+													</div>
+													<div class="form-group">
+														<label for="sel2">Do you need additional services?</label>
+														<select class="form-group__item" name="service-add" id="sel2">
+															<option>Select one</option>
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+														<br>
+														<hr class="rule">
+													</div>
+													<div class="form-group">
+														<label for="sel3">What type of property do you have?</label>
+														<select class="form-group__item" name="property-type" id="sel3">
+															<option>Select one</option>
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+														</select>
+														<br>
+														<hr class="rule">
+													</div>
+													<div class="form-group">
+														<label for="comment">Comment:</label>
+														<textarea class="form-group__item" name="comment" rows="5" id="comment"></textarea>
+														<br>
+														<hr class="rule">
+													</div>
+													<div class="form-group">
+														<label for="usr">Name:</label>
+														<input type="text" name="name" class="form-group__item" id="usr">
+														<br>
+														<hr class="rule">
+													</div>
+														<p class="sub">By clicking "Send my request" you agree to the <a href="#">terms of use</p>
+														<a class="button button--fill"><i class="fa fa-paper-plane fa-pad--right"></i><b> Send my request</b> </a>
+														<br>
+													</div>
+												</form>
+											</div>	
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'dashboard' %}{% endblock %}

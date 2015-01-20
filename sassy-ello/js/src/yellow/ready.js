@@ -1,27 +1,19 @@
-$(function () { 
+$(function () {
 
     "use strict";
-
-
 
     // Get the base app data
 
     $.extend(Yellow, Yellow.util.parseData('#app-data'));
-
-
 
     // If any notification or error in the base data, trigger a notification bar
 
     if (Yellow.notificationMessage) Yellow.notify(Yellow.notificationMessage);
     if (Yellow.errorMessage)        Yellow.notify(Yellow.errorMessage, 'error');
 
-
-
     // bind search button and inputs
 
-    Yellow.search('#searchbox'); 
-
-
+    Yellow.search('#searchbox');
 
     // Activate the mobile menu
 

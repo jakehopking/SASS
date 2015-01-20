@@ -46,17 +46,19 @@ $(function () {
     }
 
 
-    function update (stars, rating) {
+    function update (stars, rating, onUpdate) {
 
         var cls = ratingToCls(rating);
 
         stars.each(function (i, el) {
             $(el).attr('class', 'fa ' + cls[i]);
         });
+
+        if (onUpdate) onUpdate(rating);
     }
 
 
-    function starRater () {
+    function starRater (onUpdate) {
 
         var sel         = $(this),
             offset      = sel.offset().left,
@@ -87,11 +89,11 @@ $(function () {
             mousemove: function (e) {
                 var x = e.pageX - offset;
                 tempRating = percentToRating(Math.round(x / width * 100));
-                update(stars, tempRating);
+                update(stars, tempRating, onUpdate);
             },
 
             mouseout: function () {
-                update(stars, rating);
+                update(stars, rating, onUpdate);
             },
 
             click: function () { 
@@ -100,7 +102,7 @@ $(function () {
 
                     rating = tempRating;
                     input.val(rating);
-                    update(stars, rating);
+                    update(stars, rating, onUpdate);
                 }
 
                 if (action) {
@@ -123,7 +125,7 @@ $(function () {
                         success: function (data) {
 
                             rating = data.rating;
-                            update(stars, rating);
+                            update(stars, rating, onUpdate);
                             Yellow.notify(data.message || 'Rating received');
                         },
 
@@ -138,10 +140,12 @@ $(function () {
     }
 
 
-    Yellow.starRater = function (selector) {
+    Yellow.starRater = function (selector, onUpdate) {
 
         var sel = $(selector); if (sel.length < 1) return;
-        sel.each(starRater);
+        sel.each(function () {
+            starRater.call($(this), onUpdate);
+        });
     };
 
 

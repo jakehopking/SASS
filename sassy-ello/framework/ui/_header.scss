@@ -101,6 +101,45 @@ span.twitter-typeahead {
     width:100%;
 }
 
+span.tt-dropdown-menu {
+    z-index: 300 !important;
+    background-color: #FFF;
+    padding: 0 15px 0 15px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+    .tt-dataset-ta-categories {
+        color:  #858585;
+        h3 {
+            margin:0;
+            font-size: 14px;
+            color: red;
+        }
+    }
+    .tt-dataset-ta-businesses {
+        color:  #858585;
+        h3 {
+            margin:0;
+            font-size: 14px;
+            color: green;
+        }
+    }
+    .tt-dataset-ta-locations {
+        color:  #858585;
+        h3 {
+            margin:0;
+            font-size: 14px;
+            color: blue;
+        }
+    }
+    .tt-cursor { color: black; cursor: pointer; }
+    p {
+        padding: 0;
+        margin: 0;
+    }
+}
+
 .header-menu {
     text-align: right;
     a {

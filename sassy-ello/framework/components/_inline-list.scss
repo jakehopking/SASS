@@ -12,8 +12,10 @@
 //   <li><a href=# class=inline-list__link>Foo Bar Baz</a></li> // Not implemented
 // </ul>
 
+// Vars 
 $list-inline-delimit-character-comma:         ",\00A0" !default;
 $list-inline-delimit-character-bar:         "|\00A0" !default;
+
 
 %inline-list-base {
     margin: 0;

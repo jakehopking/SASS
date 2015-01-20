@@ -1,0 +1,22 @@
+// QUOTES SERVICE PAGE TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+
+// Vars END
+
+
+.quotes-service {
+	.card__section {
+		&.blue--section {
+			h5 {margin-bottom: 10px;}
+		}
+	}
+	
+	.sub {
+		@extend     .text-centre;
+		color: $colour-grey;
+		font-size: 0.8em;
+	}
+}

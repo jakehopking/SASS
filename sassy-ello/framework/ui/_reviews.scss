@@ -169,6 +169,10 @@ $review-quote-colour-yellow:    $colour-yellow;
                 color: $review-feature-time;
             }
         }
+        .feature__contact-details {
+            margin-top: $base-line-height/2;
+            font-size: 0.8em;
+        }
     }    
 }
 %review-actions-margin-left {

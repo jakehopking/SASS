@@ -2,7 +2,6 @@
 // ===============================================================================
 
 // Vars
-
 $fa-padding:                    $base-line-height;
 $fa-outline:                    3px;
 $fa-outline-brand:              $brand-primary;
@@ -12,7 +11,9 @@ $fa-outline-small:              25px;
 $fa-outline-medium:             35px;
 $fa-outline-large:              45px;
 
+
 // Font face modifiers
+
 .font-face--default {
     font-family: $font-face-default; // Roboto
 }
@@ -29,6 +30,28 @@ $fa-outline-large:              45px;
     font-family: $font-face-fa; // Font Awesome 4.2
 }
 
+.font-weight--light {
+    font-weight: $font-weight-light;
+}
+
+.font-weight--bold {
+    font-weight: $font-weight-bold;
+}
+
+// Text modifiers
+
+.text--zero-margin {
+    margin-bottom: 0;   
+}
+
+.text--half-margin {
+    margin-bottom: $half-spacing-unit;   
+}
+
+.text--double-margin {
+    margin-bottom: $base-line-height * 2;   
+}
+
 // Colour modifiers
 
 .colour--positive {
@@ -39,6 +62,17 @@ $fa-outline-large:              45px;
     color: $colour-negative;
 }
 
+.colour--info {
+    color: $colour-blue;
+}
+
+.colour-grey {
+    color: $colour-grey;
+}
+
+.colour-grey-light {
+    color: $colour-grey-light;
+}
 
 // Links
 
@@ -130,6 +164,65 @@ p a:not(.button) { // :not prevents this styling being applied to the inline but
     @extend %link-transition;
 }
 
+// See all links 
+
+%see-all-tab-base {
+    position: relative;
+    a {
+        color: $body-text;
+        background-color: $section-bg-alt;
+        display: block;
+        padding: 5px 15px;
+        &:hover {
+            background-color: $colour-link;
+            color: $colour-white;
+        }
+    }
+    
+}
+
+%see-all-tab-alt {
+    padding-top: $section-padding;
+    margin-bottom: -$section-padding * 2.5;
+    padding-bottom: 0;
+
+    @include media-query(below-desk-wide) {
+        padding-top: inherit;
+        margin-bottom: 0;
+        a {
+            background-color: $colour-link;
+            color: $colour-white;
+        }
+    }
+    @include media-query(desk) {
+        padding-top: $section-padding;
+    }
+}
+
+%see-all-tab-default {
+    padding-top: 0;
+    padding-bottom: $section-padding;
+    @include media-query(below-desk-wide) {
+        a {
+            background-color: $colour-link;
+            color: $colour-white;
+        }
+    }
+}
+
+.see-all.see-all--tab {
+    @extend %see-all-tab-base;
+    @extend %see-all-tab-default !optional;
+}
+
+.see-all.see-all--tab-alt {
+    @extend %see-all-tab-base;
+    @extend %see-all-tab-alt;
+}
+
+.see-all {
+    z-index: 2;
+}
 
 // Icons
 
@@ -223,5 +316,27 @@ p a:not(.button) { // :not prevents this styling being applied to the inline but
 }
 
 
+// Dividers
+.divider-circle {
+	background: $colour-grey-light;
+	color: $colour-white;
+	border-radius: 50%;
+	padding: 10px;
+	position: relative;
+	margin: auto;
+	display: inline-block;
+}
 
+.divider-dotted {
+	border-top: 1px dashed $colour-grey-lighter;
+	text-align: center;
+	b {
+		background:     $colour-grey-light;
+		color:          $colour-white;
+		border-radius:  20px;
+		padding:        10px;
+		top:            -10px;
+		position:       relative;
+	}
+}
 

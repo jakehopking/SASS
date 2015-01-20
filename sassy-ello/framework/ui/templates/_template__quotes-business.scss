@@ -1,0 +1,19 @@
+// QUOTES BUSINESS PAGE TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+
+// Vars END
+
+
+.quotes-business {
+	.divider-dotted {
+		margin: $base-spacing-unit 0;
+	}
+	.quotes-form {
+		.form-group--half-margin {
+			margin-bottom: $form-margin/2;		
+		}
+	}
+}
