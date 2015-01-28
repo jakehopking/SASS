@@ -34,7 +34,9 @@
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
             limit: 5,
-            remote: '/srv/ta/?q=%QUERY'
+            remote: '/srv/ta/?q=%QUERY',
+            rateLimitBy : 'throttle',
+            rateLimitWait : 1500
         });
 
         var taLocations = new Bloodhound({

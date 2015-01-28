@@ -1,0 +1,101 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+<div class="middle">
+
+    <section class="section section-logged-out">
+        <div class="section-container">
+            
+            <div class="grid grid--center logged-out">
+                <div class="grid__item one-whole lap--one-whole desk--ten-twelfths">
+                    <h1>
+                        Discover and connect with businesses, <strong>wherever you are</strong> with our <strong>latest generation</strong> of smart apps for <strong>android</strong> and <strong>iOS</strong>
+                    </h1>
+                    <form class="card card-flat grid__item one-whole">
+                        <div class="card-minimal card--padding grid__item one-whole desk--three-fifths">
+
+                                <fieldset class="grid">
+
+                                    <div class="grid__item card--padding">
+                                        <p class="">Whatever your device, we have an app that helps you get things done.</p>
+                                        <p>Save your favourite businesses and people in one place. <br>Find the best thing around or reconnect with old friends.</p>
+
+                                        <div class="grid">
+                                            <div class="grid__item card card--bottom-pad card--no-margin">
+                                                <div class="form-group grid__item lap--one-whole desk--three-fifths">
+                                                    <input class="form-group__item" type="text" name="firstname" placeholder="e.g. 021 434 9988">  
+                                                </div>
+                                                <div class="form-group grid__item lap--one-whole desk--two-fifths">
+                                                    <button type="submit" class="button button--fill">Send link to phone</button>
+                                                </div>  
+                                            </div>
+                                        </div>
+
+                                        <div class="grid__item desk--one-half card--bottom-pad">
+                                            <strong class="button button--circular button--tertiary button--border-default"><i class="fa fa-comments-o fa-2x fa-fw"></i></strong>
+                                            <span>Write/Read reviews</span>
+                                        </div>
+                                        <div class="grid__item desk--one-half card--bottom-pad">
+                                            <strong class="button button--circular button--tertiary button--border-default"><i class="fa fa-compass fa-2x fa-fw"></i></strong>
+                                            <span>Get directions</span>
+                                        </div>
+                                        <div class="grid__item desk--one-half card--bottom-pad">
+                                            <strong class="button button--circular button--tertiary button--border-default"><i class="fa fa-eye fa-2x fa-fw"></i></strong>
+                                            <span>Browse Yellow</span>
+                                        </div>
+                                        <div class="grid__item desk--one-half card--bottom-pad">
+                                            <strong class="button button--circular button--tertiary button--border-default"><i class="fa fa-camera fa-2x fa-fw"></i></strong>
+                                            <span>Add & view photos</span>
+                                        </div>
+
+                                        <div class="grid">
+                                            <div class="grid__item card card--bottom-pad">
+
+                                                <div class="grid__item lap--one-half desk--one-half">
+                                                    <a class="app-btn" href="https://itunes.apple.com/nz/app/yellow-nz/id325450909"><img src="/static/images/yellow-iphone-app.png" alt="Download Yellow app from the Apple App Store"></a>
+                                                </div>
+                                                <div class="grid__item lap--one-half desk--one-half">
+                                                    <a class="app-btn" href="https://play.google.com/store/apps/details?id=nz.co.yellow.android"><img src="/static/images/yellow-android-app.png" alt="Download Yellow app from the Play Store"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                </fieldset>    
+                            
+                        </div>
+
+                        <div class="card-minimal card--padding grid__item desk--two-fifths hide-me--palm hide-me--lap">
+                            <img class="card--horizontal-pad" src="/static/images/samsung-iphone.png" alt="">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+
+
+{% block pagescripts %}
+
+    {% include "login_signup_vendor_scripts.html" %}    
+
+    {% compressed_js 'loginSignup' %}
+
+{% endblock %}
+ 

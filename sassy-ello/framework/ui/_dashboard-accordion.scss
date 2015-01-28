@@ -20,7 +20,7 @@ $body-border-color: $colour-grey;
 		&.active {
 			.arrow-chevron-right {
 				background-color: #fff;
-				background: url(../images/arrows.png);
+				background: url(#{$path-images}arrows.png);
 				background-position: 78px 14px;
 				background-size: 216px 131px;
 				width: 81px;

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+<div class="middle">
+	<section>
+		<div class="section-container">
+			<div class="grid">
+				<div class="grid__item one-whole desk--one-quarter column-menu">
+					<div class="card card-shadow-frame card--no-border">
+						<ul class="dashboard-menu-items">
+							<li>
+								<a class="active" href="#">Emergency Services</a>
+								<!-- <ul>
+									<li><a href="#">Quotes <span class="colour-grey right"><b>( 2 )</b></span></a></li>
+									<li><a href="#">Reviews</a></li>
+									<li><a href="#">Photos</a></li>
+									<li><a href="#">Favourites</a></li>
+									<li><a href="#">Businesses you may know</a></li>
+								</ul> -->
+							</li>
+							<li><a href="#">Self Service</a></li>
+							<li><a href="#">Book Dates</a></li>
+							<li><a href="#">Terms and Conditions</a></li>
+							<li><a href="#">Mobile</a></li>
+							<li><a href="#">What's Changed</a></li>
+							<li><a href="#">Sitemap</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Ratings and Reviews</a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Display help</a></li>
+							<li><a href="#">Report Error</a></li>
+							<li><a href="#">Suggest Business</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="grid__item one-whole desk--three-quarters column-content">
+					<div class="card-shadow-frame">
+						<div class="card__title"><h4><i class="fa fa-globe fa-pad--right"></i> Title of page</h4></div>
+						<div class="card__content">Here goes dynamic content... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur in magnam odit maxime aspernatur! Magni nihil voluptatem ea dolore, repudiandae saepe praesentium optio cum provident eum possimus mollitia inventore expedita.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'dashboard' %}{% endblock %}

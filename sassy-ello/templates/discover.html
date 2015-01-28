@@ -1,0 +1,163 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+<div class="middle">
+
+    <section class="section section-discover">
+        <div class="section-container">
+            
+            <div class="discover-main ">
+
+                <div class="discover-head">
+                    <h1>Explore &amp; discover great Kiwi businesses</h1>
+                    <h4>33 categories. Thousands of amazing businesses.</h4>
+                </div>
+
+                <div class="discover-nav">
+
+                    <div class="discover-tiles">
+                        <div class="grid">
+
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Accommodation</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Automotive</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Community</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Food, Drink &amp; Dining</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Health &amp; Beauty</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Medical</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Retail &amp; Shopping</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Trades &amp; Services</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Accommodation</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Automotive</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Community</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Food, Drink &amp; Dining</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Health &amp; Beauty</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Medical</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Retail &amp; Shopping</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Trades &amp; Services</b>
+                                    <span>1230 businesses</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+
+{% block pagescripts %}
+
+    {% include "login_signup_vendor_scripts.html" %}    
+
+    {% compressed_js 'loginSignup' %}
+
+{% endblock %}
+
+
+ 

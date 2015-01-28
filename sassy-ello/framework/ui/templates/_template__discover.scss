@@ -1,0 +1,152 @@
+// DISCOVER PAGE TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+
+.section-discover {
+    background: $colour-white;
+    @include media-query(desk) {
+        background: url('/static/images/blurred-city.jpg') no-repeat center center fixed; 
+        @include vendor(background-size, cover);
+    }
+}
+
+.discover-head {
+    h1, h4 {
+        display: none;
+    }
+}
+
+.discover-category {
+
+    background: $colour-grey-lighter;
+    margin: -20px -20px 10px -20px;
+    padding: $gutter $gutter 0px $gutter;
+
+    a {
+        font-weight: normal;
+        color: #000;
+        padding-top: 5px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        text-align: center;
+        font-weight: normal;
+    }
+}
+
+.discover-back {
+}
+
+.discover-see-all {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.discover-tiles {
+    a {
+        display: block;
+        padding: $gutter 0px;
+        b {
+            float: left;
+        }
+        i {
+            float: right;
+        }
+        span {
+            display: none;
+        }
+    }
+}
+
+.discover-bread {
+    padding: $gutter 0px;
+    margin-top: $gutter;
+    text-shadow: 0px 0px 2px $colour-white;
+    border-top: 1px dotted $colour-grey-light;
+    a {
+        color: $colour-grey;
+    }
+}
+
+
+@include media-query(desk) {
+
+    .discover-head {
+        h1, h4  {
+            text-align: center;
+            padding-bottom: 0px;
+            display: block;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        h4 {
+            font-size: 1em;
+        }
+    }
+
+    .discover-category {
+        background: none;
+        h1 {
+            text-align: left;
+        }
+    }
+
+    .discover-main {
+
+        max-width: 900px;
+        margin: 0px auto;
+        padding: 25px 0px;
+        min-height: 600px;
+
+        .discover-nav {
+
+            background: $colour-white;
+            background: $colour-white-transparent;
+            border: 1px solid #fff;
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+            padding: $gutter $gutter 0px $gutter;
+        }
+
+        .discover-tiles {
+
+            a {
+                display: block;
+                padding: 0px 0px $gutter 0px;
+
+                b, span {
+                    display: block;
+                    padding: $gutter*2 0px;
+                    text-align: center;
+                    height: 100%;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+                    float: none;
+                }
+                b {
+                    background: $colour-white;
+                }
+                span {
+                    display: none;
+                    background: $colour-blue;
+                    color: $colour-white;
+                }
+                i {
+                    display: none;
+                }
+                &:hover {
+                    b {
+                        display: none;
+                    }
+                    span {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+

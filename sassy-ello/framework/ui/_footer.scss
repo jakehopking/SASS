@@ -7,6 +7,9 @@ $footer-padding:                    $base-line-height;
 $footer-general-bg:                 $colour-grey;
 $footer-coporate-bg:                $colour-grey-darker;
 $footer-text:                       $colour-white;
+$footer-general-link-colour:        $brand-primary;
+$footer-general-link-colour-hover:  $brand-primary-lightest;
+$footer-general-icon-size:          108px;
 
 footer {
     .footer-container,
@@ -20,7 +23,12 @@ footer section.footer-horizon {
     background-position: 50% 0;
     vertical-align: bottom;
     padding-top: 240px;
-    margin-top: 60px;
+    .card__title {
+        h4 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    }
 }
 
 footer .footer-horizon__image {
@@ -32,6 +40,17 @@ footer .footer-horizon__image {
 footer section.footer-general {
     background-color: $footer-general-bg;
     color: $footer-text;
+    padding-top: $footer-padding * 2;
+    padding-bottom: $footer-padding * 2;
+    a {
+        color: $footer-general-link-colour;
+        &:hover {
+            color: $footer-general-link-colour-hover;
+        }
+    }
+    a.button--circular i {
+        color: $colour-white;
+    }
 }
 
 footer section.footer-corporate-info {
@@ -43,3 +62,61 @@ footer section.footer-corporate-info {
 .footer-copy {
     font-size: $milli-size;
 }
+
+.footer-business-ad {
+    padding-bottom: $footer-padding;
+}
+
+.footer-business-ad--left {
+    @include media-query(desk) {
+        padding-left: $footer-padding * 3;
+    }
+}
+
+.footer-business-ad--right {
+    @include media-query(desk) {
+        padding-right: $footer-padding * 3;
+    }
+}
+
+.footer-general-item {
+    margin-bottom: $footer-padding * 2;
+    @include media-query(desk) {
+        margin-bottom: 0;
+    }
+    .footer-general-item__icon {
+        float: left;
+        margin-right: -110px;
+        img {
+            width: $footer-general-icon-size;
+        }
+        i.fa {
+            font-size: $footer-general-icon-size;
+        }
+    }
+    .footer-general-item__icon + .footer-general-item__content {
+        padding-left: 130px;
+    }
+    .footer-general-item__content {
+        h4 {
+            font-weight: $font-weight-regular;
+        }
+        .block-list {
+            font-size: $h7-size;
+            font-weight: $font-weight-light;
+            li {
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }    
+        }
+    }
+}
+
+.footer-links {
+    margin-bottom: 0;
+}
+
+
+
+
+

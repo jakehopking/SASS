@@ -46,7 +46,8 @@
             startScrollLeft,
             widthpx,
             distpx,
-            maxScrollLeft;
+            maxScrollLeft,
+            open;
 
 
         inner.css('width', width + '%');  
@@ -109,20 +110,41 @@
 
         // expand an item on click, removing any present one
 
+
         items.on('click', function () {
 
             var item    = $(this),
-                vidsrc  = item.attr('data-video-src');    
+                vidsrc  = item.attr('data-video-src');
 
-            expanded
-                .slideUp(1)
-                .html((vidsrc) ? [closeHtml, videoHtml(vidsrc)] : [closeHtml, item.html()])
-                .slideDown(500);
+            if (!open) {    
+                expanded
+                    .slideUp(1)
+                    .html([closeHtml, (vidsrc) ? videoHtml(vidsrc) : item.html()])
+                    .slideDown(500, function () { open = true; });
+
+            } else {
+                var current = $(expanded).children().get(1),
+                    next    = $((vidsrc) ? videoHtml(vidsrc) : item.html()).css({ 
+                        position: 'absolute',
+                        top: '1px',
+                        left: '1px',
+                        opacity: 0,
+                        zIndex: 1
+                    });
+
+                expanded.append(
+                    next.animate({
+                        opacity: 1
+                    }, 500, function () {
+                        current.remove();
+                        next.removeAttr('style');
+                    }));    
+            }
         });
 
 
         expanded.on('click', '.close', function () {
-            expanded.slideUp(500);
+            expanded.slideUp(500, function () { open = false; });
         });
 
 

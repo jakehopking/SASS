@@ -43,8 +43,4 @@ $(function () {
         $('.header-search__where-and-button').removeClass('hide-me--portable');
     });
 
-
-
-
-
 });

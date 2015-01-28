@@ -184,6 +184,11 @@ $blue-section-border-color:     $colour-blue;
 %card-with-padding-default {
     padding: $card-padding;
 }
+
+%card-with-padding-on-the-bottom {
+    padding-bottom: $card-padding;
+}
+
 %card-with-padding-half {
     padding: $card-padding/2;
 }
@@ -311,7 +316,7 @@ $blue-section-border-color:     $colour-blue;
         @extend %card__title-colours--default;
     }
     .card__content {
-
+        @extend %card-with-padding-on-the-bottom;
     }
 }
 

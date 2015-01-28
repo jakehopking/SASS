@@ -53,7 +53,8 @@
             speed   = speed || 200;
 
         heads.on('click', function () {
-            $(this).next('.accordion-body').toggle();
+            $(this).next('.accordion-body').toggle('fast');
+            $(this).find('.accordion-more-details .button').toggleClass('active');
 			$(this).toggleClass('active');
         });
 

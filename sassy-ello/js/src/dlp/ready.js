@@ -17,10 +17,15 @@ $(function () {
         ratingLabel.text((rating === -1) ? '' : ratingText[Math.round(rating)]);
     });
 
+    // Reveal 'article title' and field when textarea above is focused
+
+    $(".dlp-review-form__textarea textarea").one('focus', function () {
+        $('.dlp-review-form__title').css('display', 'block');
+    });
+
 
     // Activate carousel
 
     Yellow.carousel('.dlp-carousel', { showItems: 3 });
-
 
 });

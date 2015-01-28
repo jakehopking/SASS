@@ -43,7 +43,16 @@
             } catch (e) {
                 return false;
             }
+        },
+
+        slug: function(str) {
+            return $.trim(str)
+                .replace(/[^a-z0-9-]/gi, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '')
+                .toLowerCase();
         }
+
     };
 
 

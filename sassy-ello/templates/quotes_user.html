@@ -8,21 +8,15 @@
 				<div class="grid__item one-whole desk--one-quarter column-menu">
 					<div class="card card-shadow-frame card--no-border">
 						<div class="card__section user-details">
-							<div class="grid">
-								<div class="grid__item one-third lap--one-quarter desk--five-twelfths">
-									<div class="user__image">
-										<img class="image-thumb-circle image-thumb--black image-thumb--x3-large" src="/static/images/user-thumb-01.jpg" />
-									</div>
-								</div>
-								<div class="grid__item two-thirds lap--three-quarter desk--seven-twelfths grid--narrow">
-									<div class="card--vertical-pad">
-										<div class="user__name">Mez Hopking</div>
-										<div class="user__region">Auckland Region</div>
-										<div class="user__membership">
-											Yellow member since </br>
-											January 2013
-										</div>
-									</div>
+							<div class="user__image">
+								<img class="image-thumb-circle image-thumb--black image-thumb--x3-large" src="/static/images/user-thumb-01.jpg" />
+							</div>
+							<div class="user__info card--vertical-pad">
+								<div class="user__name">Mez Hopking</div>
+								<div class="user__region">Auckland Region</div>
+								<div class="user__membership">
+									Yellow member since </br>
+									January 2013
 								</div>
 							</div>
 						</div>
@@ -83,22 +77,28 @@
 										<div class="grid">
 										    <div class="tabs-menu grid__item one-whole">
 										    	<ul class="grid">
-											        <li class="quotes-received grid__item palm-up--one-third desk--one-sixth">
+											        <li class="quotes-received grid__item palm-up--one-quarter desk--one-fifth">
 											        	<a href="javascript:void()">
 											        		<span class="amount">4</span> 
 											        		<span class="title">Received</span>
 											        	</a>
 											        </li>
-											       	<li class="quotes-declined grid__item palm-up--one-third one-whole desk--one-sixth">
+													<li class="quotes-submitted grid__item palm-up--one-quarter desk--one-fifth">
 											        	<a href="javascript:void()">
-											        		<span class="amount">4</span> 
-											        		<span class="title">Declined</span>
+											        		<span class="amount">3</span> 
+											        		<span class="title">Submitted</span>
 											        	</a>
 											        </li>
-											        <li class="quotes-accepted grid__item palm-up--one-third one-whole desk--one-sixth">
+											        <li class="quotes-accepted grid__item palm-up--one-quarter desk--one-fifth">
 											        	<a href="javascript:void()">
 											        		<span class="amount">4</span> 
 											        		<span class="title">Accepted</span>
+											        	</a>
+											        </li>
+											       	<li class="quotes-archived grid__item palm-up--one-quarter desk--one-fifth">
+											        	<a href="javascript:void()">
+											        		<span class="amount">4</span> 
+											        		<span class="title">Archived</span>
 											        	</a>
 											        </li>
 										    	</ul>
@@ -112,11 +112,9 @@
 											        				<div class="grid__item one-whole palm-up--one-third desk--two-twelfths">
 											        					<b>Clean my house</b>
 											        				</div>
-											        				<div class="grid__item one-whole palm-up--one-third desk--eight-twelfths">
+											        				<div class="grid__item one-whole palm-up--two-thirds desk--ten-twelfths">
 											        					<b>Posted</b> <span class="colour-grey">12th of November 2014</span>
-											        				</div>
-											        				<div class="grid__item one-whole palm-up--one-third desk--two-twelfths">
-											        					<a class="button button--small button--red " href="#"><i class="fa fa-times"></i> Cancel my quote</a>
+																		<a class="button button--small button--red right" href="#"><i class="fa fa-times"></i> Cancel and Archive</a>
 											        				</div>
 											        			</div>
 											        		</div>
@@ -160,7 +158,7 @@
 											        			                                <div class="business-info card__content">
 											        			                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
 											        			                                    <div>Price range: <b>$300-450</b></div>
-											        			                                    <div class="quote-status">Status: <span class="status--quotes-received">Quote received</span></div>
+											        			                                    <div class="quote-status">Status: <span class="status--quotes-received">Received</span></div>
 											        			                                </div>
 											        			                            </div>
 											        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business CTAs (buttons) #}
@@ -218,7 +216,7 @@
 											        			                                <div class="business-info card__content">
 											        			                                    <strong class="business__title"><a href="#">Atomic Coffee Roasters</a></strong>
 											        			                                    <div>Price range: <b>$300-450</b></div>
-											        			                                    <div class="quote-status">Status: <span class="status--quotes-received">Quote received</span></div>
+											        			                                    <div class="quote-status">Status: <span class="status--quotes-received">Received</span></div>
 											        			                                </div>
 											        			                            </div>
 											        			                            <div class="grid__item one-whole palm-up--one-half"> {# Business CTAs (buttons) #}
@@ -403,9 +401,11 @@
 										        		</div>
 										        	</div>
 										        </div>
-										        <div class="quotes-declined">
+										        <div class="quotes-submitted">
 										        </div>
 										        <div class="quotes-accepted">
+										        </div>
+												<div class="quotes-archived">
 										        </div>
 										    </div>
 										</div>

@@ -3,17 +3,18 @@
 
 // Vars 
 $disruptive-padding:			$base-line-height;
-$distruptive-advert-border:     $colour-black;
+$disruptive-advert-border:     $colour-black;
 $disruptive-colour-dark:		$colour-white;
 $disruptive-colour-light:		$colour-charcoal;
 $disruptive-bg-dark:			$colour-charcoal;
 $disruptive-bg-light:			$colour-grey-lightest;
 
-.distruptive-advert {
-	border-bottom: 1px solid $distruptive-advert-border;
+.disruptive-advert {
+	border-bottom: 1px solid $disruptive-advert-border;
+    display: none;
 }
 
-.distruptive-advert-container {
+.disruptive-advert-container {
 	@extend %grid__container;
     padding-top: $disruptive-padding;
     padding-bottom: $disruptive-padding;
@@ -22,7 +23,7 @@ $disruptive-bg-light:			$colour-grey-lightest;
     }
 }
 
-.distruptive-advert--dark {
+.disruptive-advert--dark {
     color: $disruptive-colour-dark;
 	background-color: $disruptive-bg-dark;
     a.close-panel {
@@ -30,7 +31,7 @@ $disruptive-bg-light:			$colour-grey-lightest;
     }
 }
 
-.distruptive-advert--light {
+.disruptive-advert--light {
     color: $disruptive-colour-light;
 	background-color: $disruptive-bg-light;
     a.close-panel {

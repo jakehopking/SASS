@@ -23,6 +23,9 @@
     > li{
         border-bottom-width:1px;
         padding:$half-spacing-unit;
+        a {
+            display: block;
+        }
     }
 }
 .block-list__link {
@@ -31,3 +34,9 @@
     margin:-$half-spacing-unit;
 }
 
+.block-list--no-horiz-padding {
+    > li {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

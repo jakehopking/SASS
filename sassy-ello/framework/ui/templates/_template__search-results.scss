@@ -9,10 +9,10 @@ $search-results-container-shadow:       0px 2px 3px $colour-box-shadow;
 $search-results-container-border:       1px solid rgba($colour-box-shadow, 0.8);
 $search-results-container-opacity:      0.7;
 $search-item-height-desktop:            86px;
-$search-item-height-mobile:             $search-item-height-desktop - 20;
+$search-item-height-mobile:             $search-item-height-desktop;
 $search-item-border-colour:             $card-title-border-default;
 $search-item-platinum-bg:               $colour-blue-lightest-alt;
-
+$platinum-messge:                       "Sponsored ad";
 
 
 // Google map container. See map.js for view options.
@@ -23,9 +23,13 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
 
     @include media-query(desk) { // Desktop breakpoint shows the map
         width: 100%;
-        height: 1000px;
+    }
+    &.stick {
+        position: fixed !important;
+        top: 0;
     }
 }
+
 
 
 // Search results container
@@ -40,12 +44,15 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
     @include media-query(desk) { // Desktop breakpoint shows the map
         position: absolute;
         width: 62%;
-        height: 1000px;
+        min-height: 800px;
         background: rgba($search-results-container, $search-results-container-opacity);
         // box-shadow: $search-results-container-shadow;
         border-left: $search-results-container-border;
         border-right: $search-results-container-border;
         margin-left: -1px;
+    }
+    @include media-query(desk-wide) {
+        width: 57%;
     }
 }
 
@@ -59,18 +66,18 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
 // Search results item
 .search-results__item {
     .review-score {
-        max-height: $search-item-height-desktop;
+        // max-height: $search-item-height-desktop; // Why?
     }
 
     .business-thumbnail { // Business image
-        max-height: $search-item-height-mobile;
-        @include media-query(lap-and-up) {
-            max-height: $search-item-height-desktop;
+        // max-height: $search-item-height-mobile; // Why?
+        @include media-query(lap-up) {
+            // max-height: $search-item-height-desktop; // Why?
         }
         > a {
             min-height: $search-item-height-mobile;
             border-right: 1px solid $search-item-border-colour;
-            @include media-query(lap-and-up) {
+            @include media-query(lap-up) {
                 min-height: $search-item-height-desktop;
                 // border-left: 1px solid $search-item-border-colour;
             }
@@ -91,8 +98,12 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
         }
 
         .business-call-to-actions { // Phone, website / directions
+            @include media-query(palm) {
+                padding-top: 5px;
+            }
             > .button {
                 margin-right: 5px;
+                margin-bottom: 5px;
             }
             .cta__more-details { // More info arrow >
                 
@@ -136,6 +147,22 @@ $search-item-platinum-bg:               $colour-blue-lightest-alt;
         background-color: $search-item-platinum-bg;
     }
     .business-content {
+        > .grid {
+            &:after {
+                content: "#{$platinum-messge}";
+                float: right;
+                font-size: 7.5px;
+                margin-top: -12px;
+                margin-right: 4px;
+                opacity: 0.4;
+                letter-spacing: 0.1em;
+            }
+        }
+        .business-call-to-actions { // Phone, website / directions
+            @include media-query(palm) {
+                padding-bottom: 15px;
+            }
+        }
         .cta__more-details {
             @extend %arrow-chevron-right--platinum; // Change out bg img to align with platinum bg colour
         }

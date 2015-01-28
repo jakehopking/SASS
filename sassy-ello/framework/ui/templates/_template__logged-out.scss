@@ -1,0 +1,88 @@
+// SIGNUP PAGE TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+
+
+// Vars END
+
+
+.section-logged-out {
+    background: $colour-white;
+    @include media-query(desk) {
+        background: url('/static/images/hand-phone.jpg') no-repeat center center fixed; 
+        @include vendor(background-size, cover);
+    }
+}
+
+.logged-out {
+    margin:     0px auto;
+    padding:    75px 0px;
+
+    h1 {
+        font-size:      2em;
+        text-align:     center;
+        padding-bottom: 15px;
+        font-weight: normal;
+    }
+
+    form {
+        background: $colour-white;
+        background: $colour-white-transparent;
+        span { margin-left: 5px;}
+    }
+
+    fieldset {
+        margin:     0px auto;
+        display:    block;
+        p {
+        	font-size: $h7-size*1.5;
+        	text-align: justify;
+        }
+    }
+
+    .app-btn {
+    	opacity: 0.9;
+    	display: block;
+    	&:hover {
+    		opacity: 1;
+    	}
+    }
+
+	.button--circular {
+	    border-radius: 50%;
+	    line-height: 2;
+	    padding: 0px 4px;
+	    .fa-fw {
+	        padding-right: 0;
+	        padding-left:  0;
+	    }
+	    .fa-2x {
+	        padding: 8px 0px;
+	    }
+	    &:hover {
+
+	    }
+	}
+
+    @include media-query(desk) {
+        form {
+            border:     1px solid $colour-white;
+            box-shadow: 0px 0px 2px $colour-black-transparent;
+        }
+    }
+
+    @include media-query(lap) {
+   		width: 420px;
+    }
+
+    @include media-query(portable) {
+    	h1 {
+    		padding: 0;
+    	}
+		form {
+			padding: 0;
+		}
+    }
+}

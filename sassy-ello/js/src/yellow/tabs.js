@@ -35,8 +35,7 @@
 
     */
 
-    Yellow.tabs = function (menuSel, contentSel) {
-
+    Yellow.tabs = function (menuSel, contentSel, evt_handler) {
         var menu    = $(menuSel),
             content = $(contentSel);
 
@@ -45,6 +44,8 @@
         function activate (index) {
             $(menu.removeClass('active').get(index)).addClass('active');
             $(content.removeClass('active').get(index)).addClass('active');
+            if (evt_handler)
+                evt_handler.call(this, index);
         }
 
         menu.on('click', function (evt) {

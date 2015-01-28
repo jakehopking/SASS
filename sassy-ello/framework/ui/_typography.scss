@@ -303,7 +303,7 @@ p a:not(.button) { // :not prevents this styling being applied to the inline but
 
 .title-content-pair + .title-content-pair {
     margin-top: $base-line-height / 2;
-    @include media-query(lap-and-up) {
+    @include media-query(lap-up) {
         margin-left: $base-line-height;
         margin-top: 0;
     }

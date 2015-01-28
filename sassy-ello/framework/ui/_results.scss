@@ -8,6 +8,8 @@ $business-address:	                    $colour-black;
 $business-categories-border:            $colour-grey;
 $business-info-grey-bg:			        $colour-grey-lightest;
 $business-title-size-large:             $h4-size;
+$cta-with-text-colour:                  $colour-grey-light;
+
 
 .business-info.grey-bg {
     background: $business-info-grey-bg;
@@ -57,5 +59,43 @@ $business-title-size-large:             $h4-size;
     a {
         color: $business-title;
         text-decoration: none;
+    }
+}
+
+
+// CTA buttons on search result items
+
+.cta__more-details {
+
+}
+
+%cta-buttons-with-title-text-base {
+    font-family: $font-face-condensed;
+    font-size: $h7-size;
+    font-weight: 300;
+    color: $cta-with-text-colour;
+    @include media-query(below-desk-wide) { // Shows titles only when on desktop
+        display: none;
+    }
+}
+
+.cta__phone-us {
+    &[title]:after {
+        @extend %cta-buttons-with-title-text-base;
+        margin-left: -14px;
+    }
+}
+
+.cta__website {
+    &[title]:after {
+        @extend %cta-buttons-with-title-text-base;
+        margin-left: -9px;
+    }
+}
+
+.cta__directions {
+    &[title]:after {
+        @extend %cta-buttons-with-title-text-base;
+        margin-left: -15px;
     }
 }

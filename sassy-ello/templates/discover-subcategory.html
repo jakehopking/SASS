@@ -1,0 +1,92 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+<div class="middle">
+
+    <section class="section section-discover">
+        <div class="section-container">
+            
+            <div class="discover-main ">
+
+                <div class="discover-head">
+                    <h1>Explore &amp; discover great Kiwi businesses</h1>
+                    <h4>33 categories. Thousands of amazing businesses.</h4>
+                </div>
+
+                <div class="discover-nav">
+
+                    <div class="discover-category">
+                        <div class="grid">
+                            <a href="/discover" class="discover-back hide-me--desk grid__item one-eighth"><i class="fa fa-chevron-left"></i></a> 
+
+                            <h1 class="grid__item three-quarters desk--seven-eighths">Automotive</h1>
+
+                            <a href="/discover" class="discover-see-all grid__item one-eighth">
+                                <span class="hide-me--desk">See all</span> 
+                                <i class="fa fa-chevron-right hide-me--desk"></i>
+                                <i class="fa fa-chevron-down hide-me--portable"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="discover-tiles">
+                        <div class="grid">
+
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Automotive dismantlers</b>
+                                    <span>234 listings</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Automotive repairs</b>
+                                    <span>234 listings</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <div class="grid__item one-whole desk--one-quarter">
+                                <a href="#"> 
+                                    <b>Tyres</b>
+                                    <span>234 listings</span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>   
+
+                    <div class="discover-bread">
+                        <a href="/discover">All categories</a> 
+                        <i class="fa fa-angle-right"></i> 
+                        <a href="/discover/automotive">Automotive</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+
+{% block pagescripts %}
+
+    {% include "login_signup_vendor_scripts.html" %}    
+
+    {% compressed_js 'loginSignup' %}
+
+{% endblock %}
+
+
+ 

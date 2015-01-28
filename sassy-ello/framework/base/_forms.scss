@@ -228,6 +228,15 @@ input[type="search"] {
     }
 }
 
+.form-group--arrow {
+    @include arrow(left, top, #fff, $form-input-border); // Textbox arrow < for avatar (it won't attach to the textarea due to HTML limitation)
+    &:before {
+        z-index: 1;
+    }
+    &:after {
+        z-index: 2;
+    }
+}
 
 // Checkboxes and radios
 

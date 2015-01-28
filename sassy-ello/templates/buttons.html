@@ -283,6 +283,35 @@
                             </td>
                         </tr>
                         <tr>
+                            <td style="background-color: #eaeaea;">
+                                <button class="button button--minimal">Button</button>
+                                <a href="#" class="button button--minimal">Button</a>
+                                <a href="#" class="button button--minimal"><i class="fa fa-chevron-down"></i></a>
+                            </td>
+                            <td>
+                                <code>.button .button--minimal</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="button button--border-bottom">Button</button>
+                                <a href="#" class="button button--border-bottom">Button</a>
+                                <button class="button button--secondary button--border-bottom">Button</button>
+                                <a href="#" class="button button--secondary button--border-bottom">Button</a>
+                                <button class="button button--tertiary button--border-bottom">Button</button>
+                                <a href="#" class="button button--tertiary button--border-bottom">Button</a>
+                            </td>
+                            <td>
+                                <code>.button .button--border-bottom</code>
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <button class="button button--rounded">Button</button>
                                 <a href="#" class="button button--rounded">Button</a>
@@ -322,6 +351,7 @@
                                 <a href="#" class="button button--circular"><i class="fa fa-globe fa-2x"></i></a>
                                 <a href="#" class="button button--circular button--secondary"><i class="fa fa-globe fa-2x"></i></a>
                                 <a href="#" class="button button--circular button--tertiary"><i class="fa fa-globe fa-2x"></i></a>
+                                <a href="#" class="button button--circular button--tertiary button--border-default"><i class="fa fa-globe fa-2x"></i></a>
                                 <a href="#" class="button button--circular button--positive"><i class="fa fa-plus fa-2x"></i></a>
                                 <a href="#" class="button button--circular button--negative"><i class="fa fa-minus fa-2x"></i></a>
                             </td>
@@ -330,10 +360,12 @@
                                     <code>.button .button--circular</code>
                                 </p>
                                 <hr class="rule">
-                                <code>.button .button--circular .button--secondary .fa-2x</code>
+                                <code>.button .button--circular .button--secondary > .fa-2x</code>
+                                <hr class="rule">
+                                <code>.button .button--circula .button--secondary .button--border-default > .fa-2x</code>
                             </td>
                             <td>
-                                
+
                             </td>
                         </tr>
                         
@@ -471,6 +503,24 @@
 
                             </td>
                         </tr>
+
+                        <tr>
+                            <th colspan="100%">Static buttons</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong class="button">Non functioning button</strong>
+                                <strong class="button button--tertiary button--border-bottom">Non-button</strong>
+                                <strong class="button button--circular button--tertiary button--border-default"><i class="fa fa-globe fa-2x"></i></strong>
+                            </td>
+                            <td>
+                                <code>strong.button .button--circular .button--tertiary .button--border-default</code>
+                            </td>
+                            <td>
+                                Attaching .button to <code>&lt;strong class=button&gt;&lt;/strong&lt;</code> allows ALL buttons styles, without the interactive styles being used.
+                            </td>
+                        </tr>
+
                         <tr>
                             <td>
                                 
