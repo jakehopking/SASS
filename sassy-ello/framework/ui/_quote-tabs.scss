@@ -178,6 +178,11 @@ $or-circle-margin: 							28px;
 		}
 		.quotes-item {
 			margin-bottom: 3px;
+			i.fa-clock-o, i.fa-envelope-o {
+				font-size: 16px;
+				margin: 0 3px 1px 0;
+				vertical-align: middle;
+			}
 		}
 	}
 }

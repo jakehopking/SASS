@@ -7,6 +7,7 @@ $image-background-black: 				$colour-black;
 $image-background-brand: 				$brand-primary;
 $image-padding:							floor($base-line-height / 6);
 $image-radius-circle:					50%;
+$image-thumb-tiny:						22px;
 $image-thumb-small:						30px;
 $image-thumb-medium:					40px;
 $image-thumb-large:						50px;
@@ -72,6 +73,12 @@ $image-thumb-x3-large:					80px;
 	@extend %image-with-thin-padding;
 	background-color: $image-background-brand;
 	border-color: $image-background-brand;
+}
+
+.image-thumb--tiny {
+	width: $image-thumb-tiny;
+	height: $image-thumb-tiny;
+	padding: 1px;
 }
 
 .image-thumb--small {

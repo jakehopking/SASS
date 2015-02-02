@@ -4,107 +4,100 @@
 // A bunch of helper classes to use arbitrarily.
 
 .no--background {
-    background: none !important;
+    background: none ;
 }
 // Add/remove floats
  
- .left      { float: left; }
- .right     { float: right; }
+.left      { float: left; }
+.right     { float: right; }
 
-.float--right   { float:right!important; }
-.float--left    { float:left !important; }
-.float--none    { float:none !important; }
+.float--right   { float: right; }
+.float--left    { float: left ; }
+.float--none    { float: none ; }
 
 
 // Text alignment
  
-.text--left     { text-align:left  !important; }
-.text--center   { text-align:center!important; }
-.text--right    { text-align:right !important; }
+.text--left     { text-align: left  ; }
+.text--center   { text-align: center; }
+.text--right    { text-align: right ; }
 
 
 // Add/remove margins
  
-.push           { margin:       $base-spacing-unit!important; }
-.push--top      { margin-top:   $base-spacing-unit!important; }
-.push--right    { margin-right: $base-spacing-unit!important; }
-.push--bottom   { margin-bottom:$base-spacing-unit!important; }
-.push--left     { margin-left:  $base-spacing-unit!important; }
-.push--ends     { margin-top:   $base-spacing-unit!important; margin-bottom:$base-spacing-unit!important; }
-.push--sides    { margin-right: $base-spacing-unit!important; margin-left:  $base-spacing-unit!important; }
+.push           { margin:       $base-spacing-unit; }
+.push--top      { margin-top:   $base-spacing-unit; }
+.push--right    { margin-right: $base-spacing-unit; }
+.push--bottom   { margin-bottom:$base-spacing-unit; }
+.push--left     { margin-left:  $base-spacing-unit; }
+.push--ends     { margin-top:   $base-spacing-unit; margin-bottom:$base-spacing-unit; }
+.push--sides    { margin-right: $base-spacing-unit; margin-left:  $base-spacing-unit; }
 
-.pull           { margin:       -$base-spacing-unit!important; }
-.pull--top      { margin-top:   -$base-spacing-unit!important; }
-.pull--right    { margin-right: -$base-spacing-unit!important; }
-.pull--bottom   { margin-bottom:-$base-spacing-unit!important; }
-.pull--left     { margin-left:  -$base-spacing-unit!important; }
-.pull--ends     { margin-top:   -$base-spacing-unit!important; margin-bottom: -$base-spacing-unit!important; }
-.pull--sides    { margin-right: -$base-spacing-unit!important; margin-left:  -$base-spacing-unit!important; }
+.pull           { margin:       -$base-spacing-unit; }
+.pull--top      { margin-top:   -$base-spacing-unit; }
+.pull--right    { margin-right: -$base-spacing-unit; }
+.pull--bottom   { margin-bottom:-$base-spacing-unit; }
+.pull--left     { margin-left:  -$base-spacing-unit; }
+.pull--ends     { margin-top:   -$base-spacing-unit; margin-bottom: -$base-spacing-unit; }
+.pull--sides    { margin-right: -$base-spacing-unit; margin-left:  -$base-spacing-unit; }
 
 
-.push-half          { margin:       $half-spacing-unit!important; }
-.push-half--top     { margin-top:   $half-spacing-unit!important; }
-.push-half--right   { margin-right: $half-spacing-unit!important; }
-.push-half--bottom  { margin-bottom:$half-spacing-unit!important; }
-.push-half--left    { margin-left:  $half-spacing-unit!important; }
-.push-half--ends    { margin-top:   $half-spacing-unit!important; margin-bottom:$half-spacing-unit!important; }
-.push-half--sides   { margin-right: $half-spacing-unit!important; margin-left:  $half-spacing-unit!important; }
+.push-half          { margin:       $half-spacing-unit; }
+.push-half--top     { margin-top:   $half-spacing-unit; }
+.push-half--right   { margin-right: $half-spacing-unit; }
+.push-half--bottom  { margin-bottom:$half-spacing-unit; }
+.push-half--left    { margin-left:  $half-spacing-unit; }
+.push-half--ends    { margin-top:   $half-spacing-unit; margin-bottom:$half-spacing-unit; }
+.push-half--sides   { margin-right: $half-spacing-unit; margin-left:  $half-spacing-unit; }
 
-.flush          { margin:       0!important; }
-.flush--top     { margin-top:   0!important; }
-.flush--right   { margin-right: 0!important; }
-.flush--bottom  { margin-bottom:0!important; }
-.flush--left    { margin-left:  0!important; }
-.flush--ends    { margin-top:   0!important; margin-bottom:0!important; }
-.flush--sides   { margin-right: 0!important; margin-left:  0!important; }
+.flush          { margin:       0; }
+.flush--top     { margin-top:   0; }
+.flush--right   { margin-right: 0; }
+.flush--bottom  { margin-bottom:0; }
+.flush--left    { margin-left:  0; }
+.flush--ends    { margin-top:   0; margin-bottom:0; }
+.flush--sides   { margin-right: 0; margin-left:  0; }
 
 
 // Add/remove paddings
 
-.soft           { padding:       $base-spacing-unit!important; }
-.soft--top      { padding-top:   $base-spacing-unit!important; }
-.soft--right    { padding-right: $base-spacing-unit!important; }
-.soft--bottom   { padding-bottom:$base-spacing-unit!important; }
-.soft--left     { padding-left:  $base-spacing-unit!important; }
-.soft--ends     { padding-top:   $base-spacing-unit!important; padding-bottom:$base-spacing-unit!important; }
-.soft--sides    { padding-right: $base-spacing-unit!important; padding-left:  $base-spacing-unit!important; }
+.soft           { padding:       $base-spacing-unit; }
+.soft--top      { padding-top:   $base-spacing-unit; }
+.soft--right    { padding-right: $base-spacing-unit; }
+.soft--bottom   { padding-bottom:$base-spacing-unit; }
+.soft--left     { padding-left:  $base-spacing-unit; }
+.soft--ends     { padding-top:   $base-spacing-unit; padding-bottom:$base-spacing-unit; }
+.soft--sides    { padding-right: $base-spacing-unit; padding-left:  $base-spacing-unit; }
 
-.soft-half           { padding:       $half-spacing-unit!important; }
-.soft-half--top      { padding-top:   $half-spacing-unit!important; }
-.soft-half--right    { padding-right: $half-spacing-unit!important; }
-.soft-half--bottom   { padding-bottom:$half-spacing-unit!important; }
-.soft-half--left     { padding-left:  $half-spacing-unit!important; }
-.soft-half--ends     { padding-top:   $half-spacing-unit!important; padding-bottom:$half-spacing-unit!important; }
-.soft-half--sides    { padding-right: $half-spacing-unit!important; padding-left:  $half-spacing-unit!important; }
+.soft-half           { padding:       $half-spacing-unit; }
+.soft-half--top      { padding-top:   $half-spacing-unit; }
+.soft-half--right    { padding-right: $half-spacing-unit; }
+.soft-half--bottom   { padding-bottom:$half-spacing-unit; }
+.soft-half--left     { padding-left:  $half-spacing-unit; }
+.soft-half--ends     { padding-top:   $half-spacing-unit; padding-bottom:$half-spacing-unit; }
+.soft-half--sides    { padding-right: $half-spacing-unit; padding-left:  $half-spacing-unit; }
 
-.hard           { padding:       0!important; }
-.hard--top      { padding-top:   0!important; }
-.hard--right    { padding-right: 0!important; }
-.hard--bottom   { padding-bottom:0!important; }
-.hard--left     { padding-left:  0!important; }
-.hard--ends     { padding-top:   0!important; padding-bottom:0!important; }
-.hard--sides    { padding-right: 0!important; padding-left:  0!important; }
+.hard           { padding:       0; }
+.hard--top      { padding-top:   0; }
+.hard--right    { padding-right: 0; }
+.hard--bottom   { padding-bottom:0; }
+.hard--left     { padding-left:  0; }
+.hard--ends     { padding-top:   0; padding-bottom:0; }
+.hard--sides    { padding-right: 0; padding-left:  0; }
 
 
 // Informative (cursor)
 
-.informative{
-    cursor:help!important;
+.informative {
+    cursor:help;
 }
 
 
 // Muted (opacity)
 
-.muted{
-    opacity:0.5!important;
+.muted {
+    opacity: 0.5!important;
     filter:alpha(opacity = 50)!important;
-}
-
-
-// CAPS!
-
-.caps{
-    text-transform:uppercase!important;
 }
 
 
@@ -112,18 +105,19 @@
 
 // Hide content off-screen without resorting to 'display:none;'
 
-@mixin accessibility{
-    border:0!important;
-    clip:rect(0 0 0 0)!important;
-    height:1px!important;
-    margin:-1px!important;
-    overflow:hidden!important;
-    padding:0!important;
-    position: absolute!important;
-    width:1px!important;
+@mixin accessibility {
+    border: 0!important;
+    clip: rect(0 0 0 0)!important;
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position:  absolute!important;
+    width: 1px!important;
 }
+
 .accessibility,
-.visuallyhidden{
+.visuallyhidden {
     @include accessibility;
 }
 // @if $responsive{

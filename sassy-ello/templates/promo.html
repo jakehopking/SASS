@@ -1,0 +1,67 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+
+{% block header %}
+<header class="header-basic">
+    <section>
+        <div class="section-container">
+            <div class="grid">
+                <div class="grid__item one-whole">
+                    <a href="/" class="header-basic-logo"><img src="/static/images/brand-logo2.png" alt="Yellow"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="middle promo">
+
+    <div class="promo-ctrls">
+        <a href="#"><i class="fa fa-circle"></i></a>
+        <a href="#"><i class="fa fa-circle"></i></a>
+    </div>
+
+    <a href="#" class="promo-arrow-up"><i class="fa fa-angle-up"></i></a>
+    <a href="#" class="promo-arrow-down"><i class="fa fa-angle-down"></i></a>
+
+    <div class="promo-slides">
+
+        <section class="section section-promo" style="background-image:url(/static/images/hand-phone.jpg);">
+            <div class="section-container">
+                <div class="promo-content promo-content-centre">
+                    <h1>World Class Data*</h1>
+                    <p>Yellow NZ is leading the way in global<br>
+                        digital communications technology</p>
+                    <a href="#" class="button">Read NZ Herald Business Review</a>    
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-promo" style="background-image:url(/static/images/hand-phone.jpg);">
+            <div class="section-container">
+                <div class="promo-content">
+                    <h1>Campaign / product heading</h1>
+                    <p>Blurb</p>
+                    <a href="#" class="button">Link</a>    
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'promo' %}{% endblock %}

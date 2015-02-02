@@ -1,6 +1,7 @@
 // TEMPLATES
 // ===============================================================================
 
+@import "template__errors";
 @import "template__detailed-listing";
 @import "template__home";
 @import "template__search-results";
@@ -10,3 +11,4 @@
 @import "template__quotes-service";
 @import "template__quotes-business";
 @import "template__logged-out";
+@import "template__promo";

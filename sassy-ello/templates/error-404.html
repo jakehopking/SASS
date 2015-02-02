@@ -1,0 +1,52 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+<div class="middle">
+
+    <section class="section section-error" title="We've trawled the Yellow Ocean, but all we can find is this old yellow submarine...">
+        <div class="section-container">
+            
+            <div class="signup">
+
+                <h1 class="font-face--condensed">404 Page not found :'(</h1>
+                <div class="card-opaque-desk">
+                    <h3 class="text-centre font-face--condensed font-weight--light">The page you were trying to reach at this address no longer exists. <br>We apologise for any inconvenience.</h3>
+                    <hr class="rule">
+                    <h4 class="text--half-margin">What can I do now?</h4>
+                    <p class="lede">If this is your first time visiting Yellow, welcome! Sorry for the circumstances under which we're meeting. He's where you can go from here:</p>
+                    <ul class="icon-list">
+                        <li><i class="fa fa-fw fa-chevron-right"></i>Consider doing a search for the information you are looking for, using the search boxes at the top of this page.</li>
+                        <li><i class="fa fa-fw fa-chevron-right"></i>Browse our <a href="/design/article-archive">articles</a>.</li>
+                        <li><i class="fa fa-fw fa-chevron-right"></i>Our <a href="/design/homepage">home page</a> contains great recommendations for popular businesses in your area.</li>
+                    </ul>
+                    <img class="hide-me--desk error-404__img" title="We've trawled the Yellow Ocean, but all we can find is this old yellow submarine..." src="/static/images/error-404.png" alt="Error image.">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+
+{% block pagescripts %}
+
+    {% include "login_signup_vendor_scripts.html" %}    
+
+    {% compressed_js 'loginSignup' %}
+
+{% endblock %}
+
+
+ 

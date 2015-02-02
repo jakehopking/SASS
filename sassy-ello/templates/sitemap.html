@@ -1,0 +1,69 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+<div class="middle">
+    <section>
+        <div class="section-container">
+            <div class="grid">
+                <div class="grid__item one-whole">
+                    <div class="card-shadow-frame">
+                        <div class="card__title"><h4><i class="fa fa-globe fa-pad--right"></i> Sitemap</h4></div>
+                        <div class="card__content">
+                            <ul class="sitemap">
+                                <li><a href="/">Home page</a>
+                                    <ul>
+                                        <li><a href="#">Improve Your Business</a></li>
+                                        <li><a href="#">Get a Free Listing</a></li>
+                                        <li><a href="#">Find people</a></li>
+                                        <li><a href="#">Log in</a></li>
+                                        <li><a href="#">Sign up</a></li>
+                                        <li><a href="#">Get info</a>
+                                            <ul>
+                                                <li><a href="#">Discover (Browse Yellow)</a></li>
+                                                <li><a href="#">About Yellow</a></li>
+                                                <li><a href="#">White Pages</a></li>
+                                                <li><a href="#">Finda</a></li>
+                                                <li><a href="#">Menus</a></li>
+                                                <li><a href="#">Website feedback</a></li>
+                                                <li><a href="#">Website help</a></li>
+                                                <li><a href="#">Suggest a business</a></li>
+                                                <li><a href="#">Careers</a></li>
+                                                <li><a href="#">CareersOrder directories</a></li>
+                                                <li><a href="#">Emergencies</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                                <li><a href="#">Review Policy</a></li>
+                                                <li><a href="#">Terms and Conditions</a></li>
+                                            </ul>
+                                        </li>
+      
+                                        <li><a href="#">Articles</a></li>
+                                        <ul>
+                                            <li><a href="#">Dynamically generated article name</a></li>
+                                            <li><a href="#">Dynamically generated article name 2</a></li>
+                                        </ul>
+                                        <li><a href="#">Popular businesses in your area</a>
+                                            <ul>
+                                                <li><a href="#">Business name 1 (dynamic)</a></li>
+                                                <li><a href="#">Business name 2 (dynamic)</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'dashboard' %}{% endblock %}

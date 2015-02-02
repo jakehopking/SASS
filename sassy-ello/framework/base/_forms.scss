@@ -45,6 +45,43 @@ $form-large-border-radius:      $form-border-radius * 1.25;
 }
 
 
+// Form error styles 
+
+%form-error-font-awesome-icon {
+    &:before {
+        content: "\f071";
+        font-family: $font-face-fa;
+        @extend .fa-pad--right;
+    }
+}
+
+div.error {
+    border: 1px dashed $colour-negative;
+    background-color: rgba($colour-negative, 0.15);
+    padding: $form-padding / 2;
+    p.required {
+        margin-bottom: 0;
+        color: $colour-negative;
+        @extend %form-error-font-awesome-icon;
+    }
+    margin-bottom: $form-padding;
+}
+
+ul.errorlist {
+    margin: -1px 0 0 0;
+    list-style: none;
+    border: 1px solid $colour-negative;
+    border-top: none;
+    background-color: $colour-negative;
+    color: $colour-white;
+    padding: 7px 10px 5px 10px;
+    font-size: $h7-size;
+    li {
+        margin: 0;
+        @extend %form-error-font-awesome-icon;
+    }
+}
+
 
 fieldset {
     padding: 0;
@@ -576,18 +613,6 @@ input[type="checkbox"] {
             }
         }
     }
-}
-
-
-.form-group__item-help{
-    margin-top: $form-margin / 2;
-    display: inline-block;
-    visibility: hidden;
-}
-.form-group__item:active + .form-group__item-help,
-.form-group__item:focus + .form-group__item-help {
-    visibility: visible;
-    @include vendor(transition, $transition);
 }
 
 

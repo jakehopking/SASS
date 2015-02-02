@@ -52,6 +52,30 @@ $fa-outline-large:              45px;
     margin-bottom: $base-line-height * 2;   
 }
 
+.text--capitalize {
+    text-transform: capitalize;
+}
+
+.text--uppercase {
+    text-transform: uppercase;
+}
+
+.text--lowercase {
+    text-transform: lowercase;
+}
+
+.text--align-left {
+    text-align: left;
+}
+
+.text--align-right {
+    text-align: right;
+}
+
+.text--align-centre {
+    text-align: center;
+}
+
 // Colour modifiers
 
 .colour--positive {

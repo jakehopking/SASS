@@ -62,6 +62,13 @@ $cta-with-text-colour:                  $colour-grey-light;
     }
 }
 
+.image-container-background-linked {
+    background-repeat: repeat; // See srp/listing.html for bg img.
+    background-size: 2px; // A nice css method that outputs the predominant colour of the image.
+    a {
+        background-color: rgba(255,255,255,0.75); // Reduce the opacity of the above method.
+    }
+}
 
 // CTA buttons on search result items
 

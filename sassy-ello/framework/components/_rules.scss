@@ -4,12 +4,12 @@
 // Horizontal rules, extend 'hr'.
 
 .rule{
-    color:$base-ui-color;
-    border:none;
+    color: $base-ui-color;
+    border: none;
     border-bottom-width: 1px;
-    border-bottom-style:solid;
-    margin-bottom:$base-spacing-unit - 1px;
-    margin-bottom:(($base-spacing-unit - 1px) / $base-font-size)*1rem;
+    border-bottom-style: solid;
+    margin-bottom: $base-spacing-unit - 1px;
+    margin-bottom: (($base-spacing-unit - 1px) / $base-font-size)*1rem;
 }
 
 .rule--thicker {
@@ -19,14 +19,14 @@
 // Dotted rules
  
 .rule--dotted{
-    border-bottom-style:dotted;
+    border-bottom-style: dotted;
 }
 
 
 // Dashed rules
  
 .rule--dashed{
-    border-bottom-style:dashed;
+    border-bottom-style: dashed;
 }
 
 
@@ -50,5 +50,29 @@
     
     &[data-ornament]:after{
         content:attr(data-ornament);
+    }
+}
+
+.rule--section-break-x { // Needs to live inside section > .section-container.
+    @extend .rule--thicker;
+    position: relative;
+    // max-width: $breakpoint-desk-wide;
+    margin: 0 auto 0 auto;
+    @include media-query(desk-wide) {
+        margin-bottom: ($base-line-height * 1.5);
+    }
+    &:after{
+        // background-image: url('#{$path-images}section-break.png');
+        // background-size: 30px;
+        // height: 30px;
+        // width: 30px;
+        content: url("/static/images/section-break.png");
+        transform: scale(0.5);
+        position:absolute;
+        top:   -29px;
+        right: 0;
+        left:  0;
+        line-height:0;
+        text-align:center;
     }
 }

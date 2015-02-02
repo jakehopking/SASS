@@ -38,12 +38,12 @@
         <section class="section-colour section--collapse">
             <div class="section-container">
                 <ul class="suggested-business-menu tabs-menu inline-list-block"> <!-- Tabs menu -->
-                    <li><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-coffee"></i></em> Cafes</a>  <!-- Tabs menu item -->
-                    <li><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-car"></i></em> Restaurants</a>
-                    <li class="hide-me--palm"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-bomb"></i></em> Plumbers</a>
-                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-institution"></i></em> Builders</a>
-                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-dropbox"></i></em> Dentists</a>
-                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-child"></i></em> Electricians</a> <!-- Where are the closing '</li>'s? see base/_inline-list.scss -->
+                    <li><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-coffee"></i></em> <span class="category-name">Hairdressers</span></a>  <!-- Tabs menu item -->
+                    <li><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-car"></i></em> <span class="category-name">Restaurants</span></a>
+                    <li class="hide-me--palm"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-bomb"></i></em> <span class="category-name">Plumbers</span></a>
+                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-institution"></i></em> <span class="category-name">Builders</span></a>
+                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-dropbox"></i></em> <span class="category-name">Dentists</span></a>
+                    <li class="hide-me--palm hide-me--lap"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw fa-child"></i></em> <span class="category-name">Electricians</span></a> <!-- Where are the closing '</li>'s? see base/_inline-list.scss -->
                 </ul>
             </div>
         </section>
@@ -394,9 +394,15 @@
                         <a href="#" class="">View all articles <i class="fa fa-chevron-right fa-pad--left"></i></a>
                     </div>
                 </div>
-                <hr class="rule rule--thicker rule--ornament" data-ornament="X">
             </div>
         </section>
+            
+        <section>
+            <div class="section-container">
+                <div class="rule rule--section-break-x"></div>    
+            </div>
+        </section>
+
     </div>
 
 {% endblock %}

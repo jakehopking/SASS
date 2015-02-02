@@ -54,6 +54,105 @@ $typeahead-suggest-item-border:     $colour-grey;
         li:first-child a {
             border-left-color: $network-bar-border;
         }
+        // Logged in menu
+        .user-menu {
+            position: relative;
+            &:hover {
+                .user-name {
+                    background: $colour-white;
+                    color: $colour-black;
+                    .image-thumb-circle {
+                        padding: 0px;
+                        border: 2px solid $colour-black;
+                    }
+                }
+                .user-menu-out {
+                    display: block;
+                }
+            }
+        }
+        .user-name {
+            position: relative;
+            white-space: nowrap;
+            padding-right: 40px;
+            cursor: pointer;
+            img {
+                position: absolute;
+                top: 3px;
+                right: 10px;
+            }
+        }
+        .user-menu-out {
+            display: none;
+            position: absolute;
+            top: 29px;
+            right: 0px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.7);
+            z-index: 1000;
+            width: 350px;
+            text-align: left;
+            color: $colour-charcoal;
+            a {
+                background: none;
+                color: $colour-grey;
+                padding: 10px;
+                display: block;
+                border: none;
+            }
+            .left {
+                float: left;
+                width: 20%;
+            }
+            .right {
+                float: left;
+                width: 80%;
+                padding-left: 10px;
+            }
+        }
+        .user-menu-out-head {
+            padding: $gutter*0.75 $gutter/2;
+            img {
+                width: 50px;
+                height: 50px;
+                border: 3px solid $colour-charcoal;
+                padding: 0px;
+            }
+            h6 {
+                font-weight: normal;
+                margin-bottom: 0px; 
+                color: $colour-grey-alt;
+                b {
+                    display: block;
+                    font-weight: bold;
+                    color: $colour-black;
+                    font-size: 1.1em;
+                    padding: 5px 0px 0px 0px;
+                }
+                span {
+                    font-size: 0.9em;
+                }
+            }
+        }
+        .user-menu-out-items {
+            background: $colour-white;
+            border: 1px dashed $colour-grey-lighter;
+            border-left: none;
+            border-right: none;
+            padding: 5px 0px;
+            .left {
+                text-align: center;
+            }
+            a {
+                padding: 5px 10px;
+            }
+            b {
+                padding: 10px 0px;
+            }
+        }
+        .user-menu-out-logout {
+            text-align: center;
+        }
     }
 }
 
@@ -113,6 +212,7 @@ header {
         }
     }
 }
+
 
 // Typeahead
 
@@ -186,4 +286,16 @@ span.tt-dropdown-menu {
             background-color: #eaeaea;
         }
     }
+}
+
+.header-basic {
+    background: $colour-white;
+    .section-container {
+        @extend %grid__container;
+    }
+}
+
+.header-basic-logo {
+    padding: 15px 0px;
+    display: inline-block;
 }

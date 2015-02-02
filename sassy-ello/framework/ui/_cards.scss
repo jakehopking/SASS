@@ -333,6 +333,18 @@ $blue-section-border-color:     $colour-blue;
     }
 }
 
+.card-opaque-desk {
+    @extend %card-base;
+    @extend %card-with-padding-default;
+
+    background: $colour-white;
+    background: $colour-white-transparent;
+    @include media-query(desk) {
+        border: 1px solid $colour-white;
+        box-shadow: 0px 0px 2px $colour-black-transparent;
+    }
+}
+
 .card--margin-bottom {
     margin-bottom: 10px;
 }

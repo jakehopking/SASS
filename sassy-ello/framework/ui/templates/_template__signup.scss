@@ -8,6 +8,7 @@
 
 .section-signup {
     background: $colour-white;
+    height: 100vh;
     @include media-query(desk) {
         background: url('/static/images/hand-phone.jpg') no-repeat center center fixed; 
         @include vendor(background-size, cover);

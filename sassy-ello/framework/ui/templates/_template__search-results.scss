@@ -77,8 +77,10 @@ $platinum-messge:                       "Sponsored ad";
         > a {
             min-height: $search-item-height-mobile;
             border-right: 1px solid $search-item-border-colour;
+            background-size: contain;
+            background-position-y: inherit;
             @include media-query(lap-up) {
-                min-height: $search-item-height-desktop;
+                // min-height: $search-item-height-desktop;
                 // border-left: 1px solid $search-item-border-colour;
             }
         }

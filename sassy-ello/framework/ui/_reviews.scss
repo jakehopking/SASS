@@ -48,6 +48,15 @@ $review-quote-colour-yellow:    $colour-yellow;
     }
 }
 
+.review-score.no-score {
+    text-align: center;
+    .score__number {
+        width: 100%;
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
 // Review score block -- horizontal modifier (score to left, stars and ratings stacked)
 .review-score--horizontal {
     @extend %clear-all;
@@ -138,7 +147,7 @@ $review-quote-colour-yellow:    $colour-yellow;
             font-size: 13px;
             position: absolute;
             // top: -2px;
-            left: -25px;
+            left: -22px;
         }
         position: relative;
         padding-left: $review-padding / 2;

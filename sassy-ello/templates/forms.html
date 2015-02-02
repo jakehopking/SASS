@@ -24,15 +24,18 @@
                         </tr>
                         <tr>
                             <td>
+                                <div class="error">
+                                    <p class="required">Please correct these errors</p>
+                                </div>
                                 <form>
                                     <div class="form-group">
                                         <label for="usr">Name:</label>
                                         <input type="text" class="form-group__item" id="usr">
-                                    </div>
+                                    </div>  
                                     <div class="form-group">
                                         <label for="pwd">Password:</label>
                                         <input type="password" class="form-group__item" id="pwd">
-                                        <small class="form-group__item-help"><i class="fa fa-info-circle"></i> A mix of lower/upper and numbers</small>
+                                        <ul class="errorlist"><li>Enter a valid email address.</li></ul>
                                     </div>
                                 </form>
                             </td>

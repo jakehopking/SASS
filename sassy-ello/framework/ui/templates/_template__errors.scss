@@ -1,0 +1,37 @@
+// ERROR TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+$error-padding:			$base-line-height;
+$error-bg:				#7accf8;
+
+
+.section-error {
+	background-color: $colour-white;
+	.error-404__img {
+		margin-top: 20px;
+	}
+	.signup {
+		padding: 20px 0;
+	}
+	h1 {
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+	@include media-query(desk) {
+		background: url("/static/images/error-404.png");
+		background-color: rgba($error-bg, 0.85);
+		background-position: 50% 90%;
+		background-repeat: no-repeat;
+		.card-opaque-desk {
+			margin-bottom: 400px;
+		}
+		.signup {
+			padding: 75px 0;
+		}
+		h1 {
+			margin-bottom: $error-padding;
+		}
+	}
+}
