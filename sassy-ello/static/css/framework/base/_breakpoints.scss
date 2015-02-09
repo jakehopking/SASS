@@ -1,0 +1,76 @@
+// BREAKPOINTS BASE
+// ===============================================================================
+
+// I've created files for the following breakpoints. I'd like to aim for two breakpoints only (breaking at above mobile, and again at desktop. Being a mobile-first website the first one doesn't count :D )
+
+// Mixins to use anywhere
+@mixin media-query($media-query){
+
+    @if $media-query == palm{
+
+        @media only screen and (max-width: $breakpoint-palm) { @content; }
+
+    }
+
+    @if $media-query == palm-up{
+
+        @media only screen and (min-width: $breakpoint-palm + 1) { @content; }
+
+    }
+
+    @if $media-query == tablet{
+
+        @media only screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-portable) { @content; }
+
+    }
+
+    @if $media-query == tablet-up{
+
+        @media only screen and (min-width: $breakpoint-tablet + 1) { @content; }
+
+    }
+
+    @if $media-query == lap{
+
+        @media only screen and (min-width: $breakpoint-lap) and (max-width: $breakpoint-portable) { @content; }
+
+    }
+
+    @if $media-query == lap-up{
+
+        @media only screen and (min-width: $breakpoint-lap) { @content; }
+
+    }
+
+    @if $media-query == portable{
+
+        @media only screen and (max-width: $breakpoint-portable) { @content; }
+
+    }
+
+    @if $media-query == desk{
+
+        @media only screen and (min-width: $breakpoint-desk) { @content; }
+
+    }
+
+    @if $media-query == below-desk{
+
+        @media only screen and (max-width: $breakpoint-desk) { @content; }
+
+    }
+
+    @if $media-query == desk-wide{
+
+        @media only screen and (min-width: $breakpoint-desk-wide) { @content; }
+
+    }
+
+    @if $media-query == below-desk-wide{
+
+        @media only screen and (max-width: $breakpoint-desk-wide - 1) { @content; }
+
+    }
+
+}
+

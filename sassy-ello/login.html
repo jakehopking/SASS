@@ -1,0 +1,103 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+<div class="middle">
+
+    <section class="section section-signup">
+        <div class="section-container">
+
+            <div class="signup">
+
+                <h1>Log in to Yellow</h1>
+
+
+                {% include "form_errors.html" with form=login_form %}
+
+                <form action="{{ request.get_full_path }}" method="post">
+                    {% csrf_token %}
+
+                    <fieldset>
+
+                        <div class="form-group">
+                            <a href="#" class="button--facebook">
+                                <i class="fa fa-facebook-official"></i>
+                                Log in with Facebook
+                            </a>
+                        </div>
+
+                        <div class="form-group">
+                            <a href="#" class="button--google">
+                                <i class="fa fa-google"></i>
+                                Log in with Google+
+                            </a>
+                        </div>
+
+                        <p class="sub">Don't worry, we never post without your permission</p>
+
+                    </fieldset>
+
+
+                    <div class="divider-dotted"><b>OR</b></div>
+
+
+                    <fieldset>
+
+                        <h5>Log in with email</h5>
+
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input class="form-group__item" type="text" name="email" value="{%if login_form.email.value %}{{ login_form.email.value }}{% endif %}">
+                            {{ login_form.email.errors }}
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-group__item" type="password" name="password">
+                            {{ login_form.password.errors }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_keep_logged_in">Keep me logged in:</label>
+                            {{ login_form.keep_logged_in }}
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Log in" class="button button--fill">
+                        </div>
+
+                        <p class="cta"><a href="{% url 'register' %}">Sign up for Yellow</a></p>
+
+                        <p class="cta"><a href="{% url 'forgot_password' %}" >Forgot your password?</a></p>
+
+                    </fieldset>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+
+{% block pagescripts %}
+
+    {% include "login_signup_vendor_scripts.html" %}
+
+    {% compressed_js 'loginSignup' %}
+
+{% endblock %}
+
+
+

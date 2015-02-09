@@ -1,0 +1,12 @@
+{# This template is used for all listing types (plat, gold, silver etc..) #}
+<a href="/y/{{ listing.slug }}" class="cta__more-details arrow-chevron-right" alt="Follow link arrow"></a>
+{% if listing.phone %}
+<a class="cta__phone-us button button--circular button--title-text" data-telephone="{{ listing.phone }}" title="Phone us" href="tel:{{ listing.phone }}"><i class="fa fa-phone fa-lg"></i></a>
+{% endif %}
+{% if listing.website %}
+<a href="{{ listing.website }}" rel="nofollow" target="_blank" class="cta__website button button--circular button--title-text" title="Website"><i class="fa fa-globe fa-lg"></i></a>
+{% endif %}
+{% if listing.geo %}
+<a href="#" class="cta__directions button button--circular button--title-text" title="Directions"><i class="fa fa-location-arrow fa-lg"></i></a>
+{% endif %}
+<div class="phone-us-number hide-me"></div>

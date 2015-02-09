@@ -1,0 +1,29 @@
+<!-- Reviews and photots -->
+<div class="card card--no-border">
+	<div class="card-section card--bottom-half-pad">
+		<div class="card__title">
+			<span class="epsilon"><i class=" fa fa-star"></i> Reviews <span class="colour-grey-light">( {{reviews.count}} )</span> </span>
+			<a class="float--right eta" href="#/reviews"><b class="hide-me--palm">See all reviews </b>&nbsp;<i class="fa fa-chevron-right"></i></a>
+		</div>
+	</div>
+	<!-- Review item starts-->
+	<div ng-repeat="review in reviews.items | limitTo:2" class="card__section">
+		<div class="soft--left review-feature">
+			<h5 class="card--margin-bottom">{{review.title}}</h5>
+			<div class="feature__content">
+				<div class="feature__comment normal--size">
+				{{review.blurb}}
+				</div>
+				<div class="feature__comment-details">
+					<div class="feature__comment-user"><a href="{{review.author_href}}">{{review.author_byline}}</a></div>
+					<div class="feature__comment-score">{{review.rating}} 
+						<i class="fa fa-star"></i>
+					</div>
+					<div class="feature__comment-time">{{review.time_descr|date:mediumDate}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Review item ends -->
+</div>
+</div>

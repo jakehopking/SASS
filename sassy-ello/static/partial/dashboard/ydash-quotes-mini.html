@@ -1,0 +1,41 @@
+<div class="card">
+	<div class="card-section card--bottom-half-pad">
+		<div class="card__title">
+			<span class="epsilon"><i class=" fa fa-comments"></i> Quotes <span class="colour-grey-light">( {{quotes.count}} )</span> </span>
+			<a class="see-all eta" href="#/quotes"><b class="hide-me--palm">See all quotes </b>&nbsp;<i class="fa fa-chevron-right"></i></a>
+		</div>
+	</div>
+
+	<div class="card__section quote-tabs">
+		<div class="grid">
+		    <div class="tabs-content grid__item one-whole">
+		        <div class="active">
+		        	<div ng-repeat="q in quotes.items" class="card card-minimal card-shadow-frame card--no-border quotes-item">
+		        		<div class="card__section card--padding-half">
+
+		        			<div class="grid font--small ">
+		        				<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+		        					<b>{{ q.title }}</b>
+		        				</div>
+		        				<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+		        					<b>Need by: </b> <span class="colour-grey"><i title="Ending soon" class="fa fa-clock-o fa-fw colour--negative"></i>1st February</span>
+								</div>
+								<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+		        					<b>Responses: </b> <span class="colour-grey"><i title="New response(s)" class="fa fa-envelope-o fa-fw colour--positive"></i>{{ q.response_count }}</span>
+								</div>
+								<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+									<div class="accordion-more-details right">
+										<a class="button button--small button--minimal"><i class="fa fa-caret-right fa-2x"></i></a>
+									</div>
+		        				</div>
+		        			</div>
+
+		        		</div>
+		        	</div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	
+	
+</div>

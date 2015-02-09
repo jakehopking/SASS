@@ -1,0 +1,520 @@
+// BUTTONS
+// ===============================================================================
+
+$button-transition:             $transition;
+$button-radius-default:         $brand-round;
+$button-rounded-radius:         $brand-button-radius;
+$button-half-padding:           $base-line-height/2;
+$button-red-colour:             $colour-red-google-plus;
+$button-red-hover-colour:       #891305;
+$button-border-default-colour:  $colour-black;
+$button-border-default-width:   3px;
+
+.button {
+    display: inline-block;
+    vertical-align: middle;     
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 100%;
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 2.2;
+    padding-right: 1em;
+    padding-left:  1em;
+    touch-action: manipulation;
+    border: 1px solid transparent;
+    border-radius: $button-radius-default;
+    color: $button-colour;
+    background-color: $button-bg;
+    @include vendor(transition, $button-transition);
+    &:hover {
+        background-color: darken($button-bg, 10%);
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($button-bg, 15%);
+    }
+}
+
+// STATIC BUTTON
+// Attaching .button to strong allows ALL buttons styles.
+strong.button {
+    cursor: default;
+    &:hover {
+        transition: background-color 300.0s ease-in-out; // A bit hacky, but apply a super slow transision to create the illusion of staticness.
+    }
+}
+
+
+.button {
+
+    &,
+    &:hover {
+        text-decoration: none; 
+        color: $button-colour;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+// SIZES
+.button--small{
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    line-height: 2;
+}
+
+.button--large{
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+    line-height: 4;
+}
+
+.button--huge{
+    padding-right:2.5em;
+    padding-left: 2.5em;
+    line-height:6;
+}
+
+.button--fill{
+    width:100%;
+    padding-right:0;           
+    padding-left: 0;            
+    text-align:center;
+    + .button--fill {
+        margin-top: 2px;
+    }
+}
+.button--padding-left {
+    padding-left: $button-half-padding;
+}
+
+// Font sizes
+.button--alpha{
+    font-size: 3rem;
+}
+
+.button--beta{
+    font-size: 2rem;
+}
+
+.button--gamma{
+    font-size: 1.5rem;
+}
+
+
+// Make the button inherit sizing from its parent. E.g. inline buttons in a <p>.
+.button--inherit{
+    vertical-align:baseline;
+    font-size:inherit;
+    line-height:inherit;
+    padding-right:0.5em;
+    padding-left: 0.5em;
+}
+
+.button--red {
+    background-color: $colour-red-google-plus;
+    &:hover {
+        background-color: $button-red-hover-colour;
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($colour-red-google-plus, 15%);
+    }
+}
+
+// Button modifiers.
+.button--primary {
+    background-color: $button-bg;
+    color: $button-colour;
+    &:hover {
+        background-color: darken($button-bg, 10%);
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($button-bg, 15%);
+    }
+}
+
+.button--secondary {
+    background-color: $button-bg-secondary;
+    color: $button-colour-secondary;
+    &:hover {
+        background-color: darken($button-bg-secondary, 10%);
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($button-bg-secondary, 15%);
+    }
+}
+
+.button--tertiary {
+    background-color: $button-bg-tertiary;
+    color: $button-colour-tertiary;
+    &:hover {
+        background-color: darken($button-bg-tertiary, 10%);
+        color: $button-colour-tertiary;
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($button-bg-tertiary, 15%);
+    }
+}
+
+.button--muted {
+    background-color: $button-bg-muted;
+    color: $button-colour-muted;
+    &:hover {
+        background-color: darken($button-bg-muted, 10%);
+        color: $colour-grey-darkest;
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($button-bg-muted, 15%);
+    }
+}
+
+.button--circular {
+    // background-color: $button-bg;
+    // color: $button-colour;
+    border-radius: 300px; // Please don't change. 50% doesn't cut it.
+    line-height: 3;
+    .fa-fw {
+        padding-right: 0;
+        padding-left:  0;
+    }
+    .fa-2x {
+        padding-top: 11px;
+    }
+    &:hover {
+        // background-color: darken($button-bg, 10%);
+    }
+}
+
+.button--rounded {
+    border-radius: $button-rounded-radius;
+}
+
+.button--minimal { // Transparent with default bg colour on hover
+    background-color: transparent;
+    color: $button-bg;
+    &:hover {
+        background-color: $button-bg;
+        color: $button-colour;
+    }
+}
+
+
+// Buttons border modifiers
+%button--border-bottom-base {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+}
+
+.button--border-default {
+    border-width: $button-border-default-width;
+    border-style: solid;
+    border-color: $button-border-default-colour;
+}
+
+// Positive actions: Success, yes, send etc.
+.button--positive{
+    background-color: $colour-positive;
+    color:#fff;
+    &:hover {
+        background-color: darken($colour-positive, 10%);
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($colour-positive, 15%);
+    }
+}
+
+// Negative actions: Error, no, cancel etc.
+.button--negative{
+    background-color: $colour-negative;
+    color:#fff;
+    &:hover {
+        background-color: darken($colour-negative, 10%);
+    }
+    &.button--border-bottom {
+        @extend %button--border-bottom-base;
+        border-bottom-color: darken($colour-negative, 15%);
+    }
+}
+
+// Social media buttons
+.button--facebook {
+    @extend .button;
+    @extend .button--fill;
+    background-color: $facebook;
+}
+
+.button--google {
+    @extend .button;
+    @extend .button--fill;
+    background-color: $google-plus;
+}
+
+// Inactive/disabled state.
+
+%button-inactive {
+    background-color: $button-disabled-bg;
+    color: $button-disabled;
+    @include cursor-disabled;
+}
+
+.button--inactive, .button[disabled] {
+    @extend %button-inactive;
+    &:hover,
+    &:active,
+    &:focus {
+        @extend %button-inactive;
+    }
+}
+
+.button--title-text {
+    position: relative;
+    &[title]:after{
+        content:attr(title);
+        position: absolute;
+        // top: $base-line-height * 1.8;
+        // left: 0;
+        margin-left: -25%;
+        margin-top: -10%;
+        font-size: $milli-size;
+        display: table;
+        color: $button-bg;
+    }
+    .fa-2x {
+        padding-top: 11px;
+    }
+}
+
+
+// Button with a icon in a colour block 'Call [icon]'.
+.button--with-block-icon {
+    text-align: left;
+    position: relative;
+    i.fa {
+        float: right;
+        margin-right: -1em;
+        margin-left: 1em;
+        padding: 0 5px 0 7px;
+        line-height: 2.2;
+        background-color: darken(rgba($button-bg, 0.8), 10);
+        text-align: center;
+    }
+    i.fa-fw {
+        width: 2em;
+    }
+}
+// Button with a icon in a colour block 'Call [icon]'.
+// With button--fill modifier
+.button--with-block-icon.button--fill {
+    text-align: center;
+    i.fa {
+        margin-right: 0;
+    }
+}
+
+// Align left modifier for button--fill
+.button--fill.button--align-left {
+    text-align: left;
+    padding-left: 1em;
+}
+
+
+// BUTTON GROUP
+// ---------------------------------------------------
+
+.button-group,
+.button-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle; // match .button alignment given font-size hack above
+    > .button {
+        position: relative;
+        float: left;
+        // Bring the "active" button to the front
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          z-index: 2;
+      }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.button-group {
+    .button + .button,
+    .button + .button-group,
+    .button-group + .button,
+    .button-group + .button-group {
+        margin-left: -1px;
+    }
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.button--toolbar {
+    margin-left: -5px; // Offset the first child's margin
+    @extend .cf;
+
+    .button-group,
+    .input-group {
+        float: left;
+    }
+    > .button,
+    > .button-group,
+    > .input-group {
+        margin-left: 5px;
+    }
+}
+
+// Button group sizing. Affects plain .buttons in the group.
+.button-group--small > .button { 
+    @extend .button--small; 
+}
+
+.button-group--large > .button { 
+    @extend .button--large; 
+}
+
+.button-group--huge > .button { 
+    @extend .button--huge; 
+}
+
+// Button group with horizontal spacing
+.button-group--spaced {
+    > .button {
+        margin-right: $base-line-height / 4;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// Button group with horizontal spacing -- more spacing!
+.button-group--spaced-2x {
+    > .button {
+        margin-right: $base-line-height / 2;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.button-group--responsive {
+    @include media-query(palm) {
+        > .button {
+            display: block;
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: $base-line-height / 10;
+        }
+    } // End query
+    .button + .button {
+        margin-left: 0;
+    }
+}
+
+
+// Vertical button groups
+// ---------------------------------------------------
+
+.button-group--vertical {
+    > .button,
+    > .button-group,
+    > .button-group > .button {
+        display: block;
+        float: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    // Clear floats so dropdown menus can be properly placed
+    > .button-group {
+        @extend .cf;
+        > .button {
+            float: none;
+        }
+    }
+
+    > .button + .button,
+    > .button + .button-group,
+    > .button-group + .button,
+    > .button-group + .button-group {
+        margin-top: -1px;
+        margin-left: 0;
+    }
+}
+
+// .button-group--vertical > .button {
+//     &:not(:first-child):not(:last-child) {
+//         border-radius: 0;
+//     }
+//     &:first-child:not(:last-child) {
+//         border-top-right-radius: $border-radius-base;
+//     }
+//     &:last-child:not(:first-child) {
+//         border-bottom-left-radius: $border-radius-base;
+//     }
+// }
+// .button-group--vertical > .button-group:not(:first-child):not(:last-child) > .button {
+//     border-radius: 0;
+// }
+// .button-group--vertical > .button-group:first-child:not(:last-child) {
+//     > .button:last-child,
+//     > .dropdown-toggle {
+
+//     }
+// }
+// .button-group--vertical > .button-group:last-child:not(:first-child) > .button:first-child {
+
+// }
+
+
+// Justified button groups
+
+.button-group--fill {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    > .button,
+    > .button-group {
+        float: none;
+        display: table-cell;
+        width: 1%;
+    }
+    > .button-group .button {
+        width: 100%;
+    }
+
+    > .button-group .dropdown-menu {
+        left: auto;
+    }
+}
+
+
+// Checkbox and radio options
+
+[data-toggle="buttons"] {
+    > .button,
+    > .button-group > .button {
+        input[type="radio"],
+        input[type="checkbox"] {
+            position: absolute;
+            clip: rect(0,0,0,0);
+            pointer-events: none;
+        }
+    }
+}
+

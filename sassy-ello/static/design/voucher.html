@@ -1,0 +1,74 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+<div class="middle">
+    <section>
+        <div class="section-container--small">
+            <div class="grid grid--center">
+                <div class="grid__item one-whole">
+                    <div class="card card-shadow-frame card--no-border">
+                        <div class="voucher__title">
+                        	<h4> Get a free insurance upgrade on your car hire</h4>
+                        </div>
+                        <div class="card__content">
+                           Present this voucher at the time of booking and get a free insurance upgrade on your car hire! James Blond are one of Auckland leading independent Truck Van and Car Rental companies with a large range of Trucks Vans and Cars for Hire. With Rental Car rates starting from a low $20 per day and Truck Rental starting from $50 we have a Hire vehicle for you today. Call us today.
+                        </div>
+                        <div class="card__section card card--horizontal-pad">
+	                        <div class="grid">
+	                        	<div class="grid__item one-quarter">
+	                        		<div class="voucher__image">
+	                        			<img src="/static/images/voucher_01.png">
+	                        		</div>
+	                        	</div>
+	                        	<div class="grid__item three-quarters">
+	                        		<div class="expire__date">
+		                        		EXPIRE DATE<br>
+		                        		10.15.2015
+		                        	</div>
+	                        	</div>
+	                        </div>
+                        </div>
+                        <div class="card__section card--horizontal-pad">
+                        	<div class="grid">
+	                        	<div class="grid__item one-whole">
+	                        		<div class="card">
+	                        			<div class="card__section">
+			                        		<div class="get-voucher">
+			                        			<span>GET THIS COUPON</span><br>
+												TXT hirecar to 365 (NZ Only) TXTs cost 20c
+			                        		</div>
+			                        	</div>
+		                        	</div>
+	                        	</div>
+                        	</div>
+                        </div>
+                        <div class="card__section">
+                        	<div class="grid">
+	                        	<div class="grid__item one-whole">
+                    				<div  class="voucher-terms card__content">
+	                    				<h4>Terms and Conditons</h4>
+	                        			<hr>
+	                    				One voucher per person. Not to be used in conjunction with any other offer. Voucher must be presented at the time of booking. Drivers must be over 21 carry a full licence, a bond is payable on all rental contracts, exclusions may apply and we cannot guarantee availability without prior booking. Please refer to www.jamesblond.co.nz for full rental terms and conditions
+	                    			</div>
+	                    			<div class="logo">
+	                    				<img src="/static/images/brand-logo-small.png">
+	                    			</div>
+	                        	</div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'dashboard' %}{% endblock %}

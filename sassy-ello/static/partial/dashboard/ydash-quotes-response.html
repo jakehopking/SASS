@@ -1,0 +1,118 @@
+<!-- <li class="search-results__item"> --> <!-- GOLD OR SILVER LISTING --> <!-- STRUCTURAL DEFAULT -->
+	<div class="card card-shadow-frame card--no-border">
+		<div class="grid">
+			<div class="grid__item one-whole accordion-head">
+				<div class="grid grid--full">
+					<div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> <!-- Palm, lap, desk breaks -->
+						<div class="grid grid--full grid--rev"> <!-- Business score and image grid -->
+							<div class="grid__item one-whole palm-up--one-half"> 
+								<div class="business-thumbnail image-container-background-linked"> <!-- Business image container -->
+									<a href="#" style="background-image: url({{quoteresponse.listing.info.logo_src}});">
+										<!-- <img src="/static/images/business-thumb-01.jpg" alt=""> -->
+									</a>
+								</div>
+							</div>
+							<div class="grid__item one-whole palm-up--one-half"> <!-- Business review score container -->
+								<div class="review-score">
+									<div class="score__number">
+										{{ quoteresponse.listing.reviews_meta.avg_stars }}
+									</div>
+									<div class="score__stars">
+										<span ydash-stars count='quoteresponse.listing.reviews_meta.avg_stars'></span>
+									</div>
+									<div class="score__reviews">
+										<span class="score__rev iews-number">{{ quoteresponse.listing.reviews_meta.reviews_count }}</span> reviews
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> <!-- Palm, lap, desk breaks -->
+						<div class="grid grid--full"> <!-- Business details and CTAs grid -->
+							<div class="grid__item one-whole palm-up--ten-twelfths"> <!-- Business details container -->
+								<div class="business-info card__content">
+									<strong class="business__title"><a href="#">{{ quoteresponse.listing.title }}</a></strong>
+									<div>Price range: <b>${{ quoteresponse.pricerange_lower }}-${{ quoteresponse.pricerange_upper }}</b></div>
+									<div class="quote-status">Status: <span class="status--quotes-received">{{quoteresponse.response_status}}</span></div>
+								</div>
+							</div>
+							<div class="grid__item one-whole palm-up--two-twelfths"> <!-- Business CTAs (buttons) -->
+								<div class="accordion-more-details right">
+									<a class="button button--small button--minimal active"><i class="fa fa-chevron-down"></i></a>
+									<a class="button button--small button--minimal"><i class="fa fa-chevron-up"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-body grid__item one-whole quote-body">
+				<div class="card-flat">
+					<h4 class="business__title larger--title">{{ quoteresponse.listing.title }}</h4>
+					<ul class="business__categories inline-list-block delimited--bar">
+						<li ng-repeat="ctg in quoteresponse.listing.categoryreference_set_ordered"><a href="#">{{ctg.category.name}}</a></li>
+					</ul>
+					<div class="card__section ">
+						<div class="soft--left review-feature">
+							<div class="feature__content">
+								<div class="feature__comment normal--size">
+									{{quoteresponse.content_html}}</div>
+								<div class="feature__contact-details">
+									{{quoteresponse.contact_details}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card--top-pad">
+						<div class="card__title ">
+							<span class="epsilon"><i class=" fa fa-info-circle"></i> Service description </span>
+						</div>
+						<div ng-bind-html="quoteresponse.listing.info.description" class="card__section blue--section font--small card--margin-bottom">
+						</div>
+						<div class="card__section">
+							<div class="grid">
+								<div ydash-reviews-mini reviews="quoteresponse.listing.reviews" class="grid__item desk--one-half">
+									<!-- Reviews and photots -->
+
+								</div>
+								<div ydash-photos-mini photos="quoteresponse.listing.photos" class="grid__item desk--one-half">
+								</div>
+							</div>
+						</div>
+						<div class="card__section quote__contact-form">
+							<div class="card card--no-border card--title-dark">
+								<div class="card__title border--thin">
+									<span class="epsilon"><i class="fa fa-question-circle"></i> Accept this quote? </span>
+								</div>
+								<p class="epsilon card--margin-bottom ">How would you like to be contacted?</p>
+								<form class="quotes-form">
+									<div class="grid">
+										<div class="form-group grid__item palm--one-whole lap--five-twelfths desk--five-twelfths">
+											<label for="phone">Phone number</label>
+											<input type="text" class="form-group__item" id="phone">
+										</div>
+										<div class="form-group text-centre form-group--half-margin grid__item palm--one-whole lap--two-twelfths desk--two-twelfths">
+										<br class="hide-me--palm">
+											<b class="divider-circle">OR</b>
+										</div>
+										<div class="form-group grid__item palm--one-whole lap--five-twelfths desk--five-twelfths">
+											<label for="phone">Email address</label>
+											<input type="email" class="form-group__item" id="phone">									
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<p class="sub">By clicking "Accept Quote" you agree to the <a href="#">terms of use</p>
+										<a class="button button--positive push-half--right"><i class="fa fa-check fa-pad--right"></i><strong> Accept Quote</strong> </a>
+										<a class="button button--negative"><i class="fa fa-close fa-pad--right"></i><strong> Decline and Archive</strong> </a>
+										<br>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- </li> -->

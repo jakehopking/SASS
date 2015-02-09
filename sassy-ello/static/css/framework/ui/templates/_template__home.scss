@@ -1,0 +1,140 @@
+// HOMEAGE TEMPLATE - please keep generic rules in their respective files
+// ===============================================================================
+
+
+// Vars
+$business-title:                        $colour-black;
+$suggested-business-menu-size:          $h6-size;
+$suggested-business-menu-link:          $colour-charcoal;
+$suggested-business-menu-link-active:   $colour-white;
+$suggested-business-menu-icon:          $colour-charcoal;
+$suggested-business-menu-icon-active:   $colour-white;
+$suggested-business-menu-bg:            $colour-white;
+$suggested-business-menu-border:        $colour-grey-lightest;
+$suggested-business-menu-bg-hover:      $colour-grey-lighter;
+$suggested-business-menu-bg-active:     $colour-grey-darker;
+$suggested-business-menu-padding:       $base-line-height;
+
+// Featured businesses
+// Tabs-menu
+.tabs-menu.suggested-business-menu {
+    li {
+        a {
+            font-size: $suggested-business-menu-size;
+            outline: none;
+            color: $suggested-business-menu-link;
+            padding: ($suggested-business-menu-padding / 2) ($suggested-business-menu-padding - 5);
+            border-right: 1px solid $suggested-business-menu-border;
+            @include media-query(palm) {
+                padding: ($suggested-business-menu-padding / 4) ($suggested-business-menu-padding / 2);
+            }
+            em { // Icon ring
+                i { // Icon colour
+                    color: $suggested-business-menu-icon;
+                }
+            }
+            .category-name {
+                // @include media-query(palm) {
+                //     font-size: $milli-size + 1;
+                // }
+                @include media-query(lap) {
+                    font-size: $h7-size;
+                }
+                @include media-query(tablet) {
+                    font-size: $suggested-business-menu-size;
+                }
+            }
+            &:hover {
+                background-color: $suggested-business-menu-bg-hover;
+                em {
+                    border-color: $colour-grey;
+                }
+            }
+        }
+    }
+
+    @include media-query(palm) {
+        li {
+            display: block;
+            a {
+                display: block;
+                width: 60%;
+            }
+        }
+        li:not(.active) {
+            display: none;
+        }
+    }
+    
+    li.active { // Active tab
+        a, a:hover {
+            color: $suggested-business-menu-link-active;
+            background-color: $suggested-business-menu-bg-active;
+            @include arrow(bottom, left, $suggested-business-menu-bg-active, $suggested-business-menu-bg-active);
+            &:before {
+                left: 26px; // Arrow position (border start)
+            }
+            &:after {
+                left: 28px; // Arrow position (bg colour start)
+            }
+            em { // Icon ring
+                border-color: $fa-outline-brand;
+                i { // Icon colour
+                    color: $suggested-business-menu-icon-active;
+                }
+            }
+        }
+    }
+}
+
+// Featured buisnesses
+// Tabs-content
+.tabs-content.suggested-business-content {
+    // padding: 10px inherit;
+    .card {
+        .card__section--image {
+            height: 100px;
+            > img, a > img {
+                margin-top: -15%;
+                display: block;
+            }
+        }
+    }
+}
+// Review score
+.tabs-content.suggested-business-content {
+    .review-score {
+        .score__number {
+            line-height: 1.2;
+        }
+    }
+    .review-feature {
+        .feature__content {
+            @include media-query(palm-up) {
+                min-height: 95px;
+            }
+            @include media-query(lap) {
+                min-height: 125px;
+            }
+        }
+    }
+}
+
+.tabs-content.suggested-business-content {
+    .card--top-pad {
+        padding-top: $card-padding / 2;
+    }
+    .business-info { // See _results.scss for base styles
+        .business__address {
+            font-size: $h6-size - 1;
+        }
+    }
+}
+
+.homepage-title {
+    @extend .gamma;
+    @extend .font-face--serif;
+    margin-top: $base-line-height / 2;
+    font-weight: $font-weight-light;
+}
+

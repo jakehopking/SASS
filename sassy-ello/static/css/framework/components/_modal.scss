@@ -1,0 +1,34 @@
+// MODAL
+// ===============================================================================
+
+
+.modal {
+    width: 50%;
+    min-height: 100px;
+    padding: $gutter;
+    background: $colour-blue;
+    color: $colour-white;
+    border: 2px solid $colour-white;
+    box-shadow: 1px 1px 10px $colour-black;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1001;
+}
+
+.modal-content {
+    padding-bottom: $gutter;
+    position: relative;
+    font-size: 1.2em;
+}
+
+.modal-close {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    color: $colour-white;
+}
+
+.modal-buttons .button--positive {
+    float: right;
+}

@@ -1,0 +1,14 @@
+{
+	"fname": "Alan",
+	"lname": "Rowarth",
+	"email": "alan@world.com",
+	"location_name": "Auckland region",
+	"joined_when": "May 2012",
+	"thumbnail_src": "/static/images/user-thumb-01.jpg",
+	"indicators": {
+		"faves": 17,
+		"photos": 22,
+		"thingies": 7,
+		"wotsits": 29
+	}
+}

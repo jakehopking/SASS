@@ -1,0 +1,162 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}{% load godzilla_extras %}
+
+{% block content %}
+
+<div class="middle">
+
+    <section class="section--collapse srp-filter-bar">
+
+        <div class="section-container">
+            <form id="search-filter" action="{{ request.path }}" method="get">
+
+                <div class="grid"> 
+
+                    <div class="grid__item desk--one-quarter">
+                        <div class="search-filter-field">
+                            <select name="filter-sort" data-label="Sort by:">
+                                <option value="featured">Featured</option>
+                                <option value="relevant">Most relevant</option>
+                                <option value="rated">Highest-rated</option>
+                                <option value="closest">Closest</option>
+                                <option value="name">Name (A-Z)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid__item desk--one-quarter">
+                        <div class="search-filter-field">
+                            <select name="filter-category" data-label="Category:">
+                                <option value="">Any</option>
+                                {% for category in search.filters.categories %}
+                                <option {% if filters.category == category.id|stringformat:"s" %}selected="true"{% endif %} value="{{ category.id }}">{{ category.name }} ({{ category.count }})</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid__item desk--one-quarter">
+                        <div class="search-filter-field">
+                            <select name="filter-location" data-label="Location:">
+                                <option value="">Any</option>
+                                {% if search.filters.locations.3 %}
+                                    <optgroup label="Regions">
+                                        {% for location in search.filters.locations.3 %}
+                                            <option {% if filters.location == location.id|stringformat:"s" %}selected="true"{% endif %} value="{{ location.id }}">{{ location.name }} ({{ location.count }})</option>
+                                        {% endfor %}
+                                    </optgroup>
+                                {% endif %}
+                                {% if search.filters.locations.4 %}
+                                    <optgroup label="Districts">
+                                        {% for location in search.filters.locations.4 %}
+                                            <option {% if filters.location == location.id|stringformat:"s" %}selected="true"{% endif %} value="{{ location.id }}">{{ location.name }} ({{ location.count }})</option>
+                                        {% endfor %}
+                                    </optgroup>
+                                {% endif %}
+                                {% if search.filters.locations.5 %}
+                                    <optgroup label="Suburbs">
+                                        {% for location in search.filters.locations.5 %}
+                                            <option {% if filters.location == location.id|stringformat:"s" %}selected="true"{% endif %} value="{{ location.id }}">{{ location.name }} ({{ location.count }})</option>
+                                        {% endfor %}
+                                    </optgroup>
+                                {% endif %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid__item desk--one-quarter">
+                        <div class="search-filter-field">
+                          <a class="filter-clear" href="{{ request.path }}"><i class="fa fa-times-circle fa-pad--right"></i>Clear filter</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <input type="submit" value="apply">
+
+            </form>
+        </div>
+
+    </section>
+
+    <section class="section-map section--collapse">
+        <div class="section-container">
+
+            {% if search.meta.total > 0 or search.platinums %}
+
+                <div class="search-quote-module">
+                    <div class="card-minimal">
+                        <div class="card__title-dark card--border-bottom-thick">
+                            <i class="card__title-icon fa fa-comments"></i>
+                            <span class="card__title-triangle"></span>
+                            <span class="epsilon"> Get free quotes from cleaners</span>
+                        </div>
+                        <div class="card__content-dark">
+                            <div class="grid">
+                                <div class="grid__item one-whole">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="usr">Which suburb are you in?</label>
+                                            <input type="text" placeholder="e.g. Mt Albert" name="name" class="form-group__item" id="usr">
+                                        </div>
+                                        <a class="button button--tertiary button--fill"><i class="fa fa-hand-o-right fa-pad--right"></i><strong> Get started</strong> </a>
+                                        <br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>              
+                </div>
+
+                <div class="search-results-container">
+
+                    {% if search.platinums %}
+                        <ol class="search-results-list tier_platinums">
+                            {% for listing in search.platinums %}
+                                {% if listing.logo %}
+                                {% include "srp/listing.html" with listing=listing index=forloop.counter %}
+                                {% else %}
+                                    {% include "srp/listing_without_thumbnail.html" with listing=listing index=forloop.counter %}
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                    {% endif %}
+
+                    {% for tier, results  in search.results %}
+
+                        <h4 class="font-face--condensed font-weight--light text--capitalize">{% appropriate_location_tier tier search.results search.query %}</h4>
+                        <ol class="search-results-list tier_{{tier}}">
+                            {% for listing in results %}
+                                {% if listing.logo %}
+                                    {% include "srp/listing.html" with listing=listing index=forloop.counter %}
+                                {% else %}
+                                    {% include "srp/listing_without_thumbnail.html" with listing=listing index=forloop.counter %}
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+
+                    {% endfor %}
+                </div>
+            {% else %}
+                {% include "srp/no_results.html" with search=search %}
+            {% endif %}
+
+         </div>
+    </section>
+
+    <div id="search-results-map-anchor"></div>
+    <div id="search-results-map" class="hide-me--palm"></div>
+
+    {# Generates a JS array of points for the map. #}
+    {% appropriate_app_data "srp-map-data" search.results %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'srp' %}{% endblock %}

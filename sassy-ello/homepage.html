@@ -1,0 +1,72 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+{% load godzilla_extras %}
+
+{% block header %}
+    {% include "disruptive_advert.html" %}
+    {% include "header.html" %}
+{% endblock %}
+
+{% block content %}
+    <input type="hidden" id="location-by-ip" value="{{ip_region}}">
+    <div class="middle">
+        <section class="section-hero-image hide-me--portable" style="background-image: url('{{ banner.image }}');">
+            <div class="section-container" id="banner-business"></div>
+        </section>
+        
+        <section class="section-colour section--collapse">
+            <div class="section-container">
+                <ul class="suggested-business-menu tabs-menu inline-list-block"> <!-- Tabs menu -->
+                    {% for cat in category_business.categories %}
+                    <li class="{{cat.class}}" category-name="{{cat.name}}"><a href="#"><em class="fa-outline fa-outline--ring-large fa-outline--brand"><i class="fa fa-fw {{cat.icon}}"></i></em> <span class="category-name">{{cat.name}}</span></a>  <!-- Tabs menu item --> <!-- Where are the closing '</li>'s? see base/_inline-list.scss -->
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        <section class="section-colour-alt">  
+            <div class="section-container suggested-business-content tabs-content"> <!-- Tabs content -->
+                {% for cat in category_business.categories %}
+                <div class="grid tab-content__item"> <!-- Tabs content item -->
+                    <div class="grid--center grid--item spinner">
+                        <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="see-all see-all--tab-alt right">
+                    <a href="#" class="">View all businesses <i class="fa fa-chevron-right fa-pad--left"></i></a>
+                </div>
+            </div>
+        </section>
+        <section>  
+            <div class="section-container">
+            <h2 class="strike-through strike-through--left homepage-title"><span>Popular articles and interviews</span></h2>
+                <div class="grid articles">
+                    {% for arc in articles.articles %}
+                    <div class="grid__item one-whole {% if forloop.counter == 5 %}desk--one-half{% else %}lap--one-half desk--one-quarter{% endif %}">
+                        <div class="card card__image image--article">
+                            <div class="article-date">
+                                <span class="date-day">{{ arc.date.day }}</span>
+                                <span class="date-month">{{ arc.date.month }}</span>
+                            </div>
+                            <div class="article-title">
+                                <a href="/articles/article/{{ arc.path }}">{{ arc.page_heading|striptags }}</a>
+                            </div>
+                            <a href="/articles/article/{{ arc.path }}"><img src="{{ arc.thumbnail_image_url }}" alt="{{ arc.thumbnail_image_alt }}"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="see-all see-all--tab right">
+                    <a href="/articles" class="">View all articles <i class="fa fa-chevron-right fa-pad--left"></i></a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-container">
+                <div class="rule rule--section-break-x"></div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
+
+{% block pagescripts %}{% compressed_js 'homepage' %}{% endblock %}

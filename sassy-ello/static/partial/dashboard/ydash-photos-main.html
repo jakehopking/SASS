@@ -1,0 +1,93 @@
+<div class="card card-shadow-frame soft--bottom">
+	<div class="card__title">
+		<span class="epsilon"><i class="fa fa-camera"></i> Photos <span class="colour-grey-light">( {{photos.count}} )</span></span>
+	</div>
+	<div class="grid">
+		<div class="grid__item one-whole recent-favourites">
+			<ol class="search-results-list soft">
+
+                <li ng-repeat="fav in favourites.items" class="search-results__item item--with-review"> <!-- LISTING WITH COMMENT --> <!-- STRUCTURAL DEFAULT || WITH ADDITIONAL COMMENT GRID ITEM --> <!-- up tp 2 -->
+                    <div class="card card-shadow-frame card--no-border">
+                        <div class="grid">
+                            <div class="grid__item one-whole">
+                                <div class="grid grid--full">
+                                    <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> <!-- Palm, lap, desk breaks -->
+                                        <div class="grid grid--full grid--rev"> <!-- Business score and image grid -->
+                                            <div class="grid__item one-whole tablet-up--one-half"> 
+                                                <div class="business-thumbnail image-container-background-linked"> <!-- Business image container -->
+                                                    <a href="#" style="background-image: url({{fav.logo_src}});">
+                                                        <!-- <img src="/static/images/business-thumb-01.jpg" alt=""> -->
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid__item one-whole tablet-up--one-half"> <!-- Business review score container -->
+                                                <div class="review-score">
+                                                    <div class="score__number">
+                                                        {{fav.rating}}
+                                                    </div>
+                                                    <div class="score__stars">
+                                                    	<span ydash-stars count='fav.star_count'></span>
+                                                    </div>
+                                                    <div class="score__reviews">
+                                                        <span class="score__rev iews-number">{{fav.review_count}}</span> reviews
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> <!-- Palm, lap, desk breaks -->
+                                        <div class="grid grid--full"> <!-- Business details and CTAs grid -->
+                                            <div class="grid__item one-whole tablet-up--one-half"> <!-- Business details container -->
+                                                <div class="business-info card__content">
+                                                    <strong class="business__title"><a href="#"><span class="item-number">{{fav.list_index}}</span> {{fav.title}}</a></strong>
+                                                    <ul class="business__categories inline-list-block delimited--bar">
+                                                        <li ng-repeat="ctg in fav.categories"><a href="{{ctg.href}}">{{ctg.title}}</a></li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="grid__item one-whole tablet-up--one-half"> <!-- Business CTAs (buttons) -->
+                                                <div class="business-call-to-actions card__content">
+                                                    <a href="#" class="cta__more-details arrow-chevron-right" alt="Follow link arrow"></a>
+                                                    <a href="#" class="cta__phone-us button button--circular button--title-text" title="Phone us"><i class="fa fa-phone fa-lg"></i></a>
+                                                    <a href="#" class="cta__website button button--circular button--title-text" title="Website"><i class="fa fa-globe fa-lg"></i></a>
+                                                    <a href="#" class="cta__directions button button--circular button--title-text" title="Directions"><i class="fa fa-location-arrow fa-lg"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="fav.review.user_id " class="grid__item one-whole">
+							    <div class="grid grid--full review-feature">
+							        <div class="grid__item one-quarter desk--one-eighth feature__user-thumb">
+							            <img class="image-thumb-circle image-thumb--medium" src="{{ fav.review.user_photo }}" alt="">
+							        </div>
+							        <div class="grid__item three-quarters desk--seven-eighths feature__content">
+							            <div class="feature__comment">
+							              {{ fav.review.comment }}
+							            </div>
+							            <div class="feature__comment-details">
+							              <div class="feature__comment-user"><a href="#">User #{{ fav.review.user_id }}</a></div>
+							              <div class="feature__comment-score">{{ fav.review.rating }} <i class="fa fa-star"></i></div>
+							              <div class="feature__comment-time">{{fav.review.created | date:'yyyy-MM-dd @ HH:mm a'}}</div>
+							            </div>
+							        </div>
+							    </div>
+							</div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+	</div>
+    <div class="pagination soft">
+        <div class="button-group button-group--spaced {# button-group--responsive #}">
+            <a href="#" class="button button--small"><i class="fa fa-chevron-left fa-pad--right"></i> Prev</a>
+            <a href="#" class="button button--small">1</a>
+            <a href="#" class="button button--small button--inactive">2</a>
+            <a href="#" class="button button--small">3</a>
+            <a href="#" class="button button--small">Next <i class="fa fa-chevron-right fa-pad--left"></i></a>
+        </div>
+    </div>
+</div>

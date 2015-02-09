@@ -1,0 +1,35 @@
+<!-- <div class="card card-minimal card-shadow-frame card--no-border quotes-item"> -->
+	<div class="card__section card--padding-half">
+		<div class="accordion-head">
+			<div class="grid font--small ">
+				<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+					<strong ng-bind="quoterequest.title"></strong>
+				</div>
+				<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+					<strong>Posted:</strong> <span class="colour-grey" ng-bind="quoterequest.when_created | date : 'MMMM d, yyyy'"></span>
+				</div>
+				<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+					<strong>Responses:</strong> <span class="colour-grey" ng-bind="quoterequest.response_set.length"></span>
+				</div>
+				<div class="grid__item one-whole palm-up--one-quarter desk--three-twelfths">
+					<div class="accordion-more-details right">
+						<a class="button button--small button--minimal"><i class="fa fa-caret-down fa-2x"></i></a>
+						<a class="button button--small button--minimal active"><i class="fa fa-caret-up fa-2x"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-body active">
+			<div class="soft--left review-feature">
+				<div class="feature__content">
+					<div class="feature__comment normal--size" ng-bind="quoterequest.content_html"></div>
+				</div>	
+			</div>
+			<div class="divider-dotted"></div>
+			<ul class="accordion quotes-accordion">
+				<!-- <ydash-quote-response ng-repeat="quoteresponse in quoterequest.response_set"></ydash-quote-response> -->
+				<li ydash-quote-response class="search-results__item" ng-repeat="quoteresponse in quoterequest.response_set"></li>
+			</ul>
+		</div>
+	</div>
+<!-- </div> -->

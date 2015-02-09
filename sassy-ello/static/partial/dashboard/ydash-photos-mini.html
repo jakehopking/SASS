@@ -1,0 +1,16 @@
+<div class="card card--no-border">
+	<div class="card__title">
+		<span class="epsilon"><i class="fa fa-camera"></i> Photos <span class="colour-grey-light">( {{photos.count}} )</span></span>
+		<a class=" float--right eta" href="#/photos"><b class="hide-me--palm">See all photos</b> &nbsp;<i class="fa fa-chevron-right"></i></a>
+	</div>
+	<div class="card__section photo__list">
+		<ul class="grid">
+			<!-- Photo item starts -->
+			<li ng-repeat="photo in photos.items" class="grid__item palm--one-half one-quarter photo__item">
+				<a href="{{photo.href}}"><img class="image-thumb-square" src="{{photo.thumb}}"></a>
+			</li>
+			<!-- Photo item ends -->
+
+		</ul>
+	</div>
+</div>

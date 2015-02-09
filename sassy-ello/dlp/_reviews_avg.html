@@ -1,0 +1,19 @@
+{% load godzilla_extras %}
+{% if reviews %}
+    <div class="review-score review-score--horizontal">
+        <div class="score__number">{{ reviews.rating }}</div>
+        <div class="score__stars">
+            {% generate_stars reviews.rating %}
+        </div>
+        <div class="score__reviews">
+            <span class="score__rev iews-number">{{ reviews.count }}</span> reviews
+        </div>
+    </div>
+{% else %}
+
+    <div class="review-score review-score--horizontal no-score">
+        <div class="score__number">No reviews</div>
+    </div>
+
+{% endif %}
+

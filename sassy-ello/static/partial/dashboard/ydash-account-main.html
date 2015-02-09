@@ -1,0 +1,88 @@
+<div class="card card-shadow-frame soft--bottom">
+	<div class="card__title">
+		<span class="epsilon"><i class="fa fa-user"></i> Account Details</span>
+	</div>
+	<div class="card__section card__content">
+        <form id="account-form">
+
+            <fieldset>
+				<div class="grid">
+
+					<div class="form-group grid__item one-whole desk--one-whole card--no-margin">
+						<div class="grid">
+							<div class="form-group grid__item one-whole desk--one-half">
+	                            <label>Your Profile Photo</label>
+	                            <br>
+	                            <img class="image-thumb-circle image-thumb--black image-thumb--x3-large push-half--right" src="{{user.thumbnail_src}}" />
+	                            <a class="button button--positive"><i class="fa fa-upload fa-pad--right"></i><b> Upload new</b> </a>
+	                        </div>
+	                        <div class="form-group grid__item one-whole desk--one-half">
+								<input type="file" name="photo">
+								<input type="submit" value="upload">
+                    		</div> 
+						</div>
+                    </div>
+
+                    <div class="form-group grid__item one-whole lap--one-half desk--one-half">
+                        <label>First name</label>
+                        <input class="form-group__item" type="text" name="firstname" value="{{user.fname}}">  
+                    </div>  
+
+                    <div class="form-group grid__item one-whole lap--one-half desk--one-half">
+                        <label>Last name</label>
+                        <input class="form-group__item" type="text" name="lastname" value="{{user.lname}}">  
+                    </div>  
+
+                    <div class="form-group grid__item one-whole lap--one-half desk--one-half">
+                        <label>Email address</label>
+                        <input class="form-group__item" type="text" name="email" value="{{user.email}}">  
+                    </div>
+
+                    <div class="form-group grid__item one-whole lap--one-half desk--one-half">
+                        <label>Region</label>
+                        <select class="form-group__item" name="region">
+                            <option value="auckland-region" selected="selected">Auckland Region</option>
+                            <option value="bay-of-plenty">Bay Of Plenty</option>
+                            <option value="canterbury-region">Canterbury Region</option>
+                            <option value="gisborne-region">Gisborne Region</option>
+                            <option value="hawkes-bay">Hawkes Bay</option>
+                            <option value="manawatu-region">Manawatu Region</option>
+                            <option value="marlborough-region">Marlborough Region</option>
+                            <option value="nelson-region">Nelson Region</option>
+                            <option value="northland">Northland</option>
+                            <option value="otago">Otago</option>
+                            <option value="southland-region">Southland Region</option>
+                            <option value="taranaki">Taranaki</option>
+                            <option value="timaru-oamaru-region">Timaru Oamaru Region</option>
+                            <option value="waikato-region">Waikato Region</option>
+                            <option value="wairarapa">Wairarapa</option>
+                            <option value="wanganui-region">Wanganui Region</option>
+                            <option value="wellington-region">Wellington Region</option>
+                            <option value="west-coast">West Coast</option>
+                        </select>
+                    </div> 
+				</div>
+
+				<div class="form-group button-group button-group--spaced-2x">
+					<a class="button button--positive"><i class="fa fa-check fa-pad--right"></i><b> Save</b> </a>
+					<a class="button button--negative"><i class="fa fa-close fa-pad--right"></i><b> Cancel</b> </a>
+					<br>
+				</div>
+
+            </fieldset>    
+
+        </form>
+	</div>
+</div>
+
+<script language="javascript">
+			Yellow.upload({
+				form:     $('#account-form'),
+				success:  function (response, xhr) { console.log("FILE UPLOADED"); },
+				progress: function (percentDone, xhr) { console.log(percentDone); }, // optional
+				error:    function (response, xhr) { }, // optional
+				fallback: 'iframe', // optional
+				submit:   function () {  },
+				url:      '/upload-photo' // only required if the given form doesn't have an action attribute
+			});
+</script>

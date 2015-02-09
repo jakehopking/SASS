@@ -1,0 +1,65 @@
+{
+	"count": 0,
+	"items": [
+		{
+			"rating": "5.0",
+			"star_count": 5,
+			"review_count": 123,
+			"title": "Ionic Coffee Ghosters",
+			"href": "#",
+			"website_href": "#",
+			"directions_href": "#",
+			"logo_src": "https://pbs.twimg.com/media/B7buWUXCIAA98v-.jpg:large",
+			"address": "Devonport",
+			"categories": [
+				{"title": "Cafes", "href": "#"},
+				{"title": "Coffee roastery", "href": "#"}
+			]
+		},
+		{
+			"rating": "3.5",
+			"star_count": 3.5,
+			"review_count": 234,
+			"title": "Tiptronic Toffee Hipsters",
+			"href": "#",
+			"website_href": "#",
+			"directions_href": "#",
+			"logo_src": "https://pbs.twimg.com/media/BgfaxfmIcAAJ7p6.jpg:large",
+			"address": "Kalmia Street",
+			"categories": [
+				{"title": "Kafes", "href": "#"},
+				{"title": "Koffee roastery", "href": "#"}
+			]
+		},
+		{
+			"rating": "4.0",
+			"star_count": 4,
+			"review_count": 345,
+			"title": "Iconic Coffee Coasters",
+			"href": "#",
+			"website_href": "#",
+			"directions_href": "#",
+			"logo_src": "https://pbs.twimg.com/media/BhgXEzsIcAAxAvX.jpg:large",
+			"address": "Vulcan Lane",
+			"categories": [
+				{"title": "Zafes", "href": "#"},
+				{"title": "Zoffee roastery", "href": "#"}
+			]
+		},
+		{
+			"rating": "2.5",
+			"star_count": 2.5,
+			"review_count": 456,
+			"title": "Baryonic Banoffee Boasters",
+			"href": "#",
+			"website_href": "#",
+			"directions_href": "#",
+			"logo_src": "https://pbs.twimg.com/media/Bg-Wd6PCUAARPMi.jpg:large",
+			"address": "Sunset Boulevard",
+			"categories": [
+				{"title": "Cafes", "href": "#"},
+				{"title": "Banoffee boastery", "href": "#"}
+			]
+		}
+	]
+}

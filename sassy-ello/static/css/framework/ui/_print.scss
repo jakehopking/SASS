@@ -1,0 +1,160 @@
+// PRINT STYLESHEET
+// ===============================================================================
+
+@media print {
+    
+    // Vars
+
+
+    // Placeholders
+    %print-anchor-link {
+        &[href]:after {
+            content: "(" attr(href) ")";
+        }
+    }
+
+    %print-phone-number {
+        &:after {
+            content: "(" attr(data-telephone) ")";
+        }
+    }
+
+    %hide-me--print {
+        display: none;
+    }
+
+    %print-side-padding {
+        padding-left: $base-line-height;
+        padding-right: $base-line-height;
+    }
+
+    %print-no-side-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    body {
+        background-color: $colour-white;
+        font-size: 10pt;
+    }
+    p > a {
+        @extend %print-anchor-link;
+        &[href]:after {
+            content: "(" attr(href) ")" !important;
+            opacity: 1 !important;
+            position: relative !important;
+            background-color: transparent !important;
+            transition: none !important
+        }
+    }
+    
+    // HIDE THESE ELEMENTS
+    body {
+        .network-bar,
+        .mobile-menu,
+        #search-results-map,
+        .dlp-post-review,
+        .dlp-review-tools .review-helpful,
+        .middle > .section-hero-image {
+            @extend %hide-me--print;
+        }
+
+        header {
+            .yellow-logo--small,
+            #searchbox, 
+            .header-browse, 
+            .header-menu {
+                @extend %hide-me--print;
+            }
+        }
+    }
+
+    // ADD HORIZONTAL PADDING
+    body {
+        .header-container,
+        .section-container,
+        .footer-container {
+            @extend %print-side-padding;
+        }
+    }
+
+    // HOME 
+    body {
+        .tabs-content.suggested-business-content .card .card__section--image {
+            height: 0;
+        }
+        .suggested-business-menu li:not(.active) {
+            display: none;
+        }
+    }
+
+    // SRP
+    body {
+        .middle > section.section-map {
+            box-shadow: none;
+        }
+        .search-results-container {
+            max-width: 100%;
+            @extend %print-no-side-padding;
+        }
+        .cta__phone-us {
+            &:after {
+                content: "(" attr(data-telephone) ")" !important;
+                color: $colour-white !important;
+                position: relative !important;
+                display: inline !important;
+                margin-left: 10px !important;
+                font-size: 11pt !important;
+            }
+        }
+        .cta__website {
+            &:after {
+                content: "(" attr(href) ")" !important;
+                color: $colour-white !important;
+                position: relative !important;
+                display: inline !important;
+                margin-left: 10px !important;
+                font-size: 11pt !important;
+            }
+        }
+        .cta__directions {
+            display: none !important;
+        }
+    }
+
+    // DLP 
+    body {
+        .business__phone {
+            @extend %print-phone-number;
+        }
+        .business__website {
+            @extend %print-anchor-link;
+        }
+    }
+
+    // FOOTER
+    body {
+        footer {
+            position: relative !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

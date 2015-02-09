@@ -1,0 +1,37 @@
+<div class="card card-shadow-frame card-shadow--border">
+	<div class="card__title">
+		<span class="epsilon"><i class="fa fa-comments"></i> Quotes</span>
+	</div>
+	<div class="card__section card__section card__content quote-tabs">
+		<div class="grid">
+		    <div class="tabs-menu grid__item one-whole">
+		    	<ul class="grid text--center">
+			        <li class="quotes-received grid__item palm--one-half palm-up--one-half">
+			        	<a href="javascript:void()">
+			        		<i class="fa fa-fw fa-inbox"></i>
+			        		<span class="title">Inbox</span>
+							<span class="">( 2 )</span> 
+			        	</a>
+			        </li>
+					<li class="quotes-archived grid__item palm--one-half palm-up--one-half">
+			        	<a href="javascript:void()">
+							<i class="fa fa-fw fa-archive"></i>
+			        		<span class="title">Archive</span>
+			        	</a>
+			        </li>
+		    	</ul>
+		    </div>
+		    <div class="tabs-content grid__item one-whole">
+		        <div class="quotes-received accordion">
+					<!-- <ydash-quote-request ng-repeat="quoterequest in quoterequests"> -->
+					
+					<!-- <ydash-quote-request ng-repeat="quoterequest in quoterequests"></ydash-quote-request> -->
+					<div ydash-quote-request ng-repeat="quoterequest in quoterequests" class="card card-minimal card-shadow-frame card--no-border quotes-item"></div>
+
+		        </div>
+				<div class="quotes-archived">
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>

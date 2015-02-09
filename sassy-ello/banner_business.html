@@ -1,0 +1,35 @@
+<div class="grid"> {# Featured geo-located business #}
+    <div class="grid__item five-twelfths">
+        <div class="hero__feature hero__feature--review">
+            <div class="grid">
+                <div class="grid__item one-quarter business-map">
+                    <a href="#"><img class="image-thumb-circle" src="https://maps.googleapis.com/maps/api/staticmap?center={{business.lat}},{{business.lng}}&zoom=14&size=200x200" alt="Google map of business location"></a>
+                </div>
+                <div class="grid__item three-quarters business-detail">
+                    <h3 class="title"><a href="/y/{{business.slug}}">{{business.title}}</a></h3>
+                    {% if business.message %}
+                    <div class="review-feature">
+                        <div class="feature__comment"><h3>{{ business.message }}</h3></div>
+                    </div>
+                    {% endif %}
+                    {% if business.review %}
+                    <div class="review-feature">
+                        <div class="feature__content">
+                        {% with business.review as review %}
+                            {% if review.comment %}
+                                <div class="feature__comment">{{review.comment}}</div>
+                            {% endif %}
+                            <div class="feature__comment-details">
+                                <div class="feature__comment-user"><a href="#">{{review.user}}</a></div>
+                                <div class="feature__comment-score">{{review.rating}} <i class="fa fa-star"></i></div>
+                                <div class="feature__comment-time">{{review.time}}</div>
+                            </div>
+                        {% endwith %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

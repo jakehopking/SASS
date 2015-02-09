@@ -1,0 +1,86 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+
+{% block content %}
+<div class="middle">
+	<section>
+		<div ng-app="dashboardApp" class="section-container">
+			<div class="grid">
+				<div class="grid__item one-whole desk--one-quarter column-menu">
+					<div ng-controller="UserSummaryController" class="card card-shadow-frame card--no-border">
+						{% verbatim %}
+						<div class="card__section user-details">
+							<div class="user__image">
+								<img class="image-thumb-circle image-thumb--black image-thumb--x3-large" src="{{user.thumbnail_src}}" />
+							</div>
+							<div class="user__info card--vertical-pad">
+								<div class="user__name" ng-bind="user.fname+' '+user.lname"></div>
+								<div class="user__region" ng-bind="user.location_name"></div>
+								<div class="user__membership">
+									Yellow member since </br>
+									<span ng-bind="user.joined_when"></span>
+								</div>
+							</div>
+						</div>
+						<div class="card-section">
+							<div class="grid user-stats grid--full text--center ">
+								<div class="grid__item one-quarter">
+									<div class="user-stats__ratings">
+										<span ng-bind="user.indicators.faves"></span> <i class="fa fa-star"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__photos">
+										<span ng-bind="user.indicators.photos"></span> <i class="fa fa-camera"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__lists">
+										<span ng-bind="user.indicators.thingies"></span> <i class="fa fa-list"></i>
+									</div>
+								</div>
+								<div class="grid__item one-quarter">
+									<div class="user-stats__likes">
+										<span ng-bind="user.indicators.wotsits"></span> <i class="fa fa-thumbs-up"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endverbatim %}
+					<div ng-controller="NavMainController" class="card card-shadow-frame card--no-border">
+						{% verbatim %}
+						<ul class="dashboard-menu-items">
+							<li ng-repeat="navitem in navtree.items">
+								<a class="active" href="{{navitem.href}}" ng-bind="navitem.label"></a>
+								<ul ng-repeat="nav2item in navitem.items">
+									<li><a ng-class="navClass(nav2item.href)" href="{{nav2item.href}}"><span ng-bind="nav2item.label"></span> <span ng-if="nav2item.badge_text" class="colour-grey right"><strong ng-bind="'( '+nav2item.badge_text+' )'">(  ) </strong></span></a></li>
+								</ul>
+							</li>
+						</ul>
+						{% endverbatim %}
+						
+					</div>
+				</div>
+				<div ng-view class="grid__item one-whole desk--three-quarters column-content">
+					<!-- Dashboard code will be loaded in here by Angular. -->
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    {% include "footer_basic.html" %}
+</footer>
+{% endblock %}
+
+{% block pagescripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.9/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.9/angular-route.js"></script>
+<script src="/static/js/src/dashboard/dashboard.js"></script>
+
+{% compressed_js 'dashboard' %}{% endblock %}

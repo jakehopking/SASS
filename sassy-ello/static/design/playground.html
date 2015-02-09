@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="js-playground">
+
+
+
+    <h1>js playground</h1>
+
+    <p>Just a place to test stuff out</p>
+
+
+    <h3>Image crop</h3>
+
+    <img class="crop" src="/static/images/slide1.jpg">
+
+
+</div>
+
+
+{% endblock %}
+
+
+{% block pagescripts %}
+<script src="/static/js/libs/jquery.jcrop.min.js"></script>
+<script src="/static/js/src/photos/crop.js"></script>
+<script>
+$(function () {
+
+    Yellow.crop('.crop');
+
+});
+</script>
+
+{% endblock %}
+

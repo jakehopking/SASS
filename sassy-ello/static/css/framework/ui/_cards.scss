@@ -1,0 +1,541 @@
+// CARDS (boxes etc)
+// ===============================================================================
+
+// Vars
+$card-background-default:       $colour-white;
+$card-background-alt:           $colour-grey-lightest;
+$card-title-background-default: $colour-grey-lighter;
+$card-title-border-default:     $colour-grey-light-alt;
+$card-title-colour-default:     $colour-charcoal;
+$card-border-colour-default:    $colour-white;
+$card-section-border-default:   $colour-grey-light-alt;
+
+$card-border-thick:             $border-thick;
+$card-padding:                  $base-line-height;
+$card-padding-vertical:         floor($card-padding / 1.63);
+$card-margin:                   $base-line-height;
+$card-border-radius:            $brand-round;
+$card-image-title-bg:           $colour-charcoal;
+$card-image-title-bg-hover:     $colour-black;
+$card-image-text:               $colour-white;
+$card-title-dark-bg:            $colour-smoke;
+$card-content-dark-bg:          $colour-smoke-dark;
+$card-title-dark-border:        $colour-smoke-darker;
+$card-title-dark-arrow:         $colour-smoke-lighter;
+$card-title-color-light:        $colour-white;
+$card-title-color-light-hover:  $colour-grey-light;
+$card-title-color-hover:        $colour-black;
+
+$blue-section-color:            $colour-blue-lightest-alt;
+$blue-section-border-color:     $colour-blue;
+
+// Card base styling with placeholder classes
+%card-base {
+    margin-bottom: $card-margin;
+    border-radius: $card-border-radius;
+    position: relative;
+}
+
+%card-base__title {
+    
+}
+
+%card-base__content {
+
+}
+
+%card__section {
+    // margin-bottom: $card-margin;
+    &:last-child {
+        border-bottom-left-radius: $card-border-radius;
+        border-bottom-right-radius: $card-border-radius;
+        border-bottom: transparent;
+    }
+}
+
+%card__section--with-bg-colour-border-alt {
+    background-color: $card-background-alt;
+    border: 1px dashed $card-section-border-default;
+}
+
+%card__section--with-bg-colour-border-solid {
+    background-color: $card-background-default;
+    border: 1px solid $card-section-border-default;
+}
+
+%card__section--with-bg-colour-border-alt-top-bottom {
+    background-color: $card-background-alt;
+    border-top: 1px dashed $card-section-border-default;
+    border-bottom: 1px dashed $card-section-border-default;
+}
+
+// Card image (full width image as a section)
+%card__image { // Targeting the img tag itself
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    min-width: 100%;
+    // min-height: 100%;
+    // max-height: 100%;
+}
+
+%card__section--with-cover-image {
+    > img {
+        @extend %card__image;
+    }
+}
+
+%card__title {
+    padding: ($card-padding-vertical) ($card-padding);
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+    .see-all {
+        float: right;
+    }
+}
+
+%card__title-dark {
+    @extend %card__title-colours--dark;
+    border-bottom-color: $card-title-dark-border;
+    .see-all {
+        color: $card-title-color-light;
+        &:hover {
+            color: $card-title-color-light-hover;
+        }
+    }
+}
+
+%card__title--font {
+    > /* h1, h2, h3, */h4/*, h5, h6*/ /*, .alpha, .beta, .gamma, .delta, .epsilon, .zeta */ { // Uncomment to use classes
+        @include font();
+    }
+}
+
+%card__title-children {
+    > * { // All immediate children of card__title affected
+        margin-bottom: 0; // Remove margin from all headings
+    }
+}
+
+%card__title-with-border {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+%card__title-colours--default {
+    background-color: $card-title-background-default;
+    border-bottom-color: $card-title-border-default;
+    color: $card-title-colour-default;
+}
+
+%card__title-colours--on-white-bg {
+    background-color: $card-title-background-default;
+    border-bottom-color: $card-title-border-default;
+    color: $card-title-colour-default;
+}
+
+%card__title-colours--dark {
+    background-color: $card-title-dark-bg;
+    color: $card-title-color-light;
+}
+
+%card__content-colours--dark {
+    background-color: $card-content-dark-bg;
+    color: $card-title-color-light;
+}
+
+%card__title-icon-base {
+    float: left;
+    padding: 14px 0px 13px 14px;
+    font-size: 1.2em;
+    margin-top: -$card-padding-vertical;
+    margin-left: -$card-padding;
+}
+
+%card__title-icon--default {
+    color: #000;
+    background-color: $colour-grey;
+}
+
+%card__title-icon--dark {
+    background-color: $card-title-dark-arrow;
+    color: #fff;
+}
+
+%card__title-triangle-base {
+    float: left;
+    width: 0px; 
+    height: 0px; 
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 22px solid $colour-grey-light;
+    margin-right: 10px;
+    margin-top: -$card-padding-vertical;
+}
+
+%card__title-triangle-default {
+    border-left: 22px solid $colour-grey-light;
+}
+
+%card__title-triangle-dark {
+    border-left: 22px solid $card-title-dark-arrow;
+}
+
+
+// Card styling layers
+%card-with-padding-default {
+    padding: $card-padding;
+}
+
+%card-with-padding-on-the-bottom {
+    padding-bottom: $card-padding;
+}
+
+%card-with-padding-half {
+    padding: $card-padding/2;
+}
+
+%card-with-border {
+    border-width: 1px;
+    border-style: solid;
+}
+
+%card-with-border-dashed {
+    border-width: 1px;
+    border-style: dashed;
+}
+
+%card-with-border--colour-default {
+    border-color: $card-border-colour-default;
+}
+
+%card-with-box-shadow-default {
+    @extend %default-box-shadow;
+}
+
+%card-with-background-colour--default {
+    background-color: $card-background-default;
+}
+
+%card-with-background-colour--alt {
+    background-color: $card-background-alt;
+}
+
+%card-minimal__title {
+    margin-bottom: $card-margin / 2;
+}
+
+%card-blurred {
+    .card__title {
+
+    }
+    .card__content {
+
+    }
+}
+
+
+// Card classes
+
+.card {
+    @extend %card-base;
+}
+
+.card-flat {
+    @extend %card-with-background-colour--default;
+    @extend %card-with-padding-default;
+}
+
+.card-flat-alt {
+    @extend %card-with-background-colour--alt;
+    @extend %card-with-padding-default;
+}
+
+.card-heading {
+    .card__title {
+        @extend %card__title;
+        @extend %card__title--font;
+        @extend %card__title-children;
+        @extend %card__title-with-border;
+        @extend %card__title-colours--default;
+    }
+    .card__content {
+
+    }
+}
+
+.card-shadow {
+    @extend %card-with-box-shadow-default;
+    @extend %card-with-background-colour--default;
+    @extend %card-with-padding-default;
+}
+
+.card-shadow--border {
+    @extend %card-with-border;
+    @extend %card-with-border--colour-default;
+}
+
+.card-shadow-frame {
+    @extend %card-with-box-shadow-default;
+    @extend %card-with-background-colour--default;
+    @extend %card-with-border;
+    @extend %card-with-border--colour-default;
+    .card__title {
+        @extend %card__title;
+        @extend %card__title--font;
+        @extend %card__title-children;
+        @extend %card__title-with-border;
+        @extend %card__title-colours--default;
+    }
+    .card__content {
+        @extend %card-with-padding-default;
+    }
+    .card__content-alt {
+        @extend %card-with-padding-default;
+        @extend %card-with-background-colour--alt;
+    }
+    .card__section {
+
+    }
+}
+// .card-shadow-frame-border {
+//  @extend .card-shadow-frame;
+//  @extend %card-with-border;
+//  @extend %card-with-border--colour-default;
+// }
+
+.card-minimal {
+    .card__title {
+        @extend %card-minimal__title;
+        @extend %card__title--font;
+        @extend %card__title-children;
+    }
+    .card__title-alt {
+        @extend %card__title;
+        @extend %card__title--font;
+        @extend %card__title-with-border;
+        @extend %card__title-children;
+        @extend %card__title-colours--default;
+    }
+    .card__content {
+        @extend %card-with-padding-on-the-bottom;
+    }
+}
+
+.card__title-dark {
+    @extend %card__title;
+    @extend %card__title-dark;
+    .card__title-icon {
+        @extend %card__title-icon-base;
+        @extend %card__title-icon--dark;
+        } 
+    .card__title-triangle {
+        @extend %card__title-triangle-base;
+        @extend %card__title-triangle-dark;
+    }
+}
+
+.card__content-dark {
+    @extend %card__content-colours--dark;
+    @extend %card-with-padding-default;
+}
+
+.card-opaque-desk {
+    @extend %card-base;
+    @extend %card-with-padding-default;
+
+    background: $colour-white;
+    background: $colour-white-transparent;
+    @include media-query(desk) {
+        border: 1px solid $colour-white;
+        box-shadow: 0px 0px 2px $colour-black-transparent;
+    }
+}
+
+.card--margin-bottom {
+    margin-bottom: 10px;
+}
+.card--grey-bg {
+    background-color: $card-background-alt;
+}
+
+.font--small {
+    font-size: 12px;
+    line-height: 22px;
+}
+.card--blue-border {
+    border: 1px solid $colour-blue-lighter;
+}
+.card--no-border {
+    border: none;
+}
+
+.card--border-dashed {
+    @extend %card__section--with-bg-colour-border-alt;
+}
+
+.card--border-solid {
+    @extend %card__section--with-bg-colour-border-solid;
+}
+.card--border-thick {
+    border-width: $card-border-thick;
+}
+
+.card--border-right {
+    border-right: 1px solid $card-section-border-default;
+}
+
+.card--border-left {
+    border-left: 1px solid $card-section-border-default;
+}
+
+.card--border-top {
+    border-top: 1px solid $card-section-border-default;
+}
+
+.card--border-bottom {
+    border-bottom: 1px solid $card-section-border-default;
+}
+
+.card--border-bottom-thick {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+}
+
+.card--no-margin {
+    margin-bottom: 0;
+}
+
+.card--no-margin-desk {
+    @include media-query(desk) {
+        margin-bottom: 0;
+    }
+}
+
+.card--no-padding-palm {
+    @include media-query(palm) {
+        padding: 0;
+    }
+}
+.border--bottom-dashed {
+    border-bottom: 1px dashed $colour-blue-lighter;
+}
+.card--padding-half {
+    padding: $card-padding/2;
+}
+.card--padding {
+    padding: $card-padding;
+}
+.card--vertical-pad {
+    padding: $card-padding 0px;
+}
+
+.card--horizontal-pad {
+    padding: 0px $card-padding;
+}
+
+.card--top-pad {
+    padding: $card-padding 0 0 0;
+}
+
+.card--bottom-pad {
+    padding: 0 0 $card-padding 0;
+}
+
+.card--bottom-half-pad {
+    padding: 0 0 $card-padding/2 0;
+}
+
+.card__section {
+    @extend %card__section !optional;
+    &.blue--section {
+        background-color: $blue-section-color;
+        border: 1px dashed $blue-section-border-color;
+        @extend %card-with-padding-half;
+    }
+}
+
+.card__section-alt {
+    @extend %card__section !optional;
+    @extend %card__section--with-bg-colour-border-alt-top-bottom;
+}
+
+.card__section--image {
+    overflow: hidden;
+    &.card__section-alt {
+        border-top-style: solid;
+        border-bottom-style: solid;
+    }
+    > a {
+        display: block;
+    }
+    > img, > a > img {
+        @extend %card__image;
+    }
+}
+
+.card__image {
+    @extend %card-with-box-shadow-default;
+    @extend %card-with-background-colour--default;
+    border-width: 0;
+    overflow: hidden;
+    > a {
+        display: block;
+        > img {
+            @extend %card__image;
+        }
+    }
+}
+
+.card__image {
+    color: $card-image-text;
+    @include font();
+    .article-date {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        padding: 3px 8px;
+        font-size: 0.8em;
+        color: $card-image-text;
+        background-color: rgba($card-image-title-bg, 0.7);
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+    .article-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        a {
+            display: block;
+            color: $card-image-text;
+            text-decoration: none;
+            background-color: rgba($card-image-title-bg, 0.7);
+            padding: ($card-padding / 2) ($card-padding / 2);
+            @include vendor(transition, $transition);
+        }
+    }
+}
+
+.card__image {
+    &:hover {
+        .article-title {
+            a {
+                background-color: rgba($card-image-title-bg-hover, 0.9);
+            }
+        }
+    }
+}
+
+.image--article {
+    height: 170px;
+}
+
+
+

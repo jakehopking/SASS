@@ -1,0 +1,141 @@
+{% load godzilla_extras %}
+{% block header %}
+
+
+    <div class="network-bar hide-me--portable">
+        <div class="network-bar-container">
+            <div class="grid grid--right">
+                <div class="grid__item">
+                    <ul class="network-bar__list inline-list-block">
+                        <li><a href="{{improve_business_url}}">Improve your business</a>
+                        <li><a href="{{get_free_listing_url}}">Get a free listing</a>
+                        <li><a href="{{find_people_url}}">Find people</a>
+                        {% if request.yellow_user %}
+                            <li class="user-menu">
+                                <a class="user-name">{% user_display_name request.yellow_user %} <i class="fa fa-chevron-down"></i>
+                                    <span class="avatar">
+                                        <img class="image-thumb-circle image-thumb--tiny" src="{% if request.yellow_user.avatar %}{{ request.yellow_user.avatar }} %}{% else %}/static/images/default_user.png{% endif %}" alt="{% user_display_name request.yellow_user %}">
+                                    </span>
+                                </a>
+                                <div class="user-menu-out">
+
+                                    <div class="user-menu-out-head cf">
+                                        <div class="avatar left">
+                                            <img class="image-thumb-circle" src="{% if request.yellow_user.avatar %}{{ request.yellow_user.avatar }} %}{% else %}/static/images/default_user.png{% endif %}" alt="{% user_display_name request.yellow_user %}">
+                                        </div>
+                                        <h6 class="right">
+                                            <b>{{ request.yellow_user.first_name}} {{request.yellow_user.last_name}}</b>
+                                            <span>{{ request.yellow_user.user_reviews | length }} contributions</span>
+                                        </h6>
+                                    </div>
+
+                                    <div class="user-menu-out-items">
+                                        <a href="#" class="cf">
+                                            <span class="left">
+                                                <img src="/static/images/y-icon-logo.gif" alt="My Yellow">
+                                            </span> 
+                                            <b class="right">My Yellow</b>
+                                        </a>
+                                        <a href="#" class="cf">
+                                            <span class="left">
+                                                <img src="/static/images/y-icon-gears.gif" alt="Account settings"> 
+                                            </span>
+                                            <b class="right">Account settings</b>
+                                        </a>
+                                    </div>
+                                    <a class="user-menu-out-logout" href="{% url 'logout' %}?from={{ request.path }}"
+                                        <i class="fa fa-sign-out"></i> Log out
+                                    </a>
+                                </div>
+                            </li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}?from={{ request.path }}">Login</a>
+                            <li><a href="{% url 'register' %}?from={{ request.path }}">Sign up</a> 
+                        {% endif %}
+                        <!-- Where are the closing '</li>'s? see base/_inline-list.scss -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <nav class="mobile-menu mobile-menu--right hide-me--desk">
+        <ul class="block-list">
+            <li class="mobile-menu__header"><a class="mobile-menu--close" href="#"><i class="fa fa-2x fa-navicon"></i></a></li>
+
+            {% if request.yellow_user %}
+            <li class="mobile-menu__user-logged-in">
+                <a href="#">
+                    <img class="image-thumb-circle image-thumb--medium image-thumb--brand" src="{% if request.yellow_user.avatar %}{{ request.yellow_user.avatar }} %}{% else %}/static/images/default_user.png{% endif %}" alt="{% user_display_name request.yellow_user %}">
+                    <strong class="user-name">{% user_display_name request.yellow_user %}</strong>
+                </a>
+            </li>
+            <li><a href="#"><i class="fa fa-fw fa-sign-out fa-pad--right"></i>Log out</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>My Yellow</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>Account Settings</a></li>
+            {% else %}
+                <li><a href="{% url 'register' %}?from={{ request.path }}"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>Sign up</a></li>
+                <li><a href="{% url 'login' %}?from={{ request.path }}"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>Login</a></li>
+            {% endif %}
+            <li><a href="{{discover_url}}"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>Discover</a></li>
+            <li><a href="{{get_free_listing_url}}"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>Get a free listing</a></li>
+            <li><a href="{{find_people_url}}"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>Find people</a></li>
+            <li><a href="{{improve_business_url}}"><i class="fa fa-fw fa-angle-right fa-pad--right"></i>Improve your business</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="header-container header-container--homepage">
+            <div class="header-search">
+                <div class="grid">
+                    <div class="grid__item two-twelfths">
+                        <div class="hide-me--portable"> {# Desktop logo #}
+                            <a href="/"><img class="yellow-logo yellow-logo--header yellow-logo--large" src="/static/images/brand-logo.png" alt="Yellow logo"></a>
+                        </div>
+                        <div class="hide-me--desk"> {# Mobile logo #}
+                            <a href="/"><img class="yellow-logo yellow-logo--header yellow-logo--small" src="/static/images/brand-logo-small.png" alt="Yellow logo"></a>
+                        </div>
+                    </div>
+                    <div class="grid__item nine-twelfths desk--eight-twelfths">
+                        <div class="grid">
+
+                            <form id="searchbox" role="form" method="post" action="/">
+
+                                <div class="grid__item one-whole desk--four-tenths">
+                                    <div class="form-group form-group--collapse-desktop">
+                                        <label class="sr-only" for="yellow-search-term">What are you searching for?</label>
+                                        <input name="what" type="text" placeholder="What are you searching for?" class="form-group__item" id="yellow-search-term" value="{{ what }}" autofocus />
+                                    </div>
+                                </div>
+                                <div class="grid__item one-whole desk--six-tenths header-search__where-and-button hide-me--portable">
+                                    <div class="grid">
+                                        <div class="grid__item two-thirds desk--three-quarters">
+                                            <div class="form-group form-group--collapse-desktop">
+                                                <label class="sr-only" for="yellow-search-location">Where are you searching?</label>
+                                                <input name="where" type="text" placeholder="Where are you searching?" class="form-group__item" id="yellow-search-location" value="{{ where }}" />
+                                            </div>
+                                        </div>
+                                        <div class="grid__item one-third desk--one-quarter">
+                                            <button id="post_search" type="submit" class="button button--fill button--secondary"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="grid__item one-twelfth desk--two-twelfths">
+                        <div class="hide-me--portable header-browse"> {# Browse yellow (desktop) #}
+                            <button onclick="location.href='{{discover_url}}'" class="button button--fill button--secondary"><i class="fa fa-pad--right fa-navicon"></i> Discover</button>
+                        </div>
+                        <div class="hide-me--desk header-menu"> {# Menu button (mobile) #}
+                            <a href="#"><i class="fa fa-2x fa-navicon"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+{% endblock %}

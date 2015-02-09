@@ -1,0 +1,51 @@
+{% load godzilla_extras %}
+
+<input class="view-all-link" type="hidden" value="/{{place}}/{{category}}/">
+{% for bus in businesses %}
+<div class="grid__item lap--one-half one-whole desk--one-quarter">
+    <div class="card card-shadow-frame card--no-border card--no-margin-desk" listing-id="{{bus.listing_id}}">
+        <div class="card__section">
+            <div class="grid grid--narrow">
+                <div class="grid__item three-tenths">
+                    <div class="review-score">
+                        <div class="score__number">
+                            {{bus.rating}}
+                        </div>
+                        <div class="score__stars">{% generate_stars bus.rating %}</div>
+                        <div class="score__reviews">
+                            <span class="score__rev iews-number">{{bus.reviews}}</span> reviews
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item seven-tenths">
+                    <div class="business-info card--top-pad">
+                        <strong class="business__title"><a href="/y/{{bus.slug}}">{{ bus.title|truncatechars:23 }}</a></strong>
+                        <span class="business__address">{{ bus.address|truncatechars:40 }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card__section-alt card__section--image">
+            <a href="#"><img src="{% if bus.image %}{{bus.image}}{% else %}https://maps.googleapis.com/maps/api/streetview?size=300x200&location={{bus.lat}},{{bus.lng}}{% endif %}" alt=""></a>
+        </div>
+        <div class="card__section">
+            <div class="grid review-feature">
+            {% with bus.review as review %}
+                <div class="grid__item three-tenths feature__user-thumb">
+                    <img class="image-thumb-circle image-thumb--small"
+                        src="{% if review.avatar %}{{review.avatar}}{% else %}/static/images/default_user.png{% endif %}" alt="">
+                </div>
+                <div class="grid__item seven-tenths feature__content">
+                    <div class="feature__comment">{{review.comment|truncatechars:140}}</div>
+                    <div class="feature__comment-details">
+                        <div class="feature__comment-user"><a href="#">{{review.user}}</a></div>
+                        <div class="feature__comment-score">{{review.rating}} <i class="fa fa-star"></i></div>
+                        <div class="feature__comment-time">{{review.time}}</div>
+                    </div>
+                </div>
+            {% endwith %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

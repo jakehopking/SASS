@@ -1,0 +1,123 @@
+// GLOBALS & DEBUG & DEVELOPMENT
+// ===============================================================================
+
+$debug-mode:                false;
+$global-border-box:         true;
+
+$in-development:            true; // True to enable global in-development overrides.
+ 
+
+// BASE
+// ===============================================================================
+
+$body-max-width:            100%;
+$body-min-width:            320px;
+$body-min-height:           100%;
+
+
+$base-font-size:            14px;
+$base-line-height:          20px;
+$base-font-family:          sans-serif;
+$base-ui-color:             #ccc;
+
+// Base sizing
+$base-spacing-unit:         $base-line-height;
+$half-spacing-unit:         $base-spacing-unit / 2;
+$line-height-ratio:         $base-line-height / $base-font-size;
+
+
+// IMAGES
+// ===============================================================================
+
+$path-images:               "images/";
+
+
+// FONTS
+// ===============================================================================
+
+$path-fonts-roboto:         "fonts/font-roboto";
+$path-fonts-fa:             "fonts/font-awesome";
+
+$font-face-default:         "Roboto", sans-serif;
+$font-face-condensed:       "Roboto Condensed", sans-serif;
+$font-face-serif:           "Roboto Slab", serif;
+$font-face-fa:              "FontAwesome";
+
+$font-weight-bold:          700;
+$font-weight-regular:       400;
+$font-weight-light:         300;
+
+// Font-sizing
+// -------------------------------------------------------------------------------
+$giga-size:                 96px;
+$mega-size:                 72px;
+$kilo-size:                 48px;
+
+$h1-size:                   36px; // .alpha
+$h2-size:                   30px; // .beta
+$h3-size:                   24px; // .gamma
+$h4-size:                   20px; // .delta
+$h5-size:                   16px; // .epsilon
+$h6-size:                   14px; // .zeta
+$h7-size:                   12px; // .eta
+
+$milli-size:                10px;
+$micro-size:                8px;
+
+// Quotes
+// -------------------------------------------------------------------------------
+$english-quotes:            true;
+
+$open-quote:                null;
+$close-quote:               null;
+
+@if $english-quotes         != true{
+    $open-quote:            \00AB;
+    $close-quote:           \00BB;
+}
+
+// GRID
+// ===============================================================================
+
+$grid-container-max-width:  1200px;
+
+// See base/_grid.scss for vars etc.
+
+
+// MEDIA BREAKPOINTS
+// ===============================================================================
+
+$breakpoint-palm:           480px !default;
+$breakpoint-lap:            481px !default;
+$breakpoint-tablet:         768px !default;
+$breakpoint-portable:       1023px !default;
+$breakpoint-desk:           1024px !default;
+$breakpoint-desk-wide:      1200px !default;
+
+$breakpoint-forms:          480px; // Inline forms are full width below this point.
+
+// See base/_breakpoints.scss   for mixin
+// See ui/breakpoints/          for breakpoint files
+
+
+
+// BRAND Defaults
+// ===============================================================================
+
+$brand-color:               #007ed6;
+$brand-face:                $font-face-default;
+$base-font-family:          $font-face-default;
+$brand-round:               0px;
+$brand-button-radius:       4px;
+$brand-box-shadow:          0px 1px 2px $colour-box-shadow;
+// $colour-positive:           #4A993E !default;
+// $colour-negative:           #b33630 !default;
+$button-bg:                 #007ed6;
+$button-colour:             #fff;
+$section-bg:                #fff;
+$section-hero-height:       250px;
+$section-hero-bg:           $colour-grey;
+$transition:                all 0.3s ease-in-out;
+$border-thick:              3px;
+
+

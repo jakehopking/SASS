@@ -1,0 +1,52 @@
+// HIDE ME CLASSES - Dependent on ui/_breakpoints.scss
+// ===============================================================================
+
+// Sorry about the !importants, but they are in fact necessary in the case.
+
+body .hide-me {
+    display: none !important;
+}
+
+body .hide-me--palm {
+    @include media-query(palm) {
+        display: none !important;
+    }
+}
+
+body .hide-me--portable {
+    @include media-query(portable) {
+        display: none !important;
+    }
+}
+
+body .hide-me--lap {
+    @include media-query(lap) {
+        display: none !important;
+    }
+}
+
+body .hide-me--tablet {
+    @include media-query(tablet) {
+        display: none !important;
+    }
+}
+
+body .hide-me--desk {
+    @include media-query(desk) {
+        display: none !important;
+    }
+}
+
+body .hide-me--below-desk-wide {
+    @include media-query(below-desk-wide) {
+        display: none !important;
+    }
+}
+
+
+body .hide-me--desk-wide {
+    @include media-query(desk-wide) {
+        display: none !important;
+    }
+}
+

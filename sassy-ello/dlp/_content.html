@@ -1,0 +1,34 @@
+{% if listing.priority < 7 %}
+
+ <div class="grid">
+
+    <div class="grid__item one-whole desk--two-thirds">
+        <div class="dlp-about">
+            <h4>More about us</h4>
+            <p>{% firstof listing.categories.0.headline listing.categories.1.headline listing.categories.2.headline %}</p>
+        </div>
+
+    </div>
+
+    {% if listing.categories.0.termsets %}
+        <div class="grid__item one-whole desk--one-third">
+            <div class="dlp-products">
+                <h5>Products and Services</h5>
+                <table>
+                    <tbody>
+                        {% for property, keywords in listing.categories.0.termsets.items %}
+                        <tr>
+                            <td><strong>{{ property }}</strong></td>
+                            <td><div>{{ keywords|join:", " }}</div></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+{% endif %}
+

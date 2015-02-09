@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,kCAAmC;EAClC,OAAO,EAAC,IAAI;;AAEb,mCAAoC;EACnC,UAAU,EAAE,IAAI;;AAEjB,yBAA0B;EACzB,cAAc,EAAE,GAAG;EACnB,MAAM,EAAE,KAAK",
+"sources": ["yellowIE8.scss"],
+"names": [],
+"file": "yellowIE8.css"
+}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}{% load staticfiles %}{% load compressed %}
+
+{% block content %}
+
+
+<div class="middle">
+
+
+    <div class="article-head" style="background-image: url('{{article.big_image}}');">
+        <h1><span>{{article.title|striptags}}</span></h1>
+    </div>
+
+
+    <section>
+        <div class="section-container">
+
+
+            <div class="grid">
+                <div class="grid__item one-whole">
+
+                    <div class="article-sub-head card card-minimal">
+                        <div class="article-desc">
+                            <i class="fa fa-camera"></i> {{article.image_caption|striptags}}
+                        </div>
+                        <div class="article-author">
+                            By <b>{{article.author|striptags}}</b> {{article.date.original}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid">
+
+                <div class="grid__item one-whole desk--six-tenths">
+
+                    <div class="article-body">
+
+                        {{article.content_body|safe}}
+
+                    </div>
+
+                    <div class="article-footer grid">
+
+                        <div class="article-listings grid__item one-half">
+                            <a href="/{{article.listing_slug}}"><i class="fa fa-globe"></i> View this business listing</a>
+                        </div>
+
+                        <div class="share grid__item one-half">
+
+                            <b>Share:</b>
+
+                            <a href="//www.facebook.com/sharer/sharer.php?u={{ article_permalink }}" target="_blank">
+                                <i class="fa fa-facebook-official"></i>
+                            </a>
+                            <a href="//twitter.com/home?status={{ article_permalink }}" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="//plus.google.com/share?url={{ article_permalink }}" target="_blank">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="grid__item one-whole desk--four-tenths">
+
+                    <div class="article-popular">
+                        <h3>Popular articles and interviews</h3>
+
+                        <div class="grid articles">
+                        {% for arc in populars %}
+                            <div class="grid__item {% if forloop.counter == 5 %}one-half{% else %}one-half{% endif %} palm--one-whole">
+                                <div class="card card__image image--article">
+                                    <div class="article-date">
+                                        <span class="date-day">{{arc.date.day}}</span>
+                                        <span class="date-month">{{arc.date.month}}</span>
+                                    </div>
+                                    <div class="article-title">
+                                        <a href="#">{{arc.page_heading|striptags}}</a>
+                                    </div>
+                                    <a href="/articles/article/{{arc.path}}"><img src="{{arc.thumbnail_image_url}}" alt=""></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+
+{% endblock %}

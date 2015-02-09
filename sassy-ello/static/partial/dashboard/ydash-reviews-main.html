@@ -1,0 +1,52 @@
+<div class="card card-shadow-frame soft--bottom">
+	<div class="card__title">
+		<span class="epsilon"><i class="fa fa-star"></i> Reviews <span class="colour-grey-light">( {{reviews.items.length}} )</span></span>
+	</div>
+	<div ng-repeat="review in reviews.items" class="card__section soft hard--bottom">
+		<div class="soft--left review-feature">
+			<h5 class="card--margin-bottom">{{review.title}} <span>{{review.address}}</span></h5>
+			<div class="feature__content">
+				<div class="feature__comment normal--size">
+				{{review.blurb}}	
+				</div>
+				<div class="feature__comment-details">
+					<div class="feature__comment-user"><a href="{{review.author_href}}">{{review.author_byline}}</a></div>
+					<div ng-if="review.status=='Approved'" class="feature__comment-score">{{review.rating}} 
+						<span ydash-stars count='review.star_count'></span>
+					</div>
+					<div class="feature__comment-time">{{review.time_descr}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="card__section card--no-border">
+			<div class="review-actions">
+				<div ng-if="review.status=='Approved'" class="eta grid">
+					<div class="grid__item one-half">
+						<b>{{review.helpful_count}} of {{review.helpful_count+review.not_helpful_count}}</b> found this review helpful
+					</div>
+					<div class="grid__item one-half text--right">
+						<a class="sharewith push-half--right" href="#">Share</a>
+						<a class="update push-half--right" href="#">Update</a>
+						<a class="edit push-half--right" href="#">Edit</a> 
+						<a class="remove link--red" href="#">Remove</a>
+					</div>
+				</div>
+				<div ng-if="review.status=='Pending'" class="text--center">
+					<span><i class="fa fa-question-circle"></i> Pending Approval</span>
+				</div>
+				<div ng-if="review.status=='Declined'" class="text--center colour--negative">
+					<span><i class="fa fa-times-circle"></i> Declined</span>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="pagination soft">
+        <div class="button-group button-group--spaced {# button-group--responsive #}">
+            <a href="#" class="button button--small"><i class="fa fa-chevron-left fa-pad--right"></i> Prev</a>
+            <a href="#" class="button button--small">1</a>
+            <a href="#" class="button button--small button--inactive">2</a>
+            <a href="#" class="button button--small">3</a>
+            <a href="#" class="button button--small">Next <i class="fa fa-chevron-right fa-pad--left"></i></a>
+        </div>
+    </div>
+</div>

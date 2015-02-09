@@ -1,0 +1,94 @@
+{% load godzilla_extras %}
+
+
+
+    <div class="card__section">
+        <div class="card__content dlp-ratings">
+
+            {% if reviews %}
+
+            <h4>Latest reviews</h4>
+
+            <div class="grid">
+
+                {% for review in reviews %}
+                <div class="dlp-review">
+
+                    <div class="grid__item one-whole">
+
+                        <div class="grid">
+
+                            <div class="grid__item one-eighth palm--one-third lap--one-sixth">
+
+                                <div class="avatar">
+                                    {% if review.avatar %}
+                                    <img class="image-thumb-circle image-thumb--medium" src="{{ review.avatar }}" alt="{% firstof review.first_name review.username %}">
+                                    {% endif %}
+                                    <h6>{% firstof review.first_name review.username %}</h6>
+                                    <div>Auckland</div>
+                                    <div class="count">9 reviews</div>
+                                    <div class="count">6 contributions</div>
+                                </div>
+
+                            </div>
+
+                            <div class="grid__item seven-eighths palm--two-thirds lap--five-sixths">
+
+                                <div class="dlp-review-body">
+
+                                    <i class="fa fa-quote-left"></i>
+
+                                    <div class="dlp-review-tools"><strong>80</strong> out of <strong>100</strong> users found this review helpful</div>
+
+                                    <p class="dlp-review-comment">{{ review.comments }}</p>
+
+                                    <div class="dlp-review-tools dlp-review-tools--bottom">
+
+                                        <strong>{{ review.rating }}</strong>
+
+                                        <span class="stars">
+                                            {% generate_stars review.rating %}
+                                        </span>
+
+                                        <span class="review-timestamp">18 hours ago</span>
+
+                                        <div class="review-helpful hide-me--palm">
+
+                                            <span class="review-feedback">
+                                                {% csrf_token %}
+                                                | <span class="title">Was this review helpful? </span>
+                                                <a href="#/reviews/{{review.id}}/helpful/yes" data-require-login="Please log in">Yes</a> / 
+                                                <a href="#/reviews/{{review.id}}/helpful/no" data-require-login="Please log in">No</a> |
+                                            </span>
+
+                                            <a class="review-report" href="#/reviews/{{review.id}}/report" data-require-login="Please log in">
+                                                Report this review
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                {% endfor %}
+
+
+
+
+            </div>
+
+            {% else %} <p>No reviews</p> {% endif %}
+
+        </div>
+
+    </div>
+
+
+
+

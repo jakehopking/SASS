@@ -1,0 +1,25 @@
+{% extends 'refresh/base.html' %}
+
+{% block content %}
+<div class="contentContainer" id="">
+	<div class="gridContainer">
+		<div class="contentMainFull">
+			<section class="contentBlock">
+				<div class="header">
+					<h1><i class="icon-medkit"></i> Oops, we've got a problem</h1>
+				</div>
+				<div class="content">
+					<h3>{% if errormessage %}
+					    {{ errormessage }}
+					    {% else %}
+					    Sorry, an internal error with our systems has prevented us from completing your request.
+					    Please <a href="http://help.yellow.co.nz/yellow/report-error/" class="button success"><i class="icon-envelope"></i>&nbsp;report&nbsp;this&nbsp;error</a>
+					    to us.</h3>
+					    {% endif %}
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

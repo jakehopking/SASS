@@ -1,0 +1,162 @@
+// IMAGES
+// ===============================================================================
+
+// Vars
+$image-background-default: 				$colour-white;
+$image-background-black: 				$colour-black;
+$image-background-brand: 				$brand-primary;
+$image-padding:							floor($base-line-height / 6);
+$image-radius-circle:					50%;
+$image-thumb-tiny:						22px;
+$image-thumb-small:						30px;
+$image-thumb-medium:					40px;
+$image-thumb-large:						50px;
+$image-thumb-x-large:					60px;
+$image-thumb-x2-large:					70px;
+$image-thumb-x3-large:					80px;
+
+
+%image-thumbnail-base {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+// User thumbnail images
+%image-with-borders-or-backgrounds {
+	background-color: $image-background-default;
+}
+
+%image-with-with-default-border {
+	border: 1px solid $colour-grey-light-alt;
+}
+
+%image-with-default-padding { // In conjunction with default border to create additional white border
+	padding: $image-padding;
+}
+
+%image-with-thin-padding { // Used when modifiying border colours (want single colour rather than multiple)
+	padding: $image-padding - 1;
+}
+
+%image-circular {
+	border-radius: $image-radius-circle;
+}
+
+// .image-thumb-circle {
+// 	@extend %image-thumbnail-base;
+// 	@extend %image-circular;
+// 	@extend %image-with-borders-or-backgrounds;
+// 	@extend %image-with-with-default-border;
+// 	@extend %image-with-default-padding;
+// }
+
+.image-thumb-circle {
+	@extend %image-thumbnail-base;
+	@extend %image-circular;
+	@extend %image-with-borders-or-backgrounds;
+	@extend %image-with-with-default-border;
+	@extend %image-with-default-padding;
+}
+
+.image-thumb-square {
+	@extend %image-with-borders-or-backgrounds;
+	@extend %image-with-with-default-border;
+	@extend %image-with-default-padding;
+}
+.image-thumb--black {
+	@extend %image-with-thin-padding;
+	background-color: $image-background-black;
+	border-color: $image-background-black;
+}
+
+.image-thumb--brand {
+	@extend %image-with-thin-padding;
+	background-color: $image-background-brand;
+	border-color: $image-background-brand;
+}
+
+.image-thumb--tiny {
+	width: $image-thumb-tiny;
+	height: $image-thumb-tiny;
+	padding: 1px;
+}
+
+.image-thumb--small {
+	width: $image-thumb-small;
+	height: $image-thumb-small;
+	padding: $image-padding - 1;
+}
+
+.image-thumb--medium {
+	height: $image-thumb-medium;
+}
+
+.image-thumb--large {
+	width: $image-thumb-large;
+	height: $image-thumb-large;
+	padding: $image-padding + 1;
+}
+.image-thumb--x3-large {
+	height: $image-thumb-x3-large;
+	padding: $image-padding;
+}
+
+// Image div containers
+
+%image-container-base {
+	overflow: hidden;
+}
+
+%image-container-with-image-as-link {
+	@extend %image-container-base;
+	> a {
+		display: block;
+		position: relative;
+		> img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 0;
+			min-width: 100%;
+			min-height: 100%;
+		}
+	}
+}
+
+%image-container-with-background-image-linked-anchor {
+	> a {
+		background-size: cover; 
+		background-position: 50%;
+		background-repeat: no-repeat;
+		display: block;
+	}
+}
+
+.image-container-linked {
+	@extend %image-container-with-image-as-link;
+}
+
+.image-container-background-linked {
+	@extend %image-container-with-background-image-linked-anchor;
+}
+
+
+.yellow-logo {
+	@include media-query(desk) {
+		
+	}
+}
+
+.yellow-logo--header {
+	max-height: 40px;
+	margin-bottom: -8px;
+}
+
+.yellow-logo--footer {
+	max-height: 24px;
+	margin-bottom: -4px;
+	margin-right: $base-line-height / 2;
+}
+
+
+

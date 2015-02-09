@@ -1,0 +1,21 @@
+{% load godzilla_extras %}
+{# When a listing has comments with it's review this template will be shown - note that the container should also have a class (.item--with-review) specified #}
+{% if reviews %}
+<div class="grid__item one-whole"> {# N.B. ADDITONAL GRID ITEM FOR COMMENT #}
+    <div class="grid grid--full review-feature"> {# Featured review grid #}
+        <div class="grid__item one-quarter desk--one-eighth feature__user-thumb">
+            <img class="image-thumb-circle image-thumb--medium" src="/static/images/user-thumb-02.jpg" alt="">
+        </div>
+        <div class="grid__item three-quarters desk--seven-eighths feature__content">
+            <div class="feature__comment">
+              {{ reviews.latest.comments|truncatewords:50 }}
+            </div>
+            <div class="feature__comment-details">
+              <div class="feature__comment-user"><a href="#">User #{{ reviews.latest.user_id }}</a></div>
+              <div class="feature__comment-score">{{ reviews.latest.rating }} <i class="fa fa-star"></i></div>
+              <div class="feature__comment-time">{% timestamp_naturaltime reviews.latest.created %}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

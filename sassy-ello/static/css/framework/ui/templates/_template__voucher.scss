@@ -1,0 +1,84 @@
+// VOUCHERS
+// ===============================================================================
+
+// Vars
+$voucher-padding:       $base-line-height;
+$yellow-background:     rgb(255, 248, 127);
+$expire-date-height:    55px;
+$big-font-size:         1.2em;
+$gray-bg:               #464646;
+$voucher-page-width:    490px;
+
+
+%default-shadow {
+    box-shadow: 2px 1px 4px #646d78;
+}
+
+.section-container--small {
+    margin: auto;
+    max-width: $voucher-page-width;
+    padding: 0 $voucher-padding;
+    .voucher__title{
+        @extend %default-shadow;
+        font-size: 22px;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        background: $gray-bg;
+        h4 {
+            margin-bottom: 0px;
+            font-weight: normal;
+            line-height: 30px;
+        } 
+    }
+    .expire__date {
+        @extend %default-shadow;
+        background: $yellow-background;
+        height: $expire-date-height;
+        @include media-query(palm) {
+            height: 47px;
+        }
+        font-size: $big-font-size;
+        text-align: center;
+        border: 1px solid #AEAE9C;
+    }
+    .voucher__image {
+        @extend %default-shadow;
+        border: 1px solid $gray-bg;
+    }
+    .get-voucher {
+        @extend %default-shadow;
+        background: $gray-bg;
+        text-align: center;
+        color: #fff;
+        padding: 10px;
+        span {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    }
+    .voucher-terms {
+        background: $yellow-background;
+        padding-bottom:35px;
+        text-align: center;
+        hr {
+            width: 25%;
+            margin: 0 auto 10px auto;
+            border-top: 2px solid #000;
+        }
+        h4 {
+            margin-bottom: 10px;
+            font-weight: normal;
+            font-size: 23px;
+        }
+    }
+    .logo {
+        position: absolute;
+        right: 10px;;
+        bottom:10px;
+        img {
+            width: 37%;
+            float: right;
+        }
+    }
+}

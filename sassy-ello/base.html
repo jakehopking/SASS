@@ -1,0 +1,96 @@
+{% load staticfiles %}{% load compressed %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block 'title' %}{% autoescape off%}{{ seo.title }}{% endautoescape %}{% endblock%}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <meta name="description" content="{% block 'meta_description' %}{% autoescape off%}{{ seo.meta_description }}{% endautoescape %}{% endblock%}" />
+    {% compressed_css 'styles' %}
+    <!--
+                                      ____
+    __     __  _ _                    \   \
+    \ \   / / | | |                    |   \
+     \ \_/ /__| | | _____      __      /    \
+      \   / _ \ | |/ _ \ \ /\ / /     /_/ /\ \
+       | |  __/ | | (_) \ V  V /       / /  \ \
+       |_|\___|_|_|\___/ \_/\_/       /_/    \_\
+    
+    -->
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="/static/css/yellowIE8.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="/static/js/polyfills/respond.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script> 
+    var $buoop = {c:2}; 
+    function $buo_f(){ 
+     var e = document.createElement("script"); 
+     e.src = "//browser-update.org/update.js"; 
+     document.body.appendChild(e);
+    };
+    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+    catch(e){window.attachEvent("onload", $buo_f)}
+    </script>
+
+    <link rel="stylesheet" href="/static/css/yellowIE8.css" />
+
+    <![endif]-->
+
+</head>
+<body>
+
+
+    {% block header %}
+    {% include "header.html" %}
+    {% endblock %}
+
+
+    <div id="notification-bar"></div>
+
+
+    {% block content %}{% endblock %}
+
+
+    {% block footer %}
+    {% include "footer.html" %}
+    {% endblock %}
+
+
+<!-- 
+    json-encoded base app data needed by js 
+    'user' is present when logged in
+    'csrf' is token to be used in ajax requests
+    if 'notificationMessage' or 'errorMessage' present, will be shown in ui
+-->
+<code id="app-data">{ 
+    "user": { 
+    "id": 123, 
+    "name": "JohnSmith" 
+}, 
+"csrf": "{{csrf_token}}",
+"notificationMessage": "",
+"errorMessage": ""
+}</code>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.4/typeahead.bundle.min.js"></script>
+<script src="//maps.googleapis.com/maps/api/js"></script>
+
+
+<!--[if IE 8]>
+{% compressed_js 'polyfills' %}
+<![endif]-->
+
+{% compressed_js 'yellow' %}
+
+
+{% block pagescripts %}{% endblock %}
+
+</body>
+</html>

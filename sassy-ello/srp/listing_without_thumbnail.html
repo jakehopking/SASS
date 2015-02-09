@@ -1,0 +1,37 @@
+{% load godzilla_extras %}
+{# STRUCTURAL DEFAULT FOR LISTINGS WITHOUT LOGOS #}
+<li id="listing-{{listing.listingid}}" title="{% appropriate_debug "listing" listing %}" class="search-results__item search-results__item--no-image {% appropriate_classnames "listing" listing %}">
+
+    <div class="card card-shadow-frame card--no-border">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <div class="grid grid--full">
+                    <div class="grid__item one-quarter lap--one-fifth desk--one-sixth business-score"> {# Palm, lap, desk breaks #}
+                        <div class="grid grid--full"> {# Business score and image grid #}
+                            <div class="grid__item one-whole"> {# Business review score container #}
+                                <div class="review-score">
+                                    {% include "srp/_reviews.html" with reviews=listing.reviews %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item three-quarters lap--four-fifths desk--five-sixths business-content"> {# Palm, lap, desk breaks #}
+                        <div class="grid grid--full"> {# Business details and CTAs grid #}
+                            <div class="grid__item one-whole palm-up--six-tenths"> {# Business details container #}
+                                <div class="business-info card__content">
+                                    {% include "srp/_details.html" with listing=listing %}
+                                </div>
+                            </div>
+                            <div class="grid__item one-whole palm-up--four-tenths"> {# Business CTAs (buttons) #}
+                                <div class="business-call-to-actions card__content">
+                                    {% include "srp/_ctas.html" with listing=listing %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include "srp/_comments.html" with reviews=listing.reviews %}
+        </div>
+    </div>
+</li>

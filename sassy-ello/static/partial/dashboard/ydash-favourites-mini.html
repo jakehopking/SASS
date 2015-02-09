@@ -1,0 +1,87 @@
+<div class="card-section favourites__title">
+	<div class="card__title">
+		<span class="epsilon"><i class="fa fa-heart"></i> Favourites <span class="colour-grey-light">( {{favourites.count}} )</span> </span>
+        <a class="float--right eta" href="#/favourites"><b class="hide-me--palm">See all reviews </b>&nbsp;<i class="fa fa-chevron-right"></i></a>
+	</div>
+</div>
+<div class="card__section">
+	<div class="grid">
+		<div class="grid__item desk--eight-twelfths recent-favourites">
+			<ol class="search-results-list">
+
+                <li ng-repeat="fav in favourites.items | limitTo:2" class="search-results__item item--with-review"> <!-- LISTING WITH COMMENT --> <!-- STRUCTURAL DEFAULT || WITH ADDITIONAL COMMENT GRID ITEM --> <!-- up tp 2 -->
+                    <div class="card card-shadow-frame card--no-border">
+                        <div class="grid">
+                            <div class="grid__item one-whole">
+                                <div class="grid grid--full">
+                                    <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> <!-- Palm, lap, desk breaks -->
+                                        <div class="grid grid--full grid--rev"> <!-- Business score and image grid -->
+                                            <div class="grid__item one-whole tablet-up--one-half"> 
+                                                <div class="business-thumbnail image-container-background-linked"> <!-- Business image container -->
+                                                    <a href="#" style="background-image: url({{fav.logo_src}});">
+                                                        <!-- <img src="/static/images/business-thumb-01.jpg" alt=""> -->
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid__item one-whole tablet-up--one-half"> <!-- Business review score container -->
+                                                <div class="review-score">
+                                                    <div class="score__number">
+                                                        {{fav.rating}}
+                                                    </div>
+                                                    <div class="score__stars">
+                                                        <span ydash-stars count='fav.star_count'></span>
+                                                    </div>
+                                                    <div class="score__reviews">
+                                                        <span class="score__rev iews-number">{{fav.review_count}}</span> reviews
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> <!-- Palm, lap, desk breaks -->
+                                        <div class="grid grid--full"> <!-- Business details and CTAs grid -->
+                                            <div class="grid__item one-whole tablet-up--one-half"> <!-- Business details container -->
+                                                <div class="business-info card__content">
+                                                    <strong class="business__title"><a href="#"><span class="item-number">{{fav.list_index}}</span> {{fav.title}}</a></strong>
+                                                    <ul class="business__categories inline-list-block delimited--bar">
+                                                        <li ng-repeat="ctg in fav.categories"><a href="{{ctg.href}}">{{ctg.title}}</a></li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                            <div class="grid__item one-whole tablet-up--one-half"> <!-- Business CTAs (buttons) -->
+                                                <div class="business-call-to-actions card__content">
+                                                    <a href="#" class="cta__more-details arrow-chevron-right" alt="Follow link arrow"></a>
+                                                    <a href="#" class="cta__website button button--circular button--title-text" title="Website"><i class="fa fa-globe fa-lg"></i></a>
+                                                    <a href="#" class="cta__directions button button--circular button--title-text" title="Directions"><i class="fa fa-location-arrow fa-lg"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+		<div class="grid__item desk--four-twelfths old-favourites">
+			<li ng-repeat="fav2 in favourites.items" ng-if="$index>1" class="old-favourite__list"><!-- up to 4 of these -->
+				<div class="grid milli">
+					<div class="grid__item two-thirds lap--eight-tenths">
+						<b>{{fav2.title}}</b></br>
+						<span class="colour-grey-light">{{fav2.address}}</span>
+					</div>
+					<div class="grid__item one-third lap--two-tenths">
+						<div class="text--right">
+							<a href="{{fav2.href}}"><span class="float--left">More info</span><i class="fa fa-angle-right fa-lg"></i></a>
+						</div>
+						<div class="text--right">
+							<a href="{{fav2.directions_href}}" class="colour-grey-light"><span class="float--left">Directions</span> &nbsp;<i class="fa fa-angle-right fa-lg"></i></a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</div>
+	</div>
+</div>

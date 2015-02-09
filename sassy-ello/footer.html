@@ -1,0 +1,125 @@
+{% block footer %}
+
+    <footer>
+        <section class="footer-horizon">
+            <div class="footer-horizon__image">
+                <div class="section-container">
+                    <div class="grid">
+                        <div class="grid__item one-whole lap--one-half tablet-up--four-tenths">
+                            <div class="card-minimal footer-business-ad footer-business-ad--left">
+                                <div class="card__title">
+                                    <h4>Yellow helps businesses grow</h4>
+                                </div>
+                                <div class="card__content">
+                                    <p class="epsilon">From digital marketing to print advertising, we have the solution your business needs.</p>
+                                    <p class="epsilon">We’ve helped over 70,000 New Zealand businesses</p>
+                                    <a href="#" class="button button--fill button--border-bottom">Find out how we can help you</a>
+                                </div>
+                            </div>
+                        </div>
+                        <style type="text/css">
+                            @media only screen and (min-width: 768px)  {
+                                .footer-business-ad {
+                                    padding-top: 30px;
+                                }
+                                .footer-business-ad--right {
+                                    background-image: url('/static/images/footer-phone.png');
+                                    background-repeat: no-repeat;
+                                    padding-left: 210px;
+                                }
+                            }
+                            /*IE8 fix*/
+                            @media \0screen {
+                                 .footer-business-ad {
+                                    padding-top: 30px;
+                                }
+                                .footer-business-ad--right {
+                                    background-image: url('/static/images/footer-phone.png');
+                                    background-repeat: no-repeat;
+                                    padding-left: 210px;
+                                }
+                            }
+                        </style>
+                        <div class="grid__item one-whole lap--one-half tablet-up--six-tenths">
+                            <div class="card-minimal footer-business-ad footer-business-ad--right">
+                                <div class="card__title">
+                                    <h4 class="font-weight--bold text--double-margin">Connect with businesses wherever you are</h4>
+                                </div>
+                                <div class="card__content">
+                                    <p class="epsilon">Whatever your device, we have an app tha helps you get things done.</p>
+                                    <p class="epsilon">We have you covered on android and iOS</p>
+                                    <a href="#" class="button button--fill button--border-bottom">Download our mobile apps</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer-general">
+            <div class="section-container">
+                <div class="grid">
+                    <div class="grid__item one-whole tablet--one-half desk--one-third">
+                        <div class="footer-general-item footer-contact">
+                            <div class="footer-general-item__icon">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <div class="footer-general-item__content">
+                                <h5>We’re here to help. Call us on 0800 803 803 or email <a href="mailto: help@yellow.co.nz">help@yellow.co.nz</a></h5>
+                                <a href="#" class="button button--circular"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+                                <a href="#" class="button button--circular"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+                                <a href="#" class="button button--circular"><i class="fa fa-fw fa-lg fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item one-whole tablet--one-half desk--one-third">
+                        <div class="footer-general-item footer-middle">
+                            <div class="footer-general-item__icon">
+                                <img src="/static/images/footer-img-kiwi.png" alt="Kiwi icon" class="footer-img-kiwi">
+                            </div>
+                            <div class="footer-general-item__content">
+                                <h5>1.7 million Kiwis use the Yellow network every month</h5>
+                                <ul class="icon-list">
+                                    <li><i class="fa fa-fw fa-arrow-right"></i><a href="#">About Yellow Pages</a></li>
+                                    <li><i class="fa fa-fw fa-arrow-right"></i><a href="#">Careers - We're hiring!</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item one-whole desk--one-third">
+                        <div class="footer-general-item footer-links">
+                            <div class="footer-general-item__content">
+                                <h5>Yellow family and useful links</h5>
+                                <div class="grid">
+                                    <div class="grid__item one-third">
+                                        <ul class="block-list block-list--no-horiz-padding">
+                                            <li><a href="#">White Pages</a></li>
+                                            <li><a href="#">finda</a></li>
+                                            <li><a href="#">Menus</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="grid__item one-third">
+                                        <ul class="block-list block-list--no-horiz-padding">
+                                            <li><a href="#">Website Feedback</a></li>
+                                            <li><a href="#">Website Help</a></li>
+                                            <li><a href="#">Suggest a business</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="grid__item one-third">
+                                        <ul class="block-list block-list--no-horiz-padding">
+                                            <li><a href="#">Careers</a></li>
+                                            <li><a href="#">Order Directories</a></li>
+                                            <li><a href="#">Emergencies</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% include "footer_basic.html"%}
+    </footer>
+
+{% endblock %}

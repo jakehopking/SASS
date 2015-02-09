@@ -1,0 +1,76 @@
+<div class="card card-shadow-frame soft--bottom">
+	<div class="card__title">
+		<span class="epsilon"><i class="fa fa-star"></i> Businesses you may know </span>
+	</div>
+	<div class="grid soft hard--bottom">
+		<li ng-repeat="biz in businesses.items" class="search-results__item grid__item one-whole desk--one-half palm-up--one-half"><!-- STRUCTURAL DEFAULT -->
+		    <div class="card card-shadow-frame card--no-border card--no-margin">
+		        <div class="grid">
+		            <div class="grid__item one-whole">
+		                <div class="grid grid--full">
+		                    <div class="grid__item one-whole business-score"> <!-- Palm, lap, desk breaks -->
+		                        <div class="grid grid--full grid--rev"> <!-- Business score and image grid -->
+		                            <div class="grid__item one-half"> 
+		                                <div class="business-thumbnail image-container-background-linked"> <!-- Business image container -->
+		                                    <a href="#" style="background-image: url({{biz.logo_src}});">
+		                                        <!-- <img src="/static/images/business-thumb-01.jpg" alt=""> -->
+		                                    </a>
+		                                </div>
+		                            </div>
+		                            <div class="grid__item one-half"> <!-- Business review score container -->
+		                                <div class="review-score">
+		                                    <div class="score__number">
+		                                        {{biz.rating}}
+		                                    </div>
+		                                    <div class="score__stars">
+		                                        <i ng-repeat="j in [1,2,3,4,5]|limitTo:biz.star_count" class="fa fa-star"></i><i class='fa fa-star-half-o {{biz.star_count%1!==0 ? "" : "hide-me"}}'></i>
+		                                    </div>
+		                                    <div class="score__reviews">
+		                                        <span class="score__rev iews-number">{{biz.review_count}}</span> reviews
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="grid__item one-whole business-content"> <!-- Palm, lap, desk breaks -->
+	                            <div class="business-info grey-bg  card__content">
+	                                <strong class="business__title"><a href="{{biz.href}}">{{biz.title}}</a></strong>
+	                                <ul class="business__categories inline-list-block delimited--bar">
+	                                    <li ng-repeat="ctg in biz.categories"><a href="{{ctg.href}}">{{ctg.title}}</a></li>
+	                                </ul>
+	                                <em class="business__address">{{biz.address}}</em>
+	                            </div>
+	                        </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="card card-shadow-frame card--no-border">
+	        	<div class="grid card__section rating">
+	        		<div class="grid__item palm-up--one-half">
+	    		    	<h6> Rate </h6>
+	    		    	
+	    		    	<span class="rating__value">Love it</span>
+	    	    	</div>
+	    	    	<div class="grid__item palm-up--one-half">
+	    		    	<h6> Good value? </h6>
+	    		    	<a href="#">Yes</a> / <a href="#">No</a>
+	    		    </div>
+	    		    <div class="grid__item palm-up--one-whole">
+	    		    	<h6>What would you recommend?</h6>
+	    		    	<a href="#">Yes</a> / <a href="#" >No</a>
+	    		    </div>
+	    	    </div>
+	    	</div>
+		</li>
+	</div>
+    <div class="pagination soft">
+        <div class="button-group button-group--spaced {# button-group--responsive #}">
+            <a href="#" class="button button--small"><i class="fa fa-chevron-left fa-pad--right"></i> Prev</a>
+            <a href="#" class="button button--small">1</a>
+            <a href="#" class="button button--small button--inactive">2</a>
+            <a href="#" class="button button--small">3</a>
+            <a href="#" class="button button--small">Next <i class="fa fa-chevron-right fa-pad--left"></i></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+{% load godzilla_extras %}
+{# STRUCTURAL DEFAULT #}
+<li id="listing-{{listing.listingid}}" title="{% appropriate_debug "listing" listing %}" class="search-results__item {% appropriate_classnames "listing" listing %}">
+
+    <div class="card card-shadow-frame card--no-border">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <div class="grid grid--full">
+                    <div class="grid__item one-quarter lap--two-fifths desk--one-third business-score"> {# Palm, lap, desk breaks #}
+                        <div class="grid grid--full grid--rev"> {# Business score and image grid #}
+                            <div class="grid__item one-whole tablet-up--one-half">
+                                <div class="business-thumbnail image-container-background-linked" style="background-image: url('{{ listing.logo }}')"> {# Business image container #}
+                                    <a href="/y/{{ listing.slug }}" style="background-image: url('{{ listing.logo }}')">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="grid__item one-whole tablet-up--one-half"> {# Business review score container #}
+                                <div class="review-score">
+                                    {% include "srp/_reviews.html" with reviews=listing.reviews %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item three-quarters lap--three-fifths desk--two-thirds business-content"> {# Palm, lap, desk breaks #}
+                        <div class="grid grid--full"> {# Business details and CTAs grid #}
+                            <div class="grid__item one-whole tablet-up--one-half"> {# Business details container #}
+                                <div class="business-info card__content">
+                                    {% include "srp/_details.html" with listing=listing %}
+                                </div>
+                            </div>
+                            <div class="grid__item one-whole tablet-up--one-half"> {# Business CTAs (buttons) #}
+                                <div class="business-call-to-actions card__content">
+                                    {% include "srp/_ctas.html" with listing=listing %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include "srp/_comments.html" with reviews=listing.reviews %}
+        </div>
+    </div>
+</li>

@@ -1,0 +1,19 @@
+{% load godzilla_extras %}
+{# This template is the same and is used by all gold/silver/bronze templates. #}
+{% if reviews %}
+    <div class="score__number">
+        {{ reviews.rating }}
+    </div>
+    <div class="score__stars">
+        {% generate_stars reviews.rating %}
+    </div>
+    <div class="score__reviews">
+      <span class="score__reviews-number">{{ reviews.count }}</span> review{{ reviews.count|pluralize }}
+    </div>
+{% else %}
+    <br/>
+    No reviews
+    <br/>
+    <br/>
+
+{% endif %}
