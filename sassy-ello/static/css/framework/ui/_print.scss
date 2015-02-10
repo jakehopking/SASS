@@ -36,6 +36,9 @@
     body {
         background-color: $colour-white;
         font-size: 10pt;
+        * {
+            box-shadow: none !important;
+        }
     }
     p > a {
         @extend %print-anchor-link;
@@ -55,7 +58,11 @@
         #search-results-map,
         .dlp-post-review,
         .dlp-review-tools .review-helpful,
-        .middle > .section-hero-image {
+        .middle > .section-hero-image,
+        .search-quote-module,
+        .embed-container,
+        .article-popular,
+        .dashboard-menu-items {
             @extend %hide-me--print;
         }
 
@@ -64,6 +71,12 @@
             #searchbox, 
             .header-browse, 
             .header-menu {
+                @extend %hide-me--print;
+            }
+        }
+        footer {
+            .footer-horizon,
+            .footer-middle {
                 @extend %hide-me--print;
             }
         }
@@ -132,29 +145,64 @@
         }
     }
 
+    // ARTICLE
+    body {
+        .article-head {
+            box-shadow: none;
+            height: 200px;
+        }
+        .article-body {
+            p a {
+                @extend %print-phone-number;
+            }
+        }
+    }
+
+    // BROWSE & SITEMAP
+    body {
+        .browse-category {
+            a {
+                @extend %print-phone-number;
+                span {
+                    background-color: transparent;
+                    display: inline-block;
+                }
+            }
+        }
+        .sitemap {
+            a {
+                @extend %print-phone-number;
+            }
+        }
+    }
+
+    // DISCOVER 
+    body {
+        .discover-tiles {
+            a {
+                @extend %print-phone-number;
+            }
+        }
+    }
+
+    // VOUCHER 
+    body {
+        .the-voucher {
+            border: 1px solid #333;
+        }
+    }
+    
     // FOOTER
     body {
         footer {
             position: relative !important;
+            .block-list a {
+                @extend %print-phone-number;
+            }
+            .inline-list a {
+                @extend %print-phone-number;
+            }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

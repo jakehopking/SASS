@@ -9,27 +9,31 @@
     Example usage:
 
         Html:
-            <div class="slider">
-
+            <div class="slider slider-feature">
+                
                 <div class="slider-content">
-                    <img src="/img/slide1.jpg" alt="Slide 1">
-                    <img src="/img/slide2.jpg" alt="Slide 2">
-                    <img src="/img/slide3.jpg" alt="Slide 3">
-                    <img src="/img/slide4.jpg" alt="Slide 4">
+                    <div class="slider-frame slider-prev">  
+                    </div>
+                    <div class="slider-frame slider-current">
+                    </div>
+                    <div class="slider-frame slider-next">
+                    </div>
                 </div>
 
                 <div class="slider-arrows">
-                    <div>&#9664;</div>
-                    <div>&#9654;</div>
+                    <a class="arrow-left"></a>
+                    <a class="arrow-right"></a>
                 </div>
-
-                <div class="slider-nav">
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
+                <div  class="slider-nav grid">
+                    <div class="grid__item palm--one-quarter lap--one-quarter one-eighth">
+                        <div class="slider-item-info" data-description="This is not so long description" data-title="Main title" data-review-link="#" data-rating="4.5" data-time="2 days ago" data-photo="/main_image.jpg"></div>
+                        <img class="image-thumb-square" src="/thumb_image.jpg" alt="Main title">
+                    </div>
+                    <div class="grid__item palm--one-quarter lap--one-quarter one-eighth">
+                        <div class="slider-item-info" data-description="This is not so long description 2" data-title="Main title 2" data-review-link="#" data-rating="4.5" data-time="4 days ago" data-photo="/main_image2.jpg"></div>
+                        <img class="image-thumb-square" src="/thumb_image2.jpg" alt="Main title 2">
+                    </div>
                 </div>
-
             </div>
 
         Js:
@@ -46,7 +50,8 @@
 
         var sel             = $(this),
             container       = $('.slider-content', sel),
-            content         = $('.slider-content > *', sel),
+            //content         = $('.slider-content > *', sel),
+            content_full    = [],
             menu            = $('.slider-menu > *', sel),
             jumpArrows      = $('.slider-arrows > *', sel),
             jumpPrev        = $(jumpArrows.get(0)),
@@ -57,8 +62,6 @@
             frameCurrent    = $('<div class="slider-frame slider-current"></div>'),
             frameNext       = $('<div class="slider-frame slider-next"></div>'),
 
-            count           = content.length,
-            last            = count - 1,
             fromIndex       = 0,
             current         = 0,
             prev,
@@ -73,6 +76,21 @@
             startX,
             destX;
 
+            $( ".slider-item-info", sel ).each(function(i) {
+                content_full.push({
+                    description: $( this ).attr('data-description'), 
+                    title: $( this ).attr('data-title'),
+                    review_link: $( this ).attr('data-review-link'),
+                    rating: $( this ).attr('data-rating'), 
+                    time: $( this ).attr('data-time'), 
+                    photo: $( this ).attr('data-photo')
+                });
+            });
+            console.log(content_full);
+
+        var count           = content_full.length,
+            last            = count - 1;
+
         function reset (index) {
 
             position = 0;
@@ -80,9 +98,42 @@
             prev     = (current === 0) ? last : current - 1;
             next     = (current === last) ? 0 : current + 1;
 
-            framePrev.html($(content.get(prev)).clone()).css({ left: (-width) + 'px' });
-            frameCurrent.html($(content.get(current)).clone()).css({ left: '0px' });
-            frameNext.html($(content.get(next)).clone()).css({ left: width + 'px' });
+            framePrev.html(
+                '<div class="slider-item" style="background-image: url('+content_full[prev].photo+');">'+
+                    '<div class="slider-description">'+
+                        '<div class="review-feature review-feature--for-slider">'+
+                            '<a class="zeta" href="'+content_full[prev].review_link+'">'+content_full[prev].title+'</a>'+
+                            '<div class="feature__content">'+
+                                '<div class="feature__comment">'+content_full[prev].description+'</div>'+
+                                '<div class="feature__comment-details">'+
+                                    '<span class="feature__comment-score">'+content_full[prev].rating+' <i class="fa fa-star"></i></span>'+
+                                    '<span class="feature__comment-time">'+content_full[prev].time+'</span>'+
+                '</div></div></div></div></div>'
+            ).css({ left: (-width) + 'px' });
+            frameCurrent.html(
+                '<div class="slider-item" style="background-image: url('+content_full[current].photo+');">'+
+                    '<div class="slider-description">'+
+                        '<div class="review-feature review-feature--for-slider">'+
+                            '<a class="zeta" href="'+content_full[current].review_link+'">'+content_full[current].title+'</a>'+
+                            '<div class="feature__content">'+
+                                '<div class="feature__comment">'+content_full[current].description+'</div>'+
+                                '<div class="feature__comment-details">'+
+                                    '<span class="feature__comment-score">'+content_full[current].rating+' <i class="fa fa-star"></i></span>'+
+                                    '<span class="feature__comment-time">'+content_full[current].time+'</span>'+
+                '</div></div></div></div></div>'
+            ).css({ left: '0px' });
+            frameNext.html(
+                '<div class="slider-item" style="background-image: url('+content_full[next].photo+');">'+
+                    '<div class="slider-description">'+
+                        '<div class="review-feature review-feature--for-slider">'+
+                            '<a class="zeta" href="'+content_full[next].review_link+'">'+content_full[next].title+'</a>'+
+                            '<div class="feature__content">'+
+                                '<div class="feature__comment">'+content_full[next].description+'</div>'+
+                                '<div class="feature__comment-details">'+
+                                    '<span class="feature__comment-score">'+content_full[next].rating+' <i class="fa fa-star"></i></span>'+
+                                    '<span class="feature__comment-time">'+content_full[next].time+'</span>'+
+                '</div></div></div></div></div>'
+            ).css({ left: width + 'px' });
 
             if (jumpN.length > 0) $(jumpN.removeClass('active').get(current)).addClass('active');
         }

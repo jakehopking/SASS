@@ -2510,8 +2510,10 @@ dl.dl-basic dd + dt {
     width: 100%;
     padding-right: 20px; }
     @media only screen and (min-width: 1024px) {
-      .slider-feature .slider-description h6 {
-        font-size: 2em; } }
+      .slider-feature .slider-description .zeta {
+        font-size: 2em;
+        text-decoration: underline;
+        color: #fff; } }
   .slider-feature .slider-arrows .arrow-left {
     left: 20px;
     background: url(images/arrows.png) 3px 50px;
@@ -2534,6 +2536,9 @@ dl.dl-basic dd + dt {
       background-position: -27px 2px; }
   .slider-feature .slider-nav {
     padding-top: 10px; }
+    .slider-feature .slider-nav .grid__item {
+      float: none;
+      display: inline-block; }
 
 .slider-bullets {
   width: 100%;
@@ -7276,7 +7281,7 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   p > a[href]:after, body [href].business__website:after {
     content: "(" attr(href) ")"; }
 
-  body .business__phone:after {
+  body .business__phone:after, body .article-body p a:after, body .browse-category a:after, body .sitemap a:after, body .discover-tiles a:after, body footer .block-list a:after, body footer .inline-list a:after {
     content: "(" attr(data-telephone) ")"; }
 
   body .network-bar,
@@ -7284,10 +7289,15 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   body #search-results-map,
   body .dlp-post-review,
   body .dlp-review-tools .review-helpful,
-  body .middle > .section-hero-image, body header .yellow-logo--small,
+  body .middle > .section-hero-image,
+  body .search-quote-module,
+  body .embed-container,
+  body .article-popular,
+  body .dashboard-menu-items, body header .yellow-logo--small,
   body header #searchbox,
   body header .header-browse,
-  body header .header-menu {
+  body header .header-menu, body footer .footer-horizon,
+  body footer .footer-middle {
     display: none; }
 
   body .header-container,
@@ -7303,6 +7313,8 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   body {
     background-color: #fff;
     font-size: 10pt; }
+    body * {
+      box-shadow: none !important; }
 
   p > a[href]:after {
     content: "(" attr(href) ")" !important;
@@ -7336,6 +7348,17 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
     font-size: 11pt !important; }
   body .cta__directions {
     display: none !important; }
+
+  body .article-head {
+    box-shadow: none;
+    height: 200px; }
+
+  body .browse-category a span {
+    background-color: transparent;
+    display: inline-block; }
+
+  body .the-voucher {
+    border: 1px solid #333; }
 
   body footer {
     position: relative !important; } }

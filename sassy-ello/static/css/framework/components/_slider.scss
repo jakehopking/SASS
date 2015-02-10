@@ -67,8 +67,10 @@ $arrow-colour: $colour-yellow;
         width: 100%;
         padding-right: 20px;
         @include media-query(desk) {
-            h6 {
+            .zeta{
                 font-size: 2em;
+                text-decoration: underline;
+                color: $colour-white;
             }
         }
     }
@@ -104,6 +106,10 @@ $arrow-colour: $colour-yellow;
 
     .slider-nav {
         padding-top: 10px;
+        .grid__item {
+            float: none;
+            display: inline-block;
+        }
     }
 }
 

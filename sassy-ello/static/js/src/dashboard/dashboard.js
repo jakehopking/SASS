@@ -1,5 +1,110 @@
 
-var dashboardControllers = angular.module('dashboardControllers', []);
+
+var dashboardServices = angular.module('dashboardServices', [])
+
+dashboardServices
+.factory('listingSource', function ($http) {
+	var getBySlug = function (listingSlug, onSuccess) {
+		$http.get('/api/v2/yellow/listing/' + listingSlug + '/?load_review=1').success(onSuccess);
+	}
+	
+	return {
+		getBySlug: getBySlug
+	}
+})
+.factory('quotesSource', function ($http) {
+	return {
+		load: function () {return $http.get('/px/quotes/quoterequests/');},
+	};
+})
+.factory('navSource', function () {
+	return {
+		navtree: {
+			label: '<root>',
+			items: [
+				{label: 'Dashboard', href:'#/', items:[
+					{label: 'Quotes', href: '#/quotes', badge_text: '2'},
+					{label: 'Reviews', href: '#/reviews'},
+					{label: 'Photos', href: '#/photos'},
+					{label: 'Favourites', href: '#/favourites'},
+				]},
+				{label: 'Account', href: '#/account', items:[
+					{label: 'Details', href: '#/account'},
+					{label: 'Password', href: '#/password'}
+				]}
+			]
+		}
+	};
+})
+.factory('userSource', function ($http) {
+	return {load: function () {return $http.get('/static/data/mockuser.json');}}
+})
+.factory('reviewsSource', function ($http) {
+	return {load: function () {return $http.get('/static/data/mockreviews.json');}}
+})
+.factory('favouritesSource', function ($http) {
+	return {load: function () {return $http.get('/static/data/mockfavourites.json');}}
+})
+.factory('photosSource', function ($http) {
+	return {load: function () {return $http.get('/static/data/mockphotos.json');}}
+})
+.factory('friendliesSource', function ($http) {
+	return {load: function () {return $http.get('/static/data/mockbusinesses.json');}}
+})
+.factory('xlate', function ($sce) {
+	var info = function (inp) {
+		var catref = inp.categoryreference_set[0];
+		var desc = $sce.trustAs('html', (catref.headline ? catref.headline : '').replace('\n', '<br/>'));
+		var logo_src = catref.adimage_set ? catref.adimage_set[0].logo_path : null;
+		return {
+			catref: catref,
+			description: desc,
+			logo_src: logo_src
+		};
+	};
+	var reviews = function (rvs) {
+		var outrvs = [];
+		for (var i=0; i<rvs.length; i++) {
+			var r = rvs[i];
+			outrvs.push({
+				title: '',
+				blurb: r.comments,
+				author_byline: r.user.profile.displayname,
+				author_href: '',
+				rating: r.rating/2,
+				star_count: r.rating/2,
+				time_descr: r.created,
+				address: '',
+				helpful_count: 0,
+				not_helpful_count: 0
+			});
+		}
+		return {
+			count: outrvs.length,
+			items: outrvs
+		};
+	};
+	var photos = function (dat) {
+		var inp = dat['user_content_photos'];
+		var outph = [];
+		for (var i=0; i<inp.length; i++) {
+			outph.push({thumb: inp[i].icon_url, src: inp[i].icon_url, href:'#'});
+		}
+		return {
+			count: inp.length,
+			items: outph
+		};
+	};
+	
+	return {
+		listingInfo: info,
+		listingReviews: reviews,
+		listingPhotos: photos
+	};
+})
+;
+
+var dashboardControllers = angular.module('dashboardControllers', ['dashboardServices']);
 
 // function checkAccordion() {
 // 	if ($('.accordion > div').length) {
@@ -11,23 +116,9 @@ var dashboardControllers = angular.module('dashboardControllers', []);
 // };
 
 dashboardControllers
-.controller('NavMainController', function ($scope, $http, $location) {
+.controller('NavMainController', function ($scope, $http, $location, navSource) {
 	$scope.locpath = $location.path();
-	$scope.navtree = {
-		label: '<root>',
-		items: [
-			{label: 'Dashboard', href:'#/', items:[
-				{label: 'Quotes', href: '#/quotes', badge_text: '2'},
-				{label: 'Reviews', href: '#/reviews'},
-				{label: 'Photos', href: '#/photos'},
-				{label: 'Favourites', href: '#/favourites'},
-			]},
-			{label: 'Account', href: '#/account', items:[
-				{label: 'Details', href: '#/account'},
-				{label: 'Password', href: '#/password'}
-			]}
-		]
-	};
+	$scope.navtree = navSource.navtree;
 	
 	$scope.navClass = function(page) {
 		var currentRoute = $location.path().substring(1);
@@ -35,98 +126,64 @@ dashboardControllers
 		return (pg === currentRoute ? 'active' : '');
 	};
 })
-.controller('UserSummaryController', function ($scope, $http) {
-	$http.get('/static/data/mockuser.json').success(function(data){$scope.user=data;});
+.controller('UserSummaryController', function ($scope, $http, userSource) {
+	userSource.load().success(function(data){$scope.user=data;});
 })
-.controller('QuotesHubController', function ($scope, $http, $sce) {
-	$http.get('/px/quotes/quoterequests/')
-	.success(function (reqs) {
+.controller('QuotesHubController', function ($scope, $http, $sce, xlate, listingSource, quotesSource) {
+	window.setTimeout(function () {
+	    Yellow.tabs('.tabs-menu li','.tabs-content > div');
+	    Yellow.accordion('.accordion');
+	}, 500);
+
+	quotesSource.load().success(function (reqs) {
 		$scope.quoterequests = reqs;
-		window.setTimeout(function () {
-		    Yellow.tabs('.tabs-menu li','.tabs-content > div');
-		    Yellow.accordion('.accordion');
-		}, 100);
 		var inj = function (i, j) {
 			return function (dat) {
 				$scope.quoterequests[i].response_set[j].listing = dat;
-				$scope.quoterequests[i].response_set[j].listing.photos = function (inp) {
-					var outph = [];
-					for (var i=0; i<inp.length; i++) {
-						outph.push({src: inp[i].icon_url, href:'#'});
-					}
-					return {
-						count: inp.length,
-						items: outph
-					};
-				}(dat['user_content_photos']);
-				$scope.quoterequests[i].response_set[j].listing.info = function (inp) {
-					var catref = inp.categoryreference_set[0];
-					var desc = $sce.trustAs('html', (catref.headline ? catref.headline : '').replace('\n', '<br/>'));
-					var logo_src = catref.adimage_set ? catref.adimage_set[0].logo_path : null;
-					return {
-						catref: catref,
-						description: desc,
-						logo_src: logo_src
-					};
-				}(dat);
-				$scope.quoterequests[i].response_set[j].listing.reviews = function (rvs) {
-					var outrvs = [];
-					for (var i=0; i<rvs.length; i++) {
-						var r = rvs[i];
-						outrvs.push({
-							title: '',
-							blurb: r.comments,
-							author_byline: r.user.profile.displayname,
-							author_href: '',
-							rating: r.rating/2,
-							star_count: r.rating/2,
-							time_descr: r.created,
-							address: '',
-							helpful_count: 0,
-							not_helpful_count: 0
-						});
-					}
-					return {
-						count: outrvs.length,
-						items: outrvs
-					};
-				}(dat._reviews);
+				$scope.quoterequests[i].response_set[j].listing.photos = xlate.listingPhotos(dat);
+				$scope.quoterequests[i].response_set[j].listing.info = xlate.listingInfo(dat);
+				$scope.quoterequests[i].response_set[j].listing.reviews = xlate.listingReviews(dat._reviews);
 			}
 		};
+		
+		/* Iterate over the listings referred to in the quote responses and fetch and inject their data */
 		for (var i=0; i<reqs.length; i++) {
 			for (var j=0; j<reqs[i].response_set.length; j++) {
 				var resp = reqs[i].response_set[j];
 				var listingslug = resp.respondent.listing_ref.split(':')[1];
-				$http.get('/api/v2/yellow/listing/' + listingslug + '/?load_review=1').success(inj(i, j));
+				listingSource.getBySlug(listingslug, inj(i, j));
 			}
-		}
-	})
+		};
+	});
 })
-.controller('ReviewsHubController', function ($scope, $http) {
-	$http.get('/static/data/mockreviews.json').success(function(data){$scope.reviews=data;});
+.controller('ReviewsHubController', function ($scope, reviewsSource) {
+	reviewsSource.load().success(function(data){$scope.reviews=data;});
 })
-.controller('PhotosHubController', function ($scope, $http) {
-	$http.get('/static/data/mockphotos.json').success(function(data){$scope.photos=data;});
-})
-.controller('FavouritesHubController', function ($scope, $http) {
-	$http.get('/static/data/mockfavourites.json').success(function(data){$scope.favourites=data;});
-})
-.controller('DashboardHubController', function ($scope, $http) {
-	
-	$scope.quotes = {
-		count: 999,
-		items: [
-			{title: 'Weed my garden', response_count: '3'},
-			{title: 'Clean my house', response_count: '2'},
-			{title: 'Remove my garbage', response_count: '1'},
-		]
-	}
-	
-	$http.get('/static/data/mockreviews.json').success(function(data){$scope.reviews=data;});
-	$http.get('/static/data/mockphotos.json').success(function(data){$scope.photos=data;});
-	$http.get('/static/data/mockfavourites.json').success(function(data){$scope.favourites=data;});
-	$http.get('/static/data/mockbusinesses.json').success(function(data){$scope.businesses=data;});
+.controller('PhotosHubController', function ($scope, photosSource) {
+	photosSource.load().success(function(data){console.log(data);$scope.photos=data;});
 
+	//Make sure that the slider items are loaded before initialization
+	function checkSlider() {
+		if ($('.slider-nav .grid__item').length) {
+		    Yellow.slider('.slider');
+		} else {
+			setTimeout( function(){ checkSlider(); }, 200 );
+		}
+	}
+
+	checkSlider();
+})
+.controller('FavouritesHubController', function ($scope, favouritesSource) {
+	favouritesSource.load().success(function(data){$scope.favourites=data;});
+})
+.controller('DashboardHubController', function ($scope, $http, quotesSource, reviewsSource, photosSource, favouritesSource, friendliesSource) {
+	
+	quotesSource.load().success(function (dat){console.log(dat);$scope.quotes = dat;});
+	reviewsSource.load().success(function (dat){$scope.reviews = dat;});
+	photosSource.load().success(function (dat){$scope.photos = dat;});
+	favouritesSource.load().success(function (dat){$scope.favourites = dat;});
+	friendliesSource.load().success(function (dat){$scope.businesses = dat;});
+	
 	//Make sure that the "Stars" elements are loaded before initialization
 	checkStars();
 
@@ -217,7 +274,10 @@ dashboardApp
 })
 .directive('ydashQuotesMini', function () {
 	return {
-		templateUrl: '/static/partial/dashboard/ydash-quotes-mini.html'
+		templateUrl: '/static/partial/dashboard/ydash-quotes-mini.html',
+		scope: {
+			quoterequests: '=quoterequests'
+		}
 	}
 })
 .directive('ydashStars', function () {

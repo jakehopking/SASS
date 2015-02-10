@@ -50,7 +50,7 @@
             if ($window.width() > 1023) {
                 mapContainer.height($window.height());
                 footer.css({ position: "fixed", bottom: "0", width: "100%", "z-index": 9999 });
-                resultsContainer.css({ "margin-bottom": "65px" });
+                resultsContainer.css({ "padding-bottom": "85px" });
 
             } else {
                 mapContainer.height(0);
