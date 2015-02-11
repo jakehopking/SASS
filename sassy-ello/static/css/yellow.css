@@ -4163,6 +4163,9 @@ footer section.footer-corporate-info {
     margin: 0px auto 3px auto; }
   .avatar .count {
     color: #007ed6; }
+  .avatar i {
+    font-size: 28px;
+    color: #a2a2a2; }
 
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -6075,7 +6078,8 @@ footer section.footer-corporate-info {
   padding: 2px; }
 
 .image-thumb--medium {
-  height: 40px; }
+  height: 40px;
+  width: 40px; }
 
 .image-thumb--large {
   width: 50px;
@@ -6682,7 +6686,7 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   float: left; }
 
 .imageCaption {
-  margin: 22px 10px 0 10px; }
+  margin: 0 10px 0 10px; }
   @media only screen and (max-width: 480px) {
     .imageCaption {
       margin: 0px 0px 10px 0; } }
@@ -6692,6 +6696,10 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   @media only screen and (max-width: 480px) {
     .imageAction {
       margin: 0 0 10px 0; } }
+
+.uploadImageProgress {
+  overflow: hidden;
+  width: 100%; }
 
 .tabs-menu.suggested-business-menu li a {
   font-size: 14px;
@@ -6796,7 +6804,7 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   margin: 0;
   padding: 0;
   list-style: none; }
-  .search-results-list li {
+  .search-results-list > li {
     background-color: #007ed6; }
 
 .search-results__item .business-thumbnail > a {

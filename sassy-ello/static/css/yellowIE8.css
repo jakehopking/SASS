@@ -8,4 +8,8 @@
   padding-bottom: 14%;
   height: 310px; }
 
+#photo-input {
+  position: fixed;
+  width: 0px; }
+
 /*# sourceMappingURL=yellowIE8.css.map */

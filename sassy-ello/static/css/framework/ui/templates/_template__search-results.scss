@@ -62,7 +62,7 @@ $platinum-messge:                       "Sponsored ad";
     margin: 0;
     padding: 0;
     list-style: none;
-    li {
+    > li {
         background-color: $colour-blue;
     }
 }
