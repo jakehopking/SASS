@@ -23,6 +23,7 @@ $dlp-business-branded-height-tab:   200px;
     .dlp-business-image-rating {
         > .card {
             padding: 0;
+            width: 100%;
             @include media-query(desk) {
                 padding: $dlp-padding;
                 min-height: 100%;
@@ -39,6 +40,7 @@ $dlp-business-branded-height-tab:   200px;
         }
 
         .review-score--horizontal { // The rating score and review number
+            min-height: initial;
             @include media-query(desk) {
                 background-color: $colour-grey-lighter;
                 padding: ($dlp-padding / 4) ($dlp-padding / 2);

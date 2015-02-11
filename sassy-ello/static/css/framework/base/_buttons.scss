@@ -303,7 +303,7 @@ strong.button {
     text-align: left;
     position: relative;
     i.fa {
-        float: right;
+        // float: right;
         margin-right: -1em;
         margin-left: 1em;
         padding: 0 5px 0 7px;
@@ -321,6 +321,9 @@ strong.button {
     text-align: center;
     i.fa {
         margin-right: 0;
+        float: right;
+        position: absolute;
+        right: 0;
     }
 }
 
@@ -418,6 +421,14 @@ strong.button {
             margin-right: 0;
             width: 100%;
             margin-bottom: $base-line-height / 10;
+            &.button--with-block-icon {
+                i.fa {
+                    margin-right: 0;
+                    float: right;
+                    position: absolute;
+                    right: 0;
+                }
+            }
         }
     } // End query
     .button + .button {

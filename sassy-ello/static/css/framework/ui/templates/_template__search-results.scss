@@ -62,6 +62,9 @@ $platinum-messge:                       "Sponsored ad";
     margin: 0;
     padding: 0;
     list-style: none;
+    li {
+        background-color: $colour-blue;
+    }
 }
 
 // Search results item
@@ -106,11 +109,11 @@ $platinum-messge:                       "Sponsored ad";
             > .button {
                 margin-right: 5px;
                 margin-bottom: 5px;
-                @include media-query(below-desk-wide) {
+                // @include media-query(below-desk-wide) {
                     line-height: 2.5em;
                     padding-left: 0.75em;
                     padding-right: 0.75em;
-                }
+                // }
             }
             .cta__more-details { // More info arrow >
                 
@@ -173,7 +176,7 @@ $platinum-messge:                       "Sponsored ad";
                 content: "#{$platinum-messge}";
                 float: right;
                 font-size: 7.5px;
-                margin-top: -12px;
+                margin-top: -5px;
                 margin-right: 4px;
                 opacity: 0.4;
                 letter-spacing: 0.1em;

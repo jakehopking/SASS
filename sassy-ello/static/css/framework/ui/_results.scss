@@ -22,7 +22,7 @@ $cta-with-text-colour:                  $colour-grey-light;
 
 
 .business__title {
-    font-size: $h6-size + 1;
+    font-size: $h4-size - 2;
     padding-bottom: floor($results-padding / 6);
     display: block;
     a {
@@ -34,6 +34,9 @@ $cta-with-text-colour:                  $colour-grey-light;
         margin-bottom: $results-padding / 4;
         font-weight: normal;
         font-size: $business-title-size-large;
+    }
+    .item-number {
+        font-weight: $font-weight-regular;
     }
 }
 
