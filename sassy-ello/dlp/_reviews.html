@@ -26,8 +26,8 @@
                                     {% endif %}
                                     <h6>{% firstof review.first_name review.username %}</h6>
                                     <div>Auckland</div>
-                                    <div class="count">9 reviews</div>
-                                    <div class="count">6 contributions</div>
+                                    <div class="count">{{review.contributions.reviews}} reviews</div>
+                                    <div class="count">{{review.contributions.total}} contributions</div>
                                 </div>
 
                             </div>
@@ -38,7 +38,11 @@
 
                                     <i class="fa fa-quote-left"></i>
 
-                                    <div class="dlp-review-tools"><strong>80</strong> out of <strong>100</strong> users found this review helpful</div>
+                                    <div class="dlp-review-tools">
+                                        {% if review.user_flags %}
+                                        <strong>{{review.positive_flags}}</strong> out of <strong>{{review.user_flags}}</strong> users found this review helpful
+                                        {% endif %}
+                                    </div>
 
                                     <p class="dlp-review-comment">{{ review.comments }}</p>
 

@@ -1954,7 +1954,6 @@ strong.button, strong.button--facebook, strong.button--google {
   text-align: left;
   position: relative; }
   .button--with-block-icon i.fa {
-    float: right;
     margin-right: -1em;
     margin-left: 1em;
     padding: 0 5px 0 7px;
@@ -1967,7 +1966,10 @@ strong.button, strong.button--facebook, strong.button--google {
 .button--with-block-icon.button--fill, .button--with-block-icon.button--facebook, .button--with-block-icon.button--google {
   text-align: center; }
   .button--with-block-icon.button--fill i.fa, .button--with-block-icon.button--facebook i.fa, .button--with-block-icon.button--google i.fa {
-    margin-right: 0; }
+    margin-right: 0;
+    float: right;
+    position: absolute;
+    right: 0; }
 
 .button--fill.button--align-left, .button--align-left.button--facebook, .button--align-left.button--google {
   text-align: left;
@@ -2034,7 +2036,12 @@ strong.button, strong.button--facebook, strong.button--google {
     display: block;
     margin-right: 0;
     width: 100%;
-    margin-bottom: 2px; } }
+    margin-bottom: 2px; }
+    .button-group--responsive > .button.button--with-block-icon i.fa, .button-group--responsive > .button--with-block-icon.button--facebook i.fa, .button-group--responsive > .button--with-block-icon.button--google i.fa {
+      margin-right: 0;
+      float: right;
+      position: absolute;
+      right: 0; } }
 .button-group--responsive .button + .button, .button-group--responsive .button--facebook + .button, .button-group--responsive .button--google + .button, .button-group--responsive .button + .button--facebook, .button-group--responsive .button--facebook + .button--facebook, .button-group--responsive .button--google + .button--facebook, .button-group--responsive .button + .button--google, .button-group--responsive .button--facebook + .button--google, .button-group--responsive .button--google + .button--google {
   margin-left: 0; }
 
@@ -3606,7 +3613,7 @@ section.section-colour-alt-border {
   background: #f9f9f9; }
 
 .business__title {
-  font-size: 15px;
+  font-size: 18px;
   padding-bottom: 3px;
   display: block; }
   .business__title a {
@@ -3617,6 +3624,8 @@ section.section-colour-alt-border {
     margin-bottom: 5px;
     font-weight: normal;
     font-size: 20px; }
+  .business__title .item-number {
+    font-weight: 400; }
 
 .business__message {
   margin-bottom: 4px;
@@ -6121,6 +6130,9 @@ footer section.footer-corporate-info {
 .font-weight--light {
   font-weight: 300; }
 
+.font-weight--regular {
+  font-weight: 400; }
+
 .font-weight--bold {
   font-weight: 700; }
 
@@ -6389,7 +6401,8 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
         margin-bottom: 20px; } }
 
 .dlp-business-detail .dlp-business-image-rating > .card {
-  padding: 0; }
+  padding: 0;
+  width: 100%; }
   @media only screen and (min-width: 1024px) {
     .dlp-business-detail .dlp-business-image-rating > .card {
       padding: 20px;
@@ -6401,10 +6414,12 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   @media only screen and (min-width: 1024px) {
     .dlp-business-detail .dlp-business-image-rating .dlp-business-logo {
       margin-top: -20px; } }
-@media only screen and (min-width: 1024px) {
-  .dlp-business-detail .dlp-business-image-rating .review-score--horizontal {
-    background-color: #eaeaea;
-    padding: 5px 10px; } }
+.dlp-business-detail .dlp-business-image-rating .review-score--horizontal {
+  min-height: initial; }
+  @media only screen and (min-width: 1024px) {
+    .dlp-business-detail .dlp-business-image-rating .review-score--horizontal {
+      background-color: #eaeaea;
+      padding: 5px 10px; } }
 @media only screen and (max-width: 1023px) {
   .dlp-business-detail .dlp-business-image-rating .page-tools {
     border-top: 1px solid #d7d7d7; } }
@@ -6781,6 +6796,8 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   margin: 0;
   padding: 0;
   list-style: none; }
+  .search-results-list li {
+    background-color: #007ed6; }
 
 .search-results__item .business-thumbnail > a {
   min-height: 86px;
@@ -6793,12 +6810,10 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
     padding-top: 5px; } }
 .search-results__item .business-content .business-call-to-actions > .button, .search-results__item .business-content .business-call-to-actions > .button--facebook, .search-results__item .business-content .business-call-to-actions > .button--google {
   margin-right: 5px;
-  margin-bottom: 5px; }
-  @media only screen and (max-width: 1199px) {
-    .search-results__item .business-content .business-call-to-actions > .button, .search-results__item .business-content .business-call-to-actions > .button--facebook, .search-results__item .business-content .business-call-to-actions > .button--google {
-      line-height: 2.5em;
-      padding-left: 0.75em;
-      padding-right: 0.75em; } }
+  margin-bottom: 5px;
+  line-height: 2.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em; }
 .search-results__item .business-content .business-call-to-actions .cta__more-details {
   top: 10px;
   right: 10px;
@@ -6838,7 +6853,7 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   content: "Sponsored ad";
   float: right;
   font-size: 7.5px;
-  margin-top: -12px;
+  margin-top: -5px;
   margin-right: 4px;
   opacity: 0.4;
   letter-spacing: 0.1em; }

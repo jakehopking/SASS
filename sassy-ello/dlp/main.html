@@ -158,11 +158,13 @@
 
                                                                     <div class="dlp-rate-avatar">
                                                                         <div class="avatar">
-                                                                          <img class="image-thumb-circle image-thumb--medium" src="{{ request.yellow_user.avatar }}" alt="">
+                                                                          {% with request.yellow_user as yoluser %}
+                                                                          <img class="image-thumb-circle image-thumb--medium" src="{{ yolser.avatar }}" alt="">
                                                                             <h6>{{ request.yellow_user.first_name }}</h6>
                                                                             <div>Auckland</div>
-                                                                            <div class="count">41 reviews</div>
-                                                                            <div class="count">28 contributions</div>
+                                                                            <div class="count">{{yoluser.contributions.reviews}} reviews</div>
+                                                                            <div class="count">{{yoluser.contributions.total}} contributions</div>
+                                                                          {% endwith %}
                                                                         </div>
                                                                     </div>
 

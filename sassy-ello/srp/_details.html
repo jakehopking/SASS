@@ -1,5 +1,5 @@
 {# This template is used for all listing types (plat, gold, silver etc..) #}
-<strong class="business__title"><a href="/y/{{ listing.slug }}">{{index}}. {{ listing.title }}</a></strong>
+<strong class="business__title"><a href="/y/{{ listing.slug }}"><span class="item-number">{{index}}.</span> {{ listing.title }}</a></strong>
 <ul class="business__categories inline-list-block delimited--bar">
     <!--{% for category in listing.categories %}
     <li><a href="/new-zealand/{{ category.slug }}/">{{ category.name }}</a></li>
