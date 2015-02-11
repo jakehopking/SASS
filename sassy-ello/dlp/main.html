@@ -159,11 +159,15 @@
                                                                     <div class="dlp-rate-avatar">
                                                                         <div class="avatar">
                                                                           {% with request.yellow_user as yoluser %}
+                                                                          {% if review.avatar %}
                                                                           <img class="image-thumb-circle image-thumb--medium" src="{{ yolser.avatar }}" alt="">
                                                                             <h6>{{ request.yellow_user.first_name }}</h6>
                                                                             <div>Auckland</div>
                                                                             <div class="count">{{yoluser.contributions.reviews}} reviews</div>
                                                                             <div class="count">{{yoluser.contributions.total}} contributions</div>
+                                                                          {% else %}
+                                                                          <i class="image-thumb-circle image-thumb--medium fa fa-user"></i>
+                                                                          {% endif %}
                                                                           {% endwith %}
                                                                         </div>
                                                                     </div>
@@ -187,7 +191,7 @@
                                                                             <input id="photo-input" name="photo" type="file">
                                                                         </div>
 
-                                                                        <div class="form-group">
+                                                                        <div class="form-group form-group--arrow">
                                                                             <textarea class="form-group__item" name="review"></textarea>
                                                                         </div>
                                                                     </div>

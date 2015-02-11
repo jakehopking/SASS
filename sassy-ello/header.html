@@ -12,7 +12,7 @@
                         <li><a href="{{find_people_url}}">Find people</a>
                         {% if request.yellow_user %}
                             <li class="user-menu">
-                                <a class="user-name">{% user_display_name request.yellow_user %} <i class="fa fa-chevron-down"></i>
+                                <a href='/dashboard/dashboard' class="user-name">{% user_display_name request.yellow_user %} <i class="fa fa-chevron-down"></i>
                                     <span class="avatar">
                                         <img class="image-thumb-circle image-thumb--tiny" src="{% if request.yellow_user.avatar %}{{ request.yellow_user.avatar }} %}{% else %}/static/images/default_user.png{% endif %}" alt="{% user_display_name request.yellow_user %}">
                                     </span>
@@ -25,18 +25,18 @@
                                         </div>
                                         <h6 class="right">
                                             <b>{{ request.yellow_user.first_name}} {{request.yellow_user.last_name}}</b>
-                                            <span>{{ request.yellow_user.user_reviews | length }} contributions</span>
+                                            <span>{{ request.yellow_user.contributions.total }} contributions</span>
                                         </h6>
                                     </div>
 
                                     <div class="user-menu-out-items">
-                                        <a href="#" class="cf">
+                                        <a href="/dashboard/dashboard" class="cf">
                                             <span class="left">
                                                 <img src="/static/images/y-icon-logo.gif" alt="My Yellow">
                                             </span> 
                                             <b class="right">My Yellow</b>
                                         </a>
-                                        <a href="#" class="cf">
+                                        <a href="/dashboard/dashboard#/account" class="cf">
                                             <span class="left">
                                                 <img src="/static/images/y-icon-gears.gif" alt="Account settings"> 
                                             </span>
