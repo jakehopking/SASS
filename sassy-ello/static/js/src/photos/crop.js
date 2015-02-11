@@ -21,7 +21,7 @@
             <img src="some-image.jpg" alt="Some image" class="some-image">
 
         Js:
-            Yellow.crop('some-image');    
+            Yellow.crop('.some-image');    
     */
 
 

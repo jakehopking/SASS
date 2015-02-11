@@ -39,7 +39,7 @@
 			Expects a JSON reponse with following format:
 
 			{
-				"ok": true // if succeeded
+				"success": true // if succeeded
 				... any other properties, e.g: error messages
 			}	
 
@@ -49,7 +49,7 @@
 
 
 	var id = 0;
-
+	var error_message = 'Please make sure you are logged in and try again later'
 
 	Yellow.upload = function (opts) {
 
@@ -61,85 +61,73 @@
 			url         = opts.url || form.attr('action'),
 			fallback    = opts.fallback;
 
-
 		if (submit) form.on('submit', submit);	
 			
+		form.on('submit', function (e) {
+			
+			if (window.FormData !== undefined && XMLHttpRequest) { // html5 upload
+					e.preventDefault();
+					var xhr  = new XMLHttpRequest(),
+					    data = new FormData(form.get(0));
 
-		if (FormData && XMLHttpRequest) { // html5 upload
+					xhr.onreadystatechange = function () {
 
-			form.on('submit', function (e) {
+						if (xhr.readyState !== 4) return;
+			            
+			            var res = xhr.responseText;
 
-				e.preventDefault(); 
+		                try {
+		                    res = JSON.parse(res);
 
-				var xhr  = new XMLHttpRequest(),
-				    data = new FormData(form.get(0));
+		                } catch (e) {
+		                    //throw new Error(xhr.responseText);
+		                    res = { error: error_message };
+		                }
 
-				xhr.onreadystatechange = function () {
+			            (xhr.status < 400 && res.success) ? success(res, xhr) : (err && err(res, xhr));
+					};
 
-					if (xhr.readyState !== 4) return;
-		            
-		            var res = xhr.responseText;
+					if (progress && xhr.upload) {
+			            xhr.upload.addEventListener('progress', function (e) {
+			                if (e.lengthComputable) progress(Math.round((e.loaded * 100) / e.total), xhr);
+			            });
+			        }
 
-	                try {
-	                    res = JSON.parse(res);
+			        xhr.open('POST', url, true);
+			        xhr.setRequestHeader('Accept', 'application/json, text/javascript, */*; q=0.01');
+			        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+			        xhr.setRequestHeader('X-CSRFToken', Yellow.csrf);
+			        //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+			        xhr.send(data);   
 
-	                } catch (e) {
-	                    throw new Error(xhr.responseText);
-	                    res = { error: 'Could not parse json' };
-	                }
+			} else if (fallback === 'iframe') { // dumb (hidden iframe) upload
 
-		            (xhr.status < 400) ? success(res, xhr) : (err && err(res, xhr));
-				};
+				var iframe = $('<iframe style="display: none" name="post-target_' + id + '"></iframe>');
 
-				if (progress && xhr.upload) {
-		            xhr.upload.addEventListener('progress', function (e) {
-		                if (e.lengthComputable) progress(Math.round((e.loaded * 100) / e.total), xhr);
-		            });
-		        }
+		        $('body').append(iframe);
 
-		        xhr.open('POST', url, true);
-		        xhr.setRequestHeader('Accept', 'application/json, text/javascript, */*; q=0.01');
-		        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-		        xhr.setRequestHeader('X-CSRFToken', Yellow.csrf);
-		        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-		        xhr.send(data);
-		    });    
+				form.attr({ target: 'post-target_' + id, enctype: 'multipart/form-data', encoding: 'multipart/form-data' });
 
+		        iframe.on("load", function () { 
+		        	var res = {};
+		        	id++;
 
-		} else if (fallback === 'iframe') { // dumb (hidden iframe) upload
+		        	var content = (this.contentDocument) ? this.contentDocument.body :
+		        				  (this.contentWindow) ? this.contentWindow.document.body : 
+		        				  this.document.body;
+		        	try {			  
+		            	res = JSON.parse($(content).text());
 
-			e.preventDefault(); 
-
-			var iframe = $('<iframe name="post-target_' + id + '"></iframe>');
-
-	        $('body').append(iframe);
-
-			form.attr({ target: 'post-target_' + id, enctype: 'multipart/form-data', encoding: 'multipart/form-data' });
-
-	        iframe.on("load", function () { 
-
-	        	var res = {};
-	        	id++;
-
-	        	var content = (this.contentDocument) ? this.contentDocument.body :
-	        				  (this.contentWindow) ? this.contentWindow.document.body : 
-	        				  this.document.body;
-
-	        	try {			  
-	            	res = JSON.parse($(content).text());
-
-	            } catch (e) {
-	            	throw new Error('Could not parse json');
-	            	res = { error: 'Could not parse json' };
-	            }
-
-	            (res.ok) ? success(res) : (err && err(res));
-	        });
-		} 
-
+		            } catch (e) {
+		            	//throw new Error('Could not parse json');
+		            	res = { error: error_message };
+		            }
+		            (res.success) ? success(res) : (err && err(res));
+		        });
+			} 
+		}); 
 		// otherwise just submit the form normally
 	};
-
 
 
 }).call(this);
