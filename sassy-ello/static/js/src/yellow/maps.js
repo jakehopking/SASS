@@ -42,6 +42,7 @@
             google.maps.event.addListenerOnce(m.map, 'idle', function () {
                 cback.call(m);
             });
+
         },
 
         clearMarkers: function () {
@@ -85,7 +86,7 @@
         centerOnMarkers: function (shiftByX, shiftByY, offsetZ) {
 
             this.map.fitBounds(this.bounds);
-            this.map.setCenter(this.bounds.getCenter());
+            this.map.setCenter({lat: this.bounds.getCenter().k, lng: this.bounds.getCenter().D});
 
             if (offsetZ) this.map.setZoom(this.map.getZoom() + offsetZ);
             if (shiftByX || shiftByY) this.map.panBy(shiftByX || 0, shiftByY || 0);
@@ -100,8 +101,6 @@
         if (!el) return;
         return new Map(el, options);
     };
-
-
 
     // Try HTML5 geolocation
     try {

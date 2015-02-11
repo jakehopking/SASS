@@ -52,6 +52,7 @@
 
         menu.on('click', function (evt) {
             shiftInterval = 0;
+            this.stopShift();
             currIdx = $(this).index();
             activate(currIdx);
         });
@@ -62,7 +63,7 @@
             activate(currIdx++);
             if (currIdx >= menu.filter(':visible').length )
                 currIdx = 0;
-            if (shiftInterval)
+            if (shiftInterval > 0)
                 setTimeout(shiftHandler, shiftInterval);
         };
         shiftHandler.apply();

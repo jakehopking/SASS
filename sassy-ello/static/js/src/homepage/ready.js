@@ -2,10 +2,10 @@ $(function () {
 
     "use strict";
 
-    Yellow.disruptiveAd(5000);
-    Yellow.tabs('.tabs-menu li', '.tabs-content .tab-content__item', 5000, function(item) {
-        $('.suggested-business-content .see-all a').attr('href', item.find('.view-all-link').val());
-    });
+    var set_view_all_link = function() {
+        $('.suggested-business-content .see-all a').attr('href',
+            $('.suggested-business-content .tab-content__item.active .view-all-link').val());
+    };
 
     var initialize = function(place) {
         var url = '/srv/bb/' + Yellow.util.slug(place);
@@ -21,12 +21,16 @@ $(function () {
                 var url = '/srv/cb/' + slugUrl;
                 $.get(url, function(data) {
                     item.html(data);
+                    if ($('.suggested-business-content .see-all a').attr('href') == '#')
+                        set_view_all_link();
                 });
             }
         });
 
     };
 
+    Yellow.disruptiveAd(5000);
+    Yellow.tabs('.tabs-menu li', '.tabs-content .tab-content__item', 5000, set_view_all_link);
     initialize($('#location-by-ip').val());
     //Yellow.currentPlace('auckland', initialize);
 });

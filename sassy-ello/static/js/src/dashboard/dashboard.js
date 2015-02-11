@@ -1,4 +1,5 @@
 
+/* === === === === === === === === SERVICES === === === === === === === === */
 
 var dashboardServices = angular.module('dashboardServices', [])
 
@@ -14,7 +15,7 @@ dashboardServices
 })
 .factory('quotesSource', function ($http) {
 	return {
-		load: function () {return $http.get('/px/quotes/quoterequests/');},
+		load: function () {return $http.get('http://caprica:8004/px/quotes/quoterequests/');},
 	};
 })
 .factory('navSource', function () {
@@ -63,6 +64,9 @@ dashboardServices
 		};
 	};
 	var reviews = function (rvs) {
+		if (!rvs) {
+			return {count: 0, items: []};
+		}
 		var outrvs = [];
 		for (var i=0; i<rvs.length; i++) {
 			var r = rvs[i];
@@ -103,6 +107,8 @@ dashboardServices
 	};
 })
 ;
+
+/* === === === === === === === === CONTROLLERS === === === === === === === === */
 
 var dashboardControllers = angular.module('dashboardControllers', ['dashboardServices']);
 
@@ -160,7 +166,7 @@ dashboardControllers
 	reviewsSource.load().success(function(data){$scope.reviews=data;});
 })
 .controller('PhotosHubController', function ($scope, photosSource) {
-	photosSource.load().success(function(data){console.log(data);$scope.photos=data;});
+	photosSource.load().success(function(data){$scope.photos=data;});
 
 	//Make sure that the slider items are loaded before initialization
 	function checkSlider() {
@@ -178,7 +184,7 @@ dashboardControllers
 })
 .controller('DashboardHubController', function ($scope, $http, quotesSource, reviewsSource, photosSource, favouritesSource, friendliesSource) {
 	
-	quotesSource.load().success(function (dat){console.log(dat);$scope.quotes = dat;});
+	quotesSource.load().success(function (dat){$scope.quotes = dat;});
 	reviewsSource.load().success(function (dat){$scope.reviews = dat;});
 	photosSource.load().success(function (dat){$scope.photos = dat;});
 	favouritesSource.load().success(function (dat){$scope.favourites = dat;});
@@ -196,6 +202,8 @@ dashboardControllers
 	}
 
 });
+
+/* === === === === === === === === ROUTES & DIRECTIVES === === === === === === === === */
 
 var dashboardApp = angular.module('dashboardApp', ['ngRoute', 'dashboardControllers']);
 
