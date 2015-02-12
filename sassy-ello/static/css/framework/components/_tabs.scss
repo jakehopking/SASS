@@ -9,10 +9,10 @@
 
 // Basic show/hide functionality
 .tabs-content {
-	.tab-content__item {
-		display: none;
-		&.active {
-			display: block;
-		}
-	}
+    .tab-content__item {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
 }

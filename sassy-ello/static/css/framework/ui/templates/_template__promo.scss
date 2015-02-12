@@ -7,100 +7,100 @@
 
 
 .promo {
-	position: relative;
+    position: relative;
 
-	section.section-promo {
+    section.section-promo {
 
-	    background: $colour-white no-repeat center center scroll; 
-	    @include vendor(background-size, cover);
+        background: $colour-white no-repeat center center scroll; 
+        @include vendor(background-size, cover);
 
-	    .section-container {
-	    	@extend %grid__container;
-	    }
-	}
+        .section-container {
+            @extend %grid__container;
+        }
+    }
 }
 
 .promo-slides {
-	overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 .promo-ctrls {
 
-	position: absolute;
-	top: 100px;
-	right: 50px;
-	background: $colour-grey-lighter;
-	padding: 15px 3px;
-	border-radius: $gutter;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    background: $colour-grey-lighter;
+    padding: 15px 3px;
+    border-radius: $gutter;
 
-	a {
-		display: block;
-		padding: 2px;
-		color: $colour-black;
-		outline: 0;
+    a {
+        display: block;
+        padding: 2px;
+        color: $colour-black;
+        outline: 0;
 
-		&.active {
-			color: $colour-yellow;
-		}
-	}
+        &.active {
+            color: $colour-yellow;
+        }
+    }
 }
 
 .promo-content {
 
-	color: $colour-grey;
-	font-family: "Roboto";
-	font-weight: 300;
-	padding-top: $gutter*3;
-	
-	h1 {
-		font-weight: 500;
-	}
-	
-	a {
-		display: inline-block;
-	}
+    color: $colour-grey;
+    font-family: "Roboto";
+    font-weight: 300;
+    padding-top: $gutter*3;
+    
+    h1 {
+        font-weight: 500;
+    }
+    
+    a {
+        display: inline-block;
+    }
 }
 
 .promo-content-centre {
-	text-align: center;
-	p {
-		text-transform: uppercase;
-	}
+    text-align: center;
+    p {
+        text-transform: uppercase;
+    }
 }
 
 @include media-query(desk) {
 
-	.promo-content {
-		a {
-			font-size: 1.4em;
-			padding: 0px 100px;
-		}
-	}
+    .promo-content {
+        a {
+            font-size: 1.4em;
+            padding: 0px 100px;
+        }
+    }
 
-	.promo-content-centre {
-		h1 {
-			font-size: 5em;
-		}
-		p {
-			font-size: 1.6em;
-		}
-	}
+    .promo-content-centre {
+        h1 {
+            font-size: 5em;
+        }
+        p {
+            font-size: 1.6em;
+        }
+    }
 }
 
 %promo-arrow {
-	position: absolute;
-	background: $colour-blue;
-	color: $colour-white;
-	padding: 0px 10px;
-	font-size: 2em;
+    position: absolute;
+    background: $colour-blue;
+    color: $colour-white;
+    padding: 0px 10px;
+    font-size: 2em;
 }
 
 .promo-arrow-up {
-	@extend %promo-arrow;
-	top: 0px;
+    @extend %promo-arrow;
+    top: 0px;
 }
 
 .promo-arrow-down {
-	@extend %promo-arrow;
-	bottom: 0px;
+    @extend %promo-arrow;
+    bottom: 0px;
 }

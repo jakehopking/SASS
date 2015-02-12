@@ -14,10 +14,18 @@
         <div class="carousel">
             <div class="carousel-content">
                 <div class="carousel-inner">
-                    <div class="carousel-item"><img src="/static/images/home-featured-business-01.jpg"></div>
-                    <div class="carousel-item"><img src="/static/images/home-featured-business-02.jpg"></div>
-                    <div class="carousel-item"><img src="/static/images/home-featured-business-03.jpg"></div>
-                    <div class="carousel-item"><img src="/static/images/home-featured-business-04.jpg"></div>
+                    <div class="carousel-item" data-image-src="/static/images/home-featured-business-01.jpg">
+                        <img src="/static/images/home-featured-business-01-thumb.jpg">
+                    </div>
+                    <div class="carousel-item" data-image-src="/static/images/home-featured-business-02.jpg">
+                        <img src="/static/images/home-featured-business-02-thumb.jpg">
+                    </div>
+                    <div class="carousel-item" data-image-src="/static/images/home-featured-business-03.jpg">
+                        <img src="/static/images/home-featured-business-03-thumb.jpg">
+                    </div>
+                    <div class="carousel-item" data-video-src="//www.youtube.com/embed/QILiHiTD3uc">
+                        <img src="/static/images/home-featured-business-04-thumb.jpg">
+                    </div>
                 </div>
             </div>
             <div class="carousel-nav">
@@ -114,22 +122,26 @@
         items.on('click', function () {
 
             var item    = $(this),
-                vidsrc  = item.attr('data-video-src');
+                imgsrc  = item.attr('data-image-src'),
+                vidsrc  = item.attr('data-video-src'),
+                html    = (vidsrc) ? 
+                     ('<div class="embed-container"><iframe src="' + vidsrc + '" frameborder="0" allowfullscreen></iframe></div>') :
+                     ('<img src="' + imgsrc + '">');
 
             if (!open) {    
                 expanded
                     .slideUp(1)
-                    .html([closeHtml, (vidsrc) ? videoHtml(vidsrc) : item.html()])
+                    .html([closeHtml, html])
                     .slideDown(500, function () { open = true; });
 
             } else {
                 var current = $(expanded).children().get(1),
-                    next    = $((vidsrc) ? videoHtml(vidsrc) : item.html()).css({ 
-                        position: 'absolute',
-                        top: '1px',
-                        left: '1px',
-                        opacity: 0,
-                        zIndex: 1
+                    next    = $(html).css({ 
+                        position:   'absolute',
+                        top:        '1px',
+                        left:       '1px',
+                        opacity:    0,
+                        zIndex:     1
                     });
 
                 expanded.append(
@@ -157,16 +169,6 @@
 
 
     var closeHtml = '<div class="close"><i class="fa fa-times"></i></div>';
-
-
-    function videoHtml (src) {
-
-        return [
-            '<div class="embed-container">',
-                '<iframe src="', src, '" frameborder="0" allowfullscreen></iframe>',
-            '</div>'
-        ].join('');
-    }
 
 
     Yellow.carousel = function (selector, options) {

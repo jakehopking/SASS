@@ -1,27 +1,27 @@
 body {
-	margin: 0 auto;
-	max-width: $body-max-width;
-	min-width: $body-min-width;
-	min-height: $body-min-height;
-	background-color: $body-background;
-	color: $body-text;
+    margin: 0 auto;
+    max-width: $body-max-width;
+    min-width: $body-min-width;
+    min-height: $body-min-height;
+    background-color: $body-background;
+    color: $body-text;
 }
 
 %grid__container-below-max-breakpoint { // Adds padding for mobile to all %grid__container instances
-	@include media-query(below-desk-wide) {
-		padding-left:  $gutter; // Same as default gutter width
-		padding-right: $gutter; // Same as default gutter width
-	}
+    @include media-query(below-desk-wide) {
+        padding-left:  $gutter; // Same as default gutter width
+        padding-right: $gutter; // Same as default gutter width
+    }
 }
 
 %grid__container {
-	margin: 0 auto;
-	max-width: $grid-container-max-width;
-	@extend %grid__container-below-max-breakpoint;
-	@extend %clear-all;
+    margin: 0 auto;
+    max-width: $grid-container-max-width;
+    @extend %grid__container-below-max-breakpoint;
+    @extend %clear-all;
 }
 
 .grid__container {
-	@extend %grid__container;
+    @extend %grid__container;
 }
 

@@ -2612,13 +2612,13 @@ dl.dl-basic dd + dt {
 
 /* jquery.Jcrop.css v0.9.12 - MIT License */
 /*
-  The outer-most container in a typical Jcrop instance
-  If you are having difficulty with formatting related to styles
-  on a parent element, place any fixes here or in a like selector
+The outer-most container in a typical Jcrop instance
+If you are having difficulty with formatting related to styles
+on a parent element, place any fixes here or in a like selector
 
-  You can also style this element if you want to add a border, etc
-  A better method for styling can be seen below with .jcrop-light
-  (Add a class to the holder and style elements for that extended class)
+You can also style this element if you want to add a border, etc
+A better method for styling can be seen below with .jcrop-light
+(Add a class to the holder and style elements for that extended class)
 */
 .jcrop-holder {
   direction: ltr;
@@ -4154,7 +4154,8 @@ footer section.footer-corporate-info {
 .avatar {
   text-align: center;
   font-size: 0.8em;
-  white-space: nowrap; }
+  white-space: nowrap;
+  padding-bottom: 10px; }
   .avatar h6 {
     margin-bottom: 3px;
     color: #555;
@@ -6562,7 +6563,8 @@ p a:not(.button):not(.button--facebook):not(.button--google) {
   width: 100%; }
 
 .dlp-rate-avatar {
-  margin-top: 23px; }
+  margin-top: 23px;
+  text-align: center; }
 
 .dlp-rate-fields {
   position: relative; }

@@ -10,6 +10,7 @@ $avatar-count-colour:       $colour-blue;
     text-align: center;
     font-size: 0.8em;
     white-space: nowrap;
+    padding-bottom: $base-line-height/2;
     @extend .font-face--condensed;
 
     h6 {

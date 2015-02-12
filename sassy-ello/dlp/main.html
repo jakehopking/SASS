@@ -99,20 +99,20 @@
                                     <div class="dlp-carousel">
                                         <div class="carousel-content">
                                             <div class="carousel-inner">
-                                                <div class="carousel-item">
-                                                    <img src="/static/images/home-featured-business-01.jpg">
+                                                <div class="carousel-item" data-image-src="/static/images/slide1.jpg">
+                                                    <img src="/static/images/slide1-thumb.jpg">
                                                 </div>
-                                                <div class="carousel-item">
-                                                    <img src="/static/images/home-featured-business-02.jpg">
+                                                <div class="carousel-item" data-image-src="/static/images/slide2.jpg">
+                                                    <img src="/static/images/slide2-thumb.jpg">
                                                 </div>
                                                 <div class="carousel-item" data-video-src="http://www.youtube.com/embed/QILiHiTD3uc">
-                                                    <img src="/static/images/home-featured-business-03.jpg">
+                                                    <img src="/static/images/slide4-thumb.jpg">
                                                 </div>
-                                                <div class="carousel-item">
-                                                    <img src="/static/images/home-featured-business-04.jpg">
+                                                <div class="carousel-item" data-image-src="/static/images/slide3.jpg">
+                                                    <img src="/static/images/slide3-thumb.jpg">
                                                 </div>
-                                                <div class="carousel-item">
-                                                    <img src="/static/images/home-featured-business-01.jpg">
+                                                <div class="carousel-item" data-image-src="/static/images/slide4.jpg">
+                                                    <img src="/static/images/slide4-thumb.jpg">
                                                 </div>
                                             </div>
                                         </div>
@@ -154,13 +154,17 @@
 
                                                             <div class="dlp-rate">
 
-                                                                <div class="grid__item one-eighth palm--one-third lap--one-sixth">
+                                                                <div class="grid__item two-tenths palm--one-third lap--one-sixth">
 
                                                                     <div class="dlp-rate-avatar">
                                                                         <div class="avatar">
                                                                           {% with request.yellow_user as yoluser %}
-                                                                          {% if review.avatar %}
-                                                                          <img class="image-thumb-circle image-thumb--medium" src="{{ yolser.avatar }}" alt="">
+                                                                          {% if request.yellow_user %}
+                                                                            {% if yolser.avatar %}
+                                                                              <img class="image-thumb-circle image-thumb--medium" src="{{ yolser.avatar }}" alt="">
+                                                                            {% else %}
+                                                                              <i class="image-thumb-circle image-thumb--medium fa fa-user"></i>
+                                                                            {% endif %}
                                                                             <h6>{{ request.yellow_user.first_name }}</h6>
                                                                             <div>Auckland</div>
                                                                             <div class="count">{{yoluser.contributions.reviews}} reviews</div>
@@ -170,11 +174,12 @@
                                                                           {% endif %}
                                                                           {% endwith %}
                                                                         </div>
+                                                                        <p><a href="http://help.yellow.co.nz/yellow/terms-of-use/" target="_blank">Review guidelines</a></p>
                                                                     </div>
 
                                                                 </div>
 
-                                                                <div class="grid__item seven-eighths palm--two-thirds lap--five-sixths">
+                                                                <div class="grid__item eight-tenths palm--two-thirds lap--five-sixths">
 
                                                                     <div class="dlp-rate-fields">
 

@@ -6,8 +6,8 @@
 // Vars
 $srp-filter-bar-bg:             $colour-blue-lightest;
 $srp-filter-bar-border:         $colour-blue-lighter;
-$srp-padding-vert:				8px;
-$srp-padding-horiz:				$base-line-height - 5;
+$srp-padding-vert:              8px;
+$srp-padding-horiz:             $base-line-height - 5;
 
 
 .srp-filter-bar {
@@ -15,7 +15,7 @@ $srp-padding-horiz:				$base-line-height - 5;
     background: $srp-filter-bar-bg;
     font-size: $h6-size;
     border-bottom: 1px solid $srp-filter-bar-border;
-	
+    
     select, input {
         display: none;
     }
@@ -31,7 +31,7 @@ $srp-padding-horiz:				$base-line-height - 5;
         label {
             font-weight:    200;
             width:          30%;
-            margin-bottom: 	0;
+            margin-bottom:  0;
         }
     }
 
@@ -67,7 +67,7 @@ $srp-padding-horiz:				$base-line-height - 5;
             border:         1px solid $srp-filter-bar-border;
             border-top:     none;
             border-bottom:  none;
-	        padding: 		$srp-padding-vert $srp-padding-horiz;
+            padding:        $srp-padding-vert $srp-padding-horiz;
         }
 
         .select-proxy-options {

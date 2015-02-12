@@ -2,9 +2,9 @@
 // ===============================================================================
 
 .middle {
-	display: block;
-	position: relative;
-	.middle-container {
-		@extend %grid__container;
-	}
+    display: block;
+    position: relative;
+    .middle-container {
+        @extend %grid__container;
+    }
 }

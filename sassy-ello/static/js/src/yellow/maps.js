@@ -92,6 +92,55 @@
             if (shiftByX || shiftByY) this.map.panBy(shiftByX || 0, shiftByY || 0);
 
             return this;
+        },
+
+        fromLatLngToPoint: function (latLng) {
+
+            var map                 = this.map,
+                scale               = Math.pow(2, map.getZoom()),
+                nw                  = new google.maps.LatLng(map.getBounds().getNorthEast().lat(), map.getBounds().getSouthWest().lng()),
+                worldCoordinateNW   = map.getProjection().fromLatLngToPoint(nw),
+                worldCoordinate     = map.getProjection().fromLatLngToPoint(latLng);
+
+            return new google.maps.Point(
+                Math.floor((worldCoordinate.x - worldCoordinateNW.x) * scale), 
+                Math.floor((worldCoordinate.y - worldCoordinateNW.y) * scale)
+            );
+        },
+
+        offsetMap: function () {
+
+            var m               = this,
+                map             = m.map,
+                mapBounds       = map.getBounds(),
+                topRightCorner  = new google.maps.LatLng(mapBounds.getNorthEast().lat(), mapBounds.getNorthEast().lng()),
+                topRightPoint   = fromLatLngToPoint(topRightCorner).x,
+                leftCoords      = routeBounds.getSouthWest(),
+                leftMost        = fromLatLngToPoint(leftCoords).x,
+                rightMost       = fromLatLngToPoint(routeBounds.getNorthEast()).x,
+                leftOffset      = (overlayWidth - leftMost),
+                rightOffset     = ((topRightPoint - rightMargin) - rightMost),
+                newLeftPoint,
+                mapOffset;
+
+            if (leftOffset >= 0) {
+
+                if (leftOffset < rightOffset) {
+
+                    mapOffset = Math.round((rightOffset - leftOffset) / 2);
+
+                    map.panBy(-mapOffset, 0);
+
+                    newLeftPoint = fromLatLngToPoint(leftCoords).x;
+
+                    if (newLeftPoint <= overlayWidth) offsetMap();
+
+                } else {
+
+                    map.setZoom(map.getZoom() - 1);
+                    offsetMap();
+                }
+            }
         }
     };
 
@@ -116,6 +165,17 @@
             }
         );
     } catch (e) { }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

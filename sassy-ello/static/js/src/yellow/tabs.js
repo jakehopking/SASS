@@ -39,33 +39,33 @@
 
         var menu    = $(menuSel),
             content = $(contentSel),
-            currIdx = 0;
+            currIdx = 0,
+            interval;
 
         if (menu.length < 1 || content.length < 1) return;    
 
         function activate (index) {
+
             $(menu.removeClass('active').get(index)).addClass('active');
             $(content.removeClass('active').get(index)).addClass('active');
-            if (evtHandler)
-                evtHandler.call(this, $(content.get(index)));
+
+            if (evtHandler) evtHandler.call(this, $(content.get(index)));
         }
 
         menu.on('click', function (evt) {
-            shiftInterval = 0;
-            this.stopShift();
+            if (interval) clearInterval(interval);
             currIdx = $(this).index();
             activate(currIdx);
         });
 
-        var shiftHandler = function() {
-            if (menu.eq(currIdx).is(':hidden'))
-                currIdx = 0;
+        function shiftHandler () {
+            if (menu.eq(currIdx).is(':hidden')) currIdx = 0;
             activate(currIdx++);
-            if (currIdx >= menu.filter(':visible').length )
-                currIdx = 0;
-            if (shiftInterval > 0)
-                setTimeout(shiftHandler, shiftInterval);
+            if (currIdx >= menu.filter(':visible').length ) currIdx = 0;
         };
-        shiftHandler.apply();
+
+        if (shiftInterval) interval = setInterval(shiftHandler, shiftInterval);
+
+        activate(currIdx);
     };
 

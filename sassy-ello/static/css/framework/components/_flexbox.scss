@@ -31,21 +31,21 @@ html.flexbox{
     width:auto;
 }
 
-	.flexbox__item{
-	    display:table-cell;
-	    vertical-align:middle;
-	}
+    .flexbox__item{
+        display:table-cell;
+        vertical-align:middle;
+    }
 
 
 // Enable flexbox on portable devices (the ones most likely to support flexbox).
 .flexbox-portable {
-	@include media-query(portable) {
-		display: flex;
-		display: -webkit-flex;
-		margin-left: -1px; // Removes the 1px border when flexbox renders.
-		.flexbox-portable__item {
-			display: flex;
-			display: -webkit-flex;
-		}
-	}
+    @include media-query(portable) {
+        display: flex;
+        display: -webkit-flex;
+        margin-left: -1px; // Removes the 1px border when flexbox renders.
+        .flexbox-portable__item {
+            display: flex;
+            display: -webkit-flex;
+        }
+    }
 }

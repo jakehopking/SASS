@@ -3,209 +3,209 @@
 
 //VARS
 
-$quote-received-colour: 					$colour-blue-darker;
-$quote-received-background-colour: 			$colour-blue-lightest-alt-2;
-$quote-accepted-colour: 					$colour-green-darker;
-$quote-accepted-background-colour: 			$colour-green-lightest;
-$quote-archived-colour: 					$colour-red-darker;
-$quote-archived-background-colour: 			$colour-red-lightest-alt;
-$quote-pending-colour: 						$colour-orange-tango;
-$quote-pending-background-colour: 			$colour-orange-lightest;
-$quote-received-status-colour: 				$colour-grey;
-$contact-form-label-color: 					$colour-grey;
+$quote-received-colour:                     $colour-blue-darker;
+$quote-received-background-colour:          $colour-blue-lightest-alt-2;
+$quote-accepted-colour:                     $colour-green-darker;
+$quote-accepted-background-colour:          $colour-green-lightest;
+$quote-archived-colour:                     $colour-red-darker;
+$quote-archived-background-colour:          $colour-red-lightest-alt;
+$quote-pending-colour:                      $colour-orange-tango;
+$quote-pending-background-colour:           $colour-orange-lightest;
+$quote-received-status-colour:              $colour-grey;
+$contact-form-label-color:                  $colour-grey;
 
-$quote-border-colour: 						$colour-white;
-$or-circle-margin: 							28px;
+$quote-border-colour:                       $colour-white;
+$or-circle-margin:                          28px;
 
 %quote-status {
-	color: $colour-white;
-	padding: 2px 6px;
-	font-size: 12px;
+    color: $colour-white;
+    padding: 2px 6px;
+    font-size: 12px;
 }
 .quote-status {
-	margin-top:4px;
-	.status--quotes-received {
-		background: $quote-received-status-colour;
-		@extend %quote-status;
-	}
+    margin-top:4px;
+    .status--quotes-received {
+        background: $quote-received-status-colour;
+        @extend %quote-status;
+    }
 }
 
 .quotes-accordion.accordion {
-	background-color: transparent;
-	list-style-type: none;
-	margin: 0px;
-	.accordion-head {
-		&.active {
-			> .grid {
-				border-bottom: 1px solid $colour-grey-light-alt;
-			}
-		}
-	}
-	.accordion-body {
-		display: none;
-	}
+    background-color: transparent;
+    list-style-type: none;
+    margin: 0px;
+    .accordion-head {
+        &.active {
+            > .grid {
+                border-bottom: 1px solid $colour-grey-light-alt;
+            }
+        }
+    }
+    .accordion-body {
+        display: none;
+    }
 }
 
 .quote-tabs {
-	.tabs-menu {
-		display: block;
-		ul, li {
-			list-style-type: none;
-			margin: 0px;
-			background-color: $card-background-alt;
-		}
-		li {
-			padding:5px 0;
-			float: left;
-			border-bottom: 2px solid $quote-border-colour;
-			border-left: 2px solid $quote-border-colour;
-			cursor: pointer;
-			@include media-query(palm) {
-				border-right: none;
-			}
-			i {
-				margin-right: $base-line-height/2;
-				vertical-align: middle;
-				font-size: 18px;
-			}
-			.amount {
-				border-radius:50%;
-				padding: 10px 15px;
-				display: inline-block;
-				margin-right: 10px;
-			}
-			.title {
-				padding: 5px 0;
-				font-size: 13px;
-				display: inline-block;
-			}
-			&.quotes-received {
-				background: $quote-received-background-colour;
-					&.active {
-						border-bottom: 2px solid $quote-received-background-colour;
-					}
-					a {
-						color: $quote-received-colour;
-						.amount {
-							border: 3px solid $quote-received-colour;
-						}
-					}
-			}
-			&.quotes-archived {
-				background: $quote-archived-background-colour;
-					&.active {
-						border-bottom: 2px solid $quote-archived-background-colour;
-					}
-					a {
-						color: $quote-archived-colour;
-						.amount {
-							border: 3px solid $quote-archived-colour;
-						}
-					}
-			}
-			&.quotes-accepted {
-				background: $quote-accepted-background-colour;
-					&.active {
-						border-bottom: 2px solid $quote-accepted-background-colour;
-					}
-					a {
-						color: $quote-accepted-colour;
-						.amount {
-							border: 3px solid $quote-accepted-colour;
-						}
-					}
-			}
-			&.quotes-pending, &.quotes-submitted {
-				background: $quote-pending-background-colour;
-					&.active {
-						border-bottom: 2px solid $quote-pending-background-colour;
-					}
-					a {
-						color: $quote-pending-colour;
-						.amount {
-							border: 3px solid $quote-pending-colour;
-						}
-					}
-			}
-			&:first-child {
-				border-left: none;
-			}
-		}
-	}
-	.tabs-content {
-		> div {
-			display: none;
-			padding: 5px 5px 2px 5px;
-		}
-		>div.active {
-			display: block;
-		}
-		.quotes-received {
-			background: $quote-received-background-colour;
-		}
-		.quotes-accepted {
-			background: $quote-accepted-background-colour;
-		}
-		.quotes-archived {
-			background: $quote-archived-background-colour;
-		}
-		.quotes-pending, .quotes-submitted {
-			background: $quote-pending-background-colour;
-		}
-		.divider-dotted {
-			margin: $base-line-height 0;
-		}
-		.accordion-head{
-			.accordion-more-details {
-				.button {
-					display: none;
-					&.active {
-						display: block;
-					}
-				}
-			}
-			&:hover {
-				&.active {
-					
-				}
-			}
-		}
-		.accordion-body{
-			display: none;
-			&.active {
-				display: block;
-			}
-		}
-		.quotes-item {
-			margin-bottom: 3px;
-			i.fa-clock-o, i.fa-envelope-o {
-				font-size: 16px;
-				margin: 0 3px 1px 0;
-				vertical-align: middle;
-			}
-		}
-	}
+    .tabs-menu {
+        display: block;
+        ul, li {
+            list-style-type: none;
+            margin: 0px;
+            background-color: $card-background-alt;
+        }
+        li {
+            padding:5px 0;
+            float: left;
+            border-bottom: 2px solid $quote-border-colour;
+            border-left: 2px solid $quote-border-colour;
+            cursor: pointer;
+            @include media-query(palm) {
+                border-right: none;
+            }
+            i {
+                margin-right: $base-line-height/2;
+                vertical-align: middle;
+                font-size: 18px;
+            }
+            .amount {
+                border-radius:50%;
+                padding: 10px 15px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .title {
+                padding: 5px 0;
+                font-size: 13px;
+                display: inline-block;
+            }
+            &.quotes-received {
+                background: $quote-received-background-colour;
+                    &.active {
+                        border-bottom: 2px solid $quote-received-background-colour;
+                    }
+                    a {
+                        color: $quote-received-colour;
+                        .amount {
+                            border: 3px solid $quote-received-colour;
+                        }
+                    }
+            }
+            &.quotes-archived {
+                background: $quote-archived-background-colour;
+                    &.active {
+                        border-bottom: 2px solid $quote-archived-background-colour;
+                    }
+                    a {
+                        color: $quote-archived-colour;
+                        .amount {
+                            border: 3px solid $quote-archived-colour;
+                        }
+                    }
+            }
+            &.quotes-accepted {
+                background: $quote-accepted-background-colour;
+                    &.active {
+                        border-bottom: 2px solid $quote-accepted-background-colour;
+                    }
+                    a {
+                        color: $quote-accepted-colour;
+                        .amount {
+                            border: 3px solid $quote-accepted-colour;
+                        }
+                    }
+            }
+            &.quotes-pending, &.quotes-submitted {
+                background: $quote-pending-background-colour;
+                    &.active {
+                        border-bottom: 2px solid $quote-pending-background-colour;
+                    }
+                    a {
+                        color: $quote-pending-colour;
+                        .amount {
+                            border: 3px solid $quote-pending-colour;
+                        }
+                    }
+            }
+            &:first-child {
+                border-left: none;
+            }
+        }
+    }
+    .tabs-content {
+        > div {
+            display: none;
+            padding: 5px 5px 2px 5px;
+        }
+        >div.active {
+            display: block;
+        }
+        .quotes-received {
+            background: $quote-received-background-colour;
+        }
+        .quotes-accepted {
+            background: $quote-accepted-background-colour;
+        }
+        .quotes-archived {
+            background: $quote-archived-background-colour;
+        }
+        .quotes-pending, .quotes-submitted {
+            background: $quote-pending-background-colour;
+        }
+        .divider-dotted {
+            margin: $base-line-height 0;
+        }
+        .accordion-head{
+            .accordion-more-details {
+                .button {
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+            &:hover {
+                &.active {
+                    
+                }
+            }
+        }
+        .accordion-body{
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+        .quotes-item {
+            margin-bottom: 3px;
+            i.fa-clock-o, i.fa-envelope-o {
+                font-size: 16px;
+                margin: 0 3px 1px 0;
+                vertical-align: middle;
+            }
+        }
+    }
 }
 .quote__contact-form {
-	padding-bottom: $base-line-height/4;
-	border-bottom: 1px solid $colour-grey-light;
-	label {
-		font-weight: normal;
-		color: $contact-form-label-color;
-	}
-	.or__circle {
-		margin-top: $or-circle-margin;
-		 @include media-query(palm) {
-		 	margin-top: -15px;
-		 	span {
-		 		float: left;
-		 	}
-	    }
-		span {
-			border-radius: 50%;
-			padding:20px;
-			background: $colour-grey-light;
-			color: $colour-white;
-		}
-	}
+    padding-bottom: $base-line-height/4;
+    border-bottom: 1px solid $colour-grey-light;
+    label {
+        font-weight: normal;
+        color: $contact-form-label-color;
+    }
+    .or__circle {
+        margin-top: $or-circle-margin;
+         @include media-query(palm) {
+            margin-top: -15px;
+            span {
+                float: left;
+            }
+        }
+        span {
+            border-radius: 50%;
+            padding:20px;
+            background: $colour-grey-light;
+            color: $colour-white;
+        }
+    }
 }

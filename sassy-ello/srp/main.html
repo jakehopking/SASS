@@ -13,8 +13,7 @@
 
                     <div class="grid__item desk--one-quarter">
                         <div class="search-filter-field">
-                            <select name="filter-sort" data-label="Sort by:">
-                                <option value="featured">Featured</option>
+                            <select name="filter-sort" data-label="Sorted by:">
                                 <option value="relevant">Most relevant</option>
                                 <option value="rated">Highest-rated</option>
                                 <option value="closest">Closest</option>
@@ -25,8 +24,8 @@
 
                     <div class="grid__item desk--one-quarter">
                         <div class="search-filter-field">
-                            <select name="filter-category" data-label="Category:">
-                                <option value="">Any</option>
+                            <select name="filter-category" data-label="Categories:">
+                                <option value=""></option>
                                 {% for category in search.filters.categories %}
                                 <option {% if filters.category == category.id|stringformat:"s" %}selected="true"{% endif %} value="{{ category.id }}">{{ category.name }} ({{ category.count }})</option>
                                 {% endfor %}
@@ -63,11 +62,13 @@
                         </div>
                     </div>
 
+                    {% if search.filtersActive %}
                     <div class="grid__item desk--one-quarter">
                         <div class="search-filter-field">
                           <a class="filter-clear" href="{{ request.path }}"><i class="fa fa-times-circle fa-pad--right"></i>Clear filter</a>
                         </div>
                     </div>
+                    {% endif %}
 
                 </div>
 
@@ -139,7 +140,7 @@
                     <div class="pagination">
                         <div class="button-group button-group--spaced">
                             {% if search.meta.page > 1 %}
-<a href="{% url 'search_view' where what search.meta.page|add:-1 %}?{{request.GET.urlencode}}" class="button button--small"><i class="fa fa-chevron-left fa-pad--right"></i> Prev</a>
+                            <a href="{% url 'search_view' where what search.meta.page|add:-1 %}?{{request.GET.urlencode}}" class="button button--small"><i class="fa fa-chevron-left fa-pad--right"></i> Prev</a>
                             {% endif %}
                             <a href="#" class="button button--small">{{search.meta.page}}</a>
                             {% if search.meta.page < search.meta.pages %}
